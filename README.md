@@ -44,7 +44,7 @@ React.js: A JavaScript library used for building the user interface.
 # IceBox
 
 Ideas pending for future development:
-1. 
+1. Integrate personality test as part of the site.
 2. 
 3. 
 4. 

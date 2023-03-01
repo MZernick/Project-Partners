@@ -28,6 +28,8 @@ To use Project Partner, simply visit the website and sign up for an account. The
 # Technologies Used
 
 React.js: A JavaScript library used for building the user interface.
+GraphQL with a Node.js and Express.js server.
+MongoDB, Mongoose ODM.
 
 
 # Authors

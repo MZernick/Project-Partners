@@ -3,12 +3,24 @@ import Form from "react-bootstrap/Form";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import InputGroup from 'react-bootstrap/InputGroup';
+import '../styles/Landing.css';
+import Hiwtest from '../styles/howitworksmock1.png';
 
 export default function Homepage(props) {
   return (
-    <div>
-      <h1> ProPairs/ Project Partners</h1>
-      <p> Find a partner</p>
+  <div>
+     <div class="landingcontainer">
+        <h1>
+            ProPairs
+        </h1>
+        <h2>
+            Group cohesion is everything in projects. We get it. ProPairs evaluates users based on their personality type and generates a rating of how well they will work with one another. The website aims to help users find compatible project partners based on their personality traits.
+        </h2>
+        <button class="button-front" role="button">Get Started</button>
+      </div>
+    <div class="infoContainer">
+      <img src={Hiwtest} alt="how it works"/>
+    </div>
       <Form>
         <>
           <InputGroup className="mb-3">
@@ -40,6 +52,6 @@ export default function Homepage(props) {
           </InputGroup>
         </>
       </Form>
-    </div>
+  </div>
   );
 }

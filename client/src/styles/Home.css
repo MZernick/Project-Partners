@@ -1,24 +1,24 @@
-.landingContainer {
-    display: flex;
-    margin-left: 180px;
-    width: 46%;
+.headingContainer {
+    margin-top: -100px;
 }
 
-.row {
-    width: 46%;
-}
-
-.infoContainer {
-    width: 37%;
+.propairsContainer {
     margin-left: 100px;
 }
 
-.yay {
+
+.descriptionContainer {
+    display: flex;
+    margin-left: 100px;
+    width: 42% !important;
+    align-items: flex-start;
+}
+
+.imgContainer {
+    display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    margin-top: 50px;
 }
 
 .footContainer {

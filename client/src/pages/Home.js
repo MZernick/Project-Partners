@@ -4,7 +4,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import InputGroup from 'react-bootstrap/InputGroup';
 
-function Homepage(props) {
+export default function Homepage(props) {
   return (
     <div>
       <h1> ProPairs/ Project Partners</h1>
@@ -43,5 +43,3 @@ function Homepage(props) {
     </div>
   );
 }
-
-export default Homepage;

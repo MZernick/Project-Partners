@@ -1,138 +1,313 @@
-switch(pair) {
-    case "INFP,INFP": return 4;
-case "INFP,ENFP": return 4;
-case "INFP,INFJ": return 4;
-case "INFP,ENFJ": return 5;
-case "INFP,INTJ": return 4;
-case "INFP,ENTJ": return 5;
-case "INFP,INTP": return 4;
-case "INFP,ENTP": return 4;
-case "INFP,ISFP": return 1;
-case "INFP,ESFP": return 1;
-case "INFP,ISTP": return 1;
-case "INFP,ESTP": return 1;
-case "INFP,ISFJ": return 1;
-case "INFP,ESFJ": return 1;
-case "INFP,ISTJ": return 1;
-case "INFP,ESTJ": return 1;
-case "ENFP,ENFP": return 4;
-case "ENFP,INFJ": return 5;
-case "ENFP,ENFJ": return 4;
-case "ENFP,INTJ": return 5;
-case "ENFP,ENTJ": return 4;
-case "ENFP,INTP": return 4;
-case "ENFP,ENTP": return 4;
-case "ENFP,ISFP": return 1;
-case "ENFP,ESFP": return 1;
-case "ENFP,ISTP": return 1;
-case "ENFP,ESTP": return 1;
-case "ENFP,ISFJ": return 1;
-case "ENFP,ESFJ": return 1;
-case "ENFP,ISTJ": return 1;
-case "ENFP,ESTJ": return 1;
-case "INFJ,INFJ": return 4;
-case "INFJ,ENFJ": return 4;
-case "INFJ,INTJ": return 4;
-case "INFJ,ENTJ": return 4;
-case "INFJ,INTP": return 4;
-case "INFJ,ENTP": return 5;
-case "INFJ,ISFP": return 1;
-case "INFJ,ESFP": return 1;
-case "INFJ,ISTP": return 1;
-case "INFJ,ESTP": return 1;
-case "INFJ,ISFJ": return 1;
-case "INFJ,ESFJ": return 1;
-case "INFJ,ISTJ": return 1;
-case "INFJ,ESTJ": return 1;
-case "ENFJ,ENFJ": return 4;
-case "ENFJ,INTJ": return 4;
-case "ENFJ,ENTJ": return 4;
-case "ENFJ,INTP": return 4;
-case "ENFJ,ENTP": return 4;
-case "ENFJ,ISFP": return 5;
-case "ENFJ,ESFP": return 1;
-case "ENFJ,ISTP": return 1;
-case "ENFJ,ESTP": return 1;
-case "ENFJ,ISFJ": return 1;
-case "ENFJ,ESFJ": return 1;
-case "ENFJ,ISTJ": return 1;
-case "ENFJ,ESTJ": return 1;
-case "INTJ,INTJ": return 4;
-case "INTJ,ENTJ": return 4;
-case "INTJ,INTP": return 4;
-case "INTJ,ENTP": return 5;
-case "INTJ,ISFP": return 3;
-case "INTJ,ESFP": return 3;
-case "INTJ,ISTP": return 3;
-case "INTJ,ESTP": return 3;
-case "INTJ,ISFJ": return 2;
-case "INTJ,ESFJ": return 2;
-case "INTJ,ISTJ": return 2;
-case "INTJ,ESTJ": return 2;
-case "ENTJ,ENTJ": return 4;
-case "ENTJ,INTP": return 5;
-case "ENTJ,ENTP": return 4;
-case "ENTJ,ISFP": return 4;
-case "ENTJ,ESFP": return 4;
-case "ENTJ,ISTP": return 4;
-case "ENTJ,ESTP": return 4;
-case "ENTJ,ISFJ": return 4;
-case "ENTJ,ESFJ": return 4;
-case "ENTJ,ISTJ": return 4;
-case "ENTJ,ESTJ": return 4;
-case "INTP,INTP": return 4;
-case "INTP,ENTP": return 4;
-case "INTP,ISFP": return 3;
-case "INTP,ESFP": return 3;
-case "INTP,ISTP": return 3;
-case "INTP,ESTP": return 3;
-case "INTP,ISFJ": return 2;
-case "INTP,ESFJ": return 2;
-case "INTP,ISTJ": return 2;
-case "INTP,ESTJ": return 5;
-case "ENTP,ENTP": return 4;
-case "ENTP,ISFP": return 3;
-case "ENTP,ESFP": return 3;
-case "ENTP,ISTP": return 3;
-case "ENTP,ESTP": return 3;
-case "ENTP,ISFJ": return 2;
-case "ENTP,ESFJ": return 2;
-case "ENTP,ISTJ": return 2;
-case "ENTP,ESTJ": return 2;
-case "ISFP,ISFP": return 2;
-case "ISFP,ESFP": return 2;
-case "ISFP,ISTP": return 2;
-case "ISFP,ESTP": return 2;
-case "ISFP,ISFJ": return 3;
-case "ISFP,ESFJ": return 5;
-case "ISFP,ISTJ": return 3;
-case "ISFP,ESTJ": return 5;
-case "ESFP,ESFP": return 2;
-case "ESFP,ISTP": return 2;
-case "ESFP,ESTP": return 2;
-case "ESFP,ISFJ": return 5;
-case "ESFP,ESFJ": return 3;
-case "ESFP,ISTJ": return 5;
-case "ESFP,ESTJ": return 3;
-case "ISTP,ISTP": return 2;
-case "ISTP,ESTP": return 2;
-case "ISTP,ISFJ": return 3;
-case "ISTP,ESFJ": return 5;
-case "ISTP,ISTJ": return 3;
-case "ISTP,ESTJ": return 5;
-case "ESTP,ESTP": return 2;
-case "ESTP,ISFJ": return 5;
-case "ESTP,ESFJ": return 3;
-case "ESTP,ISTJ": return 5;
-case "ESTP,ESTJ": return 3;
-case "ISFJ,ISFJ": return 4;
-case "ISFJ,ESFJ": return 4;
-case "ISFJ,ISTJ": return 4;
-case "ISFJ,ESTJ": return 4;
-case "ESFJ,ESFJ": return 4;
-case "ESFJ,ISTJ": return 4;
-case "ESFJ,ESTJ": return 4;
-case "ISTJ,ISTJ": return 4;
-case "ISTJ,ESTJ": return 4;
-case "ESTJ,ESTJ": return 4;
-}
+//switch to return array of objects that contain compatibility ratings by MBTI type
+
+function setUserCompatibility(type){
+switch (type) {
+
+    case 'INFP': return [	
+            {'INFP' : 4},
+            {'ENFP' : 4},
+            {'INFJ' : 4},
+            {'ENFJ' : 5},
+            {'INTJ' : 4},
+            {'ENTJ' : 5},
+            {'INTP' : 4},
+            {'ENTP' : 4},
+            {'ISFP' : 1},
+            {'ESFP' : 1},
+            {'ISTP' : 1},
+            {'ESTP' : 1},
+            {'ISFJ' : 1},
+            {'ESFJ' : 1},
+            {'ISTJ' : 1},
+            {'ESTJ' : 1}
+        ];
+        
+    case 'ENFP': return [	
+            {'INFP' : 4},
+            {'ENFP' : 4},
+            {'INFJ' : 5},
+            {'ENFJ' : 4},
+            {'INTJ' : 5},
+            {'ENTJ' : 4},
+            {'INTP' : 4},
+            {'ENTP' : 4},
+            {'ISFP' : 1},
+            {'ESFP' : 1},
+            {'ISTP' : 1},
+            {'ESTP' : 1},
+            {'ISFJ' : 1},
+            {'ESFJ' : 1},
+            {'ISTJ' : 1},
+            {'ESTJ' : 1}
+        ];
+        
+    case 'INFJ' : return [	
+            {'INFP' : 4},
+            {'ENFP' : 5},
+            {'INFJ' : 4},
+            {'ENFJ' : 4},
+            {'INTJ' : 4},
+            {'ENTJ' : 4},
+            {'INTP' : 4},
+            {'ENTP' : 5},
+            {'ISFP' : 1},
+            {'ESFP' : 1},
+            {'ISTP' : 1},
+            {'ESTP' : 1},
+            {'ISFJ' : 1},
+            {'ESFJ' : 1},
+            {'ISTJ' : 1},
+            {'ESTJ' : 1}
+        ];
+        
+    case 'ENFJ' : return [	
+            {'INFP' : 5},
+            {'ENFP' : 4},
+            {'INFJ' : 4},
+            {'ENFJ' : 4},
+            {'INTJ' : 4},
+            {'ENTJ' : 4},
+            {'INTP' : 4},
+            {'ENTP' : 4},
+            {'ISFP' : 5},
+            {'ESFP' : 1},
+            {'ISTP' : 1},
+            {'ESTP' : 1},
+            {'ISFJ' : 1},
+            {'ESFJ' : 1},
+            {'ISTJ' : 1},
+            {'ESTJ' : 1}
+        ];
+        
+    case 'INTJ' : return [	
+            {'INFP' : 4},
+            {'ENFP' : 5},
+            {'INFJ' : 4},
+            {'ENFJ' : 4},
+            {'INTJ' : 4},
+            {'ENTJ' : 4},
+            {'INTP' : 4},
+            {'ENTP' : 5},
+            {'ISFP' : 3},
+            {'ESFP' : 3},
+            {'ISTP' : 3},
+            {'ESTP' : 3},
+            {'ISFJ' : 2},
+            {'ESFJ' : 2},
+            {'ISTJ' : 2},
+            {'ESTJ' : 2}
+        ];
+        
+    case 'ENTJ' : return [	
+            {'INFP' : 5},
+            {'ENFP' : 4},
+            {'INFJ' : 4},
+            {'ENFJ' : 4},
+            {'INTJ' : 4},
+            {'ENTJ' : 4},
+            {'INTP' : 5},
+            {'ENTP' : 4},
+            {'ISFP' : 3},
+            {'ESFP' : 3},
+            {'ISTP' : 3},
+            {'ESTP' : 3},
+            {'ISFJ' : 3},
+            {'ESFJ' : 3},
+            {'ISTJ' : 3},
+            {'ESTJ' : 3}
+        ];
+        
+    case 'INTP' : return [	
+            {'INFP' : 4},
+            {'ENFP' : 4},
+            {'INFJ' : 5},
+            {'ENFJ' : 4},
+            {'INTJ' : 5},
+            {'ENTJ' : 4},
+            {'INTP' : 4},
+            {'ENTP' : 4},
+            {'ISFP' : 3},
+            {'ESFP' : 3},
+            {'ISTP' : 3},
+            {'ESTP' : 3},
+            {'ISFJ' : 2},
+            {'ESFJ' : 2},
+            {'ISTJ' : 2},
+            {'ESTJ' : 5}
+        ];
+        
+    case 'ENTP' : return [	
+            {'INFP' : 4},
+            {'ENFP' : 4},
+            {'INFJ' : 5},
+            {'ENFJ' : 4},
+            {'INTJ' : 5},
+            {'ENTJ' : 4},
+            {'INTP' : 4},
+            {'ENTP' : 4},
+            {'ISFP' : 3},
+            {'ESFP' : 3},
+            {'ISTP' : 3},
+            {'ESTP' : 3},
+            {'ISFJ' : 2},
+            {'ESFJ' : 2},
+            {'ISTJ' : 2},
+            {'ESTJ' : 2}
+        ];
+        
+    case 'ISFP' : return [	
+            {'INFP' : 1},
+            {'ENFP' : 1},
+            {'INFJ' : 1},
+            {'ENFJ' : 5},
+            {'INTJ' : 3},
+            {'ENTJ' : 3},
+            {'INTP' : 3},
+            {'ENTP' : 3},
+            {'ISFP' : 2},
+            {'ESFP' : 2},
+            {'ISTP' : 2},
+            {'ESTP' : 2},
+            {'ISFJ' : 3},
+            {'ESFJ' : 5},
+            {'ISTJ' : 3},
+            {'ESTJ' : 5}
+        ];
+        
+    case 'ESFP' : return [	
+            {'INFP' : 1},
+            {'ENFP' : 1},
+            {'INFJ' : 1},
+            {'ENFJ' : 5},
+            {'INTJ' : 3},
+            {'ENTJ' : 3},
+            {'INTP' : 3},
+            {'ENTP' : 3},
+            {'ISFP' : 2},
+            {'ESFP' : 2},
+            {'ISTP' : 2},
+            {'ESTP' : 2},
+            {'ISFJ' : 3},
+            {'ESFJ' : 5},
+            {'ISTJ' : 3},
+            {'ESTJ' : 5}
+        ];
+        
+    case 'ISTP' : return [	
+            {'INFP' : 1},
+            {'ENFP' : 1},
+            {'INFJ' : 1},
+            {'ENFJ' : 1},
+            {'INTJ' : 3},
+            {'ENTJ' : 3},
+            {'INTP' : 3},
+            {'ENTP' : 3},
+            {'ISFP' : 2},
+            {'ESFP' : 2},
+            {'ISTP' : 2},
+            {'ESTP' : 2},
+            {'ISFJ' : 3},
+            {'ESFJ' : 5},
+            {'ISTJ' : 3},
+            {'ESTJ' : 5}
+        ];
+        
+    case 'ESTP' : return [	
+            {'INFP' : 1},
+            {'ENFP' : 1},
+            {'INFJ' : 1},
+            {'ENFJ' : 1},
+            {'INTJ' : 3},
+            {'ENTJ' : 3},
+            {'INTP' : 3},
+            {'ENTP' : 3},
+            {'ISFP' : 2},
+            {'ESFP' : 2},
+            {'ISTP' : 2},
+            {'ESTP' : 2},
+            {'ISFJ' : 5},
+            {'ESFJ' : 3},
+            {'ISTJ' : 5},
+            {'ESTJ' : 3}
+        ];
+        
+    case 'ISFJ' : return [	
+            {'INFP' : 1},
+            {'ENFP' : 1},
+            {'INFJ' : 1},
+            {'ENFJ' : 1},
+            {'INTJ' : 2},
+            {'ENTJ' : 3},
+            {'INTP' : 2},
+            {'ENTP' : 2},
+            {'ISFP' : 3},
+            {'ESFP' : 5},
+            {'ISTP' : 3},
+            {'ESTP' : 5},
+            {'ISFJ' : 4},
+            {'ESFJ' : 4},
+            {'ISTJ' : 4},
+            {'ESTJ' : 4}
+        ];
+        
+    case 'ESFJ' : return [	
+            {'INFP' : 1},
+            {'ENFP' : 1},
+            {'INFJ' : 1},
+            {'ENFJ' : 1},
+            {'INTJ' : 2},
+            {'ENTJ' : 3},
+            {'INTP' : 2},
+            {'ENTP' : 2},
+            {'ISFP' : 5},
+            {'ESFP' : 3},
+            {'ISTP' : 5},
+            {'ESTP' : 3},
+            {'ISFJ' : 4},
+            {'ESFJ' : 4},
+            {'ISTJ' : 4},
+            {'ESTJ' : 4}
+        ];
+        
+    case 'ISTJ' : return [	
+            {'INFP' : 1},
+            {'ENFP' : 1},
+            {'INFJ' : 1},
+            {'ENFJ' : 1},
+            {'INTJ' : 2},
+            {'ENTJ' : 3},
+            {'INTP' : 2},
+            {'ENTP' : 2},
+            {'ISFP' : 3},
+            {'ESFP' : 5},
+            {'ISTP' : 3},
+            {'ESTP' : 5},
+            {'ISFJ' : 4},
+            {'ESFJ' : 4},
+            {'ISTJ' : 4},
+            {'ESTJ' : 4}
+        ];
+        
+    case 'ESTJ' : return [	
+            {'INFP' : 1},
+            {'ENFP' : 1},
+            {'INFJ' : 1},
+            {'ENFJ' : 1},
+            {'INTJ' : 2},
+            {'ENTJ' : 3},
+            {'INTP' : 5},
+            {'ENTP' : 2},
+            {'ISFP' : 5},
+            {'ESFP' : 3},
+            {'ISTP' : 5},
+            {'ESTP' : 3},
+            {'ISFJ' : 4},
+            {'ESFJ' : 4},
+            {'ISTJ' : 4},
+            {'ESTJ' : 4}
+        ];
+    default : console.log('The compatibility switch in rating.js is unhappy');
+    };
+};
+
+console.log(setUserCompatibility('INTJ')) 

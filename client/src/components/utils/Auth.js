@@ -1,39 +1,37 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import decode from 'jwt-decode';
 
-const AuthContext = createContext({
-  auth: null,
-  setAuth: () => {},
-  user: null,
-});
+class AuthService {
+  getProfile() {
+    return decode(this.getToken());
+  }
 
-export useAuth = () => useContext(AuthContext);
+  loggedIn() {
+    const token = this.getToken();
+    return token && !this.isTokenExpired(token) ? true : false;
+  }
 
-const AuthProvider = ({ children }) => {
-  const [auth, setAuth] = useState(null);
-  const [user, setUser] = useState(null);
+  isTokenExpired(token) {
+    const decoded = decode(token);
+    if (decoded.exp < Date.now() / 1000) {
+      localStorage.removeItem('id_token');
+      return true;
+    }
+    return false;
+  }
 
-  useEffect(() => {
-    const isAuth = async () => {
-      try {
-        const res await axios.get(
-          'http://localhost:5000/api/logged-user/',
-          { withCredentials: true }
-        );
-      
-        setUser(res.data);
-      } catch(error) {
-        setUser(null);
-      };
-    };
+  getToken() {
+    return localStorage.getItem('id_token');
+  }
 
-    isAuth();
-  }, [auth]);
+  login(idToken) {
+    localStorage.setItem('id_token', idToken);
+    window.location.assign('/');
+  }
 
-  return (
-    <AuthContext.Provider value={{ auth, setAuth, user }}>
-      {children}
-    </AuthContext.Provider>
-  );
-};
+  logout() {
+    localStorage.removeItem('id_token');
+    window.location.reload();
+  }
+}
 
-export default AuthProvider;
+export default new AuthService();

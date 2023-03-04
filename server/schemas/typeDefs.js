@@ -11,6 +11,15 @@ const typeDefs = gql`
     email: String
     password: String
     personality: String
+    teams: [Teams]
+  }
+
+  type Teams {
+    _id: ID
+    title: String
+    description: String
+    createdAt: String
+    members: [User]
   }
 
   type Auth {
@@ -21,12 +30,15 @@ const typeDefs = gql`
   type Query {
     users: [User]!
     user(userId: ID!): User
+    me: User
+    teams: [Teams]!
+    team(teamId: ID!): Teams
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!, personality: String!): Auth
     login(email: String!, password: String!): Auth
-
+    addTeam(title: String!, description: String!) : Teams
     removeUser(userId: ID!): User
   }
 `;

@@ -10,7 +10,7 @@ const teamSchema = new Schema(
             trim: true,
           },
         //   short description fo purpose of the team?
-        descrption: {
+        description: {
             type: String,
             required: true, 
             trim: true

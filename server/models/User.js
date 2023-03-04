@@ -24,6 +24,12 @@ const userSchema = new Schema(
             type:String,
             // required: true,
         },
+        combatibility: [
+          {
+            type: String,
+            trim: true,
+          },
+        ],
         teams: [
             {
               type: Schema.Types.ObjectId, 

@@ -4,6 +4,7 @@ import Home from '../pages/Home';
 import Profile from '../pages/Profile';
 import MyTeams from '../pages/MyTeams';
 import JoinTeam from '../pages/JoinTeam';
+import Signup from '../pages/Signup';
 
 export default function PortfolioContainer() {
   const [currentPage, setCurrentPage] = useState('Home');
@@ -21,6 +22,9 @@ export default function PortfolioContainer() {
     }
     if (currentPage === 'JoinTeam') {
         return <JoinTeam />;
+      }
+    if (currentPage === 'Signup') {
+        return <Signup />;
       }
     return <Home />;
   };

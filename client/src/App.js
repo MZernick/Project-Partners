@@ -1,12 +1,7 @@
+import React from "react";
+import PortfolioContainer from "./components/PortfolioContainer";
 import './App.css';
-import Landing from "./components/Landing";
 
-function App() {
-  return (
-    <div className='App'>
-      <Landing />
-    </div>
-  );
-}
+const App = () => <PortfolioContainer />;
 
 export default App;

@@ -116,6 +116,7 @@ const Signup = () => {
                 >
                   Submit
                 </button>
+                <p>Don't know your personality type? Take this quick quiz: <a rel="noreferrer" href="https://www.16personalities.com/free-personality-test" target="_blank">16personalites.com</a></p>
               </form>
             {/* )} */}
 

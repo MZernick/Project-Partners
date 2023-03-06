@@ -1,9 +1,9 @@
 import React from 'react';
 import { useMutation } from '@apollo/client';
-//be sure to create the mutations for this
+//be sure to create the mutations for this--done
 import { REMOVE_TEAM } from '../../utils/mutations';
 
-//be sure to create the query for this
+//be sure to create the query for this--done
 import { QUERY_ME } from '../../utils/queries';
 
 const TeamList = ({ teams, isLoggedInUser = false }) => {

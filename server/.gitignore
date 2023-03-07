@@ -5,8 +5,8 @@
 /.pnp
 .pnp.js
 
-#connection
-/
+# connection
+/config/connection.js
 
 # testing
 /coverage

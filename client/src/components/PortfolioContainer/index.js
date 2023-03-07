@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import NavTabs from './NavTabs';
-import Home from '../pages/Home';
-import Profile from '../pages/Profile';
-import MyTeams from '../pages/MyTeams';
-import JoinTeam from '../pages/JoinTeam';
-import Signup from '../pages/Signup';
+import NavTabs from '../NavTabs';
+import Home from '../../pages/Home';
+import Profile from '../../pages/Profile';
+import MyTeams from '../../pages/MyTeams';
+import JoinTeam from '../../pages/JoinTeam';
+import Signup from '../../pages/Signup';
 
 export default function PortfolioContainer() {
   const [currentPage, setCurrentPage] = useState('Home');

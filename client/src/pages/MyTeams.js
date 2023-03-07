@@ -17,6 +17,7 @@ const MyTeam = () => {
         variables: { userId: userId },
       }
     );
+    const user = data?.me || data?.user || {};
   
     const profile = data?.me || data?.user || {};
     if (Auth.loggedIn() && Auth.getProfile().data._id === userId) {

@@ -3,7 +3,6 @@ import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import TeamList from '../components/TeamList';
 import Pairings from '../components/Pairings';
 
 //profile query here- are we adding pairs/partners/favorites or just seeing partners in the their teamsview?
@@ -23,7 +22,7 @@ const Profile = () => {
   );
 
   // Check if data is returning from the `QUERY_ME` query, then the `QUERY_SINGLE_PROFILE` query
-  const profile = data?.me || data?.user || {};
+  const user = data?.me || data?.user || {};
 
   // Use React Router's `<Navigate />` component to redirect to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data._id === userId) {
@@ -49,19 +48,14 @@ const Profile = () => {
         {userId ? `${user.username}'s` : 'Your'} 
       </h2>
     <p>has a ${user.personality} type.</p>
-    <h4>Teams:</h4>
-      {user.teams?.length > 0 && (
-        <TeamList
-          teams={user.teams}
-          isLoggedInUser={!userId && true}
-        />
-      )}
-
-      <div className="my-4 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        <Pairings userId={user._id} />
-      </div>
-    </div>
+    <h4>You belong to ${user.teams.length} teams</h4>
+</div>
   );
 };
 
 export default Profile;
+
+{/* MIGHT ADD PAIRINGS TO PROFILE
+<div className="my-4 p-4" style={{ border: '1px dotted #1a1a1a' }}>
+<Pairings userId={user._id} />
+</div> */}

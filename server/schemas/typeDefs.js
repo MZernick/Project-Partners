@@ -11,7 +11,14 @@ const typeDefs = gql`
     email: String
     password: String
     personality: String
+    combatibility: [Score]
     teams: [Teams]
+  }
+
+  type Score {
+    _id: ID
+    type: String
+    rating: Number
   }
 
   type Teams {

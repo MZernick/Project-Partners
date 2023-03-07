@@ -2,27 +2,25 @@ const { AuthenticationError } = require('apollo-server-express');
 const { User,  Teams } = require('../models');
 const { signToken } = require('../utils/auth');
 
-// need to add resolvers for creating and deleting teams
-
 const resolvers = {
   Query: {
     // find all users
     users: async () => {
-      return User.find().populate('teams').populate({
+      return await User.find({}).populate('teams').populate({
         path: 'teams', 
         populate: 'members'
       });
     },
     // find one user
     user: async (parent, { userId }) => {
-      return User.findOne({ _id: userId }).populate('teams').populate({
+      return await User.findOne({ _id: userId }).populate('teams').populate({
         path: 'teams', 
         populate: 'members'
       });
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id });
+        return await User.findOne({ _id: context.user._id });
       }
       throw new AuthenticationError('You need to be logged in!');
     },
@@ -61,15 +59,62 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    // update a user 
+    updateUser: async (parent, {userId, username, email, password, personality }) => {
+     return User.findOneAndUpdate(
+        { _id: userId },
+        { username, email, password, personality },
+        { runValidators: true, new: true}
+      )
+    },
+    // remove a user 
     removeUser: async (parent, { userId }) => {
       return User.findOneAndDelete({ _id: userId });
     },
-    addTeam: async (parent, { title, description }) => {
-      const team = await Teams.create({ title, description });
-      const token = signToken(team);
 
-      return { token, team };
+    // add a team then push that team's id number into the associated user's model
+    addTeam: async (parent, { userId, title, description }) => {
+      Teams.create({title, description})
+      .then((team) => {
+       return User.findOneAndUpdate(
+            { _id: userId },
+            { $addToSet: { teams: team._id }},
+            { new: true }
+          )
+        })
     },
+
+    // update a team 
+    updateTeam: async (parent, { teamId, title, description}) => {
+      return Teams.findOneAndUpdate(
+         { _id: teamId },
+         { title, description },
+         { runValidators: true, new: true}
+       )
+     },
+
+    //  remove a team
+    removeTeam: async (parent, { teamId }) => {
+      return Teams.findOneAndDelete({ _id: teamId });
+    },
+
+    // add a member to the member property on team
+    addMember: async(parent, {teamId, userId}) => {
+      return Teams.findOneAndUpdate(
+        {_id: teamId}, 
+        {$addToSet: {members: userId}}, 
+        {new: true}
+        )
+    }, 
+
+    // remove a member form a team
+    removeMember: async(parent, {teamId, userId}) => {
+      return Teams.findOneAndUpdate(
+        {_id: teamId}, 
+        {$pull: {members: userId}}, 
+        {new: true}
+        )
+    }
   },
 };
 

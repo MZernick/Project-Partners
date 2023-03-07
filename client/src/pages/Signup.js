@@ -2,7 +2,7 @@
 // // import { Link } from 'react-router-dom';
 
 // // import { useMutation } from '@apollo/client';
-// // import { ADD_PROFILE } from '../utils/mutations';
+// // import { ADD_USER } from '../utils/mutations';
 // // import { LOGIN_USER } from '../utils/mutations';
 
 // // import Auth from '../utils/auth';
@@ -14,7 +14,7 @@
 //     password: '',
 //     personality: '',
 //   });
-// //   const [addProfile, { error, data }] = useMutation(ADD_PROFILE);
+// //   const [addUser, { error, data }] = useMutation(ADD_USER);
 // const [userState, setUserState] = useState({ email: '', password: '' });
 // // const [login, { error, data }] = useMutation(LOGIN_USER);
 
@@ -54,11 +54,11 @@
 // //     console.log(signupState);
 
 // //     try {
-// //       const { data } = await addProfile({
+// //       const { data } = await addUser({
 // //         variables: { ...signupState },
 // //       });
 
-// //     //   Auth.login(data.addProfile.token);
+// //     //   Auth.login(data.addUser.token);
 // //     } catch (e) {
 // //       console.error(e);
 // //     }

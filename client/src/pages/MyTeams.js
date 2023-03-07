@@ -3,11 +3,12 @@ import React from "react";
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-// import TeamList from '../components/TeamList';
+import TeamList from '../components/TeamsList';
 
-// import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../utils/queries';
+import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../utils/queries';
+import Auth from '../utils/auth';
 
-function myTeam() {
+const MyTeam = () => {
     const { userId } = useParams();
 
     const { loading, data } = useQuery(
@@ -47,4 +48,4 @@ function myTeam() {
     )
 }
 
-export default myTeam;
+export default MyTeam;

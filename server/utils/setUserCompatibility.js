@@ -42,22 +42,22 @@ switch (type) {
         ];
         
     case 'INFJ' : return [	
-            {'INFP' : 4},
-            {'ENFP' : 5},
-            {'INFJ' : 4},
-            {'ENFJ' : 4},
-            {'INTJ' : 4},
-            {'ENTJ' : 4},
-            {'INTP' : 4},
-            {'ENTP' : 5},
-            {'ISFP' : 1},
-            {'ESFP' : 1},
-            {'ISTP' : 1},
-            {'ESTP' : 1},
-            {'ISFJ' : 1},
-            {'ESFJ' : 1},
-            {'ISTJ' : 1},
-            {'ESTJ' : 1}
+            { 'type': 'INFP','rating' : 4},
+            {'type' : 'ENFP', 'rating' : 5},
+            {'type': 'INFJ', 'rating' : 4},
+            {'type':'ENFJ', 'rating' : 4},
+            {'type':'INTJ', 'rating' : 4},
+            {'type': 'ENTJ', 'rating' : 4},
+            {'type' : 'INTP', 'rating' : 4},
+            {'type' : 'ENTP', 'rating' : 5},
+            {'type' : 'ISFP', 'rating' : 1},
+            {'type' : 'ESFP', 'rating' : 1},
+            {'type':'ISTP', 'rating' : 1},
+            {'type': 'ESTP', 'rating' : 1},
+            {'type': 'ISFJ', 'rating' : 1},
+            {'type':  'ESFJ', 'rating' : 1},
+            {'type' : 'ISTJ', 'rating' : 1},
+            {'type': 'ESTJ', 'rating' : 1}
         ];
         
     case 'ENFJ' : return [	

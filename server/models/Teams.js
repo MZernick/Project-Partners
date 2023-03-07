@@ -45,6 +45,6 @@ teamSchema.virtual('memberCount').get(function () {
     return this.members.length;
   });
 
-  const Team = model('team', teamSchema);
+  const Teams = model('Teams', teamSchema);
 
-  module.exports = Team;
+  module.exports = Teams;

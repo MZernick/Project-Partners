@@ -3,12 +3,12 @@ import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import Pairings from '../components/Pairings';
+// import Pairings from '../components/Pairings';
 
 //profile query here- are we adding pairs/partners/favorites or just seeing partners in the their teamsview?
-import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../utils/queries';
+// import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../utils/queries';
 
-import Auth from '../utils/auth';
+// import Auth from '../utils/auth';
 
 const Profile = () => {
   const { userId } = useParams();

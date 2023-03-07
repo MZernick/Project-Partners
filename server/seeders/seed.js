@@ -11,19 +11,16 @@ db.once('open', async () => {
     const teams = await Teams.insertMany(teamSeeds);
 
     for (newUser of users) {
-      // randomly add each class to a school
-      // const tempSchool = schools[Math.floor(Math.random() * schools.length)];
-      // tempSchool.classes.push(newClass._id);
-      // await tempSchool.save();
   
       // randomly add a team to each user
       const tempTeam = teams[Math.floor(Math.random() * teams.length)];
       newUser.teams = tempTeam._id;
       await newUser.save();
-  
-      // reference class on professor model, too
-      // tempProfessor.classes.push(newClass._id);
-      // await tempProfessor.save();
+
+      //randomly adds a user to members property of teams
+      const tempMember = teams[Math.floor(Math.random() * teams.length)];
+      tempMember.members.push(newUser._id);
+      await tempMember.save()
     }
 
     console.log('all done!');

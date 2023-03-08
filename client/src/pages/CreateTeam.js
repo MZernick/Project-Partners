@@ -28,7 +28,7 @@ const createTeam = () =>{
           const { users } = await resonse.json();
 
           const searchResult = users.map((user) => ({
-          username: user.username,  
+          username: user.username,      
           email: user.email,
           personality: user.personality,
           combatibility: user.combatibility

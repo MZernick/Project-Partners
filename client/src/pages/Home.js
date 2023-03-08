@@ -13,9 +13,11 @@ export default function Homepage(props) {
     <div id="menu-items">
       <a><div class="menu-item" id='big-title'>ProPairs</div></a>
       {/* In the future, I'd like to make a ProPairs logo and just put it where ProPairs is right now. */}
-      <a><div class="menu-item">How it Works</div></a>
-      <a><div class="menu-item">Our Team</div></a>
-      <div class="menu-item">Get Started</div>
+      <div class="menu-item">How it Works</div>
+      <div class="menu-item">Our Team</div>
+      <a href="/signup"><div class="menu-item">
+        Get Started
+        </div></a>
     </div>
     <div id="menu-background-image"></div>
   </div>	

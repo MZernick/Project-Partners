@@ -1,12 +1,15 @@
 import { gql } from '@apollo/client';
 //do we need to require more to login?
 export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
+  mutation addUser($username: String!, $email: String!, $password: String!, $personality: String!) {
+    addUser(username: $username, email: $email, password: $password, personality: $personality) {
       token
       user {
         _id
         username
+        email
+        password
+        personality
       }
     }
   }

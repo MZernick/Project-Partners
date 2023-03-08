@@ -1,6 +1,8 @@
 import React from "react";
 const { User } = require('server\models\User.js');
 import { Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
+import NavTabs from '../components/NavTabs';
+
 
 const createTeam = () =>{
 // handle user search: state for search field data
@@ -43,6 +45,7 @@ const createTeam = () =>{
 
     return (
         <>
+         <NavTabs/>
         <div>
             <h1>
             Model a team to see compatibility.

@@ -1,6 +1,9 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-
+const { setUserCompatibility } = require('../utils/setUserCompatibility');
+// import your setUserCompatibility function here. We'll use
+// to pass the value of of the user's personality into it,
+// and have it return the corresponding array of objects.
 const userSchema = new Schema(
     {
         username: {
@@ -24,14 +27,14 @@ const userSchema = new Schema(
             type:String,
             // required: true,
         },
-        combatibility: [
+        compatibility: [
           {
             type: {
               type: String,
               trim: true
             }, 
             rating: {
-              type: String,
+              type: Number,
               trim: true
             },
           },
@@ -63,6 +66,11 @@ userSchema.pre('save', async function (next) {
   }
 
   next();
+});
+
+//sets compatibility of the user based on their personality
+userSchema.pre('save', function () {
+  return this.compatibility = setUserCompatibility(this.personality);
 });
 
 // compare the incoming password with the hashed password

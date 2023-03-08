@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import '../styles/Signup.css'
 
@@ -10,19 +10,24 @@ import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const Signup = () => {
+  const redirect = useNavigate();
   const [signupState, setSignupState] = useState({
-    name: '',
+    username: '',
     email: '',
     password: '',
     personality: '',
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
+  
+    const [loginState, setLoginState] = useState({
+      email: '',
+      password: '',
+    });
 
-const [userState, setUserState] = useState({ email: '', password: '' });
-const [login, { error1, data1 }] = useMutation(LOGIN_USER);
+const [login, { error: error1, data: data1 }] = useMutation(LOGIN_USER);
 
   // update state based on form input changes
-  const handleChange = (event) => {
+  const handleSignupChange = (event) => {
     const { name, value } = event.target;
 
     setSignupState({
@@ -30,22 +35,31 @@ const [login, { error1, data1 }] = useMutation(LOGIN_USER);
       [name]: value,
     });
   };
+  const handleLoginChange = (event) => {
+    const { name, value } = event.target;
+
+    setLoginState({
+      ...loginState,
+      [name]: value,
+    });
+  };
 
   const handleLogin = async (event) => {
     event.preventDefault();
-    console.log(userState);
+    console.log(loginState);
     try {
       const { data } = await login({
-        variables: { ...userState },
+        variables: { ...loginState },
       });
 
       Auth.login(data.login.token);
+      redirect("/me");
     } catch (e) {
       console.error(e);
     }
 
     // clear form values
-    setUserState({
+    setLoginState({
       email: '',
       password: '',
     });
@@ -70,32 +84,32 @@ const [login, { error1, data1 }] = useMutation(LOGIN_USER);
   return (
     <main className='row'>
       <div className='column'>
-      <div class="signup-card">
+      <div className="signup-card">
         <div>
-          <div class="headers">
+          <div className="headers">
           <h4>Sign Up</h4>
-          <div class="underline-title"></div>
+          <div className="underline-title"></div>
           </div>
-          <div class="container">
+          <div className="container">
             {data ? (
               <p>
                 Success! You may now head{' '}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form class="form" onSubmit={handleSignup}>
-              <label for="username"> Enter Username:</label>
+              <form className="form" onSubmit={handleSignup}>
+              <label htmlFor="username"> Enter Username:</label>
                 <input
                   id="username"
                   className="form-input"
                   placeholder="Your username"
-                  name="name"
+                  name="username"
                   type="text"
                   value={signupState.name}
-                  onChange={handleChange}
+                  onChange={handleSignupChange}
                 />
-                <div class="form-border"></div>
-                <label for="email"> Enter Email:</label>
+                <div className="form-border"></div>
+                <label htmlFor="email"> Enter Email:</label>
                 <input
                   id="email"
                   className="form-input"
@@ -103,10 +117,10 @@ const [login, { error1, data1 }] = useMutation(LOGIN_USER);
                   name="email"
                   type="email"
                   value={signupState.email}
-                  onChange={handleChange}
+                  onChange={handleSignupChange}
                 />
-                <div class="form-border"></div>
-                <label for="password">Enter Password:</label>
+                <div className="form-border"></div>
+                <label htmlFor="password">Enter Password:</label>
                 <input
                   id="password"
                   className="form-input"
@@ -114,17 +128,17 @@ const [login, { error1, data1 }] = useMutation(LOGIN_USER);
                   name="password"
                   type="password"
                   value={signupState.password}
-                  onChange={handleChange}
+                  onChange={handleSignupChange}
                 />
-                <div class="form-border"></div>
-                <label for="personality-type">Input your Myers-Briggs Personality Type Here:</label>
+                <div className="form-border"></div>
+                <label htmlFor="personality-type">Input your Myers-Briggs Personality Type Here:</label>
                 <select
                   id="personality-type"
                   className="form-input"
                   placeholder="Pick Personality Type"
                   name="personality"
                   value={signupState.personality}
-                  onChange={handleChange}
+                  onChange={handleSignupChange}
                 >
                 <option value="INTJ">INTJ</option>
                 <option value="INTP">INTP</option>
@@ -143,11 +157,11 @@ const [login, { error1, data1 }] = useMutation(LOGIN_USER);
                 <option value="ESTP">ESTP</option>
                 <option value="ESFP">ESFP</option> 
                 </select>
-                <div class="form-border"></div>
+                <div className="form-border"></div>
                 <button
-                  className="btn btn-block btn-info"
+                  className="btn btn-block btn-info signup-btn"
                   style={{ cursor: 'pointer' }}
-                  type="submit" class="signup-btn"
+                  type="submit"
                 >
                   Submit
                 </button>
@@ -166,42 +180,42 @@ const [login, { error1, data1 }] = useMutation(LOGIN_USER);
       </div>
       </div>
       <div className='column'>
-      <div class="login-card" >
+      <div className="login-card" >
         <div >
-          <div class="headers">
+          <div className="headers">
           <h4 >Login</h4>
-          <div class="underline-title"></div>
+          <div className="underline-title"></div>
           </div>
-          <div class="container" >
+          <div className="container" >
             {data1 ? (
               <p>
                 Success! You may now head{' '}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form class="form" onSubmit={handleLogin}>
+              <form className="form" onSubmit={handleLogin}>
                 <input
                   className="form-input"
                   placeholder="Your email"
                   name="email"
                   type="email"
-                  value={userState.email}
-                  onChange={handleChange}
+                  value={loginState.email}
+                  onChange={handleLoginChange}
                 />
-                <div class="form-border"></div>
+                <div className="form-border"></div>
                 <input
                   className="form-input"
                   placeholder="******"
                   name="password"
                   type="password"
-                  value={userState.password}
-                  onChange={handleChange}
+                  value={loginState.password}
+                  onChange={handleLoginChange}
                 />
-                <div class="form-border"></div>
+                <div className="form-border"></div>
                 <button
-                  className="btn btn-block btn-info"
+                  className="btn btn-block btn-info login-btn"
                   style={{ cursor: 'pointer' }}
-                  type="submit" class="login-btn"
+                  type="submit"
                 >
                   Submit
                 </button>

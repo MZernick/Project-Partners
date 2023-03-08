@@ -4,7 +4,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import InputGroup from 'react-bootstrap/InputGroup';
 import '../styles/Home.css';
-import Hiwtest from '../styles/howitworksmock1.png';
+import Hiwtest from '../styles/howitworksmock3.png';
 
 export default function Homepage(props) {
   return (    
@@ -19,18 +19,26 @@ export default function Homepage(props) {
         Get Started
         </div></a>
     </div>
-    <div class="descriptionContainer">
-    <h2 id="description1">Group cohesion is everything in projects. We get it. ProPairs evaluates users based on their personality type and generates a rating of how well they will work with one another. The website aims to help users find compatible project partners based on their personality traits.</h2>
+    <div id="menu-background-image"></div>
+  </div>	
+  <div class="descriptionContainer1">
+  <h1 id="title1">We get it.</h1>
+    <h2 id="description1">Group cohesion is everything in projects. We evaluate users based on their personality type and generate a rating of how well they will work with one another.</h2>
   </div>
-  <div class="container">
+  <div class="imageContainer">
+    <img src={Hiwtest} alt="How it Works" id="hiwImg"/>
+
+  </div>
+  <div class="sidescrollContainer">
+    <h2 id="title2">Group cohesion is everything in projects. We evaluate users based on their personality type and generate a rating of how well they will work with one another.</h2>
     <a href="#">Menu </a>
     <a href="#">pages </a>
     <a href="#">study</a>
     <a href="#">contact </a>
   </div>
-    <div id="menu-background-image"></div>
-  </div>	
-
+  <div class="buttonContainer">
+    <button>Get Started</button>
+  </div>
 </div>
 );
 }

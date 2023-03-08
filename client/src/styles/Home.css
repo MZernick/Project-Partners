@@ -1,3 +1,11 @@
+:root {
+  --white: #F1FAEE;
+  --orange: #E63946;
+  --lightblue: #A8DADC;
+  --blue: #457B9D;
+  --darkblue: #1D3557;
+}
+
 body {
     background-color: rgb(20, 20, 20);
     margin: 0px;
@@ -24,6 +32,7 @@ body {
     margin-left: clamp(4rem, 20vw, 48rem);
     position: relative;
     z-index: 2;
+    width: 50%;
   }
 
   
@@ -48,9 +57,9 @@ body {
     background-image: url('../styles/landingpagetest4.png');
     background-position: center 40%;
     background-size: 75vmax;
-    height: 300%;
+    height: 150%;
     left: 0px;  
-    opacity: 1;
+    opacity: 0.8;
     position: absolute;
     top: 0px;
     transition: opacity 800ms ease,
@@ -89,36 +98,60 @@ body {
     transition: opacity 400ms ease;
   }
 
-/* DESCRIPTION CONTAINER BELOW */
-.descriptionContainer {
+/* DESCRIPTION / HOWITWORKS CONTAINER BELOW */
+.descriptionContainer1 {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    /* position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
-    z-index: 3;
-    opacity: 1;
+    background-color:#1D3557;
+    margin-top: 17%;
+    height: 120vh;
 }
 
 #description1 {
     font-family: 'Switzer', sans-serif;
     font-size: clamp(0.5rem, 2.5vw,2.5rem);
+    color:#F1FAEE;
     opacity: 1;
-    color: white;
+    z-index: 3;
+    width: 30%;
 }
 
-/* SCROLL CONTAINER BELOW */
-  .container {
+#title1 {
+  font-family: 'Switzer', sans-serif;
+  font-size: clamp(3.5rem, 8.5vw, 8.5rem);
+  color: #E63946;
+  font-weight: 700;
+  padding-right: 10%;
+}
+
+/* IMAGE CONTAINER BELOW */
+
+.imageContainer {
+  background-color:#F1FAEE;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+#hiwImg {
+  position: relative;
+  z-index: 3;
+  margin-top: 5%;
+}
+
+/* SIDESCROLL CONTAINER BELOW */
+  .sidescrollContainer {
     background-color: #cccccc;
     overflow: auto;
     white-space: nowrap; 
     width: 250px;
     opacity: 1;
-  } 
+  }
+
   a {
     display: inline-block;
     text-decoration: none;

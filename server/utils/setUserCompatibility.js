@@ -273,11 +273,9 @@ case 'ESTJ' : return [
 	{'type' : 'ISTJ' , 'rating' : 4},
 	{'type' : 'ESTJ' , 'rating' : 4},
 	];
-    default : console.log('The compatibility switch in rating.js is unhappy');
+    default : console.log('The compatibility switch in setUserCompatibility.js is unhappy');
 };
 };
-
-//console.log(setUserCompatibility('INTJ')) 
 
 //TO DO: make this function a module export
 module.exports = {

@@ -7,14 +7,14 @@ const typeDefs = gql`
     email: String
     password: String
     personality: String
-    combatibility: [Score]
+    compatibility: [Score]!
     teams: [Teams]
   }
 
   type Score {
     _id: ID
     type: String
-    rating: Number
+    rating: Int
   }
 
   type Teams {

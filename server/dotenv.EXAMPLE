@@ -1,1 +1,1 @@
-CONNECTION_STRING = 'mongodb+srv://UsErNaMe:gOofYPasswOrd@cluster0.5ifzajr.mongodb.net/project-partners'
+MONGODB_URI = 'mongodb+srv://UsErNaMe:gOofYPasswOrd@cluster0.5ifzajr.mongodb.net/project-partners'

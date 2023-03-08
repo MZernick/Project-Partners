@@ -33,9 +33,9 @@ function NavTabs({ currentPage, handlePageChange }) {
       </li>
       <li className="nav-item">
         <a
-          href="#My Teams"
-          onClick={() => handlePageChange('My Teams')}
-          // Check to see if the currentPage is `My Teams`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+          href="#MyTeams"
+          onClick={() => handlePageChange('MyTeams')}
+          // Check to see if the currentPage is `MyTeams`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
           className={currentPage === 'MyTeams' ? 'nav-link active' : 'nav-link'}
         >
           My Teams
@@ -43,9 +43,9 @@ function NavTabs({ currentPage, handlePageChange }) {
       </li>
       <li className="nav-item">
         <a
-          href="#Join Team"
-          onClick={() => handlePageChange('Join Team')}
-          // Check to see if the currentPage is `Join Team`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+          href="#JoinTeam"
+          onClick={() => handlePageChange('JoinTeam')}
+          // Check to see if the currentPage is `JoinTeam`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
           className={currentPage === 'JoinTeam' ? 'nav-link active' : 'nav-link'}
         >
           Join Team

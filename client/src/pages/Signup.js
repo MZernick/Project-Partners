@@ -17,6 +17,7 @@ const Signup = () => {
     personality: '',
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
+
 const [userState, setUserState] = useState({ email: '', password: '' });
 const [login, { error1, data1 }] = useMutation(LOGIN_USER);
 

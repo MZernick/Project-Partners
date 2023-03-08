@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import '../styles/Signup.css'
+
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import { LOGIN_USER } from '../utils/mutations';
@@ -65,18 +67,21 @@ const [login, { error1, data1 }] = useMutation(LOGIN_USER);
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
-          <div className="card-body">
+    <main>
+      <div class="signup-card">
+        <div>
+          <div class="headers">
+          <h4>Sign Up</h4>
+          <div class="underline-title"></div>
+          </div>
+          <div class="container">
             {data ? (
               <p>
                 Success! You may now head{' '}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleSignup}>
+              <form class="form" onSubmit={handleSignup}>
               <label for="username"> Enter Username:</label>
                 <input
                   id="username"
@@ -87,6 +92,7 @@ const [login, { error1, data1 }] = useMutation(LOGIN_USER);
                   value={signupState.name}
                   onChange={handleChange}
                 />
+                <div class="form-border"></div>
                 <label for="email"> Enter Email:</label>
                 <input
                   id="email"
@@ -97,6 +103,7 @@ const [login, { error1, data1 }] = useMutation(LOGIN_USER);
                   value={signupState.email}
                   onChange={handleChange}
                 />
+                <div class="form-border"></div>
                 <label for="password">Enter Password:</label>
                 <input
                   id="password"
@@ -107,6 +114,7 @@ const [login, { error1, data1 }] = useMutation(LOGIN_USER);
                   value={signupState.password}
                   onChange={handleChange}
                 />
+                <div class="form-border"></div>
                 <label for="personality-type">Input your Myers-Briggs Personality Type Here:</label>
                 <select
                   id="personality-type"
@@ -133,14 +141,16 @@ const [login, { error1, data1 }] = useMutation(LOGIN_USER);
                 <option value="ESTP">ESTP</option>
                 <option value="ESFP">ESFP</option> 
                 </select>
+                <div class="form-border"></div>
                 <button
                   className="btn btn-block btn-info"
                   style={{ cursor: 'pointer' }}
-                  type="submit"
+                  type="submit" class="signup-btn"
                 >
                   Submit
                 </button>
-                <p>Don't know your personality type? Take this quick quiz: <a rel="noreferrer" href="https://www.16personalities.com/free-personality-test" target="_blank">16personalites.com</a></p>
+                <p>
+                  <label>Don't know your personality type? Take this quick quiz:</label> <a id="ptest" rel="noreferrer" href="https://www.16personalities.com/free-personality-test" target="_blank">16personalites.com</a></p>
               </form>
              )} 
 
@@ -152,17 +162,20 @@ const [login, { error1, data1 }] = useMutation(LOGIN_USER);
           </div>
         </div>
       </div>
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
-          <div className="card-body">
+      <div class="login-card" >
+        <div >
+          <div class="headers">
+          <h4 >Login</h4>
+          <div class="underline-title"></div>
+          </div>
+          <div class="container" >
             {data1 ? (
               <p>
                 Success! You may now head{' '}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleLogin}>
+              <form class="form" onSubmit={handleLogin}>
                 <input
                   className="form-input"
                   placeholder="Your email"
@@ -171,6 +184,7 @@ const [login, { error1, data1 }] = useMutation(LOGIN_USER);
                   value={userState.email}
                   onChange={handleChange}
                 />
+                <div class="form-border"></div>
                 <input
                   className="form-input"
                   placeholder="******"
@@ -179,10 +193,11 @@ const [login, { error1, data1 }] = useMutation(LOGIN_USER);
                   value={userState.password}
                   onChange={handleChange}
                 />
+                <div class="form-border"></div>
                 <button
                   className="btn btn-block btn-info"
                   style={{ cursor: 'pointer' }}
-                  type="submit"
+                  type="submit" class="login-btn"
                 >
                   Submit
                 </button>

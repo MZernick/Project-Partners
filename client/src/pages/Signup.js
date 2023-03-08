@@ -1,204 +1,214 @@
-// import React, { useState } from 'react';
-// // import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-// // import { useMutation } from '@apollo/client';
-// // import { ADD_USER } from '../utils/mutations';
-// // import { LOGIN_USER } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
+import { LOGIN_USER } from '../utils/mutations';
 
-// // import Auth from '../utils/auth';
+import Auth from '../utils/auth';
 
-// const Signup = () => {
-//   const [signupState, setSignupState] = useState({
-//     name: '',
-//     email: '',
-//     password: '',
-//     personality: '',
-//   });
-// //   const [addUser, { error, data }] = useMutation(ADD_USER);
-// const [userState, setUserState] = useState({ email: '', password: '' });
-// // const [login, { error, data }] = useMutation(LOGIN_USER);
+const Signup = () => {
+  const [signupState, setSignupState] = useState({
+    name: '',
+    email: '',
+    password: '',
+    personality: '',
+  });
+  const [addUser, { error, data }] = useMutation(ADD_USER);
+const [userState, setUserState] = useState({ email: '', password: '' });
+const [login, { error1, data1 }] = useMutation(LOGIN_USER);
 
-//   // update state based on form input changes
-//   const handleChange = (event) => {
-//     const { name, value } = event.target;
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-//     setSignupState({
-//       ...signupState,
-//       [name]: value,
-//     });
-//   };
+    setSignupState({
+      ...signupState,
+      [name]: value,
+    });
+  };
 
-//   const handleLogin = async (event) => {
-//     event.preventDefault();
-//     console.log(userState);
-//     try {
-//       const { data } = await login({
-//         variables: { ...userState },
-//       });
+  // const handleDropDownChange = (event) => {
+  //   const { name, value } = event.target.value;
 
-//       Auth.login(data.login.token);
-//     } catch (e) {
-//       console.error(e);
-//     }
+  //   setSignupState({
+  //     ...signupState,
+  //     [name]: value,
+  //   });
+  // };
 
-//     // clear form values
-//     setUserState({
-//       email: '',
-//       password: '',
-//     });
-//   };
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    console.log(userState);
+    try {
+      const { data } = await login({
+        variables: { ...userState },
+      });
 
-//   // submit form
-// //   const handleSignup = async (event) => {
-// //     event.preventDefault();
-// //     console.log(signupState);
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
+    }
 
-// //     try {
-// //       const { data } = await addUser({
-// //         variables: { ...signupState },
-// //       });
+    // clear form values
+    setUserState({
+      email: '',
+      password: '',
+    });
+  };
 
-// //     //   Auth.login(data.addUser.token);
-// //     } catch (e) {
-// //       console.error(e);
-// //     }
-// //   };
+  // submit form
+  const handleSignup = async (event) => {
+    event.preventDefault();
+    console.log(signupState);
 
-//   return (
-//     <main className="flex-row justify-center mb-4">
-//       <div className="col-12 col-lg-10">
-//         <div className="card">
-//           <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
-//           <div className="card-body">
-//             {/* {data ? (
-//               <p>
-//                 Success! You may now head{' '}
-//                 <Link to="/">back to the homepage.</Link>
-//               </p>
-//             ) : ( */}
-//               <form>
-//               <label for="username"> Enter Username:</label>
-//                 <input
-//                   id="username"
-//                   className="form-input"
-//                   placeholder="Your username"
-//                   name="name"
-//                   type="text"
-//                   value={signupState.name}
-//                   onChange={handleChange}
-//                 />
-//                 <label for="email"> Enter Email:</label>
-//                 <input
-//                   id="email"
-//                   className="form-input"
-//                   placeholder="Your email"
-//                   name="email"
-//                   type="email"
-//                   value={signupState.email}
-//                   onChange={handleChange}
-//                 />
-//                 <label for="password">Enter Password:</label>
-//                 <input
-//                   id="password"
-//                   className="form-input"
-//                   placeholder="******"
-//                   name="password"
-//                   type="password"
-//                   value={signupState.password}
-//                   onChange={handleChange}
-//                 />
-//                 <label for="personality-type">Input your Myers-Briggs Personality Type Here:</label>
-//                 <select
-//                   id="personality-type"
-//                   className="form-input"
-//                   placeholder="Pick Personality Type"
-//                   name="personality"
-//                   onChange={handleChange}
-//                 >
-//                 <option value={signupState.personality}>INTJ</option>
-//                 <option value={signupState.personality}>INTP</option>
-//                 <option value={signupState.personality}>ENTJ</option>
-//                 <option value={signupState.personality}>ENTP</option>
-//                 <option value={signupState.personality}>INFJ</option>
-//                 <option value={signupState.personality}>INFP</option>
-//                 <option value={signupState.personality}>ENFJ</option>
-//                 <option value={signupState.personality}>ENFP</option>
-//                 <option value={signupState.personality}>ISTJ</option>
-//                 <option value={signupState.personality}>ISFJ</option>
-//                 <option value={signupState.personality}>ESTJ</option>
-//                 <option value={signupState.personality}>ESFJ</option>
-//                 <option value={signupState.personality}>ISTP</option>
-//                 <option value={signupState.personality}>ISFP</option>
-//                 <option value={signupState.personality}>ESTP</option>
-//                 <option value={signupState.personality}>ESFP</option> 
-//                 </select>
-//                 <button
-//                   className="btn btn-block btn-info"
-//                   style={{ cursor: 'pointer' }}
-//                   type="submit"
-//                 >
-//                   Submit
-//                 </button>
-//                 <p>Don't know your personality type? Take this quick quiz: <a rel="noreferrer" href="https://www.16personalities.com/free-personality-test" target="_blank">16personalites.com</a></p>
-//               </form>
-//             {/* )} */}
+    try {
+      const { data } = await addUser({
+        variables: { ...signupState },
+      });
 
-//             {/* {error && ( */}
-//               {/* <div className="my-3 p-3 bg-danger text-white">
-//                 {error.message}
-//               </div>
-//             )} */}
-//           </div>
-//         </div>
-//       </div>
-//       <div className="col-12 col-lg-10">
-//         <div className="card">
-//           <h4 className="card-header bg-dark text-light p-2">Login</h4>
-//           <div className="card-body">
-//             {data ? (
-//               <p>
-//                 Success! You may now head{' '}
-//                 <Link to="/">back to the homepage.</Link>
-//               </p>
-//             ) : (
-//               <form onSubmit={handleLogin}>
-//                 <input
-//                   className="form-input"
-//                   placeholder="Your email"
-//                   name="email"
-//                   type="email"
-//                   value={userState.email}
-//                   onChange={handleChange}
-//                 />
-//                 <input
-//                   className="form-input"
-//                   placeholder="******"
-//                   name="password"
-//                   type="password"
-//                   value={userState.password}
-//                   onChange={handleChange}
-//                 />
-//                 <button
-//                   className="btn btn-block btn-info"
-//                   style={{ cursor: 'pointer' }}
-//                   type="submit"
-//                 >
-//                   Submit
-//                 </button>
-//               </form>
-//             )}
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
-//             {error && (
-//               <div className="my-3 p-3 bg-danger text-white">
-//                 {error.message}
-//               </div>
-//             )}
-//           </div>
-//         </div>
-//       </div>
-//     </main>
-//   );
-// };
+  return (
+    <main className="flex-row justify-center mb-4">
+      <div className="col-12 col-lg-10">
+        <div className="card">
+          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
+          <div className="card-body">
+            {data ? (
+              <p>
+                Success! You may now head{' '}
+                <Link to="/">back to the homepage.</Link>
+              </p>
+            ) : (
+              <form onSubmit={handleSignup}>
+              <label for="username"> Enter Username:</label>
+                <input
+                  id="username"
+                  className="form-input"
+                  placeholder="Your username"
+                  name="name"
+                  type="text"
+                  value={signupState.name}
+                  onChange={handleChange}
+                />
+                <label for="email"> Enter Email:</label>
+                <input
+                  id="email"
+                  className="form-input"
+                  placeholder="Your email"
+                  name="email"
+                  type="email"
+                  value={signupState.email}
+                  onChange={handleChange}
+                />
+                <label for="password">Enter Password:</label>
+                <input
+                  id="password"
+                  className="form-input"
+                  placeholder="******"
+                  name="password"
+                  type="password"
+                  value={signupState.password}
+                  onChange={handleChange}
+                />
+                <label for="personality-type">Input your Myers-Briggs Personality Type Here:</label>
+                <select
+                  id="personality-type"
+                  className="form-input"
+                  placeholder="Pick Personality Type"
+                  name="personality"
+                  value={signupState.personality}
+                  onChange={handleChange}
+                >
+                <option value="INTJ">INTJ</option>
+                <option value="INTP">INTP</option>
+                <option value="ENTJ">ENTJ</option>
+                <option value="ENTP">ENTP</option>
+                <option value="INFJ">INFJ</option>
+                <option value="INFP">INFP</option>
+                <option value="ENFJ">ENFJ</option>
+                <option value="ENFP">ENFP</option>
+                <option value="ISTJ">ISTJ</option>
+                <option value="ISFJ">ISFJ</option>
+                <option value="ESTJ">ESTJ</option>
+                <option value="ESFJ">ESFJ</option>
+                <option value="ISTP">ISTP</option>
+                <option value="ISFP">ISFP</option>
+                <option value="ESTP">ESTP</option>
+                <option value="ESFP">ESFP</option> 
+                </select>
+                <button
+                  className="btn btn-block btn-info"
+                  style={{ cursor: 'pointer' }}
+                  type="submit"
+                >
+                  Submit
+                </button>
+                <p>Don't know your personality type? Take this quick quiz: <a rel="noreferrer" href="https://www.16personalities.com/free-personality-test" target="_blank">16personalites.com</a></p>
+              </form>
+             )} 
 
-// export default Signup;
+            {error && ( 
+              <div className="my-3 p-3 bg-danger text-white">
+                {error.message}
+              </div>
+            )} 
+          </div>
+        </div>
+      </div>
+      <div className="col-12 col-lg-10">
+        <div className="card">
+          <h4 className="card-header bg-dark text-light p-2">Login</h4>
+          <div className="card-body">
+            {data1 ? (
+              <p>
+                Success! You may now head{' '}
+                <Link to="/">back to the homepage.</Link>
+              </p>
+            ) : (
+              <form onSubmit={handleLogin}>
+                <input
+                  className="form-input"
+                  placeholder="Your email"
+                  name="email"
+                  type="email"
+                  value={userState.email}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="******"
+                  name="password"
+                  type="password"
+                  value={userState.password}
+                  onChange={handleChange}
+                />
+                <button
+                  className="btn btn-block btn-info"
+                  style={{ cursor: 'pointer' }}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </form>
+            )}
+
+            {error1 && (
+              <div className="my-3 p-3 bg-danger text-white">
+                {error.message}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+};
+
+export default Signup;
 

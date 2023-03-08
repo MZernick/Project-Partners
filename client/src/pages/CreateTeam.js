@@ -18,12 +18,12 @@ const createTeam = () =>{
           }
 
           try {
-// PLACEHOLDER NEEDS UPDATE: "searchUsers" does not exist yet
+// PLACEHOLDER NEEDS UPDATE: "searchUsers" does not exist yet. Create call function that searches backend for the email enterred.
             const response = await searchUsers(searchInput);
             if (!response.ok) {
                 throw new Error('something went wrong!');
               }
-          }
+          
           
           const { users } = await resonse.json();
 
@@ -34,6 +34,11 @@ const createTeam = () =>{
           combatibility: user.combatibility
           })
           )
+          setUserIds(searchResult);
+          setSearchInput('');
+        } catch (err) {
+            console.error(err);
+          }
       };
 
     return (

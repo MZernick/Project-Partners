@@ -26,15 +26,15 @@ const Profile = () => {
   const user = data?.me || data?.user || {};
 
   // Use React Router's `<Navigate />` component to redirect to personal profile page if username is yours
-  if (Auth.loggedIn() && Auth.getProfile().data._id === userId) {
-    return <Navigate to="/me" />;
-  }
+  // if (Auth.loggedIn() && Auth.getProfile().data._id === userId) {
+  //   return <Navigate to="/me" />;
+  // }
 
   if (loading) {
     return <div>Loading...</div>;
   }
 
-  if (!user?.name) {
+  if (!user?.username) {
     return (
       <h4>
         You need to be logged in to see your profile page. Use the navigation
@@ -49,8 +49,8 @@ const Profile = () => {
       <h2 className="card-header">
         {userId ? `${user.username}'s` : 'Your'} 
       </h2>
-    <p>has a ${user.personality} type.</p>
-    <h4>You belong to ${user.teams.length} teams</h4>
+    <p>has a {user.personality} type.</p>
+    <h4>You belong to {user.teams.length} teams</h4>
 </div>
   );
 };

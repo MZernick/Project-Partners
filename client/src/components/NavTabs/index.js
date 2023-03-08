@@ -11,7 +11,7 @@ function NavTabs({ currentPage, handlePageChange }) {
     <nav>
     <ul className="nav nav-tabs">
       <li className="nav-item">
-        <a
+        <a id="nav-link"
           href="#home"
           onClick={() => handlePageChange('Home')}
           // This is a conditional (ternary) operator that checks to see if the current page is "Home"

@@ -15,7 +15,9 @@ export default function Homepage(props) {
       {/* In the future, I'd like to make a ProPairs logo and just put it where ProPairs is right now. */}
       <div class="menu-item">How it Works</div>
       <div class="menu-item">Our Team</div>
-      <div class="menu-item">Get Started</div>
+      <a href="/signup"><div class="menu-item">
+        Get Started
+        </div></a>
     </div>
     <div id="menu-background-image"></div>
   </div>	

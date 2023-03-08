@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "dotenv": "^16.0.3",
-    "react-bootstrap": "^2.7.2"
+    "react-bootstrap": "^2.7.2",
+    "react-scroll": "^1.8.9"
   }
 }

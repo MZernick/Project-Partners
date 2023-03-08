@@ -1,4 +1,4 @@
-# Project-Partners
+# ProPairs
 
 Version 1.0
 Deployment Date: March 2023
@@ -8,14 +8,15 @@ Contributors: Anita Banh, Magdalene Zernick, Dominique Nix, Jeremy Crouthamel, J
 
 # Description
 
-Project Partners is a web application designed to help users find compatible teammates for group projects. By matching users based on their Myers-Briggs personality types, the application suggests potential partners with similar interests, values, and communication styles.
+ProPairs is a web application designed to help users find compatible teammates for group projects. By matching users based on their Myers-Briggs personality types, the application suggests potential partners with similar interests, values, and communication styles.
 
 Features
+Compatibility Rating: Search for users and see your compatibility ranking on a scale of  
 User Authentication: Users can create a personal account and log in to access the application's features.
 
 # Getting Started
 
-To use Project Partner, simply visit the website and sign up for an account. The application is hosted on a secure server and can be accessed from any device with an internet connection.
+To get started, simply visit the website and sign up for an account. The application is hosted on a secure server and can be accessed from any device with an internet connection.
 
 # Instructions
 
@@ -27,10 +28,10 @@ To use Project Partner, simply visit the website and sign up for an account. The
 
 # Technologies Used
 
-React.js: A JavaScript library used for building the user interface.
+React.js library used for building the user interface.
 GraphQL with a Node.js and Express.js server.
 MongoDB, Mongoose ODM.
-
+bcrypt with JSON Web Token (JWT). 
 
 # Authors
 

@@ -38,6 +38,7 @@ function UserSearch() {
               <p>{user.email}</p>
               <p>{user.personality}</p>
               <p>{user.compatibility}</p>
+              <a class='btn btn-primary btn-block btn-squared'>Add to a Team </a>
             </div>
           ))}
         </div>

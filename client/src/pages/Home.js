@@ -15,7 +15,9 @@ export default function Homepage(props) {
       {/* In the future, I'd like to make a ProPairs logo and just put it where ProPairs is right now. */}
       <div class="menu-item">How it Works</div>
       <div class="menu-item">Our Team</div>
-      <div class="menu-item">Get Started</div>
+      <a href="/signup"><div class="menu-item">
+        Get Started
+        </div></a>
     </div>
     <div class="descriptionContainer">
     <h2 id="description1">Group cohesion is everything in projects. We get it. ProPairs evaluates users based on their personality type and generates a rating of how well they will work with one another. The website aims to help users find compatible project partners based on their personality traits.</h2>

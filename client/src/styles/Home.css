@@ -21,6 +21,10 @@ body {
     font-size: clamp(3.5rem, 8.5vw, 8.5rem);
     font-weight: 700;
 }
+
+#getStarted {
+  text-decoration: none;
+}
   
   #menu {  
     display: flex;
@@ -57,7 +61,7 @@ body {
     background-image: url('../styles/landingpagetest4.png');
     background-position: center 40%;
     background-size: 75vmax;
-    height: 150%;
+    height: 125%;
     left: 0px;  
     opacity: 0.8;
     position: absolute;
@@ -243,4 +247,22 @@ body {
     color: #F1FAEE;
     font-family: 'Switzer', sans-serif;
     font-size: clamp(3.5rem, 8.5vw, 8.5rem);
+  }
+
+  /* GET STARTED CONTAINER BELOW */
+  .startedContainer {
+    background-color: #E63946;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+  }
+
+  #getStarted1 {
+    font-family: 'Switzer', sans-serif;
+    font-size: clamp(3.5rem, 8.5vw, 8.5rem);
+    text-decoration: none;
+    color: #F1FAEE;
   }

@@ -67,7 +67,8 @@ const [login, { error1, data1 }] = useMutation(LOGIN_USER);
   };
 
   return (
-    <main>
+    <main className='row'>
+      <div className='column'>
       <div class="signup-card">
         <div>
           <div class="headers">
@@ -162,6 +163,8 @@ const [login, { error1, data1 }] = useMutation(LOGIN_USER);
           </div>
         </div>
       </div>
+      </div>
+      <div className='column'>
       <div class="login-card" >
         <div >
           <div class="headers">
@@ -211,6 +214,7 @@ const [login, { error1, data1 }] = useMutation(LOGIN_USER);
             )}
           </div>
         </div>
+      </div>
       </div>
     </main>
   );

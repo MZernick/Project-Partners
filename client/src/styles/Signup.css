@@ -15,7 +15,7 @@
     background: #fbfbfb;
     border-radius: 8px;
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-    margin: 6rem auto 8.1rem auto;
+   
     width: 475px;
   }
   .login-card { 
@@ -24,7 +24,7 @@
     background: #fbfbfb;
     border-radius: 8px;
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-    margin: 6rem auto 8.1rem auto;
+   
     width: 475px;
   }
   
@@ -104,3 +104,9 @@
     margin: -1.1rem auto 0 auto;
     width: 89px;
   }
+  .column {
+    float: left;
+    padding: 0 20px;
+  }
+  
+.row {margin: 100px 175px;}

@@ -116,6 +116,7 @@ const [login, { error1, data1 }] = useMutation(LOGIN_USER);
                   value={signupState.personality}
                   onChange={handleChange}
                 >
+                <option value={null}>Enter Type</option>  
                 <option value="INTJ">INTJ</option>
                 <option value="INTP">INTP</option>
                 <option value="ENTJ">ENTJ</option>

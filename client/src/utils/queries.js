@@ -21,3 +21,22 @@ export const QUERY_SINGLE_PROFILE = gql`
     }
   }
 `;
+
+export const SEARCH_USER = gql`
+query SearchUser($search: String!) {
+  searchUser(search: $search) {
+    _id
+    username
+    email
+    personality
+    compatibility {
+      type
+      rating
+    }
+    teams {
+      _id
+      name
+    }
+  }
+}
+`;

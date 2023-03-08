@@ -665,7 +665,7 @@ function getCompatibility(user1, user2) {
 
 
 //TO DO: write function that returns array of compatibility rating between each of the users and the first user in the array
-async function indivTeamScores(teamArray, user1) {
+function indivTeamScores(teamArray, user1) {
     console.log("original array of users length: " + teamArray.length)
     let comp = user1.compatibility;
     console.log(user1.username + " scores:");
@@ -677,7 +677,7 @@ async function indivTeamScores(teamArray, user1) {
         console.log(member.username + " personality: " + member.personality)
 });
 
-    const user1index =  await tempTeamArray.findIndex(({_id}) => _id === user1._id);
+    const user1index = tempTeamArray.findIndex(({_id}) => _id === user1._id);
     tempTeamArray.splice(user1index, 1);
     console.log("tempTeamArray AFTER removing user1:")
     tempTeamArray.forEach(member => {
@@ -710,10 +710,13 @@ const scores1 = indivTeamScores(allTheUsers, allTheUsers[0]);
 console.log("scores1 values: " + scores1);
 //write a basic reusable average function for an array of numbers
 function avg(numArray) {
-    const a = numArray[0];
-    const result = numArray.reduce((a, b) => a + b) / numArray.length;
-    return result;
+    let sum = 0;
+    for (let i = 0; i < numArray.length; i++) {
+        sum += numArray[i];
+    }
+    return sum/numArray.length;
 }
+
 console.log(avg(scores1));
 
 

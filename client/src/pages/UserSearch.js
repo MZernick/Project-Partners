@@ -2,7 +2,7 @@ import React from "react";
 import NavTabs from '../components/NavTabs';
 import { useQuery } from '@apollo/client';
 
-import { SEARCH_USER} from '../utils/queries';
+import { SEARCH_USER } from '../utils/queries';
 
 function UserSearch() {
     const [users, setUsers] = useState([]);
@@ -14,7 +14,7 @@ function UserSearch() {
   });
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error </p>;
+  if (error) return <p>Oops...an error has occured. </p>;
   
   
     const handleSearch = (event) => {

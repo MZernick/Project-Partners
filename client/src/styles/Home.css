@@ -151,11 +151,11 @@ body {
 
 #desc1 {
   font-family: 'Switzer', sans-serif;
-  font-size: clamp(0.7rem, 2.7vw,2.7rem);
+  font-size: clamp(10.7rem, 12.7vw, 10.7rem);
   color: #E63946;
   opacity: 1;
   z-index: 3;
-  margin-bottom: 70%;
+  margin-bottom: 10.5rem;
 }
 
 #myersHyper{
@@ -169,20 +169,20 @@ body {
 
 #desc2 {
   font-family: 'Switzer', sans-serif;
-  font-size: clamp(0.7rem, 2.7vw,2.7rem);
-  color: #E63946;
+  font-size: clamp(10.7rem, 12.7vw, 10.7rem);
+  color: #1D3557;
   opacity: 1;
   z-index: 3;
-  margin-top: 16%;
+  margin-top: 10.5rem;
 }
 
 #desc3 {
   font-family: 'Switzer', sans-serif;
-  font-size: clamp(0.7rem, 2.7vw,2.7rem);
+  font-size: clamp(10.7rem, 12.7vw, 10.7rem);
   color: #E63946;
   opacity: 1;
   z-index: 3;
-  margin-top: 70%;
+  margin-top: 10.5rem;
 }
 
 
@@ -211,7 +211,7 @@ body {
     color: #E63946;
   }
 
-  .sidescrollContainer {
+  #sidescrollContainer {
     background-color: #1D3557;
     height: 70vh;
     overflow-x: scroll;

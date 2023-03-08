@@ -52,10 +52,10 @@ return (
           <Route 
                 path="/" 
                 element={<Home/>}/>
-          {/* <Route 
+          <Route 
                 path="/signup" 
                 element={<Signup />} 
-              /> */}
+              />
           <Route 
                 path="/me"
                 element={<Profile />}

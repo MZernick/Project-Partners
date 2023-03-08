@@ -11,7 +11,7 @@ export default function Homepage(props) {
 <div class="main-container">
   <div id="menu">
     <div id="menu-items">
-      <div class="menu-item" id='big-title'>ProPairs</div>
+      <a><div class="menu-item" id='big-title'>ProPairs</div></a>
       {/* In the future, I'd like to make a ProPairs logo and just put it where ProPairs is right now. */}
       <div class="menu-item">How it Works</div>
       <div class="menu-item">Our Team</div>
@@ -27,14 +27,22 @@ export default function Homepage(props) {
   </div>
   <div class="imageContainer">
     <img src={Hiwtest} alt="How it Works" id="hiwImg"/>
-
+    <div class="raffContainer">
+      <h2 id="desc1"><a id="myersHyper" rel="noreferrer" target="_blank" href="https://www.16personalities.com/free-personality-test">Test.</a></h2>
+      <h2 id="desc2">Pair.</h2>
+      <h2 id="desc3">Work.</h2>
+    </div>
   </div>
-  <div class="sidescrollContainer">
-    <h2 id="title2">Group cohesion is everything in projects. We evaluate users based on their personality type and generate a rating of how well they will work with one another.</h2>
-    <a href="#">Menu </a>
-    <a href="#">pages </a>
-    <a href="#">study</a>
-    <a href="#">contact </a>
+  <div class="ourTeamContainer">
+    <div class="teamTitleContainer">
+      <h2 id="teamTitle">Meet Our<span id="redTeam"> Team</span></h2>
+  </div>
+  <div id="sidescrollContainer">
+    <a href="#" id="scrollItem1">JOSH PICTURE</a>
+    <a href="#" id="scrollItem2">DOM PICTURE</a>
+    <a href="#" id="scrollItem3">ANITA PICTURE</a>
+    <a href="#" id="scrollItem4">MAG PICTURE</a>
+   </div>
   </div>
   <div class="buttonContainer">
     <button>Get Started</button>

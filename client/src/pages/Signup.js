@@ -28,15 +28,6 @@ const [login, { error1, data1 }] = useMutation(LOGIN_USER);
     });
   };
 
-  // const handleDropDownChange = (event) => {
-  //   const { name, value } = event.target.value;
-
-  //   setSignupState({
-  //     ...signupState,
-  //     [name]: value,
-  //   });
-  // };
-
   const handleLogin = async (event) => {
     event.preventDefault();
     console.log(userState);

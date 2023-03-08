@@ -4,6 +4,7 @@ import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import TeamList from '../components/TeamsList';
+import NavTabs from '../components/NavTabs';
 
 import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
@@ -38,6 +39,7 @@ const MyTeam = () => {
       }
     return (
         <div>
+          <NavTabs/>
             <h1>MyTeams:</h1>
             {user.teams?.length > 0 && (
         <TeamList

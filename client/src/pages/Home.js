@@ -11,10 +11,10 @@ export default function Homepage(props) {
 <div class="main-container">
   <div id="menu">
     <div id="menu-items">
-      <div class="menu-item" id='big-title'>ProPairs</div>
+      <a><div class="menu-item" id='big-title'>ProPairs</div></a>
       {/* In the future, I'd like to make a ProPairs logo and just put it where ProPairs is right now. */}
-      <div class="menu-item">How it Works</div>
-      <div class="menu-item">Our Team</div>
+      <a><div class="menu-item">How it Works</div></a>
+      <a><div class="menu-item">Our Team</div></a>
       <div class="menu-item">Get Started</div>
     </div>
     <div id="menu-background-image"></div>
@@ -26,20 +26,20 @@ export default function Homepage(props) {
   <div class="imageContainer">
     <img src={Hiwtest} alt="How it Works" id="hiwImg"/>
     <div class="raffContainer">
-      <h2 id="desc1"><a id="myersHyper" href="https://www.16personalities.com/free-personality-test">Test</a></h2>
-      <h2 id="desc2">Pair</h2>
-      <h2 id="desc3">Work</h2>
+      <h2 id="desc1"><a id="myersHyper" rel="noreferrer" target="_blank" href="https://www.16personalities.com/free-personality-test">Test.</a></h2>
+      <h2 id="desc2">Pair.</h2>
+      <h2 id="desc3">Work.</h2>
     </div>
   </div>
   <div class="ourTeamContainer">
     <div class="teamTitleContainer">
-      <h2 id="teamTitle">Meet <span id="redTeam">Our Team</span></h2>
+      <h2 id="teamTitle">Meet Our<span id="redTeam"> Team</span></h2>
   </div>
   <div id="sidescrollContainer">
-    <a href="#" id="scrollItem1">Menu </a>
-    <a href="#" id="scrollItem2">pages </a>
-    <a href="#" id="scrollItem3">study</a>
-    <a href="#" id="scrollItem4">contact </a>
+    <a href="#" id="scrollItem1">JOSH PICTURE</a>
+    <a href="#" id="scrollItem2">DOM PICTURE</a>
+    <a href="#" id="scrollItem3">ANITA PICTURE</a>
+    <a href="#" id="scrollItem4">MAG PICTURE</a>
    </div>
   </div>
   <div class="buttonContainer">

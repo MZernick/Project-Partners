@@ -25,14 +25,22 @@ export default function Homepage(props) {
   </div>
   <div class="imageContainer">
     <img src={Hiwtest} alt="How it Works" id="hiwImg"/>
-
+    <div class="raffContainer">
+      <h2 id="desc1">Users first input their <a id="myersHyper" href="https://www.16personalities.com/free-personality-test">MBTI</a> </h2>
+      <h2 id="desc2">How it Works</h2>
+      <h2 id="desc3">How it Works</h2>
+    </div>
+  </div>
+  <div class="ourTeamContainer">
+    <div class="teamTitleContainer">
+      <h2 id="teamTitle">Meet <span id="redTeam">Our Team</span></h2>
   </div>
   <div class="sidescrollContainer">
-    <h2 id="title2">Group cohesion is everything in projects. We evaluate users based on their personality type and generate a rating of how well they will work with one another.</h2>
-    <a href="#">Menu </a>
-    <a href="#">pages </a>
-    <a href="#">study</a>
-    <a href="#">contact </a>
+    <a href="#" id="scrollItem1">Menu </a>
+    <a href="#" id="scrollItem2">pages </a>
+    <a href="#" id="scrollItem3">study</a>
+    <a href="#" id="scrollItem4">contact </a>
+   </div>
   </div>
   <div class="buttonContainer">
     <button>Get Started</button>

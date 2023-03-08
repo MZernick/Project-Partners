@@ -14,6 +14,7 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import JoinTeam from './pages/JoinTeam';
 import Signup from './pages/Signup';
+import UserSearch from './pages/UserSearch';
 
 // const client = new ApolloClient({
 //   uri: '/graphql',

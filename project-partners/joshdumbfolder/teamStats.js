@@ -663,32 +663,58 @@ function getCompatibility(user1, user2) {
 
 // console.log(getCompatibility(data.data.users[0], data.data.users[1]));
 
-//TO DO: write function that returns array of compatibility rating between each of the users and the average team rating
-//by individual user
-function individualTeamScore(teamArray, user1) {
+
+//TO DO: write function that returns array of compatibility rating between each of the users and the first user in the array
+async function indivTeamScores(teamArray, user1) {
+    console.log("original array of users length: " + teamArray.length)
     let comp = user1.compatibility;
     console.log(user1.username + " scores:");
     console.log(comp);
-    
-    console.log("teamArray BEFORE removing user1:")
-    teamArray.forEach(member => {
+    let tempTeamArray = [];
+    tempTeamArray.push(...teamArray);
+    console.log("tempTeamArray BEFORE removing user1:")
+    tempTeamArray.forEach(member => {
         console.log(member.username + " personality: " + member.personality)
 });
 
-    const user1index = teamArray.findIndex(({_id}) => _id === user1._id);
-    teamArray.splice(user1index, 1);
-    console.log("teamArray AFTER removing user1:")
-    teamArray.forEach(member => {
+    const user1index =  await tempTeamArray.findIndex(({_id}) => _id === user1._id);
+    tempTeamArray.splice(user1index, 1);
+    console.log("tempTeamArray AFTER removing user1:")
+    tempTeamArray.forEach(member => {
         console.log(member.username + " personality: " + member.personality)
 });
 
     let scores = [];
-    teamArray.forEach(member => {
-            scores.push(`'{${member._id}' :  ${getCompatibility(user1, member)}}`);
+    tempTeamArray.forEach(member => {
+            scores.push(getCompatibility(user1, member));
             
     });
-    console.log(JSON.parse(scores))
-   
+    console.log(scores);
+    console.log("scores length: " +scores.length);
+    console.log("teamArray length: " +teamArray.length);
+    const avgTeamScore = scores.reduce((a, b) => a + b)/scores.length;
+    console.log("avgTeamScore: " +avgTeamScore);
+
+    return scores
+};
+
+
+const allTheUsers = data.data.users;
+// console.log(allTheUsers)
+console.log("individual team scores: " + indivTeamScores(allTheUsers, allTheUsers[0]));
+console.log("original array of users length: " + allTheUsers.length)
+
+//check if this works for an array of users
+const scores1 = indivTeamScores(allTheUsers, allTheUsers[0]);
+
+console.log("scores1 values: " + scores1);
+//write a basic reusable average function for an array of numbers
+function avg(numArray) {
+    const a = numArray[0];
+    const result = numArray.reduce((a, b) => a + b) / numArray.length;
+    return result;
 }
-console.log(data.data.users)
-individualTeamScore(data.data.users, data.data.users[0]);
+console.log(avg(scores1));
+
+
+

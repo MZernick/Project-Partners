@@ -12,19 +12,19 @@ export const QUERY_ME = gql`
   }
 `;
 
-export const QUERY_SINGLE_PROFILE = gql`
-  query singleProfile($profileId: ID!) {
-    profile(profileId: $profileId) {
-      _id
-      username
-      teams
-    }
-  }
-`;
+// export const QUERY_SINGLE_PROFILE = gql`
+//   query singleProfile($profileId: ID!) {
+//     profile(profileId: $profileId) {
+//       _id
+//       username
+//       teams
+//     }
+//   }
+// `;
 
 export const SEARCH_USER = gql`
-query SearchUser($search: String!) {
-  searchUser(search: $search) {
+query User {
+  users {
     _id
     username
     email
@@ -35,7 +35,7 @@ query SearchUser($search: String!) {
     }
     teams {
       _id
-      name
+      title
     }
   }
 }

@@ -655,9 +655,9 @@ function getCompatibility(user1, user2) {
     let comp = user1.compatibility;
     // console.log(user1.username + " scores:");
     // console.log(comp);
-    console.log(user2.username + " personality type: " +user2.personality);
+    // console.log(user2.username + " personality type: " +user2.personality);
     const result = comp.find(({type}) => type === user2.personality);
-    console.log(result);
+    // console.log(result);
     return result.rating;
 }
 
@@ -666,34 +666,34 @@ function getCompatibility(user1, user2) {
 
 //TO DO: write function that returns array of compatibility rating between each of the users and the first user in the array
 function indivTeamScores(teamArray, user1) {
-    console.log("original array of users length: " + teamArray.length)
+    // console.log("original array of users length: " + teamArray.length)
     let comp = user1.compatibility;
-    console.log(user1.username + " scores:");
-    console.log(comp);
+    // console.log(user1.username + " scores:");
+    // console.log(comp);
     let tempTeamArray = [];
     tempTeamArray.push(...teamArray);
-    console.log("tempTeamArray BEFORE removing user1:")
-    tempTeamArray.forEach(member => {
-        console.log(member.username + " personality: " + member.personality)
-});
+    // console.log("tempTeamArray BEFORE removing user1:")
+    // tempTeamArray.forEach(member => {
+    //     console.log(member.username + " personality: " + member.personality)
+    // });
 
     const user1index = tempTeamArray.findIndex(({_id}) => _id === user1._id);
     tempTeamArray.splice(user1index, 1);
-    console.log("tempTeamArray AFTER removing user1:")
-    tempTeamArray.forEach(member => {
-        console.log(member.username + " personality: " + member.personality)
-});
+    // console.log("tempTeamArray AFTER removing user1:")
+    // tempTeamArray.forEach(member => {
+    //     console.log(member.username + " personality: " + member.personality)
+    // });
 
     let scores = [];
     tempTeamArray.forEach(member => {
             scores.push(getCompatibility(user1, member));
             
     });
-    console.log(scores);
-    console.log("scores length: " +scores.length);
-    console.log("teamArray length: " +teamArray.length);
-    const avgTeamScore = scores.reduce((a, b) => a + b)/scores.length;
-    console.log("avgTeamScore: " +avgTeamScore);
+    // console.log(scores);
+    // console.log("scores length: " +scores.length);
+    // console.log("teamArray length: " +teamArray.length);
+    // const avgTeamScore = scores.reduce((a, b) => a + b)/scores.length;
+    // console.log("avgTeamScore: " +avgTeamScore);
 
     return scores
 };
@@ -701,8 +701,8 @@ function indivTeamScores(teamArray, user1) {
 
 const allTheUsers = data.data.users;
 // console.log(allTheUsers)
-console.log("individual team scores: " + indivTeamScores(allTheUsers, allTheUsers[0]));
-console.log("original array of users length: " + allTheUsers.length)
+// console.log("individual team scores: " + indivTeamScores(allTheUsers, allTheUsers[0]));
+// console.log("original array of users length: " + allTheUsers.length)
 
 //check if this works for an array of users
 const scores1 = indivTeamScores(allTheUsers, allTheUsers[0]);
@@ -719,5 +719,19 @@ function avg(numArray) {
 
 console.log(avg(scores1));
 
+function oneBigTeamScore(teamArray) {
+    const bigScores = [];
+    for (let i = 0; i < teamArray.length; i++) {
+        console.log("running indiv team scores for user: " + teamArray[i].username);
+        let lilScores = indivTeamScores(teamArray, teamArray[i]);
+        console.log(lilScores);
+        for (let j = 0; j < lilScores.length; j++) {
+        bigScores.push(...lilScores)
+        }
+    }
+    console.log(bigScores);
+    console.log("bigScores length: " + bigScores.length);
+    return avg(bigScores);
+}
 
-
+oneBigTeamScore(allTheUsers);

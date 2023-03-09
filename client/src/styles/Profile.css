@@ -34,8 +34,7 @@
     margin-top: 5%;
   }
   
-  .profilename {
-    margin-bottom: 55%;
+  .profileName {
     font-family: 'Switzer', sans-serif;
     font-size: clamp(1.5rem, 5.5vw, 5.5rem);
     text-decoration: none;

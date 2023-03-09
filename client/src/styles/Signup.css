@@ -8,6 +8,11 @@
     text-align: center;
     font-size: clamp(0.7rem, 2.7vw,2.7rem);
   }
+.signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .signup-card { 
     transition: 0.3s;
@@ -15,7 +20,6 @@
     background: #fbfbfb;
     border-radius: 8px;
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-   
     width: 475px;
   }
   .login-card { 
@@ -24,7 +28,6 @@
     background: #fbfbfb;
     border-radius: 8px;
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-   
     width: 475px;
   }
   
@@ -105,8 +108,6 @@
     width: 89px;
   }
   .column {
-    float: left;
-    padding: 0 20px;
+    padding: 100px 40px;
   }
   
-.row {margin: 100px 175px;}

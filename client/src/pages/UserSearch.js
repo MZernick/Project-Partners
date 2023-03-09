@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import NavTabs from '../components/NavTabs';
 import { useQuery } from '@apollo/client';
-
 import { SEARCH_USER } from '../utils/queries';
 
 function UserSearch() {

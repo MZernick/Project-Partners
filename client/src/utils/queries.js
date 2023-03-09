@@ -12,15 +12,15 @@ export const QUERY_ME = gql`
   }
 `;
 
-// export const QUERY_SINGLE_PROFILE = gql`
-//   query singleProfile($profileId: ID!) {
-//     profile(profileId: $profileId) {
-//       _id
-//       username
-//       teams
-//     }
-//   }
-// `;
+export const QUERY_SINGLE_PROFILE = gql`
+  query singleProfile($profileId: ID!) {
+    profile(profileId: $profileId) {
+      _id
+      username
+      teams
+    }
+  }
+`;
 
 export const SEARCH_USER = gql`
 query User {

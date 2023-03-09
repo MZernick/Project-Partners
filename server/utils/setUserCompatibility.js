@@ -2,7 +2,24 @@
 
 function setUserCompatibility(type){
 switch (type) {
-
+case 'INFP': return [	
+	{'type' : 'INFP' , 'rating' : 4},
+	{'type' : 'ENFP' , 'rating' : 4},
+	{'type' : 'INFJ' , 'rating' : 4},
+	{'type' : 'ENFJ' , 'rating' : 5},
+	{'type' : 'INTJ' , 'rating' : 4},
+	{'type' : 'ENTJ' , 'rating' : 5},
+	{'type' : 'INTP' , 'rating' : 4},
+	{'type' : 'ENTP' , 'rating' : 4},
+	{'type' : 'ISFP' , 'rating' : 1},
+	{'type' : 'ESFP' , 'rating' : 1},
+	{'type' : 'ISTP' , 'rating' : 1},
+	{'type' : 'ESTP' , 'rating' : 1},
+	{'type' : 'ISFJ' , 'rating' : 1},
+	{'type' : 'ESFJ' , 'rating' : 1},
+	{'type' : 'ISTJ' , 'rating' : 1},
+	{'type' : 'ESTJ' , 'rating' : 1},
+	];
 case 'ENFP': return [	        
     {'type' : 'INFP' , 'rating' : 4},
 	{'type' : 'ENFP' , 'rating' : 4},

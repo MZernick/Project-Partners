@@ -65,6 +65,10 @@ return (
                 path="/user/:userId/teams" 
                 element={<MyTeam />}
               />
+          <Route 
+                path="/users" 
+                element={<UserSearch />}
+                />
           <Route path="/createteam" 
                 element={<CreateTeam />}
               />

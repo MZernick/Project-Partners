@@ -6,11 +6,11 @@ import { Link } from 'react-scroll';
 export default function Homepage(props) {
   return (    
 <div class="main-container">
-  <div class="homepageNav">
+  {/* <div class="homepageNav">
     <Link to="raffContainer" smooth={true} duration={1000}>How it Works</Link>
     <Link to="ourTeamContainer" smooth={true} duration={1000}>Our Team</Link>
     <a href="/signup" id="getStartedNav">Get Started</a>
-  </div>
+  </div> */}
   <div id="menu">
     <div id="menu-items">
     <Link to="descriptionContainer" smooth={true} duration={1000} className="menu-item"><div id='big-title'>ProPairs</div></Link>

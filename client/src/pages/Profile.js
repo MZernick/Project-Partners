@@ -52,8 +52,10 @@ const Profile = () => {
   <img src="profile-photo.jpg" alt="Profile photo" id="profilePic"/>
   <h2 id="usernameProfile">{user.username} </h2>
       <p id="personalityType">{user.personality} </p>
-  <div class="infoBox">
-    <p>woo!</p>
+  <div class="commentBox">
+    <p id="newComment">you are awesome</p>
+    <p id="newComment">you are okay</p>
+    <p id="newComment">you stink</p>
   </div>
   
   </div>

@@ -6,6 +6,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    background-color:#F1FAEE;
   }
 /* SPECIFIC PROFILE CONTAINER */
   .profile-box {
@@ -39,6 +40,14 @@
     font-size: clamp(1.5rem, 5.5vw, 5.5rem);
     text-decoration: none;
     color: #1D3557;
+  }
+
+  .commentBox {
+    
+  }
+
+  #newComment {
+
   }
 /* TEAM BOX CONTAINER */
   .team-box {

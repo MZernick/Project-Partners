@@ -667,7 +667,7 @@ function getCompatibility(user1, user2) {
 //TO DO: write function that returns array of compatibility rating between each of the users and the first user in the array
 function indivTeamScores(teamArray, user1) {
     // console.log("original array of users length: " + teamArray.length)
-    let comp = user1.compatibility;
+    // let comp = user1.compatibility;
     // console.log(user1.username + " scores:");
     // console.log(comp);
     let tempTeamArray = [];
@@ -719,19 +719,24 @@ function avg(numArray) {
 
 console.log(avg(scores1));
 
+function myTeamScore(teamArray, User1) {
+    let arrayToAverage = indivTeamScores(teamArray, User1);
+    return avg(arrayToAverage);
+}
+
 function oneBigTeamScore(teamArray) {
     const bigScores = [];
     for (let i = 0; i < teamArray.length; i++) {
-        console.log("running indiv team scores for user: " + teamArray[i].username);
+        // console.log("running indiv team scores for user: " + teamArray[i].username);
         let lilScores = indivTeamScores(teamArray, teamArray[i]);
-        console.log(lilScores);
-        for (let j = 0; j < lilScores.length; j++) {
+        // console.log(lilScores);
         bigScores.push(...lilScores)
-        }
     }
-    console.log(bigScores);
-    console.log("bigScores length: " + bigScores.length);
+    // console.log(bigScores);
+    // console.log("bigScores length: " + bigScores.length);
     return avg(bigScores);
 }
 
-oneBigTeamScore(allTheUsers);
+console.log("myTeamScore: " +myTeamScore(allTheUsers, allTheUsers[0]));
+
+console.log("the big 'ol team score is: " + oneBigTeamScore(allTheUsers));

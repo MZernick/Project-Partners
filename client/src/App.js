@@ -12,6 +12,7 @@ import './App.css';
 import MyTeam from './pages/MyTeams';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
+import CreateTeam from './pages/CreateTeam';
 import Signup from './pages/Signup';
 import UserSearch from './pages/UserSearch';
 
@@ -64,8 +65,12 @@ return (
                 path="/user/:userId/teams" 
                 element={<MyTeam />}
               />
-          <Route path="/users" 
+          <Route 
+                path="/users" 
                 element={<UserSearch />}
+                />
+          <Route path="/createteam" 
+                element={<CreateTeam />}
               />
         </Routes>
       </div>

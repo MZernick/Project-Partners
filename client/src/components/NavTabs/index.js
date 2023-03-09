@@ -49,6 +49,12 @@ function NavTabs({ currentPage, handlePageChange }) {
           className={currentPage === 'UserSearch' ? 'nav-link active' : 'nav-link'}
         >
           Search Users
+          href="#CreateTeam"
+          onClick={() => handlePageChange('CreateTeam')}
+          // Check to see if the currentPage is `JoinTeam`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+          className={currentPage === 'CreateTeam' ? 'nav-link active' : 'nav-link'}
+        >
+        Create Team
         </a>
       </li>
     </ul>

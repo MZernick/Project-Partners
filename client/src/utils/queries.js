@@ -12,6 +12,23 @@ export const QUERY_ME = gql`
   }
 `;
 
+export const SEARCH_USER = gql`
+query User {
+  users {
+    _id
+    email
+    personality
+    compatibility {
+      type
+      rating
+    }
+    teams {
+      title
+      description
+    }
+  }
+}
+`;
 export const QUERY_SINGLE_USER = gql`
   query singleUser($userId: ID!) {
     users(userId: $userId) {
@@ -22,21 +39,13 @@ export const QUERY_SINGLE_USER = gql`
   }
 `;
 
-export const SEARCH_USER = gql`
-query User {
-  users {
+export const SEARCH_EMAIL = gql`
+query User($email: String!) {
+  searchEmail(email: $email) {
     _id
     username
     email
     personality
-    compatibility {
-      type
-      rating
-    }
-    teams {
-      _id
-      title
-    }
   }
 }
 `;

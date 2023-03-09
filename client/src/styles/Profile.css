@@ -23,20 +23,22 @@
     margin-right: 2%;
   }
 
-  .profile-box img {
+  #profilePic {
+    display: flex;
     width: 150px;
     height: 150px;
     object-fit: cover;
     border-radius: 50%;
-    margin-bottom: 10px;
+    align-items: flex-start;
+    margin-top: 5%;
   }
   
-  .profile-box h2 {
+  #username {
+    margin-bottom: 55%;
     font-family: 'Switzer', sans-serif;
     font-size: clamp(1.5rem, 5.5vw, 5.5rem);
     text-decoration: none;
     color: #1D3557;
-    margin: 0;
   }
 /* TEAM BOX CONTAINER */
   .team-box {
@@ -52,19 +54,66 @@
     align-items: center;
     justify-content: center;
   }
+
   
-  .team-box img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 10px;
-  }
-  
-  .team-box h2 {
+  #yourTeams {
     font-family: 'Switzer', sans-serif;
     font-size: clamp(1.5rem, 5.5vw, 5.5rem);
     text-decoration: none;
     color: #1D3557;
     margin: 0;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  #teamsNumber {
+    
+  }
+
+  .team1Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+  }
+
+  #team1 {
+    margin: 0;
+    font-family: 'Switzer', sans-serif;
+    font-size: clamp(.5rem, 3.5vw, 2.5rem);
+    text-decoration: none;
+    color: #1D3557;
+  }
+
+  .team2Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+  }
+
+  #team2 {
+    margin: 0;
+    font-family: 'Switzer', sans-serif;
+    font-size: clamp(.5rem, 3.5vw, 2.5rem);
+    text-decoration: none;
+    color: #1D3557;
+  }
+
+  .team3Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+  }
+
+  #team3 {
+    margin: 0;
+    font-family: 'Switzer', sans-serif;
+    font-size: clamp(.5rem, 3.5vw, 2.5rem);
+    text-decoration: none;
+    color: #1D3557;
   }

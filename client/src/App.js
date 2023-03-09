@@ -65,9 +65,9 @@ return (
                 path="/user/:userId/teams" 
                 element={<MyTeam />}
               />
-          {/* <Route path="/jointeam" 
-                element={<JoinTeam />}
-              /> */}
+          <Route path="/createteam" 
+                element={<CreateTeam />}
+              />
         </Routes>
       </div>
       </div>

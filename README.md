@@ -16,7 +16,7 @@ User Authentication: Users can create a personal account and log in to access th
 
 # Getting Started
 
-To get started, simply visit the website and sign up for an account. The application is hosted on a secure server and can be accessed from any device with an internet connection.
+To get started, simply visit the website and sign up for an account, by inThe application is hosted on a secure server and can be accessed from any device with an internet connection.
 
 # Instructions
 
@@ -29,9 +29,10 @@ To get started, simply visit the website and sign up for an account. The applica
 # Technologies Used
 
 React.js library used for building the user interface.
+React Bootstrap, CSS
 GraphQL with a Node.js and Express.js server.
 MongoDB, Mongoose ODM.
-bcrypt with JSON Web Token (JWT). 
+Security: bcrypt with JSON Web Token (JWT). 
 
 # Authors
 
@@ -48,8 +49,8 @@ bcrypt with JSON Web Token (JWT).
 
 Ideas pending for future development:
 1. Integrate personality test as part of the site.
-2. 
-3. 
+2. Facilitate user-to-user communication via chat.
+3. Visual graph representation of the modeled team compatibility.
 4. 
 
 ## License

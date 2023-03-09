@@ -6,6 +6,12 @@ function getCompatibility(user1, user2) {
     return result.rating;
 };
 
+function getCompatibilityandUsername(user1, user2) {
+    let comp = user1.compatibility;
+    const result = comp.find(({type}) => type === user2.personality);
+    return {username: `${user2.username}`, rating: `${result.rating}`};
+};
+
 // a basic reusable average function for an array of numbers
 function avg(numArray) {
     let sum = 0;
@@ -45,5 +51,5 @@ function oneBigTeamScore(teamArray) {
 
 
 module.exports = {
-    getCompatibility, avg, indivTeamScores, myTeamScore, oneBigTeamScore
+    getCompatibility, getCompatibilityandUsername, avg, indivTeamScores, myTeamScore, oneBigTeamScore
 }

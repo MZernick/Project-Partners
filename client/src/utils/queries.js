@@ -40,3 +40,11 @@ query User {
   }
 }
 `;
+
+export const ALL_TEAMS = gql `
+query Teams {
+  teams {
+    title
+    _id
+  }
+}`;

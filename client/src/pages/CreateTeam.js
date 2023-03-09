@@ -7,19 +7,19 @@ import { ADD_TEAM } from '../utils/mutations';
 
 
 const CreateTeam = () => {
-//     const { loading, data } = useQuery(SEARCH_USER);
-//     const userList = data?.tech || [];
-//     // console.log(userList)
-//     const [users, setUsers] = useState([]);
+    // const { loading, data } = useQuery(SEARCH_USER);
+    // const userList = data?.tech || [];
+    // console.log(userList)
+    // const [users, setUsers] = useState([]);
   
-    const [addTeam, { error } ] = useMutation(ADD_TEAM);    
+    // const [addTeam, { error } ] = useMutation(ADD_TEAM);    
 
-    const [formData, setFormData] = useState({
-        title: '',
-        description: '',
-        members: ''
-      });
-      let navigate = useNavigate();
+    // const [formData, setFormData] = useState({
+    //     title: '',
+    //     description: '',
+    //     members: ''
+    //   });
+    //   let navigate = useNavigate();
   
 
  const handleInputChange = (event) => {
@@ -35,7 +35,7 @@ const CreateTeam = () => {
         variables: { ...formData },
       });
 
-    //   navigate();
+      navigate('/me');
     } catch (err) {
       console.error(err);
     }

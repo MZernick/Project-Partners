@@ -50,7 +50,7 @@ const Profile = () => {
       <div class="profileContainer">
   <div class="profile-box">
   <img src="profile-photo.jpg" alt="Profile photo" id="profilePic"/>
-  <h2 id="username">{user.username} </h2>
+  <h2 id="usernameProfile">{user.username} </h2>
       <p id="personalityType">{user.personality} </p>
   <div class="infoBox">
     <p>woo!</p>
@@ -59,23 +59,22 @@ const Profile = () => {
   </div>
   <div class="team-box">
   <h2 id="yourTeams">Your Teams</h2>
-  <h4 id="teamsNumber">You belong to {user.teams.length} teams</h4>
   <div class="team1Container">
     <h3 id="team1">team1</h3>
     <div class="infoBox1">
-    <p>we are the greatest</p>
+    <p>JOSH GRAPH HERE</p>
     </div>
   </div>
   <div class="team2Container">
     <h3 id="team2">team2</h3>
     <div class="infoBox2">
-    <p>we are okay</p>
+    <p>JOSH GRAPH HERE</p>
     </div>
   </div>
   <div class="team3Container">
     <h3 id="team3">team3</h3>
     <div class="infoBox3">
-    <p>we are the worst</p>
+    <p>JOSH GRAPH HERE</p>
     </div>
   </div>
   </div>

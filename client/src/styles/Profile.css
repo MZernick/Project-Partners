@@ -33,7 +33,7 @@
     margin-top: 5%;
   }
   
-  #username {
+  #usernameProfile {
     margin-bottom: 55%;
     font-family: 'Switzer', sans-serif;
     font-size: clamp(1.5rem, 5.5vw, 5.5rem);
@@ -52,7 +52,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
   }
 
   
@@ -72,10 +72,11 @@
 
   .team1Container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-bottom: 5%;
+    width: 90%;
   }
 
   #team1 {
@@ -84,14 +85,16 @@
     font-size: clamp(.5rem, 3.5vw, 2.5rem);
     text-decoration: none;
     color: #1D3557;
+    margin-right: 40%;
   }
 
   .team2Container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-bottom: 5%;
+    width: 90%;
   }
 
   #team2 {
@@ -100,14 +103,16 @@
     font-size: clamp(.5rem, 3.5vw, 2.5rem);
     text-decoration: none;
     color: #1D3557;
+    margin-right: 40%;
   }
 
   .team3Container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-bottom: 5%;
+    width: 90%;
   }
 
   #team3 {
@@ -116,4 +121,5 @@
     font-size: clamp(.5rem, 3.5vw, 2.5rem);
     text-decoration: none;
     color: #1D3557;
+    margin-right: 40%;
   }

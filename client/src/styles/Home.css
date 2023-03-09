@@ -15,6 +15,26 @@ body {
     height: auto;
 }
 
+.homepageNav {
+  background-color: #333; /* Black background color */
+  font-family: 'Switzer', sans-serif;
+  font-size: clamp(.5rem, 4.5vw, 4.5rem);
+  font-weight: 700;
+  position: fixed; /* Make it stick/fixed */
+  top: -50px; /* Hide the navbar 50 px outside of the top view */
+  width: 100%; /* Full width */
+  z-index: 3;
+}
+
+.homepageNav Link {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+}
+
 /* MENU CONTAINER BELOW */
 #big-title {
     font-family: 'Switzer', sans-serif;
@@ -150,31 +170,47 @@ body {
 }
 
 .raffContainer {
-  margin-left: 5%;
   height: 200vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
+.testBox1 {
+  width: 70%;
+  margin-top: 10%;
+  margin-left: 10%;
+}
 #desc1 {
   font-family: 'Switzer', sans-serif;
   font-size: clamp(10.7rem, 12.7vw, 10.7rem);
   opacity: 1;
   z-index: 3;
-  margin-bottom: 10.5rem;
+  margin: 0;
+  color: #1D3557;
+}
+
+#testDescription {
+  font-family: 'Switzer', sans-serif;
+  font-size: clamp(.5rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  margin: 0;
+  color: #1D3557;
 }
 
 #myersHyper{
-  color: #1D3557;
+  color: #E63946;
   text-decoration:solid
 }	
 
 #myersHyper:hover{
-  color: #E63946;
+  color: #457B9D;
 }	
 
+.pairBox1 {
+  width: 60%;
+}
 
 #desc2 {
   font-family: 'Switzer', sans-serif;
@@ -182,16 +218,37 @@ body {
   color: #1D3557;
   opacity: 1;
   z-index: 3;
+  margin: 0;
+}
+
+#pairDescription {
+  font-family: 'Switzer', sans-serif;
+  font-size: clamp(.5rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  margin: 0;
+  color: #1D3557;
+}
+
+.workBox1 {
+  width: 70%;
+  margin-left: 10%;
 }
 
 #desc3 {
   font-family: 'Switzer', sans-serif;
   font-size: clamp(10.7rem, 12.7vw, 10.7rem);
-  color: #E63946;
+  color: #1D3557;
   opacity: 1;
   z-index: 3;
-  margin-top: 30%;
-  margin-bottom: 0;
+  margin: 0;
+}
+
+#workDescription {
+  font-family: 'Switzer', sans-serif;
+  font-size: clamp(.5rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  margin: 0;
+  color: #1D3557;
 }
 
 
@@ -251,7 +308,7 @@ body {
 
   /* GET STARTED CONTAINER BELOW */
   .startedContainer {
-    background-color: #E63946;
+    background-color: #F1FAEE;
     height: 80vh;
     display: flex;
     flex-direction: row;
@@ -264,5 +321,6 @@ body {
     font-family: 'Switzer', sans-serif;
     font-size: clamp(3.5rem, 8.5vw, 8.5rem);
     text-decoration: none;
-    color: #F1FAEE;
+    color: #E63946;
+    font-weight: 700;
   }

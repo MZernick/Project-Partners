@@ -49,6 +49,7 @@ const CreateTeam = () => {
 
     return(
         <main>
+          <NavTabs/>
             <div className='card'>
                 <h1 className="headers">Create a New Team</h1>
                 <div className="underline"></div>

@@ -8,16 +8,14 @@ import '../styles/Profile.css'
 // import Pairings from '../components/Pairings';
 
 //profile query here- are we adding pairs/partners/favorites or just seeing partners in the their teamsview?
-import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../utils/queries';
-
-import Auth from '../utils/auth';
+import { QUERY_SINGLE_USER, QUERY_ME } from '../utils/queries';
 
 const Profile = () => {
   const { userId } = useParams();
 
   // If there is no `userId` in the URL as a parameter, execute the `QUERY_ME` query instead for the logged in user's information
   const { loading, data } = useQuery(
-    userId ? QUERY_SINGLE_PROFILE : QUERY_ME,
+    userId ? QUERY_SINGLE_USER : QUERY_ME,
     {
       variables: { userId: userId },
     }
@@ -50,7 +48,7 @@ const Profile = () => {
       <div class="profileContainer">
   <div class="profile-box">
   <img src="profile-photo.jpg" alt="Profile photo" id="profilePic"/>
-  <h2 id="usernameProfile">{user.username} </h2>
+  <h2 id="username" className='profileName'>{user.username} </h2>
       <p id="personalityType">{user.personality} </p>
   <div class="commentBox">
     <p id="newComment">you are awesome</p>

@@ -12,9 +12,9 @@ export const QUERY_ME = gql`
   }
 `;
 
-export const QUERY_SINGLE_PROFILE = gql`
-  query singleProfile($profileId: ID!) {
-    profile(profileId: $profileId) {
+export const QUERY_SINGLE_USER = gql`
+  query singleUser($userId: ID!) {
+    users(userId: $userId) {
       _id
       username
       teams
@@ -40,3 +40,11 @@ query User {
   }
 }
 `;
+
+export const ALL_TEAMS = gql `
+query Teams {
+  teams {
+    title
+    _id
+  }
+}`;

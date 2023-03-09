@@ -2,6 +2,9 @@
 
 .eslintcache
 package-lock.json
+
+.eslintcache
+package-lock.json
 # dependencies
 /node_modules
 /.pnp

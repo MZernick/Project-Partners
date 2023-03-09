@@ -7,12 +7,12 @@ import { ADD_TEAM } from '../utils/mutations';
 
 
 const CreateTeam = () => {
-    // const { loading, data } = useQuery(SEARCH_USER);
-    // const userList = data?.tech || [];
-    // console.log(userList)
-    const [users, setUsers] = useState([]);
+//     const { loading, data } = useQuery(SEARCH_USER);
+//     const userList = data?.tech || [];
+//     // console.log(userList)
+//     const [users, setUsers] = useState([]);
   
-    const [addTeam, { error1 } ] = useMutation(ADD_TEAM);    
+    const [addTeam, { error } ] = useMutation(ADD_TEAM);    
 
     const [formData, setFormData] = useState({
         title: '',
@@ -72,7 +72,18 @@ const CreateTeam = () => {
                     value={formData.description}>
                     </input>
                     <div className="form-border"></div>
-                    <label for="members">Members</label>
+                    <form className="form">
+                      <label for="members">Members:</label>
+                      {/* add in a map to create list elements based on who you've */}
+                      <ul className="list">
+                        <li>Amanda</li>
+                      </ul>
+                      <div className="inline">
+                        <input id="members" type="text" placeholder='Add New Member...' className="s-form-input"></input>
+                        <button className="s-btn">Add Member</button>
+                      </div>  
+                    </form>
+                    
                     {/* <div>
                       <form onSubmit={handleSearchSubmit}>
                         <input type="text" placeholder="Search users" onChange={handleSearch} />

@@ -86,6 +86,7 @@ const [login, { error: error1, data: data1 }] = useMutation(LOGIN_USER);
       });
 
       Auth.login(data.addUser.token);
+      redirect("/me");
     } catch (e) {
       console.error(e);
     }

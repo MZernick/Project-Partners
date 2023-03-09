@@ -1,8 +1,6 @@
 nav {
-    position: sticky;
     top: 0;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     padding: 1.5rem 2rem;
     background-color: #eaeaea;
@@ -11,11 +9,13 @@ nav {
 li {
     display: inline;
     float: left;
+    font-family: 'Switzer', sans-serif;
+    font-size: 200px;
 }
   
 #nav-link {
     display: block;
     padding: 8px;
-    background-color: #dddddd;
+    text-decoration: none;
   }
 

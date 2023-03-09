@@ -12,7 +12,7 @@ function NavTabs({ currentPage, handlePageChange }) {
     <ul className="nav nav-tabs">
       <li className="nav-item">
         <a id="nav-link"
-          href="#home"
+          href="/"
           onClick={() => handlePageChange('Home')}
           // This is a conditional (ternary) operator that checks to see if the current page is "Home"
           // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
@@ -23,7 +23,7 @@ function NavTabs({ currentPage, handlePageChange }) {
       </li>
       <li className="nav-item">
         <a
-          href="#Profile"
+          href="/me"
           onClick={() => handlePageChange('Profile')}
           // Check to see if the currentPage is `Profile`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
           className={currentPage === 'Profile' ? 'nav-link active' : 'nav-link'}
@@ -33,7 +33,7 @@ function NavTabs({ currentPage, handlePageChange }) {
       </li>
       <li className="nav-item">
         <a
-          href="#MyTeams"
+          href="/user/:userId/teams"
           onClick={() => handlePageChange('MyTeams')}
           // Check to see if the currentPage is `MyTeams`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
           className={currentPage === 'MyTeams' ? 'nav-link active' : 'nav-link'}
@@ -43,13 +43,14 @@ function NavTabs({ currentPage, handlePageChange }) {
       </li>
       <li className="nav-item">
         <a
-          href="#UserSearch"
+          href="/users"
           onClick={() => handlePageChange('UserSearch')}
           // Check to see if the currentPage is `UserSearch`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
           className={currentPage === 'UserSearch' ? 'nav-link active' : 'nav-link'}
         >
           Search Users
-          href="#CreateTeam"
+          </a>
+        <a  href="/createteam"
           onClick={() => handlePageChange('CreateTeam')}
           // Check to see if the currentPage is `JoinTeam`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
           className={currentPage === 'CreateTeam' ? 'nav-link active' : 'nav-link'}

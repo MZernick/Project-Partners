@@ -9,7 +9,7 @@ function UserSearch() {
 
     
   const { loading, error, data } = useQuery(SEARCH_USER, {
-    variables: { search: searchTerm },
+    variables: { email: searchTerm },
   });
 
   if (loading) return <p>Loading...</p>;
@@ -17,6 +17,9 @@ function UserSearch() {
   
   
     const handleSearch = (event) => {
+      if(null){
+        return;
+      }
       setSearchTerm(event.target.value);
     };
 
@@ -36,7 +39,7 @@ function UserSearch() {
               <h2>{user.username}</h2>
               <p>{user.email}</p>
               <p>{user.personality}</p>
-              <p>{user.compatibility}</p>
+              {/* <p>{user.compatibility.rating}</p> */}
               <a class='btn btn-primary btn-block btn-squared'>Add to a Team </a>
             </div>
           ))}
@@ -46,13 +49,14 @@ function UserSearch() {
   
     return (
       <div>
-        <NavTabs/>
         <form onSubmit={handleSearchSubmit}>
         <input type="text" placeholder="Search users" onChange={handleSearch} />
         <button type="submit">Search</button>
       </form>
       {renderUsers()}
+      <NavTabs/>
     </div>
+    
   );
 }
   

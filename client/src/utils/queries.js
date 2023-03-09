@@ -23,20 +23,12 @@ export const QUERY_SINGLE_PROFILE = gql`
 `;
 
 export const SEARCH_USER = gql`
-query User {
-  users {
+query Query($email: String!) {
+  searchEmail(email: $email) {
     _id
     username
     email
     personality
-    compatibility {
-      type
-      rating
-    }
-    teams {
-      _id
-      title
-    }
   }
 }
 `;

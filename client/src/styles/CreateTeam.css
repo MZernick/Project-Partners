@@ -1,16 +1,16 @@
-/* .headers {
+.headers {
     color: black; 
     font-family: 'Switzer', sans-serif;
     padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
     transition: opacity 400ms ease;
     letter-spacing: 4px;
-    padding-bottom: 23px;
+    padding-bottom: 1%;
     text-align: center;
     font-size: clamp(0.7rem, 2.7vw,2.7rem);
-  } */
+  }
 
 .card{
-    height: 75vh;
+    height: fit-content;
     width: 50vw;
     background: #fbfbfb;
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
@@ -56,3 +56,31 @@
     transition: 0.25s;
     width: 15vw;
   }
+
+  .s-btn {
+    background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);border: none;
+    border-radius: 20px;
+    box-shadow: 0px 1px 8px #588ab6;
+    color: white;
+    font-family: "Raleway SemiBold", sans-serif;
+    height: 5vh;
+    /* margin: 0 auto; */
+    transition: 0.25s;
+    width: 10vw;
+    margin-left: 15vw;
+    margin-bottom:2%;
+    
+  }
+
+  .s-form-input {
+    background: #fbfbfb;
+    border: none;
+    outline: none;
+    
+    /* padding-top: 14px; */
+    /* padding-bottom: 5px; */
+  }
+  
+ .list {
+  margin-left: 1%;
+ }

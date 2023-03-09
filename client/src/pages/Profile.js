@@ -3,6 +3,7 @@ import React from 'react';
 import NavTabs from '../components/NavTabs';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
+import '../styles/Profile.css'
 
 // import Pairings from '../components/Pairings';
 
@@ -46,12 +47,28 @@ const Profile = () => {
   return (
     <div>
       <div><NavTabs/></div>
-      <h2 className="card-header">
-        {userId ? `${user.username}'s` : 'Your'} 
-      </h2>
-    <p>has a {user.personality} type.</p>
-    <h4>You belong to {user.teams.length} teams</h4>
+      <div class="profileContainer">
+  <div class="profile-box">
+  <img src="profile-photo.jpg" alt="Profile photo"/>
+  <h2 id="">{userId ? `${user.username}'s` : 'Your'} </h2>
+      <p id="">has a {user.personality} type.</p>
+    <h4 id="">You belong to {user.teams.length} teams</h4>
+  <div class="infoBox">
+
+  </div>
+  
+  </div>
+  <div class="team-box">
+  <img src="profile-photo.jpg" alt="Profile photo"/>
+  <h2>Your Teams</h2>
+  <div class="infoBox">
+
+  </div>
+  
+  </div>
 </div>
+
+    </div>
   );
 };
 

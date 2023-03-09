@@ -1,4 +1,4 @@
-/* nav {
+nav {
     position: sticky;
     top: 0;
     display: flex;
@@ -6,15 +6,16 @@
     justify-content: space-between;
     padding: 1.5rem 2rem;
     background-color: #eaeaea;
-  } */
+  }
 
 li {
     display: inline;
     float: left;
 }
   
-/* a {
+#nav-link {
     display: block;
     padding: 8px;
     background-color: #dddddd;
-  } */
+  }
+

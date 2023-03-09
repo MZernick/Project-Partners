@@ -27,6 +27,18 @@ export const LOGIN_USER = gql`
   }
 `;
 
+export const ADD_TEAM = gql`
+mutation addTeam($userId: ID!, $title: String!, $description: String!) {
+  addTeam(userId: $userId, title: $title, decription: $decription) {
+      _id
+      userId
+      title
+      description
+      members
+  }
+}
+`
+
 export const REMOVE_TEAM = gql`
   mutation removeTeam($team: String!) {
     removeTeam(team: $team) {

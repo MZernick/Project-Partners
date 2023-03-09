@@ -4,6 +4,8 @@ import NavTabs from '../components/NavTabs';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import '../styles/Profile.css'
+import Avatar from '@mui/material/Avatar';
+import AvatarGroup from '@mui/material/AvatarGroup';
 
 // import Pairings from '../components/Pairings';
 
@@ -47,33 +49,43 @@ const Profile = () => {
       <div><NavTabs/></div>
       <div class="profileContainer">
   <div class="profile-box">
-  <img src="profile-photo.jpg" alt="Profile photo" id="profilePic"/>
-  <h2 id="username" className='profileName'>{user.username} </h2>
+    <Avatar>h</Avatar>
+  <h2 className='profileName'>{user.username}</h2>
       <p id="personalityType">{user.personality} </p>
-  <div class="infoBox">
-    <p>woo!</p>
+  <div class="commentBox">
+    <p id="newComment">you are awesome</p>
+    <p id="newComment">you are okay</p>
+    <p id="newComment">you stink</p>
   </div>
   
   </div>
   <div class="team-box">
   <h2 id="yourTeams">Your Teams</h2>
-  <h4 id="teamsNumber">You belong to {user.teams.length} teams</h4>
   <div class="team1Container">
     <h3 id="team1">team1</h3>
+    <AvatarGroup>
+
+    </AvatarGroup>
     <div class="infoBox1">
-    <p>we are the greatest</p>
+    <p>JOSH GRAPH HERE</p>
     </div>
   </div>
   <div class="team2Container">
     <h3 id="team2">team2</h3>
+    <AvatarGroup>
+        
+    </AvatarGroup>
     <div class="infoBox2">
-    <p>we are okay</p>
+    <p>JOSH GRAPH HERE</p>
     </div>
   </div>
   <div class="team3Container">
     <h3 id="team3">team3</h3>
+    <AvatarGroup>
+        
+    </AvatarGroup>
     <div class="infoBox3">
-    <p>we are the worst</p>
+    <p>JOSH GRAPH HERE</p>
     </div>
   </div>
   </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import NavTabs from '../components/NavTabs';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
@@ -44,6 +45,7 @@ const Profile = () => {
 
   return (
     <div>
+      <div><NavTabs/></div>
       <h2 className="card-header">
         {userId ? `${user.username}'s` : 'Your'} 
       </h2>

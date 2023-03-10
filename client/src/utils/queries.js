@@ -30,6 +30,7 @@ export const SEARCH_USER = gql`
 query User {
   users {
     _id
+    username
     email
     personality
     compatibility {

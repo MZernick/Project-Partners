@@ -7,22 +7,30 @@ import auth from '../utils/auth';
 const UserSearch = () => {
   const [searchText, setSearchText] = useState('');
   const [filter, setFilter] = useState('personality'); // set default filter to personality
+  const [filteredUsers, setFilteredUsers] = useState ([])
   const { loading, data } = useQuery(SEARCH_USER);
 
   const users = data?.users || [];
 console.log(users);
 
-  // filter users based on selected filter
-  const filteredUsers = users.filter((user) => {
-    if (filter === 'personality') {
-      return user.personality === searchText;
-    } else if (filter === 'email') {
-      return user.email === searchText;
-    } else {
-      return ; // if no filter is selected, show all users
-    }
-  });
+function changingFilter(){
+  let listarray = [];
+  console.log(searchText);
+  console.log(filter);
 
+  if (filter === 'personality') {
+    listarray = users.filter(user=> user.personality === searchText)
+  } else if (filter === 'email') {
+    listarray = users.filter(user=> user.email === searchText)
+  } else {
+    listarray = []; // if no filter is selected
+  }
+  console.log(listarray);
+  // if array is empty, display no users found, if >0 then setfiltered
+  listarray.length==0? "No matches" : setFilteredUsers(listarray);
+}
+
+console.log(filteredUsers);
   return (
     <>
     <NavTabs/>
@@ -55,16 +63,20 @@ console.log(users);
                     value={searchText}
                     onChange={(e) => setSearchText(e.target.value)}
                   />
+                  <button
+                  type="submit"
+                  onClick={()=> changingFilter()
+                  }
+                  >Submit</button>
+
+                  
                 </div>
               </div>
               <div className="flex-row justify-space-between my-4">
-                {setTimeout(() => {
-    console.log(filteredUsers);
-  }, "3000")}
-                {filteredUsers.map((user) => (
-                  <div key={user._id} className="col-12 col-xl-6">
-                    <div className="card mb-3">
-                      <h4 className="card-header bg-dark text-light p-2 m-0">
+                {filteredUsers.length > 0 ? filteredUsers.map((user) => (
+                  <div key={user._id} >
+                    <div >
+                      <h4 >
                         username: {user.username} <br />
                         <span> email: {user.email}</span>
                         <br />
@@ -76,7 +88,7 @@ console.log(users);
                       </h4>
                     </div>
                   </div>
-                ))}
+                )): ""}
               </div>
             </div>
           )}

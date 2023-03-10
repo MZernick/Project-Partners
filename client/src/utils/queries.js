@@ -36,6 +36,7 @@ export const SEARCH_USER = gql`
 query User {
   users {
     _id
+    username
     email
     personality
     compatibility {
@@ -62,6 +63,16 @@ export const QUERY_SINGLE_USER = gql`
 export const SEARCH_EMAIL = gql`
 query User($email: String!) {
   searchEmail(email: $email) {
+    _id
+    username
+    email
+    personality
+  }
+}
+`;
+export const SEARCH_PERSONALITY = gql`
+query User($personality: String!) {
+  searchPersonality(personality: $personality) {
     _id
     username
     email

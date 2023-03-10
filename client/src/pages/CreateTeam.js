@@ -5,7 +5,7 @@ import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import auth from '../utils/auth';
 import { useMutation, useQuery } from '@apollo/client';
-import { SEARCH_USER, QUERY_SINGLE_USER } from '../utils/queries';
+import { SEARCH_USER, QUERY_SINGLE_USER_WITH_COMPATIBILITY } from '../utils/queries';
 import '../styles/CreateTeam.css'
 import { getCompatibilityandUsername} from '../utils/helpers';
 import { ADD_TEAM } from '../utils/mutations';
@@ -16,13 +16,13 @@ const CreateTeam = () => {
   // Search for all users by username
   const { loading, data } = useQuery(SEARCH_USER);
   const userList = data?.users || [];
-  // userList.map(user => console.log(user.compatibility))
+
   // array that hold options for adding new members
   const userArr = [];
 
   
 // searching for the single user logged in so we can run commpatibility
-  const data1 = useQuery(QUERY_SINGLE_USER, {
+  const data1 = useQuery(QUERY_SINGLE_USER_WITH_COMPATIBILITY, {
     variables: {userId: auth.getProfile().data._id}   
   })
 

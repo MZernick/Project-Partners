@@ -12,17 +12,17 @@ export const QUERY_ME = gql`
   }
 `;
 
-// export const QUERY_SINGLE_USER = gql`
-//   query singleUser($userId: ID!) {
-//     users(userId: $userId) {
-//       _id
-//       username
-//       teams
-//     }
-//   }
-// `;
-
 export const QUERY_SINGLE_USER = gql`
+  query singleUser($userId: ID!) {
+    users(userId: $userId) {
+      _id
+      username
+      teams
+    }
+  }
+`;
+
+export const QUERY_SINGLE_USER_WITH_COMPATIBILITY= gql`
 query User($userId: ID!) {
   user(userId: $userId) {
     _id

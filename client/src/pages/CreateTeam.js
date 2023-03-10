@@ -16,7 +16,7 @@ const CreateTeam = () => {
   // Search for all users by username
   const { loading, data } = useQuery(SEARCH_USER);
   const userList = data?.users || [];
-
+// console.log(userList)
   // array that hold options for adding new members
   const userArr = [];
 
@@ -33,12 +33,10 @@ const CreateTeam = () => {
     })
   }, "3000");
 
+  console.log(userArr)
   // userList.map(user => {
   //   console.log(getCompatibilityandUsername(data1.data?.user, user))
   // })
-
-// const [members, setMembers] = useState([])
-
   const [formData, setFormData] = useState({
     title: '', 
     description: '',
@@ -55,7 +53,6 @@ const CreateTeam = () => {
         ...formData, 
         [name]: value,
       });
-      // console.log(value)
   };
 
   const handleFormSubmit = async (event) => {
@@ -81,8 +78,6 @@ const CreateTeam = () => {
       description: '', 
       members: []
     })
-
-    setMembers([])
   }
 
  console.log(formData)
@@ -120,7 +115,7 @@ const CreateTeam = () => {
                     <div className="form-border"></div>
                     {loading ? (
                           <div>Loading...</div>
-                           ) : (
+                           ) : (    
                             <Stack className="stack">
                             <Autocomplete
                             freeSolo
@@ -128,9 +123,8 @@ const CreateTeam = () => {
                             //   const {value} = event.target
                             //   setMembers(value) 
                             // console}}
-                            onChange = { (event, newValue) => setFormData({...formData, members: [...formData.members, newValue[0].value]})}
+                            onChange = { (event, newValue) => setFormData({...formData, members: [...newValue].map(item => item.value)})}
                             multiple
-                            // value={members}
                             id="user-autocomplete"
                             getOptionLabel={(option) => `${option.username} ${option.rating}` }
                             // isOptionEqualToValue={(option, value) => console.log(value)}

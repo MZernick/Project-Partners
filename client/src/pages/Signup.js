@@ -9,16 +9,6 @@ import { LOGIN_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
-function showPassword() {
-  var x = document.getElementsByClassName("password-signup");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-  console.log(x);
-}
-
 const Signup = () => {
   const redirect = useNavigate();
   const [signupState, setSignupState] = useState({
@@ -143,7 +133,7 @@ const [login, { error: error1, data: data1 }] = useMutation(LOGIN_USER);
                   onChange={handleSignupChange}
                 />
                 <div className="form-border"></div>
-                <input type="checkbox" onClick={showPassword}/> Show Password
+                {/* <input type="checkbox" onClick={showPassword}/> Show Password */}
                 <label htmlFor="personality-type">Input your Myers-Briggs Personality Type Here:</label>
                 <select
                   id="personality-type"

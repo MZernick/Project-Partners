@@ -36,6 +36,7 @@ const typeDefs = gql`
     me: User
     teams: [Teams]
     team(teamId: ID!): Teams
+    searchEmail(email: String!): [User]!
   }
 
   type Mutation {

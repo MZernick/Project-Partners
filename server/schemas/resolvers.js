@@ -18,6 +18,14 @@ const resolvers = {
         populate: 'members'
       });
     },
+    // find one user by email
+    searchEmail: async (parent, { email }) => {
+      return await User.find({ email: email }).populate('teams').populate({
+        path: 'teams', 
+        populate: 'members'
+      });
+    },
+
     me: async (parent, args, context) => {
       if (context.user) {
         return await User.findOne({ _id: context.user._id });

@@ -66,9 +66,9 @@
     height: 5vh;
     /* margin: 0 auto; */
     transition: 0.25s;
-    width: 10vw;
-    margin-left: 15vw;
-    margin-bottom:2%;
+    width: 20%;
+    margin-left: 5%;
+    /* margin-bottom:2%; */
     
   }
 
@@ -80,7 +80,18 @@
     /* padding-top: 14px; */
     /* padding-bottom: 5px; */
   }
+
+  .inline {
+    display: flex;
+    align-items: center;
+    padding-bottom: 2%;
+  }
   
+  .stack {
+    width: 75%
+  }
+
  .list {
   margin-left: 1%;
+  
  }

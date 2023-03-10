@@ -9,16 +9,6 @@ import { LOGIN_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
-function showPassword() {
-  var x = document.getElementsByClassName("password-signup");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-  console.log(x);
-}
-
 const Signup = () => {
   const redirect = useNavigate();
   const [signupState, setSignupState] = useState({

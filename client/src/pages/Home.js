@@ -6,6 +6,11 @@ import { Link } from 'react-scroll';
 export default function Homepage(props) {
   return (    
 <div class="main-container">
+  {/* <div class="homepageNav">
+    <Link to="raffContainer" smooth={true} duration={1000}>How it Works</Link>
+    <Link to="ourTeamContainer" smooth={true} duration={1000}>Our Team</Link>
+    <a href="/signup" id="getStartedNav">Get Started</a>
+  </div> */}
   <div id="menu">
     <div id="menu-items">
     <Link to="descriptionContainer" smooth={true} duration={1000} className="menu-item"><div id='big-title'>ProPairs</div></Link>
@@ -24,9 +29,18 @@ export default function Homepage(props) {
   <div id="imageContainer" class="imageContainer">
     <img src={Hiwtest} alt="How it Works" id="hiwImg"/>
     <div id="raffContainer" class="raffContainer">
-      <h2 id="desc1"><a id="myersHyper" rel="noreferrer" target="_blank" href="https://www.16personalities.com/free-personality-test">Test.</a></h2>
+      <div class="testBox1">
+      <h2 id="desc1">Test.</h2>
+      <p id="testDescription">Take an <a id="myersHyper" rel="noreferrer" target="_blank" href="https://www.16personalities.com/free-personality-test">MBTI personality test</a> to discover your MBTI personality type.</p>
+      </div>
+      <div class="pairBox1">
       <h2 id="desc2">Pair.</h2>
+      <p id="pairDescription">Search by pair name, personality type, or email.</p>
+      </div>
+      <div class="workBox1">
       <h2 id="desc3">Work.</h2>
+      <p id="workDescription">Get your work compatibility rating, join a team, and work better. All in one place.</p>
+      </div>
     </div>
   </div>
   <div class="ourTeamContainer">

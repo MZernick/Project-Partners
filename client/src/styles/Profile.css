@@ -77,17 +77,13 @@
     border-color: #F1FAEE;
   }
 
-  #teamsNumber {
-    
-  }
-
   .team1Container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-bottom: 5%;
-    width: 90%;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 85%;
+    height: 20%;
   }
 
   #team1 {
@@ -99,17 +95,13 @@
     margin-right: 40%;
   }
 
-  #teamInfoContainer {
-    
-  }
-
   .team2Container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-bottom: 5%;
-    width: 90%;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 85%;
+    height: 20%;
   }
 
   #team2 {
@@ -121,13 +113,18 @@
     margin-right: 40%;
   }
 
+  #team2AvatarContainer {
+    margin-top: 2%;
+  }
+
   .team3Container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-bottom: 5%;
-    width: 90%;
+    flex-direction: column;
+    align-items: flex-start;
+    /* justify-content: ; */
+    flex-wrap: wrap;
+    width: 85%;
+    height: 20%;
   }
 
   #team3 {
@@ -137,4 +134,8 @@
     text-decoration: none;
     color: #F1FAEE;
     margin-right: 40%;
+  }
+
+  #team3AvatarContainer {
+    
   }

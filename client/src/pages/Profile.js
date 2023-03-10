@@ -61,38 +61,39 @@ const user = data?.me || data?.user || {};
   <h2 id="yourTeams">Your Teams</h2>
   <div class="team1Container">
     <h3 id="team1">team1</h3>
-    <div id="teamInfoContainer">
-    <Stack direction="row" spacing={2}>
-      <Avatar>H</Avatar>
-      <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
-      <Avatar sx={{ bgcolor: deepPurple[500] }}>OP</Avatar>
-    </Stack>
-    </div>
-    <div class="infoBox1">
-    <p>JOSH GRAPH HERE</p>
-    </div>
+    <div id="team1AvatarContainer">
+    <AvatarGroup max={4}>
+      <Avatar>h</Avatar>
+      <Avatar>e</Avatar>
+      <Avatar>r</Avatar>
+      <Avatar>s</Avatar>
+      <Avatar>s</Avatar>
+    </AvatarGroup>
+  </div>
   </div>
   <div class="team2Container">
     <h3 id="team2">team2</h3>
-    <Stack direction="row" spacing={2}>
-      <Avatar>{user.username}</Avatar>
-      <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
-      <Avatar sx={{ bgcolor: deepPurple[500] }}>OP</Avatar>
-    </Stack>
-    <div class="infoBox2">
-    <p>JOSH GRAPH HERE</p>
-    </div>
+    <div id="team2AvatarContainer">
+    <AvatarGroup max={4}>
+    <Avatar>h</Avatar>
+      <Avatar>e</Avatar>
+      <Avatar>r</Avatar>
+      <Avatar>s</Avatar>
+      <Avatar>s</Avatar>
+    </AvatarGroup>
+  </div>
   </div>
   <div class="team3Container">
     <h3 id="team3">team3</h3>
-    <Stack direction="row" spacing={2}>
-      <Avatar>H</Avatar>
-      <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
-      <Avatar sx={{ bgcolor: deepPurple[500] }}>OP</Avatar>
-    </Stack>
-    <div class="infoBox3">
-    <p>JOSH GRAPH HERE</p>
-    </div>
+    <div id="team3AvatarContainer">
+    <AvatarGroup max={4}>
+     <Avatar>h</Avatar>
+      <Avatar>e</Avatar>
+      <Avatar>r</Avatar>
+      <Avatar>s</Avatar>
+      <Avatar>s</Avatar>
+    </AvatarGroup>
+  </div>
   </div>
   </div>
 </div>

@@ -50,6 +50,7 @@ const typeDefs = gql`
     removeTeam(teamId: ID!): Teams
     addMember(teamId: ID!, userId: ID!): Teams
     removeMember(teamId: ID!, userId: ID!): Teams
+    addTeamAndMembers(userId: ID!, title: String!, description: String!, members:[ID]) : Teams
   }
 `;
 

@@ -9,7 +9,7 @@ function getCompatibility(user1, user2) {
 function getCompatibilityandUsername(user1, user2) {
     let comp = user1.compatibility;
     const result = comp.find(({type}) => type === user2.personality);
-       return {username: `${user2.username}`, rating: `${result.rating}`};
+       return {value:`${user2._id}`, username: `${user2.username}`, rating: `${result.rating}`};
 };
 
 // a basic reusable average function for an array of numbers

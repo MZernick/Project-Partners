@@ -12,7 +12,8 @@ import { deepOrange, deepPurple } from '@mui/material/colors';
 // import Pairings from '../components/Pairings';
 
 //profile query here- are we adding pairs/partners/favorites or just seeing partners in the their teamsview?
-import { QUERY_SINGLE_USER, QUERY_ME, MY_TEAMS } from '../utils/queries';
+import { QUERY_ME, MY_TEAMS } from '../utils/queries';
+import TeamList from '../components/TeamsList';
 
 const Profile = () => {
   const { userId } = useParams();
@@ -23,10 +24,12 @@ const Profile = () => {
     }
   );
 
-  // const { myteams } =useParams();
-  // const {} =useQuery( myteams)
+  // 
+  // const {} =useQuery(MY_TEAMS);
+  //const teams = data?.teams || [];
 
 const user = data?.me || data?.user || {};
+console.log(user);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -108,3 +111,4 @@ export default Profile;
 <div className="my-4 p-4" style={{ border: '1px dotted #1a1a1a' }}>
 <Pairings userId={user._id} />
 </div> */}
+

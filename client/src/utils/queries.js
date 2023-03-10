@@ -5,8 +5,11 @@ export const QUERY_ME = gql`
     me {
       _id
       username
+      personality
+      email
       teams {
         title
+        description
       }
     }
   }
@@ -22,6 +25,10 @@ query User($userId: ID!) {
       type
       rating
     }
+    teams{
+      title
+      description
+    }
   }
 }
 `;
@@ -30,6 +37,7 @@ export const SEARCH_USER = gql`
 query User {
   users {
     _id
+    username
     email
     username
     personality
@@ -64,6 +72,16 @@ query User($email: String!) {
   }
 }
 `;
+export const SEARCH_PERSONALITY = gql`
+query User($personality: String!) {
+  searchPersonality(personality: $personality) {
+    _id
+    username
+    email
+    personality
+  }
+}
+`;
 
 export const SINGLE_TEAM = gql `
 query Teams($teamId: ID!) {
@@ -79,15 +97,6 @@ query Teams($teamId: ID!) {
           rating
           type
         }
-      }
-    }
-  }`;
-
-export const MY_TEAMS = gql `
- query User($userId: ID!) {
-    users(userId: $userId) {
-      teams {
-        title
       }
     }
   }`;

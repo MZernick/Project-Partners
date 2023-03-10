@@ -6,25 +6,30 @@ import { useQuery } from '@apollo/client';
 import '../styles/Profile.css'
 import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
-
+import Stack from '@mui/material/Stack';
+import { deepOrange, deepPurple } from '@mui/material/colors';
+import auth from '../utils/auth';
 // import Pairings from '../components/Pairings';
 
 //profile query here- are we adding pairs/partners/favorites or just seeing partners in the their teamsview?
-import { QUERY_SINGLE_USER, QUERY_ME, MY_TEAMS } from '../utils/queries';
+import { QUERY_SINGLE_USER_WITH_COMPATIBILITY, MY_TEAMS } from '../utils/queries';
+import TeamList from '../components/TeamsList';
 
 const Profile = () => {
-  const { userId } = useParams();
+  // const { userId } = useParams();
   const { loading, data } = useQuery(
-    userId ? QUERY_SINGLE_USER : QUERY_ME,
+     QUERY_SINGLE_USER_WITH_COMPATIBILITY,
     {
-      variables: { userId: userId },
+      variables: {userId: auth.getProfile().data._id} ,
     }
   );
 
-  // const { myteams } =useParams();
-  // const {} =useQuery( myteams)
+  // 
+  // const {} =useQuery(MY_TEAMS);
+  //const teams = data?.teams || [];
 
 const user = data?.me || data?.user || {};
+console.log(user);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -44,7 +49,8 @@ const user = data?.me || data?.user || {};
       <div><NavTabs/></div>
       <div class="profileContainer">
   <div class="profile-box">
-    <Avatar>h</Avatar>
+     <Avatar 
+     sx={{ width: 112, height: 112 }}>{user.username}</Avatar>
   <h2 className='profileName'>{user.username}</h2>
       <p id="personalityType">{user.personality} </p>
   <div class="commentBox">
@@ -57,28 +63,36 @@ const user = data?.me || data?.user || {};
   <div class="team-box">
   <h2 id="yourTeams">Your Teams</h2>
   <div class="team1Container">
-    <h3 id="team1">team1</h3>
-    <AvatarGroup>
-
-    </AvatarGroup>
+    <h3 id="team1"><TeamList/></h3>
+    <div id="teamInfoContainer">
+    <Stack direction="row" spacing={2}>
+      <Avatar>H</Avatar>
+      <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
+      <Avatar sx={{ bgcolor: deepPurple[500] }}>OP</Avatar>
+    </Stack>
+    </div>
     <div class="infoBox1">
     <p>JOSH GRAPH HERE</p>
     </div>
   </div>
   <div class="team2Container">
     <h3 id="team2">team2</h3>
-    <AvatarGroup>
-        
-    </AvatarGroup>
+    <Stack direction="row" spacing={2}>
+      <Avatar>{user.username}</Avatar>
+      <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
+      <Avatar sx={{ bgcolor: deepPurple[500] }}>OP</Avatar>
+    </Stack>
     <div class="infoBox2">
     <p>JOSH GRAPH HERE</p>
     </div>
   </div>
   <div class="team3Container">
     <h3 id="team3">team3</h3>
-    <AvatarGroup>
-        
-    </AvatarGroup>
+    <Stack direction="row" spacing={2}>
+      <Avatar>H</Avatar>
+      <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
+      <Avatar sx={{ bgcolor: deepPurple[500] }}>OP</Avatar>
+    </Stack>
     <div class="infoBox3">
     <p>JOSH GRAPH HERE</p>
     </div>
@@ -96,3 +110,4 @@ export default Profile;
 <div className="my-4 p-4" style={{ border: '1px dotted #1a1a1a' }}>
 <Pairings userId={user._id} />
 </div> */}
+

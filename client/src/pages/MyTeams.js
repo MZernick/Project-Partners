@@ -11,12 +11,12 @@ import { QUERY_SINGLE_USER, QUERY_ME } from '../utils/queries';
 //IMPORT ALL TEAMS QUERY
 
 const MyTeam = () => {
-  const { userId } = useParams();
+  const { username } = useParams();
 
   const { loading, data } = useQuery(
-    userId ? QUERY_SINGLE_USER : QUERY_ME,
+    username ? QUERY_SINGLE_USER : QUERY_ME,
     {
-      variables: { userId: userId },
+      variables: { username: username },
     }
   );
   const user = data?.me || data?.user || {};
@@ -24,6 +24,7 @@ const MyTeam = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
+  console.log(user);
 
   // if (!user?.username) {
   //   return (
@@ -35,9 +36,10 @@ const MyTeam = () => {
   // }
   return (
     <div>
-      <div className="signup-page">
+      <div >
         <NavTabs />
       </div>
+      <div className="signup-page">
       <div className='column'>
         <div className="allteam-card">
           <h1 className="headers">My Teams</h1>
@@ -46,7 +48,8 @@ const MyTeam = () => {
           Team names
           {user.teams?.length > 0 && (
             <h4 className="allteam-title"> 
-            <TeamList teams={user.teams}/> 
+            <TeamList teams={user.teams.title}/> 
+            {user.teams.title}
             </h4>
             
           )}
@@ -56,8 +59,7 @@ const MyTeam = () => {
       <div>
         <div className="team-card">
           <h1 className="headers">
-            {/* {teams.title} */}
-            Title</h1>
+            Team Title</h1>
           <div className="underline-title"></div>
           <div className="container">
             <div className="members-username"></div>
@@ -78,6 +80,7 @@ const MyTeam = () => {
                   <label>Don't have a team?</label> <a id="createteam" rel="noreferrer" href="/createteam" target="_blank">Create a Team</a></p>
         </div>
       </div>
+    </div>
     </div>
   )
 }

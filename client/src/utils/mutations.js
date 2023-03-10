@@ -60,3 +60,10 @@ mutation addTeamAndMembers($userId: ID!, $title: String!, $description: String!,
   }
 }
 `
+export const REMOVE_USER = gql`
+mutation removeUser($userId: ID!) {
+  removeUser(userId: $userId) {
+    _id
+  }
+}
+`;

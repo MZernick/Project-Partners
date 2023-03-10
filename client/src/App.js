@@ -58,11 +58,11 @@ return (
                 element={<Signup />} 
               />
           <Route 
-                path="/me"
+                path="/user/:id"
                 element={<Profile />}
               />
           <Route 
-                path="/user/:userId/teams" 
+                path="/user/:id/teams" 
                 element={<MyTeam />}
               />
           <Route 

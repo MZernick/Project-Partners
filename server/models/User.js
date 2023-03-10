@@ -25,7 +25,7 @@ const userSchema = new Schema(
         },
         personality: {
             type:String,
-            // required: true,
+            required: true,
         },
         compatibility: [
           {

@@ -7,16 +7,15 @@ import '../styles/MyTeam.css'
 import TeamList from '../components/TeamsList';
 import NavTabs from '../components/NavTabs';
 
-import { QUERY_SINGLE_USER, QUERY_ME } from '../utils/queries';
+import { QUERY_SINGLE_USER_WITH_COMPATIBILITY } from '../utils/queries';
 //IMPORT ALL TEAMS QUERY
 
 const MyTeam = () => {
-  const { userId } = useParams();
 
   const { loading, data } = useQuery(
-    userId ? QUERY_SINGLE_USER : QUERY_ME,
+    QUERY_SINGLE_USER_WITH_COMPATIBILITY,
     {
-      variables: { userId: userId },
+      variables: {userId: auth.getProfile().data._id},
     }
   );
   const user = data?.me || data?.user || {};
@@ -24,6 +23,7 @@ const MyTeam = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
+  console.log(user);
 
   // if (!user?.username) {
   //   return (
@@ -35,9 +35,10 @@ const MyTeam = () => {
   // }
   return (
     <div>
-      <div className="signup-page">
+      <div >
         <NavTabs />
       </div>
+      <div className="signup-page">
       <div className='column'>
         <div className="allteam-card">
           <h1 className="headers">My Teams</h1>
@@ -57,8 +58,7 @@ const MyTeam = () => {
       <div>
         <div className="team-card">
           <h1 className="headers">
-            {/* {teams.title} */}
-            Title</h1>
+            Team Title</h1>
           <div className="underline-title"></div>
           <div className="container">
             <div className="members-username"></div>
@@ -79,6 +79,7 @@ const MyTeam = () => {
                   <label>Don't have a team?</label> <a id="createteam" rel="noreferrer" href="/createteam" target="_blank">Create a Team</a></p>
         </div>
       </div>
+    </div>
     </div>
   )
 }

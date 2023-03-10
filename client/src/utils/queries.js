@@ -1,20 +1,5 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_ME = gql`
-  query me {
-    me {
-      _id
-      username
-      personality
-      email
-      teams {
-        title
-        description
-      }
-    }
-  }
-`;
-
 export const QUERY_SINGLE_USER_WITH_COMPATIBILITY= gql`
 query User($userId: ID!) {
   user(userId: $userId) {

@@ -27,6 +27,7 @@ query User($userId: ID!) {
     }
     teams{
       title
+      description
     }
   }
 }
@@ -95,15 +96,6 @@ query Teams($teamId: ID!) {
           rating
           type
         }
-      }
-    }
-  }`;
-
-export const MY_TEAMS = gql `
- query User($userId: ID!) {
-    users(userId: $userId) {
-      teams {
-        title
       }
     }
   }`;

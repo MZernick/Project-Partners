@@ -50,3 +50,11 @@ export const REMOVE_TEAM = gql`
     }
   }
 `;
+
+export const REMOVE_USER = gql`
+mutation removeUser($userId: ID!) {
+  removeUser(userId: $userId) {
+    _id
+  }
+}
+`;

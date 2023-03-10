@@ -8,19 +8,19 @@ import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import Stack from '@mui/material/Stack';
 import { deepOrange, deepPurple } from '@mui/material/colors';
-
+import auth from '../utils/auth';
 // import Pairings from '../components/Pairings';
 
 //profile query here- are we adding pairs/partners/favorites or just seeing partners in the their teamsview?
-import { QUERY_ME, MY_TEAMS } from '../utils/queries';
+import { QUERY_SINGLE_USER_WITH_COMPATIBILITY, MY_TEAMS } from '../utils/queries';
 import TeamList from '../components/TeamsList';
 
 const Profile = () => {
-  const { userId } = useParams();
+  // const { userId } = useParams();
   const { loading, data } = useQuery(
-    userId ? QUERY_SINGLE_USER : QUERY_ME,
+     QUERY_SINGLE_USER_WITH_COMPATIBILITY,
     {
-      variables: { userId: userId },
+      variables: {userId: auth.getProfile().data._id} ,
     }
   );
 
@@ -63,7 +63,7 @@ console.log(user);
   <div class="team-box">
   <h2 id="yourTeams">Your Teams</h2>
   <div class="team1Container">
-    <h3 id="team1">team1</h3>
+    <h3 id="team1"><TeamList/></h3>
     <div id="teamInfoContainer">
     <Stack direction="row" spacing={2}>
       <Avatar>H</Avatar>

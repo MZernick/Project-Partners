@@ -1,54 +1,94 @@
 import React, { useState } from "react";
 import NavTabs from "../components/NavTabs";
 import { useQuery } from "@apollo/client";
-import { SEARCH_USER, SEARCH_EMAIL, SEARCH_PERSONALITY } from "../utils/queries";
+import { SEARCH_USER} from "../utils/queries";
+import auth from '../utils/auth';
 
-// from all users query, filter to match a certain field. 
-  // use dropdown to select field
-  // start with personality
-  // test mapping all users as a card similar to thoughts on activity 26
 const UserSearch = () => {
-const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState('');
+  const [filter, setFilter] = useState('personality'); // set default filter to personality
+  const { loading, data } = useQuery(SEARCH_USER);
 
-const { loading, data } = useQuery(SEARCH_USER);
+  const users = data?.users || [];
+console.log(users);
 
-const users = data?.users || [];
+  // filter users based on selected filter
+  const filteredUsers = users.filter((user) => {
+    if (filter === 'personality') {
+      return user.personality === searchText;
+    } else if (filter === 'email') {
+      return user.email === searchText;
+    } else {
+      return ; // if no filter is selected, show all users
+    }
+  });
 
-return (
-  <main>
+  return (
+    <>
+    <NavTabs/>
+    <main>
       <div className="flex-row justify-center">
         <div className="col-12 col-md-10 my-3">
           {loading ? (
             <div>Loading...</div>
           ) : (
             <div>
-      <h3 className="text-primary">{title}</h3>
-      <div className="flex-row justify-space-between my-4">
-        {users &&
-          users.map((user) => (
-            <div key={user._id} className="col-12 col-xl-6">
-              <div className="card mb-3">
-                <h4 className="card-header bg-dark text-light p-2 m-0">
-                  {user.username} <br />
-                  {/* <span> {user.email}</span>
-                  <span> {user.personality}</span>
-                  <span className="text-white" style={{ fontSize: '1rem' }}>
-                    currently part of {user.teams ? user.teams.length : 0} */}
-                  {/* </span> */}
-                </h4>
+              <div className="flex-row justify-space-between my-4 position-relative">
+                <div className="col-12 col-md-4 mb-3">
+                  <label htmlFor="filter">Search By:</label>
+                  <select
+                    className="form-select"
+                    id="filter"
+                    onChange={(e) => setFilter(e.target.value)}
+                  >
+                    <option value="personality">Personality Type</option>
+                    <option value="email">Email</option>
+                  </select>
+                </div>
+                <div className="col-12 col-md-4 mb-3">
+                  <label htmlFor="search">Search:</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="search"
+                    placeholder={`Search by ${filter}`}
+                    value={searchText}
+                    onChange={(e) => setSearchText(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div className="flex-row justify-space-between my-4">
+                {setTimeout(() => {
+    console.log(filteredUsers);
+  }, "3000")}
+                {filteredUsers.map((user) => (
+                  <div key={user._id} className="col-12 col-xl-6">
+                    <div className="card mb-3">
+                      <h4 className="card-header bg-dark text-light p-2 m-0">
+                        username: {user.username} <br />
+                        <span> email: {user.email}</span>
+                        <br />
+                        <span> Personality type: {user.personality}</span>
+                        <br />
+                        <span className="text-white" style={{ fontSize: '1rem' }}>
+                          Team(s): {user.teams ? user.teams.length : 0} 
+                        </span> 
+                      </h4>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
-      </div>
-    </div>
           )}
         </div>
       </div>
     </main>
-)
-
+    </>
+  );
 };
+
 export default UserSearch;
+
 
 
 // function UserSearch() {

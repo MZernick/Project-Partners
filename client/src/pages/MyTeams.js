@@ -7,16 +7,15 @@ import '../styles/MyTeam.css'
 import TeamList from '../components/TeamsList';
 import NavTabs from '../components/NavTabs';
 
-import { QUERY_SINGLE_USER, QUERY_ME } from '../utils/queries';
+import { QUERY_SINGLE_USER_WITH_COMPATIBILITY } from '../utils/queries';
 //IMPORT ALL TEAMS QUERY
 
 const MyTeam = () => {
-  const { username } = useParams();
 
   const { loading, data } = useQuery(
-    username ? QUERY_SINGLE_USER : QUERY_ME,
+    QUERY_SINGLE_USER_WITH_COMPATIBILITY,
     {
-      variables: { username: username },
+      variables: {userId: auth.getProfile().data._id},
     }
   );
   const user = data?.me || data?.user || {};

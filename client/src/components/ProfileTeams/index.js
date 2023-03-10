@@ -39,21 +39,21 @@ const TeamList = ({ user, isLoggedInUser = false }) => {
       <div>
         {user.teams &&
           user.teams.map((team) => (
-            <div key={team}>
-              <div>
-                <h4>
-                  <li>{team.title}</li>
-                  {/* {isLoggedInUser && (
-                    <button
-                      className="btn btn-sm btn-danger ml-auto"
-                      onClick={() => handleRemoveTeam(teams)}
-                    >
-                      X
-                    </button>
-                  )} */}
-                </h4>
-              </div>
+            <div class="team1Container">
+            <h3 id="team1" key={team}>
+              {team.title}
+              </h3>
+            <div id="teamInfoContainer">
+            <Stack direction="row" spacing={2}>
+              <Avatar>H</Avatar>
+              <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
+              <Avatar sx={{ bgcolor: deepPurple[500] }}>OP</Avatar>
+            </Stack>
             </div>
+            <div class="infoBox1">
+            <p>JOSH GRAPH HERE</p>
+            </div>
+          </div>
           ))}
       </div>
       {error && (
@@ -63,4 +63,13 @@ const TeamList = ({ user, isLoggedInUser = false }) => {
   );
 };
 
-export default TeamList;
+export default ProfileTeamList;
+
+                  {/* {isLoggedInUser && (
+                    <button
+                      className="btn btn-sm btn-danger ml-auto"
+                      onClick={() => handleRemoveTeam(teams)}
+                    >
+                      X
+                    </button>
+                  )} */}

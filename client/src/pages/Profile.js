@@ -63,7 +63,9 @@ console.log(user);
   <div class="team-box">
   <h2 id="yourTeams">Your Teams</h2>
   <div class="team1Container">
-    <h3 id="team1"><TeamList/></h3>
+    <h3 id="team1">
+      <TeamList user={user}/>
+      </h3>
     <div id="teamInfoContainer">
     <Stack direction="row" spacing={2}>
       <Avatar>H</Avatar>

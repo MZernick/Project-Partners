@@ -68,7 +68,7 @@ const CreateTeam = () => {
           }
       });
 
-      navigate('/me')
+      navigate('/user/:id')
     } catch (err) {
         console.log(err);
     }

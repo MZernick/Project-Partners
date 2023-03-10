@@ -1,5 +1,5 @@
 # ProPairs
-
+ADD HEROKU LINK
 Version 1.0
 Deployment Date: March 2023
 
@@ -10,7 +10,7 @@ Contributors: Anita Banh, Magdalene Zernick, Dominique Nix, Jeremy Crouthamel, J
 
 ProPairs is a web application designed to help users find compatible teammates for group projects. By matching users based on their Myers-Briggs personality types, the application suggests potential partners with similar interests, values, and communication styles.
 
-Features
+*Features*
 Compatibility Rating: Search for users and see your compatibility ranking on a scale of  
 User Authentication: Users can create a personal account and log in to access the application's features.
 
@@ -30,9 +30,10 @@ To get started, simply visit the website and sign up for an account, by inThe ap
 
 React.js library used for building the user interface.
 React Bootstrap, CSS
-GraphQL with a Node.js and Express.js server.
+GraphQL API with a Node.js and Express.js server.
 MongoDB, Mongoose ODM.
-Security: bcrypt with JSON Web Token (JWT). 
+Authentication: bcrypt with JSON Web Token (JWT). 
+Deployment: Heroku and MongoDB Atlas.
 
 # Authors
 
@@ -48,8 +49,8 @@ Security: bcrypt with JSON Web Token (JWT).
 # IceBox
 
 Ideas pending for future development:
-1. Integrate personality test as part of the site.
-2. Facilitate user-to-user communication via chat.
+1. Integrate personality test.
+2. Facilitate team and user communication via chat.
 3. Visual graph representation of the modeled team compatibility.
 4. 
 

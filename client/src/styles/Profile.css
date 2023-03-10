@@ -10,7 +10,7 @@
   }
 /* SPECIFIC PROFILE CONTAINER */
   .profile-box {
-    background-color:#F1FAEE;
+    background-color:#E63946;
     border: 1px solid #ced4cc;
     border-radius: 2%;
     width: 35%;
@@ -38,7 +38,7 @@
     font-family: 'Switzer', sans-serif;
     font-size: clamp(1.5rem, 5.5vw, 5.5rem);
     text-decoration: none;
-    color: #1D3557;
+    color: #F1FAEE;
   }
 
   .commentBox {
@@ -50,7 +50,7 @@
   }
 /* TEAM BOX CONTAINER */
   .team-box {
-    background-color:#F1FAEE;
+    background-color:#1D3557;
     border: 1px solid #ced4cc;
     border-radius: 2%;
     width: 57%;
@@ -66,12 +66,15 @@
   
   #yourTeams {
     font-family: 'Switzer', sans-serif;
-    font-size: clamp(1.5rem, 5.5vw, 5.5rem);
+    font-size: clamp(0.8rem, 4.2vw, 4.2rem);
     text-decoration: none;
-    color: #1D3557;
+    color: #F1FAEE;
     margin: 0;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 10px;
+    border-color: #F1FAEE;
   }
 
   #teamsNumber {
@@ -92,8 +95,12 @@
     font-family: 'Switzer', sans-serif;
     font-size: clamp(.5rem, 3.5vw, 2.5rem);
     text-decoration: none;
-    color: #1D3557;
+    color: #F1FAEE;
     margin-right: 40%;
+  }
+
+  #teamInfoContainer {
+    
   }
 
   .team2Container {
@@ -110,7 +117,7 @@
     font-family: 'Switzer', sans-serif;
     font-size: clamp(.5rem, 3.5vw, 2.5rem);
     text-decoration: none;
-    color: #1D3557;
+    color: #F1FAEE;
     margin-right: 40%;
   }
 
@@ -128,6 +135,6 @@
     font-family: 'Switzer', sans-serif;
     font-size: clamp(.5rem, 3.5vw, 2.5rem);
     text-decoration: none;
-    color: #1D3557;
+    color: #F1FAEE;
     margin-right: 40%;
   }

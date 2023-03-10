@@ -6,6 +6,8 @@ import { useQuery } from '@apollo/client';
 import '../styles/Profile.css'
 import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
+import Stack from '@mui/material/Stack';
+import { deepOrange, deepPurple } from '@mui/material/colors';
 
 // import Pairings from '../components/Pairings';
 
@@ -47,7 +49,8 @@ console.log(user);
       <div><NavTabs/></div>
       <div class="profileContainer">
   <div class="profile-box">
-    <Avatar>h</Avatar>
+     <Avatar 
+     sx={{ width: 112, height: 112 }}>{user.username}</Avatar>
   <h2 className='profileName'>{user.username}</h2>
       <p id="personalityType">{user.personality} </p>
   <div class="commentBox">
@@ -60,28 +63,36 @@ console.log(user);
   <div class="team-box">
   <h2 id="yourTeams">Your Teams</h2>
   <div class="team1Container">
-    <h3 id="team1">{user.teams.title}</h3>
-    <AvatarGroup>
-
-    </AvatarGroup>
+    <h3 id="team1">team1</h3>
+    <div id="teamInfoContainer">
+    <Stack direction="row" spacing={2}>
+      <Avatar>H</Avatar>
+      <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
+      <Avatar sx={{ bgcolor: deepPurple[500] }}>OP</Avatar>
+    </Stack>
+    </div>
     <div class="infoBox1">
     <p>JOSH GRAPH HERE</p>
     </div>
   </div>
   <div class="team2Container">
     <h3 id="team2">team2</h3>
-    <AvatarGroup>
-        
-    </AvatarGroup>
+    <Stack direction="row" spacing={2}>
+      <Avatar>{user.username}</Avatar>
+      <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
+      <Avatar sx={{ bgcolor: deepPurple[500] }}>OP</Avatar>
+    </Stack>
     <div class="infoBox2">
     <p>JOSH GRAPH HERE</p>
     </div>
   </div>
   <div class="team3Container">
     <h3 id="team3">team3</h3>
-    <AvatarGroup>
-        
-    </AvatarGroup>
+    <Stack direction="row" spacing={2}>
+      <Avatar>H</Avatar>
+      <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
+      <Avatar sx={{ bgcolor: deepPurple[500] }}>OP</Avatar>
+    </Stack>
     <div class="infoBox3">
     <p>JOSH GRAPH HERE</p>
     </div>

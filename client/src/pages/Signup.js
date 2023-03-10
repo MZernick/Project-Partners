@@ -133,7 +133,6 @@ const [login, { error: error1, data: data1 }] = useMutation(LOGIN_USER);
                   onChange={handleSignupChange}
                 />
                 <div className="form-border"></div>
-                {/* <input type="checkbox" onClick={showPassword}/> Show Password */}
                 <label htmlFor="personality-type">Input your Myers-Briggs Personality Type Here:</label>
                 <select
                   id="personality-type"

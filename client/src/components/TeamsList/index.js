@@ -30,7 +30,7 @@ const TeamList = ({ teams, isLoggedInUser = false }) => {
     }
   };
 
-  if (!teams.length) {
+  if (teams=0) {
     return <h3>No Teams Yet</h3>;
   }
 
@@ -38,15 +38,15 @@ const TeamList = ({ teams, isLoggedInUser = false }) => {
     <div>
       <div className="flex-row justify-space-between my-4">
         {teams &&
-          teams.map((team) => (
-            <div key={team} className="col-12 col-xl-6">
+          teams.map((teams) => (
+            <div key={teams} className="col-12 col-xl-6">
               <div className="card mb-3">
                 <h4 className="card-header bg-dark text-light p-2 m-0 display-flex align-center">
-                  <span>{team.title}</span>
+                  <span>{teams.title}</span>
                   {isLoggedInUser && (
                     <button
                       className="btn btn-sm btn-danger ml-auto"
-                      onClick={() => handleRemoveTeam(team)}
+                      onClick={() => handleRemoveTeam(teams)}
                     >
                       X
                     </button>

@@ -10,7 +10,8 @@ import AvatarGroup from '@mui/material/AvatarGroup';
 // import Pairings from '../components/Pairings';
 
 //profile query here- are we adding pairs/partners/favorites or just seeing partners in the their teamsview?
-import { QUERY_SINGLE_USER, QUERY_ME, MY_TEAMS } from '../utils/queries';
+import { QUERY_ME, MY_TEAMS } from '../utils/queries';
+import TeamList from '../components/TeamsList';
 
 const Profile = () => {
   const { userId } = useParams();
@@ -21,10 +22,12 @@ const Profile = () => {
     }
   );
 
-  // const { myteams } =useParams();
-  // const {} =useQuery( myteams)
+  // 
+  // const {} =useQuery(MY_TEAMS);
+  //const teams = data?.teams || [];
 
 const user = data?.me || data?.user || {};
+console.log(user);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -57,7 +60,7 @@ const user = data?.me || data?.user || {};
   <div class="team-box">
   <h2 id="yourTeams">Your Teams</h2>
   <div class="team1Container">
-    <h3 id="team1">team1</h3>
+    <h3 id="team1">{user.teams.title}</h3>
     <AvatarGroup>
 
     </AvatarGroup>
@@ -96,3 +99,4 @@ export default Profile;
 <div className="my-4 p-4" style={{ border: '1px dotted #1a1a1a' }}>
 <Pairings userId={user._id} />
 </div> */}
+

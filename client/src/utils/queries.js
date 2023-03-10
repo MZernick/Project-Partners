@@ -49,6 +49,16 @@ query User($email: String!) {
   }
 }
 `;
+export const SEARCH_PERSONALITY = gql`
+query User($personality: String!) {
+  searchPersonality(personality: $personality) {
+    _id
+    username
+    email
+    personality
+  }
+}
+`;
 
 export const ALL_TEAMS = gql `
 query Teams {

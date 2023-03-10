@@ -58,15 +58,20 @@ console.log(user);
     <p id="newComment">you are okay</p>
     <p id="newComment">you stink</p>
   </div>
-  
   </div>
+  <div class="userAndTeamBox">
+  <div class="userBox1">
+        <div>
+         <p>iamauser</p>
+        </div>
+    </div>
   <div class="team-box">
-  <h2 id="yourTeams">Your Teams</h2>
+  {/* <h2 id="yourTeams">Your Teams</h2> */}
   <div class="team1Container">
     <h3 id="team1">team1</h3>
     <div id="team1AvatarContainer">
     <AvatarGroup max={4}>
-      <Avatar>h</Avatar>
+      {/* <Avatar sz={{ bgcolor: }}>h</Avatar> */}
       <Avatar>e</Avatar>
       <Avatar>r</Avatar>
       <Avatar>s</Avatar>
@@ -96,6 +101,7 @@ console.log(user);
       <Avatar>s</Avatar>
       <Avatar>s</Avatar>
     </AvatarGroup>
+  </div>
   </div>
   </div>
   </div>

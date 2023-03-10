@@ -46,7 +46,8 @@ const MyTeam = () => {
           Team names
           {user.teams?.length > 0 && (
             <h4 className="allteam-title"> 
-            <TeamList teams={user.teams}/> 
+            <TeamList teams={user.teams.title}/> 
+            {user.teams.title}
             </h4>
             
           )}

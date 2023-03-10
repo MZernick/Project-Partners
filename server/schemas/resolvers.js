@@ -98,13 +98,14 @@ const resolvers = {
 
     // add a team then push that team's id number into the associated user's model
     addTeam: async (parent, { userId, title, description }) => {
-      Teams.create({ title, description }).then((team) => {
-        return User.findOneAndUpdate(
-          { _id: userId },
-          { $addToSet: { teams: team._id } },
-          { new: true }
-        );
-      });
+      return Teams.create({title, description})
+      .then((team) => {
+       return User.findOneAndUpdate(
+            { _id: userId },
+            { $addToSet: { teams: team._id }},
+            { new: true }
+          )
+        })
     },
 
     // update a team

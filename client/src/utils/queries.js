@@ -5,8 +5,11 @@ export const QUERY_ME = gql`
     me {
       _id
       username
+      personality
+      email
       teams {
         title
+        description
       }
     }
   }
@@ -21,6 +24,9 @@ query User($userId: ID!) {
     compatibility {
       type
       rating
+    }
+    teams{
+      title
     }
   }
 }

@@ -12,6 +12,20 @@ export const QUERY_ME = gql`
   }
 `;
 
+export const QUERY_SINGLE_USER_WITH_COMPATIBILITY= gql`
+query User($userId: ID!) {
+  user(userId: $userId) {
+    _id
+    username
+    personality
+    compatibility {
+      type
+      rating
+    }
+  }
+}
+`;
+
 export const SEARCH_USER = gql`
 query User {
   users {

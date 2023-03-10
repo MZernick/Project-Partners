@@ -1,109 +1,132 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import NavTabs from '../components/NavTabs'
+import Autocomplete from '@mui/material/Autocomplete'
+import TextField from '@mui/material/TextField';
+import Stack from '@mui/material/Stack';
+import auth from '../utils/auth';
 import { useMutation, useQuery } from '@apollo/client';
-// import { SEARCH_USER } from '../utils/queries';
+import { SEARCH_USER, QUERY_SINGLE_USER_WITH_COMPATIBILITY } from '../utils/queries';
 import '../styles/CreateTeam.css'
+import { getCompatibilityandUsername} from '../utils/helpers';
 import { ADD_TEAM } from '../utils/mutations';
-
+import { useNavigate } from 'react-router-dom';
 
 const CreateTeam = () => {
-    // const { loading, data } = useQuery(SEARCH_USER);
-    // const userList = data?.tech || [];
-    // console.log(userList)
-    // const [users, setUsers] = useState([]);
-  
-    // const [addTeam, { error } ] = useMutation(ADD_TEAM);    
 
-    // const [formData, setFormData] = useState({
-    //     title: '',
-    //     description: '',
-    //     members: ''
-    //   });
-    //   let navigate = useNavigate();
-  
+  // Search for all users by username
+  const { loading, data } = useQuery(SEARCH_USER);
+  const userList = data?.users || [];
 
- const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
+  // array that hold options for adding new members
+  const userArr = [];
+
+  
+// searching for the single user logged in so we can run commpatibility
+  const data1 = useQuery(QUERY_SINGLE_USER_WITH_COMPATIBILITY, {
+    variables: {userId: auth.getProfile().data._id}   
+  })
+
+// waits until query is finished, then creates an array of users with thier rating to choose from 
+  setTimeout(() => {
+    userList.map(user => {
+      return userArr.push(getCompatibilityandUsername(data1.data?.user, user));
+    })
+  }, "2000");
+
+  console.log(userArr)
+
+  const [formData, setFormData] = useState({
+    title: '', 
+    description: '',
+    members: [] 
+  })
+
+  let navigate = useNavigate();
+
+  const [addTeam, { error }] = useMutation(ADD_TEAM);
+
+  const handleInputChange = (event) => {
+    const {name , value} = event.target;
+      setFormData({
+        ...formData, 
+        [name]: value,
+      });
   };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+    console.log(formData)
     try {
       const { data } = await addTeam({
-        variables: { ...formData },
+        variables: {
+            userId: auth.getProfile().data._id, 
+            title: formData.title,
+            description: formData.description
+          }
       });
 
-      navigate('/me');
+      navigate('/me')
     } catch (err) {
-      console.error(err);
+        console.log(err);
     }
 
     setFormData({
-        title: '',
-        description: '',
-        members: ''
-    });
-  };     
+      title: '', 
+      description: '', 
+      members: []
+    })
+  }
 
+ 
     return(
-        <main>
-          <NavTabs/>
-            <div className='card'>
+      <main>
+        <NavTabs />
+        <div className='card'>
                 <h1 className="headers">Create a New Team</h1>
                 <div className="underline"></div>
                 <div className="container">
                 <form className="form" onSubmit={handleFormSubmit}>
                     <label for="title">Team Title:</label>
                     <input 
+                    name="title"
                     id="title"
                     type="text"
                     placeholder='Team Title Here....'  
                     className="form-input"
-                    value={formData.title}>
+                    onChange={ handleInputChange }
+                    value={formData.title}
+                    >
                     </input>
                     <div className="form-border"></div>
                     <label for="description">Description:</label>
                     <input 
+                    name="description"
                     id="description" 
                     type="text"  
                     placeholder='Description Here....'  
                     className="form-input"
-                    value={formData.description}>
+                    onChange={ handleInputChange }
+                    value={formData.description}
+                    >
                     </input>
                     <div className="form-border"></div>
-                    <form className="form">
-                      <label for="members">Members:</label>
-                      {/* add in a map to create list elements based on who you've */}
-                      <ul className="list">
-                        <li>Amanda</li>
-                      </ul>
-                      <div className="inline">
-                        <input id="members" type="text" placeholder='Add New Member...' className="s-form-input"></input>
-                        <button className="s-btn">Add Member</button>
-                      </div>  
-                    </form>
-                    
-                    {/* <div>
-                      <form onSubmit={handleSearchSubmit}>
-                        <input type="text" placeholder="Search users" onChange={handleSearch} />
-                        <button type="submit">Search</button>
-                      </form>
-                      {renderUsers()}
-                    </div> */}
-                    {/* <form>
-
-                    </form>
-                    <input 
-                    id="members" 
-                    type="text" 
-                    start 
-                    className="form-input"
-                    placeholder='Enter Members Here'
-                    value={formData.members}>
-                    </input> */}
-                    <div className="form-border"></div>
+                    {loading ? (
+                          <div>Loading...</div>
+                           ) : (
+                            <Stack className="stack">
+                            <Autocomplete
+                            onChange={ handleInputChange }
+                            multiple
+                            // value={formData.members}
+                            id="user-autocomplete"
+                            getOptionLabel={(option) => `${option.username} ${option.rating}` }
+                            options={userArr}
+                            className="usersearch"
+                            renderInput={(params) => <TextField {...params} variant="standard" label="Add Member..." />}
+                          />
+                           </Stack> 
+                      )}
+                     <div className="form-border"></div>
                     <button
                     type='submit'
                     className='btn'
@@ -111,9 +134,9 @@ const CreateTeam = () => {
                         Add Team
                     </button>
                 </form>
-                </div>
-            </div>
-        </main>
+              </div>
+        </div>
+      </main>
     )
 }
 

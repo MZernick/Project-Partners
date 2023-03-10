@@ -8,7 +8,7 @@ import { useMutation, useQuery } from '@apollo/client';
 import { SEARCH_USER, QUERY_SINGLE_USER_WITH_COMPATIBILITY } from '../utils/queries';
 import '../styles/CreateTeam.css'
 import { getCompatibilityandUsername} from '../utils/helpers';
-import { ADD_TEAM } from '../utils/mutations';
+import { ADD_TEAM_AND_MEMBERS } from '../utils/mutations';
 import { useNavigate } from 'react-router-dom';
 
 const CreateTeam = () => {
@@ -31,9 +31,13 @@ const CreateTeam = () => {
     userList.map(user => {
       return userArr.push(getCompatibilityandUsername(data1.data?.user, user));
     })
-  }, "2000");
+  }, "3000");
 
-  console.log(userArr)
+  // userList.map(user => {
+  //   console.log(getCompatibilityandUsername(data1.data?.user, user))
+  // })
+
+// const [members, setMembers] = useState([])
 
   const [formData, setFormData] = useState({
     title: '', 
@@ -43,7 +47,7 @@ const CreateTeam = () => {
 
   let navigate = useNavigate();
 
-  const [addTeam, { error }] = useMutation(ADD_TEAM);
+  const [addTeam, { error }] = useMutation(ADD_TEAM_AND_MEMBERS);
 
   const handleInputChange = (event) => {
     const {name , value} = event.target;
@@ -51,6 +55,7 @@ const CreateTeam = () => {
         ...formData, 
         [name]: value,
       });
+      // console.log(value)
   };
 
   const handleFormSubmit = async (event) => {
@@ -61,7 +66,8 @@ const CreateTeam = () => {
         variables: {
             userId: auth.getProfile().data._id, 
             title: formData.title,
-            description: formData.description
+            description: formData.description, 
+            members: formData.members
           }
       });
 
@@ -75,9 +81,11 @@ const CreateTeam = () => {
       description: '', 
       members: []
     })
+
+    setMembers([])
   }
 
- 
+ console.log(formData)
     return(
       <main>
         <NavTabs />
@@ -115,11 +123,17 @@ const CreateTeam = () => {
                            ) : (
                             <Stack className="stack">
                             <Autocomplete
-                            onChange={ handleInputChange }
+                            freeSolo
+                            // onChange={ (event) => {
+                            //   const {value} = event.target
+                            //   setMembers(value) 
+                            // console}}
+                            onChange = { (event, newValue) => setFormData({...formData, members: [...formData.members, newValue[0].value]})}
                             multiple
-                            // value={formData.members}
+                            // value={members}
                             id="user-autocomplete"
                             getOptionLabel={(option) => `${option.username} ${option.rating}` }
+                            // isOptionEqualToValue={(option, value) => console.log(value)}
                             options={userArr}
                             className="usersearch"
                             renderInput={(params) => <TextField {...params} variant="standard" label="Add Member..." />}

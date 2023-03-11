@@ -107,16 +107,13 @@ console.log(user);
   </div>
   </div>
   </div>
-</div>
-
+  </div>
     </div>
-  );
+    </div>
+  )
 };
 
 export default Profile;
 
-{/* MIGHT ADD PAIRINGS TO PROFILE
-<div className="my-4 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-<Pairings userId={user._id} />
-</div> */}
+
 

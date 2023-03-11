@@ -68,6 +68,28 @@ query User($personality: String!) {
 }
 `;
 
+export const MY_TEAMS = gql `
+query myTeams($userId: ID!) {
+  user(userId: $userId) {
+    _id
+    teams {
+      _id
+      title
+      description
+      createdAt
+      members {
+        _id
+        username
+        personality
+        compatibility {
+          type
+          rating
+        }
+      }
+    }
+  }
+}`;
+
 export const SINGLE_TEAM = gql `
 query Teams($teamId: ID!) {
     team(teamId: $teamId) {

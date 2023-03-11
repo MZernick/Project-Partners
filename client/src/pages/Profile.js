@@ -55,13 +55,15 @@ console.log(user);
     <p id="newComment">you are okay</p>
     <p id="newComment">you stink</p>
   </div>
-  
-  </div>
+  <div class="userAndTeamBox">
+  <div class="userBox1">
+        <div>
+         <p>iamauser</p>
+        </div>
+    </div>
   <div class="team-box">
   <h2 id="yourTeams">Your Teams</h2>
-
-
-  <ProfileTeamList user={user}/>
+<ProfileTeamList user={user}/>
   </div>
 </div>
 

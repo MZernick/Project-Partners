@@ -24,6 +24,7 @@ query User {
     _id
     username
     email
+    username
     personality
     compatibility {
       type

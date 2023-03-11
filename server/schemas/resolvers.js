@@ -134,11 +134,23 @@ const resolvers = {
     // remove a member form a team
     removeMember: async (parent, { teamId, userId }) => {
       return Teams.findOneAndUpdate(
-        { _id: teamId },
-        { $pull: { members: userId } },
-        { new: true }
-      );
+        {_id: teamId}, 
+        {$pull: {members: userId}}, 
+        {new: true}
+        )
     },
+
+    addTeamAndMembers: async (parent, { userId, title, description, members}) => {
+      Teams.create({title, description, members })
+      .then((team) => {
+       return User.findOneAndUpdate(
+            { _id: userId },
+            { $addToSet: { teams: team._id }},
+            { new: true }
+          )
+        })
+    }
+   
   },
 };
 

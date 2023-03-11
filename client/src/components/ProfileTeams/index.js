@@ -45,7 +45,7 @@ const ProfileTeamList = ({ user, isLoggedInUser = false }) => {
       <div>
         {user.teams &&
           user.teams.map((team) => (
-            <div class="team1Container">
+            <div className="team1Container">
             <h3 id="team1" key={team}>
               {team.title}
               </h3>
@@ -56,7 +56,7 @@ const ProfileTeamList = ({ user, isLoggedInUser = false }) => {
               <Avatar sx={{ bgcolor: deepPurple[500] }}>OP</Avatar>
             </Stack>
             </div>
-            <div class="infoBox1">
+            <div className="infoBox1">
             <p>JOSH GRAPH HERE</p>
             </div>
           </div>

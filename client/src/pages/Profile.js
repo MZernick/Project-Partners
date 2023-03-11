@@ -22,7 +22,8 @@ const Profile = () => {
       variables: {userId: userId} ,
     }
   );
-
+console.log(userId);
+console.log(auth.getProfile().data._id);
   // 
   // const {} =useQuery(MY_TEAMS);
   //const teams = data?.teams || [];

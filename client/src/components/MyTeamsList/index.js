@@ -33,9 +33,9 @@ const MyTeamList = ({ teamsData, isLoggedInUser = false }) => {
     }
   };
 
-  if (!teamsData.length) {
-    return <h3>No Teams Yet</h3>;
-  }
+  // if (!teamsData) {
+  //   return <h3>No Teams Yet</h3>;
+  // }
 
   return (
     <div>

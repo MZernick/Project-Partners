@@ -98,6 +98,7 @@ query Teams($teamId: ID!) {
       createdAt
       description
       members {
+        _id
         username
         personality
         compatibility {

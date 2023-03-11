@@ -19,7 +19,7 @@ const Profile = () => {
   const { loading, data } = useQuery(
      QUERY_SINGLE_USER_WITH_COMPATIBILITY,
     {
-      variables: {userId: userId } ,
+      variables: {userId: auth.getProfile().data._id} ,
     }
   );
 

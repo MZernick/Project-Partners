@@ -1,9 +1,15 @@
 nav {
     top: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 1.5rem 2rem;
-    background-color: #eaeaea;
+    background-color: #4b6282;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
   }
 
 li {
@@ -16,5 +22,21 @@ li {
     display: block;
     padding: 8px;
     text-decoration: none;
+    color: #F1FAEE;
   }
 
+#icon1 {
+  margin-right: 4.5rem;
+}
+#icon2 {
+  margin-right: 4.5rem;
+}
+#icon3 {
+  margin-right: 4.5rem;
+}
+#icon4 {
+  margin-right: 4.5rem;
+}
+#icon5 {
+  margin-right: 4.5rem;
+}

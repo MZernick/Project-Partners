@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/client";
 import { SEARCH_USER} from "../utils/queries";
 import auth from '../utils/auth';
 import Button from 'react-bootstrap/Button';
+import '../styles/UserSearch.css'
 
 const UserSearch = () => {
   const [searchText, setSearchText] = useState('');
@@ -38,44 +39,47 @@ console.log(filteredUsers);
     <>
     <NavTabs/>
     <main>
-      <div className="flex-row justify-center">
-        <div className="col-12 col-md-10 my-3">
+      <div className="search-page" >
+        <div className="column">
           {loading ? (
             <div>Loading...</div>
           ) : (
             <div>
-              <div className="flex-row justify-space-between my-4 position-relative">
-                <div className="col-12 col-md-4 mb-3">
+              <div className="search-card" >
+                <div className="container">
+                <div className="headers">
+                  <div className="form">
                   <label htmlFor="filter">Search By:</label>
                   <select
-                    className="form-select"
+                    className="form-select pform-input"
                     id="filter"
                     onChange={(e) => setFilter(e.target.value)}
                   >
                     <option value="personality">Personality Type</option>
                     <option value="email">Email</option>
                   </select>
-                </div>
-                <div className="col-12 col-md-4 mb-3">
+                
+                <div className="headers" >
                   <label htmlFor="search">Search:</label>
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control form-input"
                     id="search"
                     placeholder={`Search by ${filter}`}
                     value={searchText}
                     onChange={(e) => setSearchText(e.target.value)}
                   />
-                  <button
+                  <button className="search-btn"
                   type="submit"
                   onClick={()=> handleSubmit()
                   }
                   >Submit</button>
-
-                  
                 </div>
               </div>
-              <div className="flex-row justify-space-between my-4">
+              </div>
+              </div>
+              </div>
+              <div >
                 {filteredUsers.length > 0 ? filteredUsers.map((user) => (
                   <div key={user._id} >
                     <div className="team-card">

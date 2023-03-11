@@ -62,7 +62,7 @@ return (
                 element={<Profile />}
               />
           <Route 
-                path="/user/:id/teams" 
+                path="/user/:userId/teams" 
                 element={<MyTeam />}
               />
           <Route 

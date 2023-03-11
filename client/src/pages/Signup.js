@@ -53,7 +53,7 @@ const Signup = () => {
       });
 
       Auth.login(data.login.token);
-      redirect("/user/:id");
+      redirect("/user/:userId");
     } catch (e) {
       console.error(e);
     }
@@ -76,7 +76,7 @@ const Signup = () => {
       });
 
       Auth.login(data.addUser.token);
-      redirect("/user/:id");
+      redirect("/user/:userId");
     } catch (e) {
       console.error(e);
     }

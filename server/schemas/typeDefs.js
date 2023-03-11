@@ -45,7 +45,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addTeam(userId: ID!, title: String!, description: String!) : Teams
     updateUser(userId: ID!, username: String, email: String, password: String, personality: String) : User
-    updateTeam(teamId: ID!, title: String , description: String) : Teams
+    updateTeam(teamId: ID!, title: String , description: String, members: [ID]) : Teams
     removeUser(userId: ID!): User
     removeTeam(teamId: ID!): Teams
     addMember(teamId: ID!, userId: ID!): Teams

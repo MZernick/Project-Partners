@@ -109,10 +109,10 @@ const resolvers = {
     },
 
     // update a team
-    updateTeam: async (parent, { teamId, title, description }) => {
+    updateTeam: async (parent, { teamId, title, description, members }) => {
       return Teams.findOneAndUpdate(
         { _id: teamId },
-        { title, description },
+        { title, description, members },
         { runValidators: true, new: true }
       );
     },

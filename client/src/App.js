@@ -15,6 +15,7 @@ import Profile from './pages/Profile';
 import CreateTeam from './pages/CreateTeam';
 import Signup from './pages/Signup';
 import UserSearch from './pages/UserSearch';
+import EditTeam from './pages/EditTeam';
 
 // const client = new ApolloClient({
 //   uri: '/graphql',
@@ -71,6 +72,9 @@ return (
                 />
           <Route path="/createteam" 
                 element={<CreateTeam />}
+              />
+        <Route path="/:teamId/editteam" 
+                element={<EditTeam />}
               />
         </Routes>
       </div>

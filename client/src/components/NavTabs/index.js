@@ -16,7 +16,7 @@ function NavTabs({ currentPage, handlePageChange }) {
       </li>
       <li >
         <a id="nav-link"
-          href="/me"
+          href="/user/:userId"
           onClick={() => handlePageChange('Profile')}
           className={currentPage === 'Profile' ? 'nav-link active' : 'nav-link'}
         >
@@ -25,7 +25,7 @@ function NavTabs({ currentPage, handlePageChange }) {
       </li>
       <li>
         <a id="nav-link"
-          href="/user/:id/teams"
+          href="/user/:userId/teams"
           onClick={() => handlePageChange('MyTeams')}
           className={currentPage === 'MyTeams' ? 'nav-link active' : 'nav-link'}
         >

@@ -68,6 +68,7 @@ console.log(user);
   </div>
     </div>
     </div>
+    </div>
   )
 };
 

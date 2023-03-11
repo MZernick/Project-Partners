@@ -3,10 +3,16 @@ import { useMutation } from '@apollo/client';
 //be sure to create the mutations for this--done
 import { REMOVE_TEAM } from '../../utils/mutations';
 
+import '../../styles/Profile.css'
+import Avatar from '@mui/material/Avatar';
+import AvatarGroup from '@mui/material/AvatarGroup';
+import Stack from '@mui/material/Stack';
+import { deepOrange, deepPurple } from '@mui/material/colors';
+
 //be sure to create the query for this--done
 import { QUERY_SINGLE_USER_WITH_COMPATIBILITY } from '../../utils/queries';
 
-const TeamList = ({ user, isLoggedInUser = false }) => {
+const ProfileTeamList = ({ user, isLoggedInUser = false }) => {
   const [removeTeam, { error }] = useMutation(REMOVE_TEAM, {
     update(cache, { data: { removeTeam } }) {
       try {

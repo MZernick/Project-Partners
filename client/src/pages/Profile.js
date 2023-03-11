@@ -5,15 +5,12 @@ import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import '../styles/Profile.css'
 import Avatar from '@mui/material/Avatar';
-import AvatarGroup from '@mui/material/AvatarGroup';
-import Stack from '@mui/material/Stack';
-import { deepOrange, deepPurple } from '@mui/material/colors';
 import auth from '../utils/auth';
 // import Pairings from '../components/Pairings';
 
 //profile query here- are we adding pairs/partners/favorites or just seeing partners in the their teamsview?
 import { QUERY_SINGLE_USER_WITH_COMPATIBILITY, MY_TEAMS } from '../utils/queries';
-import TeamList from '../components/TeamsList';
+import ProfileTeamList from '../components/ProfileTeams';
 
 const Profile = () => {
   // const { userId } = useParams();
@@ -65,58 +62,17 @@ console.log(user);
         </div>
     </div>
   <div class="team-box">
-  {/* <h2 id="yourTeams">Your Teams</h2> */}
-  <div class="team1Container">
-    <h3 id="team1">
-      <TeamList user={user}/>
-      </h3>
-    <div id="teamInfoContainer">
-    <Stack direction="row" spacing={2}>
-      <Avatar>H</Avatar>
-      <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
-      <Avatar sx={{ bgcolor: deepPurple[500] }}>OP</Avatar>
-    </Stack>
+  <h2 id="yourTeams">Your Teams</h2>
+<ProfileTeamList user={user}/>
+  </div>
+  </div>
     </div>
-    <div class="infoBox1">
-    <p>JOSH GRAPH HERE</p>
     </div>
-  </div>
-  <div class="team2Container">
-    <h3 id="team2">team2</h3>
-    <div id="team2AvatarContainer">
-    <AvatarGroup max={4}>
-    <Avatar>h</Avatar>
-      <Avatar>e</Avatar>
-      <Avatar>r</Avatar>
-      <Avatar>s</Avatar>
-      <Avatar>s</Avatar>
-    </AvatarGroup>
-  </div>
-  </div>
-  <div class="team3Container">
-    <h3 id="team3">team3</h3>
-    <div id="team3AvatarContainer">
-    <AvatarGroup max={4}>
-     <Avatar>h</Avatar>
-      <Avatar>e</Avatar>
-      <Avatar>r</Avatar>
-      <Avatar>s</Avatar>
-      <Avatar>s</Avatar>
-    </AvatarGroup>
-  </div>
-  </div>
-  </div>
-  </div>
-</div>
-</div>
     </div>
-  );
+  )
 };
 
 export default Profile;
 
-{/* MIGHT ADD PAIRINGS TO PROFILE
-<div className="my-4 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-<Pairings userId={user._id} />
-</div> */}
+
 

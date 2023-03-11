@@ -4,6 +4,11 @@ import { useQuery } from "@apollo/client";
 import { SEARCH_USER } from "../utils/queries";
 import auth from "../utils/auth";
 import Button from "react-bootstrap/Button";
+import { SEARCH_USER} from "../utils/queries";
+import auth from '../utils/auth';
+import Button from 'react-bootstrap/Button';
+import '../styles/UserSearch.css'
+
 
 const UserSearch = () => {
   const [searchText, setSearchText] = useState("");
@@ -36,69 +41,70 @@ const UserSearch = () => {
   console.log(filteredUsers);
   return (
     <>
-      <NavTabs />
-      <main>
-        <div className="flex-row justify-center">
-          <div className="col-12 col-md-10 my-3">
-            {loading ? (
-              <div>Loading...</div>
-            ) : (
-              <div>
-                <div className="flex-row justify-space-between my-4 position-relative">
-                  <div className="col-12 col-md-4 mb-3">
-                    <label htmlFor="filter">Search By:</label>
-                    <select
-                      className="form-select"
-                      id="filter"
-                      onChange={(e) => setFilter(e.target.value)}
-                    >
-                      <option value="personality">Personality Type</option>
-                      <option value="email">Email</option>
-                    </select>
-                  </div>
-                  <div className="col-12 col-md-4 mb-3">
-                    <label htmlFor="search">Search:</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="search"
-                      placeholder={`Search by ${filter}`}
-                      value={searchText}
-                      onChange={(e) => setSearchText(e.target.value)}
-                    />
-                    <button type="submit" onClick={() => handleSubmit()}>
-                      Submit
-                    </button>
-                  </div>
-                </div>
-                <div className="flex-row justify-space-between my-4">
-                  {filteredUsers.length > 0 ? (
-                    filteredUsers.map((user) => (
-                      <div key={user._id}>
-                        <div className="team-card">
-                          <h4 className="headers">
-                            username: {user.username}
-                            <br />
-                            <span> email: {user.email}</span>
-                            <br />
-                            <span> Personality type: {user.personality}</span>
-                            <br />
-                            <span>
-                              Current team(s):{" "}
-                              {user.teams ? user.teams.length : 0}
-                            </span>
-                          </h4>
-                          <Button href={`user/${user._id}`}>Profile</Button>
-                        </div>
-                      </div>
-                    ))
-                  ) : (
-                    <h1>{noResultMsg}</h1>
-                  )}
+    <NavTabs/>
+    <main>
+      <div className="search-page" >
+        <div className="column">
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <div>
+              <div className="search-card" >
+                <div className="container">
+                <div className="headers">
+                  <div className="form">
+                  <label htmlFor="filter">Search By:</label>
+                  <select
+                    className="form-select pform-input"
+                    id="filter"
+                    onChange={(e) => setFilter(e.target.value)}
+                  >
+                    <option value="personality">Personality Type</option>
+                    <option value="email">Email</option>
+                  </select>
+                
+                <div className="headers" >
+                  <label htmlFor="search">Search:</label>
+                  <input
+                    type="text"
+                    className="form-control form-input"
+                    id="search"
+                    placeholder={`Search by ${filter}`}
+                    value={searchText}
+                    onChange={(e) => setSearchText(e.target.value)}
+                  />
+                  <button className="search-btn"
+                  type="submit"
+                  onClick={()=> handleSubmit()
+                  }
+                  >Submit</button>
                 </div>
               </div>
-            )}
-          </div>
+              </div>
+              </div>
+              </div>
+              <div >
+                {filteredUsers.length > 0 ? filteredUsers.map((user) => (
+                  <div key={user._id} >
+                    <div className="team-card">
+                      <h4 className="headers">
+                        username: {user.username} 
+                        <br />
+                        <span> email: {user.email}</span>
+                        <br />
+                        <span> Personality type: {user.personality}</span>
+                        <br />
+                        <span >
+                          Current team(s): {user.teams ? user.teams.length : 0} 
+                        </span> 
+                      </h4>
+                      <Button href={`user/${user._id}`}>click</Button>
+                    </div>
+                  </div>
+                )): <h1>{noResultMsg}</h1>}
+              </div>
+            </div>
+          )}
         </div>
       </main>
     </>

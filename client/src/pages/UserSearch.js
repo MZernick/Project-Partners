@@ -1,112 +1,111 @@
 import React, { useState } from "react";
 import NavTabs from "../components/NavTabs";
 import { useQuery } from "@apollo/client";
-import { SEARCH_USER} from "../utils/queries";
-import auth from '../utils/auth';
-import Button from 'react-bootstrap/Button';
+import { SEARCH_USER } from "../utils/queries";
+import auth from "../utils/auth";
+import Button from "react-bootstrap/Button";
 
 const UserSearch = () => {
-  const [searchText, setSearchText] = useState('');
-  const [filter, setFilter] = useState('personality'); // set default filter to personality
-  const [filteredUsers, setFilteredUsers] = useState([])
+  const [searchText, setSearchText] = useState("");
+  const [filter, setFilter] = useState("personality"); // set default filter to personality
+  const [filteredUsers, setFilteredUsers] = useState([]);
   const { loading, data } = useQuery(SEARCH_USER);
-  const [noResultMsg, setNoResultMsg] = useState('');
+  const [noResultMsg, setNoResultMsg] = useState("");
 
   const users = data?.users || [];
-console.log(users);
+  console.log(users);
 
-function handleSubmit(){
-  let listarray = [];
-  console.log(searchText);
-  console.log(filter);
-  if (filter === 'personality') {
-    listarray = users.filter(user=> user.personality === searchText)
-  } else if (filter === 'email') {
-    listarray = users.filter(user=> user.email === searchText)
-  } else {
-    listarray = []; // if no filter is selected
+  function handleSubmit() {
+    let listarray = [];
+    console.log(searchText);
+    console.log(filter);
+    if (filter === "personality") {
+      listarray = users.filter((user) => user.personality === searchText);
+    } else if (filter === "email") {
+      listarray = users.filter((user) => user.email === searchText);
+    } else {
+      listarray = []; // if no filter is selected
+    }
+    setFilteredUsers(listarray);
+    // ADD error handling if searchText is blank and if search results yield no matches
+    // if array is empty, display no users found, if >0 then setfiltered
+    if (listarray.length == 0) {
+      setNoResultMsg("No results found");
+    }
   }
- setFilteredUsers(listarray);
-  // ADD error handling if searchText is blank and if search results yield no matches
-  // if array is empty, display no users found, if >0 then setfiltered
- if(listarray.length ==0) {
-  setNoResultMsg("No results found");
- }
-}
-console.log(filteredUsers);
+  console.log(filteredUsers);
   return (
     <>
-    <NavTabs/>
-    <main>
-      <div className="flex-row justify-center">
-        <div className="col-12 col-md-10 my-3">
-          {loading ? (
-            <div>Loading...</div>
-          ) : (
-            <div>
-              <div className="flex-row justify-space-between my-4 position-relative">
-                <div className="col-12 col-md-4 mb-3">
-                  <label htmlFor="filter">Search By:</label>
-                  <select
-                    className="form-select"
-                    id="filter"
-                    onChange={(e) => setFilter(e.target.value)}
-                  >
-                    <option value="personality">Personality Type</option>
-                    <option value="email">Email</option>
-                  </select>
-                </div>
-                <div className="col-12 col-md-4 mb-3">
-                  <label htmlFor="search">Search:</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="search"
-                    placeholder={`Search by ${filter}`}
-                    value={searchText}
-                    onChange={(e) => setSearchText(e.target.value)}
-                  />
-                  <button
-                  type="submit"
-                  onClick={()=> handleSubmit()
-                  }
-                  >Submit</button>
-
-                  
-                </div>
-              </div>
-              <div className="flex-row justify-space-between my-4">
-                {filteredUsers.length > 0 ? filteredUsers.map((user) => (
-                  <div key={user._id} >
-                    <div className="team-card">
-                      <h4 className="headers">
-                        username: {user.username} 
-                        <br />
-                        <span> email: {user.email}</span>
-                        <br />
-                        <span> Personality type: {user.personality}</span>
-                        <br />
-                        <span >
-                          Current team(s): {user.teams ? user.teams.length : 0} 
-                        </span> 
-                      </h4>
-                      <Button href={`user/${user._id}`}>click</Button>
-                    </div>
+      <NavTabs />
+      <main>
+        <div className="flex-row justify-center">
+          <div className="col-12 col-md-10 my-3">
+            {loading ? (
+              <div>Loading...</div>
+            ) : (
+              <div>
+                <div className="flex-row justify-space-between my-4 position-relative">
+                  <div className="col-12 col-md-4 mb-3">
+                    <label htmlFor="filter">Search By:</label>
+                    <select
+                      className="form-select"
+                      id="filter"
+                      onChange={(e) => setFilter(e.target.value)}
+                    >
+                      <option value="personality">Personality Type</option>
+                      <option value="email">Email</option>
+                    </select>
                   </div>
-                )): <h1>{noResultMsg}</h1>}
+                  <div className="col-12 col-md-4 mb-3">
+                    <label htmlFor="search">Search:</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="search"
+                      placeholder={`Search by ${filter}`}
+                      value={searchText}
+                      onChange={(e) => setSearchText(e.target.value)}
+                    />
+                    <button type="submit" onClick={() => handleSubmit()}>
+                      Submit
+                    </button>
+                  </div>
+                </div>
+                <div className="flex-row justify-space-between my-4">
+                  {filteredUsers.length > 0 ? (
+                    filteredUsers.map((user) => (
+                      <div key={user._id}>
+                        <div className="team-card">
+                          <h4 className="headers">
+                            username: {user.username}
+                            <br />
+                            <span> email: {user.email}</span>
+                            <br />
+                            <span> Personality type: {user.personality}</span>
+                            <br />
+                            <span>
+                              Current team(s):{" "}
+                              {user.teams ? user.teams.length : 0}
+                            </span>
+                          </h4>
+                          <Button href={`user/${user._id}`}>Profile</Button>
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    <h1>{noResultMsg}</h1>
+                  )}
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
     </>
   );
 };
 
 export default UserSearch;
-
-
 
 // function UserSearch() {
 //   const [searchTerm, setSearchTerm] = useState("");
@@ -134,8 +133,8 @@ export default UserSearch;
 //   //   variables: { email: 'abtest@email.com' },
 //   // });
 //   // if (loading) return <p>Loading...</p>;
-//   // if (error) return <p>Oops...an error has occured. </p>; 
-  
+//   // if (error) return <p>Oops...an error has occured. </p>;
+
 //   // setTimeout(() => {
 //   //   console.log(data.searchEmail);
 //   // }, "3000");
@@ -144,21 +143,18 @@ export default UserSearch;
 //     variables: { personality: searchTerm },
 //   });
 //   if (loading) return <p>Loading...</p>;
-//   if (error) return <p>Oops...an error has occured. </p>; 
-  
+//   if (error) return <p>Oops...an error has occured. </p>;
+
 //   setTimeout(() => {
 //     console.log(data.searchPersonality);
 //   }, "3000");
-  
- 
-
 
 //   const handleInputChange = (e) => {
 //     // if(null){
 //     //   return;
 //     // }
 // const { search, value } = e.target;
-  
+
 //    return search == '' ? 'Please enter something to search.' : setSearchTerm(value);
 //   };
 
@@ -168,19 +164,19 @@ export default UserSearch;
 //       variables: { email: searchTerm },
 //     });
 //     if (loading) return <p>Loading...</p>;
-//     if (error) return 
+//     if (error) return
 //     <p>Oops...an error has occured. {console.log("userQuery", searchTerm)} </p>;
 //     setMatchedUsers(data.searchPersonality);
 //     setTimeout(() => {
 //         console.log(data.searchPersonality);
 //       }, "3000");
-      
+
 //       const renderUsers = () => {
 //     if (matchedUsers.length === 0) {
 //       console.log("in renderUsers", searchTerm);
 //       return <div>No users found</div>;
-//     } 
-   
+//     }
+
 //     return (
 //       <div className="user-cards-container">
 //         {matchedUsers.map((data) => (
@@ -194,10 +190,6 @@ export default UserSearch;
 //       </div>
 //     );
 //   };
-
-  
-
-
 
 //     return (
 //       <div className="user-cards-container">
@@ -217,11 +209,11 @@ export default UserSearch;
 //     <div>
 //       <NavTabs />
 //       <form onSubmit={handleFormSubmit}>
-//         <input 
+//         <input
 //         type="text"
-//         name="search" 
+//         name="search"
 //         placeholder="Search users"
-//         value={searchTerm} 
+//         value={searchTerm}
 //         onChange={handleInputChange} />
 //         <button type="submit">Search</button>
 //       </form>

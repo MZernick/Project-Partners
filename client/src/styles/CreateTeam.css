@@ -88,6 +88,7 @@
   }
   
   .stack {
+    text-align: center;
     width: 75%
   }
 
@@ -95,3 +96,45 @@
   margin-left: 1%;
   
  }
+
+.rating {
+  background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);border: none;
+  border-radius: 50%;
+  margin-right: 10%;
+  height: 2rem;
+  width: 2rem;
+  color:#fbfbfb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5%;
+}
+
+.spacing{
+  width: 1.5vw;
+}
+
+.listels {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5rem;
+}
+
+.ratingtag {
+  background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);border: none;
+  border-radius: 15px;
+  height: 1.5rem;
+  width: 2rem;
+  color:#fbfbfb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .75rem;
+}

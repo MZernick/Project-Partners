@@ -4,9 +4,9 @@ import { useQuery } from "@apollo/client";
 import { SEARCH_USER } from "../utils/queries";
 import auth from "../utils/auth";
 import Button from "react-bootstrap/Button";
-import { SEARCH_USER} from "../utils/queries";
-import auth from '../utils/auth';
-import Button from 'react-bootstrap/Button';
+// import { SEARCH_USER} from "../utils/queries";
+// import auth from '../utils/auth';
+// import Button from 'react-bootstrap/Button';
 import '../styles/UserSearch.css'
 
 
@@ -105,6 +105,7 @@ const UserSearch = () => {
               </div>
             </div>
           )}
+        </div>
         </div>
       </main>
     </>

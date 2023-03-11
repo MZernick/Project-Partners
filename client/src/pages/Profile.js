@@ -13,11 +13,13 @@ import { QUERY_SINGLE_USER_WITH_COMPATIBILITY, MY_TEAMS } from '../utils/queries
 import ProfileTeamList from '../components/ProfileTeams';
 
 const Profile = () => {
-  // const { userId } = useParams();
+  let { userId } = useParams();
+  if(userId==="me") {userId = auth.getProfile().data._id}
+  console.log(userId);
   const { loading, data } = useQuery(
      QUERY_SINGLE_USER_WITH_COMPATIBILITY,
     {
-      variables: {userId: auth.getProfile().data._id} ,
+      variables: {userId: userId } ,
     }
   );
 
@@ -25,7 +27,7 @@ const Profile = () => {
   // const {} =useQuery(MY_TEAMS);
   //const teams = data?.teams || [];
 
-const user = data?.me || data?.user || {};
+const user = data?.user || data?.me || {};
 console.log(user);
 
   if (loading) {

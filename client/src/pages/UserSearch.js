@@ -3,26 +3,37 @@ import NavTabs from "../components/NavTabs";
 import { useQuery } from "@apollo/client";
 import { SEARCH_USER} from "../utils/queries";
 import auth from '../utils/auth';
+import Button from 'react-bootstrap/Button';
 
 const UserSearch = () => {
   const [searchText, setSearchText] = useState('');
   const [filter, setFilter] = useState('personality'); // set default filter to personality
+  const [filteredUsers, setFilteredUsers] = useState([])
   const { loading, data } = useQuery(SEARCH_USER);
+  const [noResultMsg, setNoResultMsg] = useState('');
 
   const users = data?.users || [];
 console.log(users);
 
-  // filter users based on selected filter
-  const filteredUsers = users.filter((user) => {
-    if (filter === 'personality') {
-      return user.personality === searchText;
-    } else if (filter === 'email') {
-      return user.email === searchText;
-    } else {
-      return ; // if no filter is selected, show all users
-    }
-  });
-
+function handleSubmit(){
+  let listarray = [];
+  console.log(searchText);
+  console.log(filter);
+  if (filter === 'personality') {
+    listarray = users.filter(user=> user.personality === searchText)
+  } else if (filter === 'email') {
+    listarray = users.filter(user=> user.email === searchText)
+  } else {
+    listarray = []; // if no filter is selected
+  }
+ setFilteredUsers(listarray);
+  // ADD error handling if searchText is blank and if search results yield no matches
+  // if array is empty, display no users found, if >0 then setfiltered
+ if(listarray.length ==0) {
+  setNoResultMsg("No results found");
+ }
+}
+console.log(filteredUsers);
   return (
     <>
     <NavTabs/>
@@ -55,28 +66,34 @@ console.log(users);
                     value={searchText}
                     onChange={(e) => setSearchText(e.target.value)}
                   />
+                  <button
+                  type="submit"
+                  onClick={()=> handleSubmit()
+                  }
+                  >Submit</button>
+
+                  
                 </div>
               </div>
               <div className="flex-row justify-space-between my-4">
-                {setTimeout(() => {
-    console.log(filteredUsers);
-  }, "3000")}
-                {filteredUsers.map((user) => (
-                  <div key={user._id} className="col-12 col-xl-6">
-                    <div className="card mb-3">
-                      <h4 className="card-header bg-dark text-light p-2 m-0">
-                        username: {user.username} <br />
+                {filteredUsers.length > 0 ? filteredUsers.map((user) => (
+                  <div key={user._id} >
+                    <div className="team-card">
+                      <h4 className="headers">
+                        username: {user.username} 
+                        <br />
                         <span> email: {user.email}</span>
                         <br />
                         <span> Personality type: {user.personality}</span>
                         <br />
-                        <span className="text-white" style={{ fontSize: '1rem' }}>
-                          Team(s): {user.teams ? user.teams.length : 0} 
+                        <span >
+                          Current team(s): {user.teams ? user.teams.length : 0} 
                         </span> 
                       </h4>
+                      <Button href={`user/${user._id}`}>click</Button>
                     </div>
                   </div>
-                ))}
+                )): <h1>{noResultMsg}</h1>}
               </div>
             </div>
           )}

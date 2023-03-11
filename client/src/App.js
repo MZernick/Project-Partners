@@ -58,7 +58,7 @@ return (
                 element={<Signup />} 
               />
           <Route 
-                path="/user/:id"
+                path="/user/:userId"
                 element={<Profile />}
               />
           <Route 

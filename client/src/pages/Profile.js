@@ -19,7 +19,7 @@ const Profile = () => {
   const { loading, data } = useQuery(
      QUERY_SINGLE_USER_WITH_COMPATIBILITY,
     {
-      variables: {userId: auth.getProfile().data._id} ,
+      variables: {userId: userId} ,
     }
   );
 
@@ -34,7 +34,7 @@ console.log(user);
     return <div>Loading...</div>;
   }
 
-  if (!user?.username) {
+  if (!userId) {
     return (
       <h4>
         You need to be logged in to see your profile page. Use the navigation

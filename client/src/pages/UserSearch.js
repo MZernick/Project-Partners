@@ -106,6 +106,7 @@ const UserSearch = () => {
             </div>
           )}
         </div>
+        </div>
       </main>
     </>
   );

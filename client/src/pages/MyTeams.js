@@ -18,12 +18,16 @@ const MyTeam = () => {
     }
   );
   const teamsData = data?.me || data?.user || {};
-
+  console.log(teamsData);
+  console.log(teamsData.teams);
+  //selectedTeam  will be set by user click or default to 0;
+  const selectedTeam = 0;
+  const focusTeam = teamsData.teams[selectedTeam];
+  console.log(focusTeam);
   if (loading) {
     return <div>Loading...</div>;
   }
-  console.log(teamsData);
-  console.log(teamsData.teams);
+  
 
   if (!teamsData?._id) {
     return (
@@ -58,7 +62,7 @@ const MyTeam = () => {
          
             
 
-           <MyTeamsList teams={teamsData}/> 
+           <MyTeamsList focusTeam={focusTeam}/> 
           <p>
                   <label>Don't have a team?</label> <a id="createteam" rel="noreferrer" href="/createteam" target="_blank">Create a Team</a></p>
         </div>)}

@@ -76,6 +76,7 @@ return (
         <Route path="/:teamId/editteam" 
                 element={<EditTeam />}
               />
+        <Route render={() => <h1>Wrong Page!</h1>} />
         </Routes>
       </div>
       </div>

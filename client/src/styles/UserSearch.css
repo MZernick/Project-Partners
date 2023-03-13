@@ -79,7 +79,7 @@ label {
   padding-bottom: 5px;
 }
 
-.viewuser-btn {
+.viewuser-btnSearch {
   background: linear-gradient(90deg, rgba(21, 17, 87, 1) 0%, rgba(88, 138, 182, 1) 100%);
   border: none;
   border-radius: 21px;
@@ -91,10 +91,15 @@ label {
   width: 153px;
   margin-bottom: 30px;
 }
+.viewuser-btnSearch a {
+ color: white;
+ text-decoration: none;
+ font-family: 700;
+}
 
 .user-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background: #1D3557;
@@ -106,7 +111,7 @@ label {
   margin: 20px;
 }
 
-.profileName {
+.profileNameSearch {
   font-family: 'Switzer', sans-serif;
   text-decoration: none;
   color: #F1FAEE;
@@ -120,15 +125,15 @@ label {
   text-align: center;
 }
 
-.pType {
+.pTypeSearch {
   font-family: 'Switzer', sans-serif;
-  font-size: clamp(0.5rem, 2.5vw, 2.5rem);
+  /* font-size: clamp(0.5rem, 2.5vw, 2.5rem); */
   color: #F1FAEE;
   font-weight: 700;
-  margin-top: 1%;
+  /* margin-top: 1%; */
   background-color: #E63946;
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 2%;
+  padding-right: 2%;
   padding-top: 2%;
   padding-bottom: 2%;
   border-radius: 8px;

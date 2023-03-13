@@ -69,7 +69,7 @@ const CreateTeam = () => {
           }
       });
 
-      navigate('/user/:id')
+      navigate(`/user/${auth.getProfile().data._id}`)
     } catch (err) {
         console.log(err);
     }

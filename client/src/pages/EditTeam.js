@@ -14,24 +14,32 @@ import Box from "@mui/material/Box";
 import CircularProgress from '@mui/material/CircularProgress';
 
 const EditTeam = () => {
-
+  // getting teamId from the URL
   const { teamId } = useParams();
 
+  // getting the signle team based on the teamID from the URL
   const  data2 = useQuery(SINGLE_TEAM, {
     variables: {teamId: teamId}
   })
+
+  // teamData that is returned
   const teamData = data2 || [];
 
+  // Search for all users to run in the compatibility checker
   const { loading, data } = useQuery(SEARCH_USER);
   const userList = data?.users || [];
 
+  // empty array that will hold all the user options that the user can choose from
   const userArr = [];
 
+  // Search for the user who is logged in to run in the compatibility checker
   const data1 = useQuery(QUERY_SINGLE_USER_WITH_COMPATIBILITY, {
     variables: {userId: auth.getProfile().data._id}
   })
+  // user data
   const user = data1 || [];
 
+  // if the user data is done loading, run the compatibility checker for each user and the user logged in 
   if(data1.loading) {
     console.log('loading user')
   } else {
@@ -41,6 +49,7 @@ const EditTeam = () => {
     })
   }
 
+  // checking the userList has come in
   if(!loading) {
     console.log(userList)
     // console.log(userArr)
@@ -48,8 +57,10 @@ const EditTeam = () => {
     console.log('Loading Users...')
   }
 
+  // Empty array to hld the team members already on your team
   const membersInTeam = []
 
+  // when team data and user logged in data is done loading, run the compatibility checker on the members you already have in your team
   if(data2.loading || data1.loading) {
     console.log('loading team info')
   } 
@@ -63,15 +74,6 @@ const EditTeam = () => {
   //   console.log(teamData)
   //   console.log(membersInTeam)
   // }
-
-  
-
-// what I'm trying to do to set the data 
-// const [formData, setFormData] = useState({
-//   title: data2.loading ? 'Loading...' : teamData.data.team.title, 
-//   description: data2.loading ? 'Loading...' : teamData.data.team.description, 
-//   members: data2.loading ? [] : teamData.data.team.members.map(member => member._id),
-// })
 
 // itializing the formData
  const [formData, setFormData] = useState({
@@ -90,8 +92,6 @@ useEffect(() => {
     members: teamData.data.team.members.map(member => member._id),
   })}
 },[data2.loading])
-
-
 
   let navigate = useNavigate();
 

@@ -1,3 +1,12 @@
+.bigContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120vh;
+  background-color: #1D3557;
+  flex-direction: column;
+}
+
 .headers {
     color: black; 
     font-family: 'Switzer', sans-serif;
@@ -12,7 +21,7 @@
 .card{
     height: fit-content;
     width: 50vw;
-    background: #fbfbfb;
+    background-color: #3e5a80;
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
     position:absolute;
     top:50%;

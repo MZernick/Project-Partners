@@ -1,5 +1,5 @@
 .headers {
-  color: black;
+  color: #F1FAEE;
   font-family: 'Switzer', sans-serif;
   padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
   transition: opacity 400ms ease;

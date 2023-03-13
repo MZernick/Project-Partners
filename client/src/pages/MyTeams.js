@@ -66,7 +66,7 @@ const MyTeam = () => {
         <div className="team-cardContainer">
           {teamsData.teams?.length > 0 && (
             <div className="team-card">
-              {/* <MyTeamsList focusTeam={focusTeam} /> */}
+              <MyTeamsList focusTeam={focusTeam} />
               <p id="dontHaveTeam">Don't have a team?</p>
               <a id="createTeam" rel="noreferrer" href="/createteam" target="_blank">Create a Team</a>
             </div>)}

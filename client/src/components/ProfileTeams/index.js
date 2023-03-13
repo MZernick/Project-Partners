@@ -10,36 +10,43 @@ import AvatarGroup from '@mui/material/AvatarGroup';
 import Stack from '@mui/material/Stack';
 import { deepOrange, deepPurple } from '@mui/material/colors';
 import Button from '@mui/material/Button';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 //be sure to create the query for this--done
 import { QUERY_SINGLE_USER_WITH_COMPATIBILITY } from '../../utils/queries';
 
 const ProfileTeamList = ({ user, isLoggedInUser = false }) => {
-  const [removeTeam, { error }] = useMutation(REMOVE_TEAM, {
-    update(cache, { data: { removeTeam } }) {
-      try {
-        cache.writeQuery({
-          query: QUERY_SINGLE_USER_WITH_COMPATIBILITY,
-          data: { user: removeTeam },
-        });
-      } catch (e) {
-        console.error(e);
-      }
-    },
-  });
+
+  const {userId} = useParams()
+  const [removeTeam, {error}] = useMutation(REMOVE_TEAM)
+
+  // const [removeTeam, { error }] = useMutation(REMOVE_TEAM, {
+  //   update(cache, { data: { removeTeam } }) {
+  //     try {
+  //       cache.writeQuery({
+  //         query: QUERY_SINGLE_USER_WITH_COMPATIBILITY,
+  //         data: { user: removeTeam },
+  //       });
+  //     } catch (e) {
+  //       console.error(e);
+  //     }
+  //   },
+  // });
+let navigate = useNavigate();
 
   const handleRemoveTeam = async (team) => {
     try {
       const { data } = await removeTeam({
-        variables: { teamId: team },
+        variables: { teamId: team } 
       });
+      // navigate(`/user/${userId}`)
+      window.location.reload(true)
     } catch (err) {
       console.error(err);
     }
   };
 
-  let navigate = useNavigate();
+  
 
   if (!user.teams) {
     return <h3>No Teams Yet</h3>;
@@ -50,14 +57,29 @@ const ProfileTeamList = ({ user, isLoggedInUser = false }) => {
       <div>
         {user.teams &&
           user.teams.map((team) => (
-            <div className="team1Container">
-            <h3 id="team1" key={team}>
+            <div className="team1Container" key={team._id}>
+              <Button 
+              className = 'titlebtn'
+              sx={{margin: '2%'}}
+              size="large"
+              variant="contained"
+              onClick={() => navigate(`/user/${user._id}/teams`)}
+              // onClick={(console.log(team))}
+              >
               {team.title}
-              <div className="buttons">
+              {team.members.map(member => {
+                return (
+                  <Stack direction="row" sx={{padding: '2%'}} key={member.username}>
+                  <Avatar>{` ${member.username.charAt(0)} `}</Avatar>
+                </Stack>
+                )
+                })}
+               </Button> 
+               <div className="buttons">
               <Button 
               variant="contained" 
               size="small"
-              // sx={{ margin: '1%' }}
+              sx={{margin: '2%', background: 'rgba(88,138,182,1)'}}
               onClick={() => navigate(`/${team._id}/editteam`)}
               >
                 Update
@@ -65,14 +87,13 @@ const ProfileTeamList = ({ user, isLoggedInUser = false }) => {
               <Button 
               size="small"
               variant="contained" 
-              // sx={{ margin: '1%' }}
+              sx={{margin: '2%',  background: '#E63946'}}
               startIcon={<DeleteIcon />}
               onClick={ () => handleRemoveTeam(team._id)}
               aria-label="delete">
                 Delete
               </Button>
               </div>
-              </h3>
               
             {/* <div id="teamInfoContainer">
             <Stack direction="row" spacing={2}>

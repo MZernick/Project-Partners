@@ -15,6 +15,7 @@
     border-radius: 15px;
     width: 25%;
     height: 56.5%;
+    /* height: fit-content; */
     padding: 20px;
     /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); */
     display: flex;
@@ -30,7 +31,7 @@
   /* border: 1px solid #ced4cc; */
   border-radius: 15px;
   width: 25%;
-  height: 56.5%;
+  height: fit-content;
   padding: 20px;
   /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); */
   display: flex;
@@ -186,14 +187,15 @@
     padding-bottom: 5%;
   }
 
-  /* .team1Container {
+  .team1Container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    width: 85%;
-    height: 20%;
-  } */
+    /* align-items: flex-start; */
+    /* flex-wrap: wrap; */
+    width: 100%;
+    /* height: 20%; */
+
+  }
 
   #team1 {
     margin: 0;
@@ -250,18 +252,40 @@
   } */
 
   .buttons {
-    display: 'inline'
+    display: 'inline';
+    padding-bottom: 10%;
   }
 
   .delete-btn {
     background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);border: none;
     border-radius: 20px;
     box-shadow: 0px 1px 8px #588ab6;
-    color: white;
-    font-family: "Raleway SemiBold", sans-serif;
-    height: 7vh;
+    color: #F1FAEE;
+    font-family: 'Switzer', sans-serif;
+    /* height: 10vh; */
     margin: 0 auto;
-    margin-top: 25%;
+    margin-top: 15%;
     transition: 0.25s;
     width: 15vw;
+    padding: 5%;
+
   } 
+
+  .delete-btn:hover {
+    background: linear-gradient(90deg,rgba(88,138,182,1) 0%,  rgba(21,17,87,1) 100%);border: none;
+  }
+
+  .titlebtn {
+    background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);border: none;
+  }
+
+  .titlebtn:hover {
+    background: linear-gradient(90deg,rgba(88,138,182,1) 0%,  rgba(21,17,87,1) 100%);border: none;
+  }
+
+  #email {
+    font-size: 1.5rem;
+    color: #F1FAEE;
+    font-family: 'Switzer', sans-serif;
+
+  }

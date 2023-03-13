@@ -52,7 +52,7 @@ const Profile = () => {
             sx={{ width: 112, height: 112 }}>{user.username}</Avatar>
           <h2 className='profileName'>{user.username}</h2>
           <p id="personalityType">{user.personality} </p>
-          <p>{user.email}</p>
+          <p id="email">{user.email}</p>
           {/* <div className="commentBox">
             <p id="newComment">you are awesome</p>
             <p id="newComment">you are okay</p>

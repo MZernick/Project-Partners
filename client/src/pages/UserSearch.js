@@ -27,7 +27,7 @@ const UserSearch = () => {
       listarray = users.filter((user) => user.personality.toLowerCase() === searchText);
     } else if (filter === "email") {
       listarray = users.filter((user) => user.email.toLowerCase() === searchText);
-    } else if (filter=== "username") {
+    } else if (filter === "username") {
       listarray = users.filter((user) => user.username.toLowerCase() === searchText);
     } else {
       listarray = []; // if no filter is selected
@@ -43,78 +43,78 @@ const UserSearch = () => {
   return (
 
     <>
-    <NavTabs/>
-    <main>
-      <div className="search-page" >
-        <div className="column">
-          {loading ? (
-            <div>Loading...</div>
-          ) : (
-            <div>
-              <div className="search-card" >
-                <div className="container">
-                <div className="headers">
-                  <div className="form">
-                  <label htmlFor="filter">Search By:</label>
-                  <select
-                    className="form-select pform-input"
-                    id="filter"
-                    onChange={(e) => setFilter(e.target.value)}
-                  >
-                    <option value="personality">Personality Type</option>
-                    <option value="email">Email</option>
-                    <option value="username">Username</option>
+      <NavTabs />
+      <main>
+        <div className="search-page" >
+          <div className="column">
+            {loading ? (
+              <div>Loading...</div>
+            ) : (
+              <div>
+                <div className="search-card" >
+                  <div className="container">
+                    <div className="headers">
+                      <div className="form">
+                        <label htmlFor="filter">Search By:</label>
+                        <select
+                          className="form-select pform-input"
+                          id="filter"
+                          onChange={(e) => setFilter(e.target.value)}
+                        >
+                          <option value="personality">Personality Type</option>
+                          <option value="email">Email</option>
+                          <option value="username">Username</option>
 
-                  </select>
-                
-                <div className="headers" >
-                  <label htmlFor="search">Search:</label>
-                  <input
-                    type="text"
-                    className="form-control form-input"
-                    id="search"
-                    placeholder={`Search by ${filter}`}
-                    value={searchText}
-                    onChange={(e) => setSearchText(e.target.value.toLowerCase())}
-                  />
-                  <button className="search-btn"
-                  type="submit"
-                  onClick={()=> handleSubmit()
-                  }
-                  >Submit</button>
-                </div>
-              </div>
-              </div>
-              </div>
-              </div>
-              <div >
-                {filteredUsers.length > 0 ? filteredUsers.map((user) => (
-                  <div key={user._id} >
-                    <div className="team-card">
-                      <h4 className="headers">
-                        username: {user.username} 
-                        <br />
-                        <span> email: {user.email}</span>
-                        <br />
-                        <span> Personality type: {user.personality}</span>
-                        <br />
-                        <span >
-                          Current team(s): {user.teams ? user.teams.length : 0} 
-                        </span> 
-                      </h4>
-                      <button href={`user/${user._id}`}>View Profile</button>
+                        </select>
 
+                        <div className="headers" >
+                          <label htmlFor="search">Search:</label>
+                          <input
+                            type="text"
+                            className="form-control form-input"
+                            id="search"
+                            placeholder={`Search by ${filter}`}
+                            value={searchText}
+                            onChange={(e) => setSearchText(e.target.value.toLowerCase())}
+                          />
+                          <button className="search-btn"
+                            type="submit"
+                            onClick={() => handleSubmit()
+                            }
+                          >Submit</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                )): <h1>{noResultMsg}</h1>}
-              </div>
-            </div>
-          )}
+                </div>
+                <div >
+                  {filteredUsers.length > 0 ? filteredUsers.map((user) => (
+                    <div key={user._id} >
+                      <div className="user-container">
+                        <h2 className="profileName">
+                          {user.username}</h2>
+                        <br />
+                        <span className="profileName">{user.email}</span>
+                        <br />
+                        <span className="pType">{user.personality}</span>
+                        <br />
+                        <span className="profileName" >
+                          Current team(s): {user.teams ? user.teams.length : 0}
+                        </span>
+                        <br />
+                        <button className="viewuser-btn" href={`user/${user._id}`}>View Profile</button>
 
-        </div>
+                      </div>
+                    </div>
+                  )) : <h1>{noResultMsg}</h1>}
+                </div>
+              </div>
+            )}
+
+          </div>
         </div>
       </main>
-      </div>
+    </>
   );
 };
 

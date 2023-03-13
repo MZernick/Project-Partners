@@ -62,6 +62,8 @@ const UserSearch = () => {
                   >
                     <option value="personality">Personality Type</option>
                     <option value="email">Email</option>
+                    <option value="username">Username</option>
+
                   </select>
                 
                 <div className="headers" >

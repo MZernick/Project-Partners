@@ -2,14 +2,14 @@
 //use like this: // console.log(getCompatibility(data.data.users[0], data.data.users[1]));
 function getCompatibility(user1, user2) {
     let comp = user1.compatibility;
-    const result = comp.find(({type}) => type === user2.personality);
+    const result = comp.find(({ type }) => type === user2.personality);
     return result.rating;
 };
 
 function getCompatibilityandUsername(user1, user2) {
     let comp = user1.compatibility;
-    const result = comp.find(({type}) => type === user2.personality);
-       return {value:`${user2._id}`, username: `${user2.username}`, rating: `${result.rating}`};
+    const result = comp.find(({ type }) => type === user2.personality);
+    return { value: `${user2._id}`, username: `${user2.username}`, rating: `${result.rating}` };
 };
 
 // a basic reusable average function for an array of numbers
@@ -18,7 +18,7 @@ function avg(numArray) {
     for (let i = 0; i < numArray.length; i++) {
         sum += numArray[i];
     }
-    return sum/numArray.length;
+    return sum / numArray.length;
 };
 
 //a function that returns array of compatibility rating between each of the users and an identified user
@@ -26,11 +26,11 @@ function avg(numArray) {
 function indivTeamScores(teamArray, user1) {
     let tempTeamArray = [];
     tempTeamArray.push(...teamArray);
-    const user1index = tempTeamArray.findIndex(({_id}) => _id === user1._id);
+    const user1index = tempTeamArray.findIndex(({ _id }) => _id === user1._id);
     tempTeamArray.splice(user1index, 1);
     let scores = [];
     tempTeamArray.forEach(member => {
-            scores.push(getCompatibility(user1, member));
+        scores.push(getCompatibility(user1, member));
     });
     return scores
 };

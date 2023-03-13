@@ -3,7 +3,7 @@ import NavTabs from "../components/NavTabs";
 import { useQuery } from "@apollo/client";
 import { SEARCH_USER } from "../utils/queries";
 // import auth from "../utils/auth";
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import '../styles/UserSearch.css'
 
 
@@ -53,7 +53,7 @@ const UserSearch = () => {
               <div>
                 <div className="search-card" >
                   <div className="container">
-                    <div className="headers">
+                    <div className="headers-search">
                       <div className="form">
                         <label htmlFor="filter">Search By:</label>
                         <select
@@ -67,13 +67,13 @@ const UserSearch = () => {
 
                         </select>
 
-                        <div className="headers" >
+                        <div className="headers-search" >
                           <label htmlFor="search"></label>
                           <input
                             type="text"
-                            className="form-control form-input"
+                            className="form-input"
                             id="search"
-                            placeholder={`Find a ${filter}`}
+                            placeholder={`Enter ${filter}`}
                             value={searchText}
                             onChange={(e) => setSearchText(e.target.value.toLowerCase())}
                             onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
@@ -85,30 +85,32 @@ const UserSearch = () => {
                           }
                         >Submit</button>
                       </div>
-                      <div >
+                    </div>
+                  </div>
+                </div>
+                      <div>
                         {filteredUsers.length > 0 ? filteredUsers.map((user) => (
                           <div key={user._id} >
                             <div className="user-container">
-                              <h2 className="profileName">
+                              <h2 className="profileNameSearch">
                                 {user.username}</h2>
                               <br />
-                              <span className="profileName">{user.email}</span>
+                              <span className="profileNameSearch">{user.email}</span>
                               <br />
-                              <span className="pType">{user.personality}</span>
+                              <span className="pTypeSearch">{user.personality}</span>
                               <br />
-                              <span className="profileName" >
+                              <span className="profileNameSearch" >
                                 Current team(s): {user.teams ? user.teams.length : 0}
                               </span>
                               <br />
-                              <button className="viewuser-btn" href={`user/${user._id}`}>View Profile</button>
+                              <button className="viewuser-btnSearch">
+                                <a href={`user/${user._id}`}>View Profile</a>
+                              </button>
 
                             </div>
                           </div>
                         )) : <h1>{noResultMsg}</h1>}
                       </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             )}
           </div>

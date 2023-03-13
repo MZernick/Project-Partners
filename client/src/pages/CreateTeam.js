@@ -28,17 +28,17 @@ const CreateTeam = () => {
   })
 
   // waits until query is finished, then creates an array of users with thier rating to choose from 
-    // if the user data is done loading, run the compatibility checker for each user and the user logged in 
-    if(data1.loading) {
-      console.log('loading user')
-    } else {
-      userList.map(user => {
-        return userArr.push(getCompatibilityandUsername(data1.data.user, user));
-      })
-    }
+  // if the user data is done loading, run the compatibility checker for each user and the user logged in 
+  if (data1.loading) {
+    console.log('loading user')
+  } else {
+    userList.map(user => {
+      return userArr.push(getCompatibilityandUsername(data1.data.user, user));
+    })
+  }
 
   console.log(userArr)
- 
+
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -84,85 +84,87 @@ const CreateTeam = () => {
 
   console.log(formData)
   return (
-    <div className="bigContainer">
-      <NavTabs />
-      <div className='card'>
-        <h1 className="headers">Create a New Team</h1>
-        <div className="underline"></div>
-        <div className="container">
-          <form className="form" onSubmit={handleFormSubmit}>
-            <label htmlFor="title">Team Title:</label>
-            <input
-              name="title"
-              id="title"
-              type="text"
-              placeholder='Team Title Here....'
-              className="form-input"
-              onChange={handleInputChange}
-              value={formData.title}
-            >
-            </input>
-            <div className="form-border"></div>
-            <label htmlFor="description">Description:</label>
-            <input
-              name="description"
-              id="description"
-              type="text"
-              placeholder='Description Here....'
-              className="form-input"
-              onChange={handleInputChange}
-              value={formData.description}
-            >
-            </input>
-            <div className="form-border"></div>
-            {loading ? (
-              <div>Loading...</div>
-            ) : (
-              <Stack className="stack">
-                <Autocomplete
-                  freeSolo
-                  renderOption={(props, option) => (
-                    <Box {...props}>
-                      <div className='listels'>
-                        {`${option.username}`}
-                        <div className='spacing'></div>
-                        <div className='rating'>
-                          {`${option.rating}`}
+    <div>
+      <div><NavTabs /></div>
+      <div className="bigContainer">
+        <div className='card'>
+          <h1 className="headers">Create a New Team</h1>
+          <div className="underline"></div>
+          <div className="container">
+            <form className="form" onSubmit={handleFormSubmit}>
+              <label htmlFor="title">Team Title:</label>
+              <input
+                name="title"
+                id="title"
+                type="text"
+                placeholder='Team Title Here....'
+                className="form-input"
+                onChange={handleInputChange}
+                value={formData.title}
+              >
+              </input>
+              <div className="form-border"></div>
+              <label htmlFor="description">Description:</label>
+              <input
+                name="description"
+                id="description"
+                type="text"
+                placeholder='Description Here....'
+                className="form-input"
+                onChange={handleInputChange}
+                value={formData.description}
+              >
+              </input>
+              <div className="form-border"></div>
+              {loading ? (
+                <div>Loading...</div>
+              ) : (
+                <Stack className="stack">
+                  <Autocomplete
+                    freeSolo
+                    renderOption={(props, option) => (
+                      <Box {...props}>
+                        <div className='listels'>
+                          {`${option.username}`}
+                          <div className='spacing'></div>
+                          <div className='rating'>
+                            {`${option.rating}`}
+                          </div>
                         </div>
-                      </div>
 
-                    </Box>
-                  )}
-                  onChange={(event, newValue) => setFormData({ ...formData, members: [...newValue].map(item => item.value) })}
-                  multiple
-                  id="user-autocomplete"
-                  // getOptionLabel={(option) => (
-                  //   <Box>
-                  //   <div className='tag'>
-                  // {`${option.username}`}
-                  //     <div className='spacing'></div>
-                  //     <div className='ratingtag'>
-                  //       {`${option.rating}`}
-                  //     </div>
-                  //   </div>
-                  // </Box>
-                  // ) }
-                  getOptionLabel={(option) => `${option.username} ${option.rating}`}
-                  // isOptionEqualToValue={(option, value) => console.log(value)}
-                  options={userArr}
-                  className="usersearch"
-                  renderInput={(params) => <TextField {...params} variant="standard" label="Add Member..." />}
-                />
-              </Stack>
-            )}
-            <div className="form-border"></div>
-            <button
-              type='submit'
-              className='btn'
-            >
-              Add Team
-            </button>
-          </form>
+                      </Box>
+                    )}
+                    onChange={(event, newValue) => setFormData({ ...formData, members: [...newValue].map(item => item.value) })}
+                    multiple
+                    id="user-autocomplete"
+                    // getOptionLabel={(option) => (
+                    //   <Box>
+                    //   <div className='tag'>
+                    // {`${option.username}`}
+                    //     <div className='spacing'></div>
+                    //     <div className='ratingtag'>
+                    //       {`${option.rating}`}
+                    //     </div>
+                    //   </div>
+                    // </Box>
+                    // ) }
+                    getOptionLabel={(option) => `${option.username} ${option.rating}`}
+                    // isOptionEqualToValue={(option, value) => console.log(value)}
+                    options={userArr}
+                    className="usersearch"
+                    renderInput={(params) => <TextField {...params} variant="standard" label="Add Member..." />}
+                  />
+                </Stack>
+              )}
+              <div className="form-border"></div>
+              <button
+                type='submit'
+                className='btn'
+              >
+                Add Team
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>

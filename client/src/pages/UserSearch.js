@@ -22,12 +22,16 @@ const UserSearch = () => {
 
   function handleSubmit() {
     let listarray = [];
+    const filterLower = filter.toLowerCase();
+
     console.log(searchText);
     console.log(filter);
     if (filter === "personality") {
-      listarray = users.filter((user) => user.personality === searchText);
+      listarray = users.filter((user) => user.personality.toLowerCase() === searchText);
     } else if (filter === "email") {
-      listarray = users.filter((user) => user.email === searchText);
+      listarray = users.filter((user) => user.email.toLowerCase() === searchText);
+    } else if (filter=== "username") {
+      listarray = users.filter((user) => user.username.toLowerCase() === searchText);
     } else {
       listarray = []; // if no filter is selected
     }
@@ -61,17 +65,18 @@ const UserSearch = () => {
                   >
                     <option value="personality">Personality Type</option>
                     <option value="email">Email</option>
+                    <option value="username">Username</option>
                   </select>
                 
                 <div className="headers" >
-                  <label htmlFor="search">Search:</label>
+                  <label htmlFor="search"></label>
                   <input
                     type="text"
                     className="form-control form-input"
                     id="search"
                     placeholder={`Search by ${filter}`}
                     value={searchText}
-                    onChange={(e) => setSearchText(e.target.value)}
+                    onChange={(e) => setSearchText(e.target.value.toLowerCase())}
                   />
                   <button className="search-btn"
                   type="submit"
@@ -98,13 +103,14 @@ const UserSearch = () => {
                           Current team(s): {user.teams ? user.teams.length : 0} 
                         </span> 
                       </h4>
-                      <Button href={`user/${user._id}`}>click</Button>
+                      <Button href={`user/${user._id}`}>View Profile</Button>
                     </div>
                   </div>
                 )): <h1>{noResultMsg}</h1>}
               </div>
             </div>
           )}
+        </div>
         </div>
       </main>
     </>

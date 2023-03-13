@@ -37,7 +37,7 @@ const UserSearch = () => {
   }
   console.log(filteredUsers);
   return (
-    <>
+    <div>
       <NavTabs />
       <main>
         <div className="search-page" >
@@ -93,19 +93,19 @@ const UserSearch = () => {
                           <br />
                           <span >
                             Current team(s): {user.teams ? user.teams.length : 0}
-                          </span>
-                        </h4>
-                        <Button href={`user/${user._id}`}>click</Button>
-                      </div>
+                        </span> 
+                      </h4>
+                      <Button href={`user/${user._id}`}>click</Button>
                     </div>
-                  )) : <h1>{noResultMsg}</h1>}
-                </div>
+                  </div>
+                )): <h1>{noResultMsg}</h1>}
               </div>
-            )}
+            </div>
+          )}
           </div>
         </div>
       </main>
-    </>
+      </div>
   );
 };
 

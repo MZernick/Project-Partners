@@ -1,10 +1,10 @@
 import React from 'react';
 import '../../styles/Nav.css';
-import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
-import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-import AddCircleOutlineRoundedIcon from '@mui/icons-material/AddCircleOutlineRounded';
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+// import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
+// import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
+// import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+// import AddCircleOutlineRoundedIcon from '@mui/icons-material/AddCircleOutlineRounded';
+// import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
 

@@ -8,15 +8,14 @@ import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
+import ProLogo from '../../styles/PP_logo.png'
 
 function NavTabs({ currentPage }) {
   return (
     <nav>
       <ul className="nav">
-        <li id="logoPlaceholder">
-          <p>
-            INSERT LOGO HERE
-          </p>
+        <li className="logoPlaceholder">
+          <img src={ProLogo} alt="ProPairs logo" id="Logo" />
         </li>
         <li>
           <Link id="nav-link"

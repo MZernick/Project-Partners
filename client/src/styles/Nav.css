@@ -4,12 +4,14 @@ nav {
     justify-content: center;
     padding: 1.5rem 2rem;
     background-color: #3e5a80;
+    align-items: center;
   }
 
   .nav {
     display: flex;
     justify-content: center;
-    align-items: space-between;
+    align-items: center;
+    margin-right: 530px;
   }
 
 li {
@@ -39,4 +41,15 @@ li {
 }
 #icon5 {
   margin-right: 4.5rem;
+}
+
+.logoPlaceholder {
+  display: flex;
+  align-items: center;
+}
+
+#Logo {
+  width: 150px;
+  height: 150px;
+  margin-right: 500px;
 }

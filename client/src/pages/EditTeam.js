@@ -73,7 +73,7 @@ const EditTeam = () => {
 //   members: data2.loading ? [] : teamData.data.team.members.map(member => member._id),
 // })
 
-// what currently works
+// itializing the formData
  const [formData, setFormData] = useState({
     title: '', 
     description: '' , 
@@ -81,7 +81,7 @@ const EditTeam = () => {
  })
 
 
-//  will pre-populate the exsisting data in the team form
+//  will pre-populate the exsisting data in the team form after the team query has run
 useEffect(() => {
   if(!data2.loading) {
     setFormData({
@@ -201,7 +201,7 @@ if(loading || data2.loading || data1.loading) {
                     type='submit'
                     className='btn'
                     >
-                        Add Team
+                        Update Team
                     </button>
                 </form>
               </div>

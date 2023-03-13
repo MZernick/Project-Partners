@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import NavTabs from "../components/NavTabs";
 import { useQuery } from "@apollo/client";
 import { SEARCH_USER } from "../utils/queries";
-import auth from "../utils/auth";
-import Button from "react-bootstrap/Button";
+// import auth from "../utils/auth";
+// import Button from 'react-bootstrap/Button';
 import '../styles/UserSearch.css'
 
 
@@ -19,12 +19,16 @@ const UserSearch = () => {
 
   function handleSubmit() {
     let listarray = [];
+    const filterLower = filter.toLowerCase();
+
     console.log(searchText);
     console.log(filter);
     if (filter === "personality") {
-      listarray = users.filter((user) => user.personality === searchText);
+      listarray = users.filter((user) => user.personality.toLowerCase() === searchText);
     } else if (filter === "email") {
-      listarray = users.filter((user) => user.email === searchText);
+      listarray = users.filter((user) => user.email.toLowerCase() === searchText);
+    } else if (filter=== "username") {
+      listarray = users.filter((user) => user.username.toLowerCase() === searchText);
     } else {
       listarray = []; // if no filter is selected
     }
@@ -37,72 +41,77 @@ const UserSearch = () => {
   }
   console.log(filteredUsers);
   return (
-    <div>
-      <NavTabs />
-      <main>
-        <div className="search-page" >
-          <div className="column">
-            {loading ? (
-              <div>Loading...</div>
-            ) : (
-              <div>
-                <div className="search-card" >
-                  <div className="container">
-                    <div className="headers">
-                      <div className="form">
-                        <label htmlFor="filter">Search By:</label>
-                        <select
-                          className="form-select pform-input"
-                          id="filter"
-                          onChange={(e) => setFilter(e.target.value)}
-                        >
-                          <option value="personality">Personality Type</option>
-                          <option value="email">Email</option>
-                        </select>
 
-                        <div className="headers" >
-                          <label htmlFor="search">Search:</label>
-                          <input
-                            type="text"
-                            className="form-control form-input"
-                            id="search"
-                            placeholder={`Search by ${filter}`}
-                            value={searchText}
-                            onChange={(e) => setSearchText(e.target.value)}
-                          />
-                          <button className="search-btn"
-                            type="submit"
-                            onClick={() => handleSubmit()
-                            }
-                          >Submit</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+    <>
+    <NavTabs/>
+    <main>
+      <div className="search-page" >
+        <div className="column">
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <div>
+              <div className="search-card" >
+                <div className="container">
+                <div className="headers">
+                  <div className="form">
+                  <label htmlFor="filter">Search By:</label>
+                  <select
+                    className="form-select pform-input"
+                    id="filter"
+                    onChange={(e) => setFilter(e.target.value)}
+                  >
+                    <option value="personality">Personality Type</option>
+                    <option value="email">Email</option>
+                    <option value="username">Username</option>
+
+                  </select>
+                
+                <div className="headers" >
+                  <label htmlFor="search">Search:</label>
+                  <input
+                    type="text"
+                    className="form-control form-input"
+                    id="search"
+                    placeholder={`Search by ${filter}`}
+                    value={searchText}
+                    onChange={(e) => setSearchText(e.target.value.toLowerCase())}
+                  />
+                  <button className="search-btn"
+                  type="submit"
+                  onClick={()=> handleSubmit()
+                  }
+                  >Submit</button>
                 </div>
-                <div >
-                  {filteredUsers.length > 0 ? filteredUsers.map((user) => (
-                    <div key={user._id} >
-                      <div className="team-card">
-                        <h4 className="headers">
-                          username: {user.username}
-                          <br />
-                          <span> email: {user.email}</span>
-                          <br />
-                          <span> Personality type: {user.personality}</span>
-                          <br />
-                          <span >
-                            Current team(s): {user.teams ? user.teams.length : 0}
+              </div>
+              </div>
+              </div>
+              </div>
+              <div >
+                {filteredUsers.length > 0 ? filteredUsers.map((user) => (
+                  <div key={user._id} >
+                    <div className="team-card">
+                      <h4 className="headers">
+                        username: {user.username} 
+                        <br />
+                        <span> email: {user.email}</span>
+                        <br />
+                        <span> Personality type: {user.personality}</span>
+                        <br />
+                        <span >
+                          Current team(s): {user.teams ? user.teams.length : 0} 
                         </span> 
                       </h4>
-                      <Button href={`user/${user._id}`}>click</Button>
+                      <button href={`user/${user._id}`}>View Profile</button>
+
                     </div>
                   </div>
                 )): <h1>{noResultMsg}</h1>}
               </div>
             </div>
           )}
-          </div>
+
+        </div>
         </div>
       </main>
       </div>

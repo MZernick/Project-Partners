@@ -42,7 +42,7 @@ const UserSearch = () => {
   console.log(filteredUsers);
   return (
 
-    <>
+    <div>
     <NavTabs/>
     <main>
       <div className="search-page" >

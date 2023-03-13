@@ -56,8 +56,8 @@ const Profile = () => {
             <p id="newComment">you are awesome</p>
             <p id="newComment">you are okay</p>
             <p id="newComment">you stink</p>
-          </div> */}
-          <button onClick={async () => {
+          </div>
+          <button className='delete-btn' onClick={async () => {
             await removeUser();
             auth.logout();
             navigate("/");

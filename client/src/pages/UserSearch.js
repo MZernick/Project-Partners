@@ -27,7 +27,7 @@ const UserSearch = () => {
       listarray = users.filter((user) => user.personality.toLowerCase() === searchText);
     } else if (filter === "email") {
       listarray = users.filter((user) => user.email.toLowerCase() === searchText);
-    } else if (filter=== "username") {
+    } else if (filter === "username") {
       listarray = users.filter((user) => user.username.toLowerCase() === searchText);
     } else {
       listarray = []; 
@@ -42,7 +42,6 @@ const UserSearch = () => {
   console.log(filteredUsers);
  
   return (
-
     <div>
     <NavTabs/>
     <main>
@@ -85,35 +84,31 @@ const UserSearch = () => {
                   }
                   >Submit</button>
                 </div>
-              </div>
-              </div>
-              </div>
-              </div>
-              <div >
-                {filteredUsers.length > 0 ? filteredUsers.map((user) => (
-                  <div key={user._id} >
-                    <div className="team-card">
-                      <h4 className="headers">
-                        Username: {user.username} 
+                <div >
+                  {filteredUsers.length > 0 ? filteredUsers.map((user) => (
+                    <div key={user._id} >
+                      <div className="user-container">
+                        <h2 className="profileName">
+                          {user.username}</h2>
                         <br />
-                        <span> Email: {user.email}</span>
+                        <span className="profileName">{user.email}</span>
                         <br />
-                        <span> Personality type: {user.personality}</span>
+                        <span className="pType">{user.personality}</span>
                         <br />
-                        <span >
-                          Current team(s): {user.teams ? user.teams.length : 0} 
-                        </span> 
-                      </h4>
-                      <Button className= "search-btn" href={`user/${user._id}`}>View Profile</Button>
+                        <span className="profileName" >
+                          Current team(s): {user.teams ? user.teams.length : 0}
+                        </span>
+                        <br />
+                        <button className="viewuser-btn" href={`user/${user._id}`}>View Profile</button>
 
+                      </div>
                     </div>
-                  </div>
-                )): <h1>{noResultMsg}</h1>}
+                  )) : <h1>{noResultMsg}</h1>}
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
-        </div>
+          </div>
         </div>
       </main>
      

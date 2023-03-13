@@ -1,87 +1,139 @@
 .headers {
-    color: black; 
-    font-family: 'Switzer', sans-serif;
-    padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
-    transition: opacity 400ms ease;
-    letter-spacing: 4px;
-    padding-bottom: 23px;
-    text-align: center;
-    font-size: clamp(0.7rem, 2.7vw,2.7rem);
-  }
+  color: black;
+  font-family: 'Switzer', sans-serif;
+  padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+  transition: opacity 400ms ease;
+  letter-spacing: 4px;
+  padding-bottom: 23px;
+  text-align: center;
+  font-size: clamp(0.7rem, 2.7vw, 2.7rem);
+}
+
 .search-page {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.search-card { 
-    transition: 0.3s;
-    border-radius: 5px;
-    background: #fbfbfb;
-    border-radius: 8px;
-    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-    width: 475px;
-  }
-  
-  /* On mouse-over, add a deeper shadow */
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  /* Add some padding inside the card container */
-  .container {
-    padding: 12px 44px;
-  }
-  body {
-    background-image: url('../styles/landingpagetest4.png');
-    background-repeat: no-repeat;
-  }
-  label {
-    font-family: 'Switzer', sans-serif;
-    font-size: 11pt;
-    padding: 5px;
-  }
+.search-card {
+  transition: 0.3s;
+  border-radius: 5px;
+  background: #fbfbfb;
+  border-radius: 8px;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+  width: 475px;
+  margin: 20px;
+}
 
-  .search-btn {
-    background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);border: none;
-    border-radius: 21px;
-    box-shadow: 0px 1px 8px #588ab6;
-    color: white;
-    font-family: "Raleway SemiBold", sans-serif;
-    height: 42.3px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    margin-top: 30px;
-    transition: 0.25s;
-    width: 153px;
-  }
-  /* #signup-btn:hover {
-    box-shadow: 0px 1px 18px #588ab6;
-  }DOES NOT WORK */
-  .form {
-    align-items: left;
-    display: flex;
-    flex-direction: column;
-  }
-  .form-border {
-    background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);height: 1px;
-    width: 100%;
-  }
-  .form-input {
-    background: #fbfbfb;
-    border: none;
-    outline: none;
-    padding-top: 14px;
-    padding-bottom: 5px;
-  }
-  .pform-input {
-    /* background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);height: 1px;
-    border-radius: 21px; */
-    border: none;
-    outline: none;
-    padding-top: 14px;
-    padding-bottom: 5px;
-  }
-  .column {
-    padding: 100px 30px;
-  }
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 12px 44px;
+}
+
+body {
+  background-image: url('../styles/landingpagetest4.png');
+  background-repeat: no-repeat;
+}
+
+label {
+  font-family: 'Switzer', sans-serif;
+  font-size: 11pt;
+  padding: 5px;
+}
+
+.search-btn {
+  background: linear-gradient(90deg, rgba(21, 17, 87, 1) 0%, rgba(88, 138, 182, 1) 100%);
+  border: none;
+  border-radius: 21px;
+  box-shadow: 0px 1px 8px #588ab6;
+  color: white;
+  font-family: "Raleway SemiBold", sans-serif;
+  height: 42.3px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  transition: 0.25s;
+  width: 153px;
+}
+
+.form {
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-border {
+  background: linear-gradient(90deg, rgba(21, 17, 87, 1) 0%, rgba(88, 138, 182, 1) 100%);
+  height: 1px;
+  width: 100%;
+}
+
+.form-input {
+  background: #fbfbfb;
+  border: none;
+  outline: none;
+  padding-top: 14px;
+  padding-bottom: 5px;
+}
+
+.viewuser-btn {
+  background: linear-gradient(90deg, rgba(21, 17, 87, 1) 0%, rgba(88, 138, 182, 1) 100%);
+  border: none;
+  border-radius: 21px;
+  box-shadow: 0px 1px 8px #588ab6;
+  color: white;
+  font-family: "Raleway SemiBold", sans-serif;
+  height: 42.3px;
+  transition: 0.25s;
+  width: 153px;
+  margin-bottom: 30px;
+}
+
+.user-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: #1D3557;
+  flex-wrap: wrap;
+  transition: 0.3s;
+  border-radius: 15px;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+  width: 600px;
+  margin: 20px;
+}
+
+.profileName {
+  font-family: 'Switzer', sans-serif;
+  text-decoration: none;
+  color: #F1FAEE;
+  text-align: center;
+}
+
+.userInfo {
+  font-family: 'Switzer', sans-serif;
+  text-decoration: none;
+  color: #F1FAEE;
+  text-align: center;
+}
+
+.pType {
+  font-family: 'Switzer', sans-serif;
+  font-size: clamp(0.5rem, 2.5vw, 2.5rem);
+  color: #F1FAEE;
+  font-weight: 700;
+  margin-top: 1%;
+  background-color: #E63946;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-radius: 8px;
+}
+
+.column {
+  padding: 100px 30px;
+}

@@ -650,6 +650,8 @@ const data ={
     }
   }
 
+
+
 //return the compatibility between two users
 function getCompatibility(user1, user2) {
     let comp = user1.compatibility;
@@ -662,6 +664,12 @@ function getCompatibility(user1, user2) {
 }
 
 // console.log(getCompatibility(data.data.users[0], data.data.users[1]));
+//Thanks Dom for making this!
+function getCompatibilityandUsername(user1, user2) {
+  let comp = user1.compatibility;
+  const result = comp.find(({type}) => type === user2.personality);
+     return {value:`${user2._id}`, username: `${user2.username}`, rating: `${result.rating}`};
+};
 
 
 //TO DO: write function that returns array of compatibility rating between each of the users and the first user in the array
@@ -740,3 +748,25 @@ function oneBigTeamScore(teamArray) {
 console.log("myTeamScore: " +myTeamScore(allTheUsers, allTheUsers[0]));
 
 console.log("the big 'ol team score is: " + oneBigTeamScore(allTheUsers));
+
+//JOSH START HERE need to do more console.log invistgating to figure this out, but should work to build sub-lists
+
+function makeObjectListofOthers(teamArray, user1) {
+  
+  let tempTeamArray = [];
+  tempTeamArray.push(...teamArray);
+  const user1index = tempTeamArray.findIndex(({_id}) => _id === user1._id);
+  tempTeamArray.splice(user1index, 1);
+  // console.log("tempTeamArray AFTER removing user1:")
+
+  let nameAndscores = [];
+  tempTeamArray.forEach(member => {
+          nameAndscores.push(getCompatibilityandUsername(user1, member));
+          
+  });
+  // console.log(nameAndscores);
+
+  return nameAndscores
+};
+
+console.log(makeObjectListofOthers(allTheUsers, allTheUsers[0]));

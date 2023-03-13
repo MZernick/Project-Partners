@@ -42,51 +42,47 @@ const UserSearch = () => {
   console.log(filteredUsers);
  
   return (
+    <div>
+    <NavTabs/>
+    <main>
+      <div className="search-page" >
+        <div className="column">
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <div>
+              <div className="search-card" >
+                <div className="container">
+                <div className="headers">
+                  <div className="form">
+                  <label htmlFor="filter">Search By:</label>
+                  <select
+                    className="form-select pform-input"
+                    id="filter"
+                    onChange={(e) => setFilter(e.target.value)}
+                  >
+                    <option value="personality">Personality Type</option>
+                    <option value="email">Email</option>
+                    <option value="username">Username</option>
 
-    <>
-      <NavTabs />
-      <main>
-        <div className="search-page" >
-          <div className="column">
-            {loading ? (
-              <div>Loading...</div>
-            ) : (
-              <div>
-                <div className="search-card" >
-                  <div className="container">
-                    <div className="headers">
-                      <div className="form">
-                        <label htmlFor="filter">Search By:</label>
-                        <select
-                          className="form-select pform-input"
-                          id="filter"
-                          onChange={(e) => setFilter(e.target.value)}
-                        >
-                          <option value="personality">Personality Type</option>
-                          <option value="email">Email</option>
-                          <option value="username">Username</option>
-
-                        </select>
-
-                        <div className="headers" >
-                          <label htmlFor="search">Search:</label>
-                          <input
-                            type="text"
-                            className="form-control form-input"
-                            id="search"
-                            placeholder={`Search by ${filter}`}
-                            value={searchText}
-                            onChange={(e) => setSearchText(e.target.value.toLowerCase())}
-                          />
-                          <button className="search-btn"
-                            type="submit"
-                            onClick={() => handleSubmit()
-                            }
-                          >Submit</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  </select>
+                
+                <div className="headers" >
+                  <label htmlFor="search"></label>
+                  <input
+                    type="text"
+                    className="form-control form-input"
+                    id="search"
+                    placeholder={`Find a ${filter}`}
+                    value={searchText}
+                    onChange={(e) => setSearchText(e.target.value.toLowerCase())}
+                    onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
+                  />
+                  <button className="search-btn"
+                  type="submit"
+                  onClick={()=> handleSubmit()
+                  }
+                  >Submit</button>
                 </div>
                 <div >
                   {filteredUsers.length > 0 ? filteredUsers.map((user) => (

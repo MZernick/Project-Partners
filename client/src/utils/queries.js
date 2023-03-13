@@ -11,6 +11,7 @@ query User($userId: ID!) {
       rating
     }
     teams{
+      _id
       title
       description
     }

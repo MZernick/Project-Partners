@@ -40,8 +40,8 @@ mutation addTeam($userId: ID!, $title: String!, $description: String!) {
 `
 
 export const REMOVE_TEAM = gql`
-  mutation removeTeam($team: String!) {
-    removeTeam(team: $team) {
+  mutation removeTeam($teamId: ID!) {
+    removeTeam(teamId: $teamId) {
       _id
       username
       team {

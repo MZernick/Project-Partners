@@ -9,11 +9,11 @@ import { QUERY_ME, MY_TEAMS } from '../../utils/queries';
 import { getCompatibility, getCompatibilityandUsername, avg, indivTeamScores, myTeamScore, oneBigTeamScore } from '../../utils/helpers'
 
 const MyTeamList = (props) => {
-
-  console.log(props.focusTeam)
+  console.log("this is in MyTeamsList index.js",props.focusTeam)
   const focusTeam = props.focusTeam;
-  const members = focusTeam.members;
+  const members = focusTeam?.members;
   console.log(members)
+ 
 
   // const [removeTeam, { error }] = useMutation(REMOVE_TEAM, {
   //   update(cache, { data: { removeTeam } }) {
@@ -38,10 +38,10 @@ const MyTeamList = (props) => {
   //   }
   // };
 
-  // if (!teams) {
-  //   return <h3>No Teams Yet</h3>;
-  // }
-
+  if (!focusTeam) {
+    return <h3>No Teams Yet</h3>;
+  }
+  
   return (
 
     <div>
@@ -50,11 +50,11 @@ const MyTeamList = (props) => {
       </h1>
       <div className="underline-title"></div>
       <p>{focusTeam.description}</p>
-      <h2>Overall Compatibility: {Math.round(oneBigTeamScore(members))}%</h2>
+      <h2>Overall Compatibility: {members?.length && Math.round(oneBigTeamScore(members))}%</h2>
       <div className="container">
         <h2>By team member:</h2>
         <ul className="list-group">
-          {members.map((member) => (
+          {members?.map((member) => (
             <li className="list-group-item" key={member.username}>
               <div className="members-username"><h3>{member.username}'s Team Score: {Math.round(myTeamScore(members, member))}%</h3> </div>
             </li>

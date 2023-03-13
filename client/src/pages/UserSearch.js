@@ -4,9 +4,9 @@ import { useQuery } from "@apollo/client";
 import { SEARCH_USER } from "../utils/queries";
 import auth from "../utils/auth";
 import Button from "react-bootstrap/Button";
-import { SEARCH_USER} from "../utils/queries";
-import auth from '../utils/auth';
-import Button from 'react-bootstrap/Button';
+// import { SEARCH_USER} from "../utils/queries";
+// import auth from '../utils/auth';
+// import Button from 'react-bootstrap/Button';
 import '../styles/UserSearch.css'
 
 
@@ -40,7 +40,7 @@ const UserSearch = () => {
   }
   console.log(filteredUsers);
   return (
-    <>
+    <div>
     <NavTabs/>
     <main>
       <div className="search-page" >
@@ -106,8 +106,9 @@ const UserSearch = () => {
             </div>
           )}
         </div>
+       </div> 
       </main>
-    </>
+      </div>
   );
 };
 

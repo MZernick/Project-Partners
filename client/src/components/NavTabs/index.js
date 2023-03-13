@@ -28,7 +28,6 @@ function NavTabs({ currentPage }) {
         <li>
           <Link id="nav-link"
             to={`/user/${auth.getProfile().data._id}/teams`}
-            className={currentPage === 'MyTeams' ? 'nav-link active' : 'nav-link'}
           >
             <GroupsRoundedIcon fontSize="large" id="icon2" />
           </Link>
@@ -36,7 +35,6 @@ function NavTabs({ currentPage }) {
         <li>
           <Link id="nav-link"
             to="/users"
-            className={currentPage === 'UserSearch' ? 'nav-link active' : 'nav-link'}
           >
             <SearchRoundedIcon fontSize="large" id="icon3" />
           </Link>
@@ -44,7 +42,6 @@ function NavTabs({ currentPage }) {
         <li>
           <Link id="nav-link"
             to="/createteam"
-            className={currentPage === 'CreateTeam' ? 'nav-link active' : 'nav-link'}
           >
             <AddCircleOutlineRoundedIcon fontSize="large" id="icon4" />
           </Link>
@@ -52,7 +49,6 @@ function NavTabs({ currentPage }) {
         <li >
           <Link id="nav-link"
             to={`/user/${auth.getProfile().data._id}`}
-            className={currentPage === 'Profile' ? 'nav-link active' : 'nav-link'}
           >
             <AccountCircleRoundedIcon fontSize="large" id="icon5" />
           </Link>
@@ -61,7 +57,6 @@ function NavTabs({ currentPage }) {
           <Link id="nav-link"
             to={`/`}
             onClick={() => auth.logout()}
-            className={currentPage === 'Profile' ? 'nav-link active' : 'nav-link'}
           >
             <LogoutRoundedIcon fontSize="large" id="icon5" />
           </Link>

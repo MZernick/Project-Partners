@@ -22,7 +22,7 @@ function NavTabs({ currentPage }) {
             to="/"
             activeclassname={'active'}
           >Home
-            {/* <HomeRoundedIcon fontSize="large" id="icon1" /> */}
+            <HomeRoundedIcon fontSize="large" id="icon1" />
           </Link>
         </li>
         <li>
@@ -30,7 +30,7 @@ function NavTabs({ currentPage }) {
             to={`/user/${auth.getProfile().data._id}/teams`}
             className={currentPage === 'MyTeams' ? 'nav-link active' : 'nav-link'}
           >My Teams
-            {/* <GroupsRoundedIcon fontSize="large" id="icon2" /> */}
+            <GroupsRoundedIcon fontSize="large" id="icon2" />
           </Link>
         </li>
         <li>
@@ -38,7 +38,7 @@ function NavTabs({ currentPage }) {
             to="/users"
             className={currentPage === 'UserSearch' ? 'nav-link active' : 'nav-link'}
           >Search Users
-            {/* <SearchRoundedIcon fontSize="large" id="icon3" /> */}
+            <SearchRoundedIcon fontSize="large" id="icon3" />
           </Link>
         </li>
         <li>
@@ -46,7 +46,7 @@ function NavTabs({ currentPage }) {
             to="/createteam"
             className={currentPage === 'CreateTeam' ? 'nav-link active' : 'nav-link'}
           >Create Team
-            {/* <AddCircleOutlineRoundedIcon fontSize="large" id="icon4" /> */}
+            <AddCircleOutlineRoundedIcon fontSize="large" id="icon4" />
           </Link>
         </li>
         <li >
@@ -54,7 +54,7 @@ function NavTabs({ currentPage }) {
             to={`/user/${auth.getProfile().data._id}`}
             className={currentPage === 'Profile' ? 'nav-link active' : 'nav-link'}
           >My Profile
-            {/* <AccountCircleRoundedIcon fontSize="large" id="icon5" /> */}
+            <AccountCircleRoundedIcon fontSize="large" id="icon5" />
           </Link>
         </li>
         <li >
@@ -63,7 +63,7 @@ function NavTabs({ currentPage }) {
             onClick={() => auth.logout()}
             className={currentPage === 'Profile' ? 'nav-link active' : 'nav-link'}
           >Logout
-            {/* <AccountCircleRoundedIcon fontSize="large" id="icon5" /> */}
+            <AccountCircleRoundedIcon fontSize="large" id="icon5" />
           </Link>
         </li>
       </ul>

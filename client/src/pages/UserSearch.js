@@ -53,7 +53,7 @@ const UserSearch = () => {
               <div>
                 <div className="search-card" >
                   <div className="container">
-                    <div className="headers">
+                    <div className="headers-search">
                       <div className="form">
                         <label htmlFor="filter">Search By:</label>
                         <select
@@ -67,7 +67,7 @@ const UserSearch = () => {
 
                         </select>
 
-                        <div className="headers" >
+                        <div className="headers-search" >
                           <label htmlFor="search"></label>
                           <input
                             type="text"

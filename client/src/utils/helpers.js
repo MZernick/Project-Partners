@@ -48,8 +48,25 @@ function oneBigTeamScore(teamArray) {
     }
     return avg(bigScores);
 }
+function makeObjectListofOthers(teamArray, user1) {
+ 
+    let tempTeamArray = [];
+    tempTeamArray.push(...teamArray);
+    const user1index = tempTeamArray.findIndex(({_id}) => _id === user1._id);
+    tempTeamArray.splice(user1index, 1);
+   
+  
+    let nameAndscores = [];
+    tempTeamArray.forEach(member => {
+            nameAndscores.push(getCompatibilityandUsername(user1, member));
+            
+    });
+    
+  
+    return nameAndscores
+  };
 
 
 module.exports = {
-    getCompatibility, getCompatibilityandUsername, avg, indivTeamScores, myTeamScore, oneBigTeamScore
+    getCompatibility, getCompatibilityandUsername, avg, indivTeamScores, myTeamScore, oneBigTeamScore, makeObjectListofOthers
 }

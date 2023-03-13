@@ -2,7 +2,8 @@ import React from 'react';
 import { useMutation } from '@apollo/client';
 //be sure to create the mutations for this--done
 import { REMOVE_TEAM } from '../../utils/mutations';
-
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
 import '../../styles/Profile.css'
 import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
@@ -29,7 +30,7 @@ const ProfileTeamList = ({ user, isLoggedInUser = false }) => {
   const handleRemoveTeam = async (team) => {
     try {
       const { data } = await removeTeam({
-        variables: { team },
+        variables: { teamId: team },
       });
     } catch (err) {
       console.error(err);
@@ -48,17 +49,23 @@ const ProfileTeamList = ({ user, isLoggedInUser = false }) => {
             <div className="team1Container">
             <h3 id="team1" key={team}>
               {team.title}
+              <IconButton 
+              onClick={ () => handleRemoveTeam(team._id)}
+              aria-label="delete">
+                <DeleteIcon />
+              </IconButton>
               </h3>
-            <div id="teamInfoContainer">
+              
+            {/* <div id="teamInfoContainer">
             <Stack direction="row" spacing={2}>
-              <Avatar>H</Avatar>
+                <Avatar>H</Avatar>
               <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
               <Avatar sx={{ bgcolor: deepPurple[500] }}>OP</Avatar>
             </Stack>
-            </div>
-            <div className="infoBox1">
+            </div> */}
+            {/* <div className="infoBox1">
             <p>JOSH GRAPH HERE</p>
-            </div>
+            </div> */}
           </div>
           ))}
       </div>

@@ -3,7 +3,7 @@ import NavTabs from "../components/NavTabs";
 import { useQuery } from "@apollo/client";
 import { SEARCH_USER } from "../utils/queries";
 // import auth from "../utils/auth";
-// import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button';
 import '../styles/UserSearch.css'
 
 
@@ -19,7 +19,7 @@ const UserSearch = () => {
 
   function handleSubmit() {
     let listarray = [];
-    const filterLower = filter.toLowerCase();
+   
 
     console.log(searchText);
     console.log(filter);
@@ -30,19 +30,20 @@ const UserSearch = () => {
     } else if (filter=== "username") {
       listarray = users.filter((user) => user.username.toLowerCase() === searchText);
     } else {
-      listarray = []; // if no filter is selected
+      listarray = []; 
     }
     setFilteredUsers(listarray);
-    // ADD error handling if searchText is blank and if search results yield no matches
-    // if array is empty, display no users found, if >0 then setfiltered
+    // if array is empty, no results found is rendered in place of cards.
     if (listarray.length == 0) {
       setNoResultMsg("No results found");
     }
+  
   }
   console.log(filteredUsers);
+ 
   return (
 
-    <>
+    <div>
     <NavTabs/>
     <main>
       <div className="search-page" >
@@ -68,14 +69,15 @@ const UserSearch = () => {
                   </select>
                 
                 <div className="headers" >
-                  <label htmlFor="search">Search:</label>
+                  <label htmlFor="search"></label>
                   <input
                     type="text"
                     className="form-control form-input"
                     id="search"
-                    placeholder={`Search by ${filter}`}
+                    placeholder={`Find a ${filter}`}
                     value={searchText}
                     onChange={(e) => setSearchText(e.target.value.toLowerCase())}
+                    onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
                   />
                   <button className="search-btn"
                   type="submit"
@@ -92,9 +94,9 @@ const UserSearch = () => {
                   <div key={user._id} >
                     <div className="team-card">
                       <h4 className="headers">
-                        username: {user.username} 
+                        Username: {user.username} 
                         <br />
-                        <span> email: {user.email}</span>
+                        <span> Email: {user.email}</span>
                         <br />
                         <span> Personality type: {user.personality}</span>
                         <br />
@@ -102,7 +104,7 @@ const UserSearch = () => {
                           Current team(s): {user.teams ? user.teams.length : 0} 
                         </span> 
                       </h4>
-                      <button href={`user/${user._id}`}>View Profile</button>
+                      <Button className= "search-btn" href={`user/${user._id}`}>View Profile</Button>
 
                     </div>
                   </div>
@@ -114,7 +116,8 @@ const UserSearch = () => {
         </div>
         </div>
       </main>
-    </>
+     
+      </>
   );
 };
 

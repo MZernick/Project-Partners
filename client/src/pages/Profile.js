@@ -56,7 +56,7 @@ const Profile = () => {
             <p id="newComment">you are awesome</p>
             <p id="newComment">you are okay</p>
             <p id="newComment">you stink</p>
-          </div>
+          </div> */}
           <button className='delete-btn' onClick={async () => {
             await removeUser();
             auth.logout();
@@ -67,13 +67,13 @@ const Profile = () => {
               {/* <div>
                 <p>iamauser</p>
               </div> */}
-            </div>    
-         </div>
+            </div>
+          </div>
         </div>
         <div className="space"></div>
         <div className="team-box">
-              <h2 id="yourTeams">Your Teams</h2>
-              <ProfileTeamList user={user} />
+          <h2 id="yourTeams">Your Teams</h2>
+          <ProfileTeamList user={user} />
         </div>
       </div>
     </div>

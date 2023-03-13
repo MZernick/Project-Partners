@@ -1,115 +1,193 @@
 .headers {
-    color: black; 
-    font-family: 'Switzer', sans-serif;
-    padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
-    transition: opacity 400ms ease;
-    letter-spacing: 4px;
-    padding-bottom: 23px;
-    text-align: center;
-    font-size: clamp(0.7rem, 2.7vw,2.7rem);
-  }
+  color: black; 
+  font-family: 'Switzer', sans-serif;
+  padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+  transition: opacity 400ms ease;
+  letter-spacing: 4px;
+  padding-bottom: 23px;
+  text-align: center;
+  font-size: clamp(0.7rem, 2.7vw,2.7rem);
+}
 .signup-page {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 110vh;
+  height: 120vh;
   background-color: #1D3557;
+  flex-direction: column;
 }
 
 .allteam-card { 
-    transition: 0.3s;
-    border-radius: 5px;
-    background-color: #3e5a80;
-    border-radius: 8px;
-    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-    width: 90%;
-    margin-bottom: 20%;
-  }
-  .team-card { 
-    transition: 0.3s;
-    border-radius: 5px;
-    background: #fbfbfb;
-    border-radius: 8px;
-    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-    width: 475px;
-  }
-  
-  /* On mouse-over, add a deeper shadow */
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  /* Add some padding inside the card container */
-  .container {
-    padding: 12px 44px;
-  }
-  body {
-    background-image: url('../styles/landingpagetest4.png');
-    background-repeat: no-repeat;
-  }
-  .allteam-title {
-    font-family: 'Switzer', sans-serif;
-    font-size: 11pt;
-    padding: 5px;
-  }
-  #create-team {
-    color: #588ab6;
-    font-family: 'Switzer', sans-serif;
-    font-size: 10pt;
-    margin-top: 3px;
-    text-align: right;
-    text-decoration: none;
-  }
+  transition: 0.3s;
+  border-radius: 5px;
+  background-color: #3e5a80;
+  border-radius: 8px;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+  width: 90%;
+  height: 60%;
+}
 
-  .signup-btn {
-    background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);border: none;
-    border-radius: 21px;
-    box-shadow: 0px 1px 8px #588ab6;
-    color: white;
-    font-family: "Raleway SemiBold", sans-serif;
-    height: 42.3px;
-    margin: 0 auto;
-    margin-top: 50px;
-    transition: 0.25s;
-    width: 153px;
-  }
-  .login-btn {
-    background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);border: none;
-    border-radius: 21px;
-    box-shadow: 0px 1px 8px #588ab6;
-    color: white;
-    font-family: "Raleway SemiBold", sans-serif;
-    height: 42.3px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    margin-top: 50px;
-    transition: 0.25s;
-    width: 153px;
-  }
-  /* #signup-btn:hover {
-    box-shadow: 0px 1px 18px #588ab6;
-  }DOES NOT WORK */
-  .form {
-    align-items: left;
-    display: flex;
-    flex-direction: column;
-  }
-  .form-border {
-    background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);height: 1px;
-    width: 100%;
-  }
-  .form-input {
-    background: #fbfbfb;
-    border: none;
-    outline: none;
-    padding-top: 14px;
-    padding-bottom: 5px;
-  }
-  .underline-title {
-    background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);height: 2px;
-    margin: -1.1rem auto 0 auto;
-    width: 89px;
-  }
-  .column {
-    padding: 100px 40px;
-  }
+.bottomContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+.team-cardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+.team-card { 
+  transition: 0.3s;
+  border-radius: 5px;
+  background: #3e5a80;
+  border-radius: 8px;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 5%;
+  margin-right: 5%;
+}
+
+.goToSearchContainer {
+  transition: 0.3s;
+  border-radius: 5px;
+  background: #3e5a80;
+  border-radius: 8px;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  margin-top: 2.5%;
+}
+
+#dontHaveTeam {
+  color: black; 
+  font-family: 'Switzer', sans-serif;
+  padding: clamp(0.55rem, 0.9vw, 1.5rem);
+  font-weight: 700;
+}
+
+#dontHaveSearch {
+  color: black; 
+  font-family: 'Switzer', sans-serif;
+  padding: clamp(0.55rem, 0.9vw, 1.5rem);
+  font-weight: 700;
+}
+
+#createTeam {
+  background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);border: none;
+  border-radius: 21px;
+  box-shadow: 0px 1px 8px #588ab6;
+  color: white;
+  font-family: "Raleway SemiBold", sans-serif;
+  height: 42.3px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  transition: 0.25s;
+  width: 153px;
+}
+
+#createSearch {
+  background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);border: none;
+  border-radius: 21px;
+  box-shadow: 0px 1px 8px #588ab6;
+  color: white;
+  font-family: "Raleway SemiBold", sans-serif;
+  height: 42.3px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  transition: 0.25s;
+  width: 153px;
+}
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 12px 44px;
+}
+body {
+  background-image: url('../styles/landingpagetest4.png');
+  background-repeat: no-repeat;
+}
+.allteam-title {
+  font-family: 'Switzer', sans-serif;
+  font-size: 11pt;
+  padding: 5px;
+}
+#create-team {
+  color: #588ab6;
+  font-family: 'Switzer', sans-serif;
+  font-size: 10pt;
+  margin-top: 3px;
+  text-align: right;
+  text-decoration: none;
+}
+
+.signup-btn {
+  background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);border: none;
+  border-radius: 21px;
+  box-shadow: 0px 1px 8px #588ab6;
+  color: white;
+  font-family: "Raleway SemiBold", sans-serif;
+  height: 42.3px;
+  margin: 0 auto;
+  margin-top: 50px;
+  transition: 0.25s;
+  width: 153px;
+}
+.login-btn {
+  background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);border: none;
+  border-radius: 21px;
+  box-shadow: 0px 1px 8px #588ab6;
+  color: white;
+  font-family: "Raleway SemiBold", sans-serif;
+  height: 42.3px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  transition: 0.25s;
+  width: 153px;
+}
+/* #signup-btn:hover {
+  box-shadow: 0px 1px 18px #588ab6;
+}DOES NOT WORK */
+.form {
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+}
+.form-border {
+  background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);height: 1px;
+  width: 100%;
+}
+.form-input {
+  background: #fbfbfb;
+  border: none;
+  outline: none;
+  padding-top: 14px;
+  padding-bottom: 5px;
+}
+.underline-title {
+  background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);height: 2px;
+  margin: -1.1rem auto 0 auto;
+  width: 89px;
+}
+.column {
+  padding: 100px 40px;
+}

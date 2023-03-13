@@ -50,13 +50,21 @@ const MyTeam = () => {
             </div>
           </div>
         {/* </div> */}
-        <div>
+        <div className="bottomContainer">
+        <div className="team-cardContainer">
           {teamsData.teams?.length > 0 && (
             <div className="team-card">
-              <MyTeamsList focusTeam={focusTeam} />
-              <p>
-                <label>Don't have a team?</label> <a id="createteam" rel="noreferrer" href="/createteam" target="_blank">Create a Team</a></p>
+              {/* <MyTeamsList focusTeam={focusTeam} /> */}
+              <p id="dontHaveTeam">Don't have a team?</p>
+              <a id="createTeam" rel="noreferrer" href="/createteam" target="_blank">Create a Team</a>
             </div>)}
+        </div>
+        <div className="goToSearchContainer">
+            <div className="searchCard">
+                <p id="dontHaveSearch">Need to search?</p>
+                <a id="createSearch" rel="noreferrer" href="/createteam" target="_blank">Go to Search</a>
+            </div>
+        </div>
         </div>
       </div>
     </div>

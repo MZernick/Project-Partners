@@ -9,6 +9,8 @@ import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import Stack from '@mui/material/Stack';
 import { deepOrange, deepPurple } from '@mui/material/colors';
+import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
 
 //be sure to create the query for this--done
 import { QUERY_SINGLE_USER_WITH_COMPATIBILITY } from '../../utils/queries';
@@ -37,6 +39,8 @@ const ProfileTeamList = ({ user, isLoggedInUser = false }) => {
     }
   };
 
+  let navigate = useNavigate();
+
   if (!user.teams) {
     return <h3>No Teams Yet</h3>;
   }
@@ -49,11 +53,25 @@ const ProfileTeamList = ({ user, isLoggedInUser = false }) => {
             <div className="team1Container">
             <h3 id="team1" key={team}>
               {team.title}
-              <IconButton 
+              <div className="buttons">
+              <Button 
+              variant="contained" 
+              size="small"
+              // sx={{ margin: '1%' }}
+              onClick={() => navigate(`/${team._id}/editteam`)}
+              >
+                Update
+              </Button>
+              <Button 
+              size="small"
+              variant="contained" 
+              // sx={{ margin: '1%' }}
+              startIcon={<DeleteIcon />}
               onClick={ () => handleRemoveTeam(team._id)}
               aria-label="delete">
-                <DeleteIcon />
-              </IconButton>
+                Delete
+              </Button>
+              </div>
               </h3>
               
             {/* <div id="teamInfoContainer">

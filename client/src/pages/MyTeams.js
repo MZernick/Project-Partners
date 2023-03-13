@@ -41,7 +41,7 @@ const MyTeam = () => {
         <NavTabs />
       </div>
       <div className="signup-page">
-        <div className='column'>
+        {/* <div className='column'> */}
           <div className="allteam-card">
             <h1 className="headers">My Teams</h1>
             <div className="underline-title"></div>
@@ -49,7 +49,7 @@ const MyTeam = () => {
               <TeamsList teams={teamsData.teams} />
             </div>
           </div>
-        </div>
+        {/* </div> */}
         <div>
           {teamsData.teams?.length > 0 && (
             <div className="team-card">

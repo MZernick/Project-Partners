@@ -84,8 +84,9 @@ const CreateTeam = () => {
 
   console.log(formData)
   return (
+    <div>
+      <div><NavTabs /></div>
     <div className="bigContainer">
-      <NavTabs />
       <div className='card'>
         <h1 className="headers">Create a New Team</h1>
         <div className="underline"></div>
@@ -166,6 +167,7 @@ const CreateTeam = () => {
         </div>
       </div>
     </div>
+  </div>
   )
 }
 

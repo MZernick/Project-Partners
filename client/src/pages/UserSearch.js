@@ -3,7 +3,7 @@ import NavTabs from "../components/NavTabs";
 import { useQuery } from "@apollo/client";
 import { SEARCH_USER } from "../utils/queries";
 // import auth from "../utils/auth";
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import '../styles/UserSearch.css'
 
 
@@ -73,7 +73,7 @@ const UserSearch = () => {
                             type="text"
                             className="form-control form-input"
                             id="search"
-                            placeholder={`Find a ${filter}`}
+                            placeholder={`Enter ${filter}`}
                             value={searchText}
                             onChange={(e) => setSearchText(e.target.value.toLowerCase())}
                             onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
@@ -100,7 +100,7 @@ const UserSearch = () => {
                                 Current team(s): {user.teams ? user.teams.length : 0}
                               </span>
                               <br />
-                              <button className="viewuser-btn" href={`user/${user._id}`}>View Profile</button>
+                              <a className="viewuser-btn" href={`user/${user._id}`}>View Profile</a>
 
                             </div>
                           </div>

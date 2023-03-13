@@ -1,13 +1,14 @@
 .headers {
-  color: black; 
+  color: #F1FAEE;
   font-family: 'Switzer', sans-serif;
   padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
   transition: opacity 400ms ease;
   letter-spacing: 4px;
   padding-bottom: 23px;
   text-align: center;
-  font-size: clamp(0.7rem, 2.7vw,2.7rem);
+  font-size: clamp(0.7rem, 2.7vw, 2.7rem);
 }
+
 .signup-page {
   display: flex;
   justify-content: center;
@@ -25,6 +26,7 @@
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
   width: 90%;
   height: 60%;
+  color:#F1FAEE;
 }
 
 .bottomContainer {
@@ -72,14 +74,14 @@
 }
 
 #dontHaveTeam {
-  color: black; 
+  color: #F1FAEE;
   font-family: 'Switzer', sans-serif;
   padding: clamp(0.55rem, 0.9vw, 1.5rem);
   font-weight: 700;
 }
 
 #dontHaveSearch {
-  color: black; 
+  color: #F1FAEE;
   font-family: 'Switzer', sans-serif;
   padding: clamp(0.55rem, 0.9vw, 1.5rem);
   font-weight: 700;
@@ -89,7 +91,7 @@
   background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);border: none;
   border-radius: 21px;
   box-shadow: 0px 1px 8px #588ab6;
-  color: white;
+  color: #F1FAEE;
   font-family: "Raleway SemiBold", sans-serif;
   height: 42.3px;
   margin: 0 auto;
@@ -103,7 +105,7 @@
   background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);border: none;
   border-radius: 21px;
   box-shadow: 0px 1px 8px #588ab6;
-  color: white;
+  color: #F1FAEE;
   font-family: "Raleway SemiBold", sans-serif;
   height: 42.3px;
   margin: 0 auto;
@@ -143,7 +145,7 @@ body {
   background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);border: none;
   border-radius: 21px;
   box-shadow: 0px 1px 8px #588ab6;
-  color: white;
+  color: #F1FAEE;
   font-family: "Raleway SemiBold", sans-serif;
   height: 42.3px;
   margin: 0 auto;
@@ -155,7 +157,7 @@ body {
   background: linear-gradient(90deg, rgba(21,17,87,1) 0%, rgba(88,138,182,1) 100%);border: none;
   border-radius: 21px;
   box-shadow: 0px 1px 8px #588ab6;
-  color: white;
+  color: #F1FAEE;
   font-family: "Raleway SemiBold", sans-serif;
   height: 42.3px;
   margin: 0 auto;

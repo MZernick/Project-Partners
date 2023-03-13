@@ -7,7 +7,7 @@ import auth from '../utils/auth';
 import { useMutation, useQuery } from '@apollo/client';
 import { SINGLE_TEAM, QUERY_SINGLE_USER_WITH_COMPATIBILITY, SEARCH_USER } from '../utils/queries';
 import '../styles/CreateTeam.css'
-import { getCompatibilityandUsername} from '../utils/helpers';
+import { getCompatibilityandUsername } from '../utils/helpers';
 import { UPDATE_TEAM } from '../utils/mutations';
 import { useNavigate, useParams } from 'react-router-dom';
 import Box from "@mui/material/Box";
@@ -95,14 +95,14 @@ useEffect(() => {
 
   let navigate = useNavigate();
 
-  const [updateTeam, { error }] = useMutation( UPDATE_TEAM );
+  const [updateTeam, { error }] = useMutation(UPDATE_TEAM);
 
   const handleInputChange = (event) => {
-    const {name , value} = event.target;
-      setFormData({
-        ...formData, 
-        [name]: value,
-      });
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
   const handleFormSubmit = async (event) => {
@@ -111,21 +111,21 @@ useEffect(() => {
     try {
       const { data } = await updateTeam({
         variables: {
-            teamId: teamId, 
-            title: formData.title,
-            description: formData.description, 
-            members: formData.members
-          }
+          teamId: teamId,
+          title: formData.title,
+          description: formData.description,
+          members: formData.members
+        }
       });
 
       navigate(`/user/${auth.getProfile().data._id}`)
     } catch (err) {
-        console.log(err);
+      console.log(err);
     }
 
     setFormData({
-      title: '', 
-      description: '', 
+      title: '',
+      description: '',
       members: []
     })
   }

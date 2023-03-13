@@ -7,6 +7,7 @@ import AddCircleOutlineRoundedIcon from '@mui/icons-material/AddCircleOutlineRou
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
+import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 
 function NavTabs({ currentPage }) {
   return (
@@ -21,7 +22,7 @@ function NavTabs({ currentPage }) {
           <Link id="nav-link"
             to="/"
             activeclassname={'active'}
-          >Home
+          >
             <HomeRoundedIcon fontSize="large" id="icon1" />
           </Link>
         </li>
@@ -29,7 +30,7 @@ function NavTabs({ currentPage }) {
           <Link id="nav-link"
             to={`/user/${auth.getProfile().data._id}/teams`}
             className={currentPage === 'MyTeams' ? 'nav-link active' : 'nav-link'}
-          >My Teams
+          >
             <GroupsRoundedIcon fontSize="large" id="icon2" />
           </Link>
         </li>
@@ -37,7 +38,7 @@ function NavTabs({ currentPage }) {
           <Link id="nav-link"
             to="/users"
             className={currentPage === 'UserSearch' ? 'nav-link active' : 'nav-link'}
-          >Search Users
+          >
             <SearchRoundedIcon fontSize="large" id="icon3" />
           </Link>
         </li>
@@ -45,7 +46,7 @@ function NavTabs({ currentPage }) {
           <Link id="nav-link"
             to="/createteam"
             className={currentPage === 'CreateTeam' ? 'nav-link active' : 'nav-link'}
-          >Create Team
+          >
             <AddCircleOutlineRoundedIcon fontSize="large" id="icon4" />
           </Link>
         </li>
@@ -53,7 +54,7 @@ function NavTabs({ currentPage }) {
           <Link id="nav-link"
             to={`/user/${auth.getProfile().data._id}`}
             className={currentPage === 'Profile' ? 'nav-link active' : 'nav-link'}
-          >My Profile
+          >
             <AccountCircleRoundedIcon fontSize="large" id="icon5" />
           </Link>
         </li>
@@ -62,8 +63,8 @@ function NavTabs({ currentPage }) {
             to={`/`}
             onClick={() => auth.logout()}
             className={currentPage === 'Profile' ? 'nav-link active' : 'nav-link'}
-          >Logout
-            <AccountCircleRoundedIcon fontSize="large" id="icon5" />
+          >
+            <LogoutRoundedIcon fontSize="large" id="icon5" />
           </Link>
         </li>
       </ul>

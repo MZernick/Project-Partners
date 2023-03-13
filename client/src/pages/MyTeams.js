@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import '../styles/MyTeam.css';
@@ -9,25 +9,37 @@ import NavTabs from '../components/NavTabs';
 import { MY_TEAMS } from '../utils/queries';
 
 const MyTeam = () => {
-
-  const { loading, data } = useQuery(
+  const [focusTeam, setFocusTeam] = useState({});
+  const [teamsData, setTeamsData] = useState({});
+  const [selectedTeam, setSelectedTeam] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const { data } = useQuery(
     MY_TEAMS,
     {
-      variables: { userId: auth.getProfile().data._id },
+      variables: { userId: useParams().userId },
     }
   );
-  const teamsData = data?.me || data?.user || {};
-  console.log(teamsData);
-  console.log(teamsData.teams);
+  useEffect(() => {
+  setTeamsData(data?.me || data?.user || {});
+  console.log(data);
+  // console.log(teamsData.teams);
+  if (teamsData){
+    setLoading(false);
+  }
+  // auth.getProfile().data._id "640f39aab4c41e776393b01c"
+  
   //selectedTeam  will be set by user click or default to 0;
-  // const selectedTeam = 0;
-  // const focusTeam = teamsData.teams[selectedTeam];
-  // console.log(focusTeam);
+  setSelectedTeam(0)
+  data?.user?.teams?.length && setFocusTeam(data?.user?.teams[selectedTeam]);
+  
+  // console.log(focusTeam); 
+
+}, [loading, data])
   if (loading) {
     return <div>Loading...</div>;
   }
 
-  if (!teamsData?._id) {
+  if (!data) {
     return (
       <h4>
         You need to be logged in to see your teams page. Use the navigation

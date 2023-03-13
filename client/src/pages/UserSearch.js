@@ -41,6 +41,7 @@ const UserSearch = () => {
   }
   console.log(filteredUsers);
   return (
+
     <>
     <NavTabs/>
     <main>
@@ -102,16 +103,18 @@ const UserSearch = () => {
                         </span> 
                       </h4>
                       <button href={`user/${user._id}`}>View Profile</button>
+
                     </div>
                   </div>
                 )): <h1>{noResultMsg}</h1>}
               </div>
             </div>
           )}
+
         </div>
         </div>
       </main>
-    </>
+      </div>
   );
 };
 

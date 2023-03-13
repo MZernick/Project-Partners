@@ -48,7 +48,7 @@ export function oneBigTeamScore(teamArray) {
     }
     return avg(bigScores);
 }
-function makeObjectListofOthers(teamArray, user1) {
+export function makeObjectListofOthers(teamArray, user1) {
  
     let tempTeamArray = [];
     tempTeamArray.push(...teamArray);

@@ -4,7 +4,7 @@ import { useMutation } from '@apollo/client';
 import { REMOVE_TEAM } from '../../utils/mutations';
 //be sure to create the query for this--done
 import { QUERY_ME, MY_TEAMS } from '../../utils/queries';
-import {MyTeamSubLst} from '../MyTeamSubLst'
+import MyTeamSubLst from '../MyTeamSubLst'
 import { getCompatibility, getCompatibilityandUsername, avg, indivTeamScores, myTeamScore, oneBigTeamScore, makeObjectListofOthers } from '../../utils/helpers'
 
 const MyTeamList = (props) => {
@@ -31,10 +31,14 @@ const MyTeamList = (props) => {
         <ul className="list-group">
           {members?.map((member) => (
             <li className="list-group-item" key={member.username}>
-              <div className="members-username"><h3>{member.username}'s Team Score: {Math.round(myTeamScore(members, member))}%</h3> </div>
-              <div><ul className="list-group-item-sub" key={member.username} >
-                <MyTeamSubLst members={members}/>
-                </ul></div>
+              <div className="members-username">
+                <h3>{member.username}'s Team Score: 
+                {Math.round(myTeamScore(members, member))}%<br/></h3> </div>
+                  <div>
+                    <ul className="list-group-item-sub" key={member.username} >
+                <MyTeamSubLst members={members} thisOne = {member}/>
+                    </ul>
+                  </div>
             </li>
           ))}
         </ul>

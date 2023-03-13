@@ -6,12 +6,15 @@ import { REMOVE_TEAM } from '../../utils/mutations';
 //be sure to create the query for this--done
 import { QUERY_ME, MY_TEAMS } from '../../utils/queries';
 
-import { getCompatibility, getCompatibilityandUsername, avg, indivTeamScores, myTeamScore, oneBigTeamScore, makeObjectListofOthers } from '../../utils/helpers'
+import { makeObjectListofOthers } from '../../utils/helpers'
 
 const MyTeamSubLst = (props) => {
   console.log("this is in MyTeamSubLst index.js",props.members)
   const members = props.members;
   console.log(members)
+  const thisOne = props.thisOne;
+  const others = makeObjectListofOthers(members, thisOne)
+  console.log(others)
 
   if (!members) {
     return <h3>No Others Yet</h3>;
@@ -20,8 +23,9 @@ const MyTeamSubLst = (props) => {
   return (
 
     <div>
-      <li>Dumbface with BOI</li>
-      <li>Dumbface with BOI</li>
+      {others?.map(other => ( 
+      <li> {thisOne.username} & {other.username}: {other.rating} %</li>
+      ))}
     </div>
   );
 };

@@ -26,20 +26,21 @@
   }
 
 /* SPECIFIC PROFILE CONTAINER */
-.profile-box {
-  background-color: #3e5a80;
+/* .profile-box {
+  background-color: #3e5a80; */
   /* border: 1px solid #ced4cc; */
-  border-radius: 15px;
+  /* border-radius: 15px;
   width: 25%;
+  width: fit-content;
   height: fit-content;
-  padding: 20px;
+  padding: 20px; */
   /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); */
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-right: 2%;
-}
+} */
 
 #profilePic {
   display: flex;
@@ -53,7 +54,8 @@
 
 .profileName {
   font-family: 'Switzer', sans-serif;
-  font-size: clamp(1.5rem, 5.5vw, 5.5rem);
+  font-size: 3.5rem;
+  /* font-size: clamp(1.5rem, 5.5vw, 5.5rem); */
   text-decoration: none;
   color: #F1FAEE;
   margin-bottom: 0;

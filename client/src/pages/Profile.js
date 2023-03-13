@@ -52,11 +52,11 @@ const Profile = () => {
             sx={{ width: 112, height: 112 }}>{user.username}</Avatar>
           <h2 className='profileName'>{user.username}</h2>
           <p id="personalityType">{user.personality} </p>
-          <div className="commentBox">
+          {/* <div className="commentBox">
             <p id="newComment">you are awesome</p>
             <p id="newComment">you are okay</p>
             <p id="newComment">you stink</p>
-          </div>
+          </div> */}
           <button onClick={async () => {
             await removeUser();
             auth.logout();
@@ -64,15 +64,16 @@ const Profile = () => {
           }}>Delete User</button>
           <div className="userAndTeamBox">
             <div className="userBox1">
-              <div>
+              {/* <div>
                 <p>iamauser</p>
-              </div>
-            </div>
-            <div className="team-box">
+              </div> */}
+            </div>    
+         </div>
+        </div>
+        <div className="space"></div>
+        <div className="team-box">
               <h2 id="yourTeams">Your Teams</h2>
               <ProfileTeamList user={user} />
-            </div>
-          </div>
         </div>
       </div>
     </div>

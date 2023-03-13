@@ -2,11 +2,8 @@ import React, { useState } from "react";
 import NavTabs from "../components/NavTabs";
 import { useQuery } from "@apollo/client";
 import { SEARCH_USER } from "../utils/queries";
-import auth from "../utils/auth";
-import Button from "react-bootstrap/Button";
-import { SEARCH_USER} from "../utils/queries";
-import auth from '../utils/auth';
-import Button from 'react-bootstrap/Button';
+// import auth from "../utils/auth";
+// import Button from 'react-bootstrap/Button';
 import '../styles/UserSearch.css'
 
 
@@ -65,11 +62,10 @@ const UserSearch = () => {
                   >
                     <option value="personality">Personality Type</option>
                     <option value="email">Email</option>
-                    <option value="username">Username</option>
                   </select>
                 
                 <div className="headers" >
-                  <label htmlFor="search"></label>
+                  <label htmlFor="search">Search:</label>
                   <input
                     type="text"
                     className="form-control form-input"
@@ -103,7 +99,7 @@ const UserSearch = () => {
                           Current team(s): {user.teams ? user.teams.length : 0} 
                         </span> 
                       </h4>
-                      <Button href={`user/${user._id}`}>View Profile</Button>
+                      <button href={`user/${user._id}`}>View Profile</button>
                     </div>
                   </div>
                 )): <h1>{noResultMsg}</h1>}
@@ -196,7 +192,7 @@ export default UserSearch;
 //             <h2>{data.searchPersonality.username}</h2>
 //             <p>{data.searchPersonality.email}</p>
 //             <p>{data.searchPersonality.personality}</p>
-//             <a class="btn btn-primary btn-block btn-squared">Add to a Team </a>
+//             <a className="btn btn-primary btn-block btn-squared">Add to a Team </a>
 //           </div>
 //         ))}
 //       </div>
@@ -210,7 +206,7 @@ export default UserSearch;
 //             <h2>{data.searchPersonality.username}</h2>
 //             <p>{data.searchPersonality.email}</p>
 //             <p>{data.searchPersonality.personality}</p>
-//             <a class="btn btn-primary btn-block btn-squared">Add to a Team </a>
+//             <a className="btn btn-primary btn-block btn-squared">Add to a Team </a>
 //           </div>
 //         ))}
 //       </div>

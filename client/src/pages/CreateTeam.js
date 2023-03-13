@@ -28,16 +28,17 @@ const CreateTeam = () => {
   })
 
   // waits until query is finished, then creates an array of users with thier rating to choose from 
-  setTimeout(() => {
-    userList.map(user => {
-      return userArr.push(getCompatibilityandUsername(data1.data?.user, user));
-    })
-  }, "3000");
+    // if the user data is done loading, run the compatibility checker for each user and the user logged in 
+    if(data1.loading) {
+      console.log('loading user')
+    } else {
+      userList.map(user => {
+        return userArr.push(getCompatibilityandUsername(data1.data.user, user));
+      })
+    }
 
   console.log(userArr)
-  // userList.map(user => {
-  //   console.log(getCompatibilityandUsername(data1.data?.user, user))
-  // })
+ 
   const [formData, setFormData] = useState({
     title: '',
     description: '',

@@ -3,7 +3,7 @@ import NavTabs from "../components/NavTabs";
 import { useQuery } from "@apollo/client";
 import { SEARCH_USER } from "../utils/queries";
 // import auth from "../utils/auth";
-// import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button';
 import '../styles/UserSearch.css'
 
 
@@ -19,7 +19,7 @@ const UserSearch = () => {
 
   function handleSubmit() {
     let listarray = [];
-    const filterLower = filter.toLowerCase();
+   
 
     console.log(searchText);
     console.log(filter);
@@ -30,16 +30,17 @@ const UserSearch = () => {
     } else if (filter === "username") {
       listarray = users.filter((user) => user.username.toLowerCase() === searchText);
     } else {
-      listarray = []; // if no filter is selected
+      listarray = []; 
     }
     setFilteredUsers(listarray);
-    // ADD error handling if searchText is blank and if search results yield no matches
-    // if array is empty, display no users found, if >0 then setfiltered
+    // if array is empty, no results found is rendered in place of cards.
     if (listarray.length == 0) {
       setNoResultMsg("No results found");
     }
+  
   }
   console.log(filteredUsers);
+ 
   return (
 
     <>
@@ -114,7 +115,8 @@ const UserSearch = () => {
           </div>
         </div>
       </main>
-    </>
+     
+      </>
   );
 };
 

@@ -77,3 +77,12 @@ mutation AddTeamAndMembers($teamId: ID!, $title: String, $description: String, $
     }
   }
 }`;
+
+export const UPDATE_USER = gql`
+mutation updateUser($userId: ID!, $username: String, $email: String, $personality: String) {
+  updateUser(userId: $userId, username: $username, email: $email, personality: $personality) {
+    username
+    personality
+    email
+  }
+}`

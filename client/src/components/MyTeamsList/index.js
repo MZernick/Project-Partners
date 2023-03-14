@@ -2,41 +2,16 @@ import React from 'react';
 import { useMutation } from '@apollo/client';
 //be sure to create the mutations for this--done
 import { REMOVE_TEAM } from '../../utils/mutations';
-
 //be sure to create the query for this--done
 import { QUERY_ME, MY_TEAMS } from '../../utils/queries';
-
-import { getCompatibility, getCompatibilityandUsername, avg, indivTeamScores, myTeamScore, oneBigTeamScore } from '../../utils/helpers'
+import MyTeamSubLst from '../MyTeamSubLst'
+import { getCompatibility, getCompatibilityandUsername, avg, indivTeamScores, myTeamScore, oneBigTeamScore, makeObjectListofOthers } from '../../utils/helpers'
 
 const MyTeamList = (props) => {
   console.log("this is in MyTeamsList index.js",props.focusTeam)
   const focusTeam = props.focusTeam;
   const members = focusTeam?.members;
   console.log(members)
- 
-
-  // const [removeTeam, { error }] = useMutation(REMOVE_TEAM, {
-  //   update(cache, { data: { removeTeam } }) {
-  //     try {
-  //       cache.writeQuery({
-  //         query: MY_TEAMS,
-  //         data: { teams: removeTeam },
-  //       });
-  //     } catch (e) {
-  //       console.error(e);
-  //     }
-  //   },
-  // });
-
-  // const handleRemoveTeam = async (team) => {
-  //   try {
-  //     const { data } = await removeTeam({
-  //       variables: { team },
-  //     });
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
 
   if (!focusTeam) {
     return <h3>No Teams Yet</h3>;
@@ -56,7 +31,14 @@ const MyTeamList = (props) => {
         <ul className="list-group">
           {members?.map((member) => (
             <li className="list-group-item" key={member.username}>
-              <div className="members-username"><h3>{member.username}'s Team Score: {Math.round(myTeamScore(members, member))}%</h3> </div>
+              <div className="members-username">
+                <h3>{member.username}'s Team Score: 
+                {Math.round(myTeamScore(members, member))}%<br/></h3> </div>
+                  <div>
+                    <ul className="list-group-item-sub" key={member.username} >
+                <MyTeamSubLst members={members} thisOne = {member}/>
+                    </ul>
+                  </div>
             </li>
           ))}
         </ul>

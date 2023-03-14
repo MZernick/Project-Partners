@@ -1,10 +1,4 @@
 import React from 'react';
-import { useMutation } from '@apollo/client';
-//be sure to create the mutations for this--done
-import { REMOVE_TEAM } from '../../utils/mutations';
-
-//be sure to create the query for this--done
-import { QUERY_ME, MY_TEAMS } from '../../utils/queries';
 
 import { makeObjectListofOthers } from '../../utils/helpers'
 

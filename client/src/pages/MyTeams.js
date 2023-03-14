@@ -31,7 +31,7 @@ const MyTeam = () => {
   // auth.getProfile().data._id "640f39aab4c41e776393b01c"
   
   //selectedTeam  will be set by user click or default to 0;
-  setSelectedTeam(0)
+  // setSelectedTeam(0)
   data?.user?.teams?.length && setFocusTeam(data?.user?.teams[selectedTeam]);
   
   // console.log(focusTeam); 
@@ -59,7 +59,7 @@ const MyTeam = () => {
             <h1 className="headers">My Teams</h1>
             <div className="underline-title"></div>
             <div className="container">
-              <MyButtonList teams={teamsData.teams} />
+              <MyButtonList teams={teamsData.teams} setFocusTeam={setFocusTeam}/>
             </div>
           </div>
         {/* </div> */}

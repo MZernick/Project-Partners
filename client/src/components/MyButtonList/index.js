@@ -1,5 +1,5 @@
 import React from 'react';
-import { useMutation } from '@apollo/client';
+import { useMutation, useState } from '@apollo/client';
 //be sure to create the mutations for this--done
 import { REMOVE_TEAM } from '../../utils/mutations';
 import Button from '@mui/material/Button';
@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 //be sure to create the query for this--done
 import { QUERY_SINGLE_USER_WITH_COMPATIBILITY } from '../../utils/queries';
 
-const MyButtonList = ({ teams, isLoggedInUser = false }) => {
+const MyButtonList = ({ teams, setSelectedTeam, setFocusTeam, isLoggedInUser = false }) => {
   const [removeTeam, { error }] = useMutation(REMOVE_TEAM, {
     update(cache, { data: { removeTeam } }) {
       try {
@@ -30,7 +30,11 @@ const MyButtonList = ({ teams, isLoggedInUser = false }) => {
       console.error(err);
     }
   };
-  console.log(teams);
+
+  //TO DO: write function to get team index from button click event and set selectedTeam index number
+  
+
+  console.log("this is in MyButtonList as teams: ", teams);
   if (!teams) {
     return <h3>No Teams Yet</h3>;
   }
@@ -40,14 +44,14 @@ const MyButtonList = ({ teams, isLoggedInUser = false }) => {
       <div>
         {/* Need a way to set the state of these buttons to get the right team. */}
         <ul>{teams &&
-          teams.map((team) => (
+          teams.map((team, i) => (
             <div key={team.title}>
               <li>
                 <Button className = 'focus-btn'
                         sx={{margin: '2%'}}
                         size="large"
                         variant="contained"
-                        onClick={() => setSelectedTeam(selectedTeam +1)}>
+                        onClick={() => setFocusTeam(team)}>
                   {team.title}
                 </Button>
               </li>

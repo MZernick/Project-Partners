@@ -752,21 +752,22 @@ console.log("the big 'ol team score is: " + oneBigTeamScore(allTheUsers));
 //JOSH START HERE need to do more console.log invistgating to figure this out, but should work to build sub-lists
 
 function makeObjectListofOthers(teamArray, user1) {
-  
+ 
   let tempTeamArray = [];
   tempTeamArray.push(...teamArray);
   const user1index = tempTeamArray.findIndex(({_id}) => _id === user1._id);
   tempTeamArray.splice(user1index, 1);
-  // console.log("tempTeamArray AFTER removing user1:")
+ 
 
   let nameAndscores = [];
   tempTeamArray.forEach(member => {
           nameAndscores.push(getCompatibilityandUsername(user1, member));
           
   });
-  // console.log(nameAndscores);
+  
 
   return nameAndscores
 };
 
 console.log(makeObjectListofOthers(allTheUsers, allTheUsers[0]));
+console.log((makeObjectListofOthers(allTheUsers, allTheUsers[0])).length)

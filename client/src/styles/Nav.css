@@ -21,7 +21,7 @@ nav {
 }
 
 li {
-  display: block;
+  display: flex;
   font-family: 'Switzer', sans-serif;
 }
 
@@ -29,27 +29,50 @@ li {
   display: flex;
   text-decoration: none;
   color: #F1FAEE;
-  margin-bottom: 17%;
-  margin-right: 0;
+  margin-bottom: 10%;
+  padding-bottom: 4%;
+  padding-top: 4%;
   width: 80%;
   align-items: center;
+  transition: 0.4s;
+  border: 1px;
+  border-radius: 15px;
 }
 
-#icon1,
-#icon2,
-#icon3,
-#icon4,
+#nav-link:hover {
+  background-color: #1D3557;
+}
+
+#icon1 {
+  margin-right: 4%;
+  margin-left: 10%;
+}
+#icon2 {
+  margin-right: 4%;
+  margin-left: 10%;
+}
+#icon3 {
+  margin-right: 4%;
+  margin-left: 10%;
+}
+#icon4 {
+  margin-right: 4%;
+  margin-left: 10%;
+}
 #icon5 {
-  margin-right: 0;
-}
-
-.logoPlaceholder {
-  /* display: flex;
-  align-items: center; */
+  margin-right: 4%;
+  margin-left: 10%;
 }
 
 #Logo {
-  width: 200px;
-  height: 220px;
+  width: 240px;
+  height: 260px;
   margin-bottom: 15%;
+  margin-right: 20%;
+  transition: 1s;
+}
+
+
+#Logo:hover {
+  filter: contrast(200%) brightness(150%) sepia(100%);
 }

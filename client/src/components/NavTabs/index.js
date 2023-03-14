@@ -17,7 +17,7 @@ function NavTabs({ currentPage }) {
         <li className="logoPlaceholder">
           <img src={ProLogo} alt="ProPairs logo" id="Logo" />
         </li>
-        <li>
+        <li className="tabOne">
           <Link id="nav-link"
             to="/"
             activeclassname={'active'}

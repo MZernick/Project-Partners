@@ -1,97 +1,97 @@
 [
     {
       "username": "Archie01",
-      "email": "architect@Pmail.com",
+      "email": "Archie01@Pmail.com",
       "password": "password01",
       "personality": "INTJ"
     },
     {
       "username": "Logic02",
-      "email": "spock@Pmail.com",
+      "email": "Logic02@Pmail.com",
       "password": "password02",
       "personality": "INTP"
     },
     {
       "username": "Command03",
-      "email": "amiko@Pmail.com",
+      "email": "Command03@Pmail.com",
       "password": "password03",
       "personality": "ENTJ"
     },
     {
       "username": "Debate04",
-      "email": "MasterDebater@Pmail.com",
+      "email": "Debate04@Pmail.com",
       "password": "password04",
       "personality": "ENTP"
     },
     {
       "username": "Advocate05",
-      "email": "evberard@Pmail.com",
+      "email": "Advocate05@Pmail.com",
       "password": "password05",
       "personality": "INFJ"
     },
     {
       "username": "Mediator06",
-      "email": "akay@Pmail.com",
+      "email": "Mediator06@Pmail.com",
       "password": "password06",
       "personality": "INFP"
     },
     {
       "username": "Protagonist07",
-      "email": "choare@Pmail.com",
+      "email": "Protagonist07@Pmail.com",
       "password": "password07",
       "personality": "ENFJ"
     },
     {
       "username": "Campaign08",
-      "email": "dthomas@Pmail.com",
+      "email": "Campaign08@Pmail.com",
       "password": "password08",
       "personality": "ENFP"
     },
     {
       "username": "LogisTick09",
-      "email": "dknuth@Pmail.com",
+      "email": "LogisTick09@Pmail.com",
       "password": "password09",
       "personality": "ISTJ"
     },
     {
       "username": "Defend10",
-      "email": "lernantino@Pmail.com",
+      "email": "Defend10@Pmail.com",
       "password": "password10",
       "personality": "ISFJ"
     },
     {
       "username": "Exec11",
-      "email": "boss@Pmail.com",
+      "email": "Exec11@Pmail.com",
       "password": "password11",
       "personality": "ESTJ"
     },
     {
       "username": "Consul12",
-      "email": "helper@Pmail.com",
+      "email": "Consul12@Pmail.com",
       "password": "password12",
       "personality": "ESFJ"
     },
     {
       "username": "Leo13",
-      "email": "rennaissance@Pmail.com",
+      "email": "Leo13@Pmail.com",
       "password": "password13",
       "personality": "ISTP"
     },
     {
       "username": "Adventure14",
-      "email": "LetsGoooo@Pmail.com",
+      "email": "Adventure14@Pmail.com",
       "password": "password14",
       "personality": "ISFP"
     },
     {
       "username": "Startup15",
-      "email": "Entreprenteur@Pmail.com",
+      "email": "Startup15@Pmail.com",
       "password": "password15",
       "personality": "ESTP"
     },
     {
       "username": "StandUp16",
-      "email": "Funny@Pmail.com",
+      "email": "StandUp16@Pmail.com",
       "password": "password16",
       "personality": "ESFP"
     }

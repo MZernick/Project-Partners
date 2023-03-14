@@ -92,7 +92,7 @@ const CreateTeam = () => {
           <div className="underline"></div>
           <div className="container">
             <form className="createform" onSubmit={handleFormSubmit}>
-              <label htmlFor="title">Team Title:</label>
+              <label htmlFor="title" id="titleLabel">Title</label>
               <input
                 name="title"
                 id="title"
@@ -104,7 +104,7 @@ const CreateTeam = () => {
               >
               </input>
               <div className="form-border"></div>
-              <label htmlFor="description">Description:</label>
+              <label htmlFor="description" id="descLabel">Description</label>
               <input
                 name="description"
                 id="description"

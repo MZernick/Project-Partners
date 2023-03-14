@@ -47,6 +47,7 @@ const Profile = () => {
     <div>
       <div><NavTabs /></div>
       <div className="profileContainer">
+        <h2 id="welcomeBack">Welcome back, {user.username}</h2>
         <div className="profile-box">
           <Avatar
             sx={{ width: 112, height: 112 }}>{user.username}</Avatar>

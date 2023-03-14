@@ -54,7 +54,7 @@ const MyTeam = () => {
       <div >
         <NavTabs />
       </div>
-      <div className="signup-page">
+      <div className="teams-page">
         {/* <div className='column'> */}
         <div className="allteam-card">
           <h1 className="myTeamHeaders">My Teams</h1>
@@ -67,21 +67,10 @@ const MyTeam = () => {
         <div className="bottomContainer">
           <div className="team-cardContainer">
             {teamsData.teams?.length > 0 && (
-              <div className="team-card">
+              <>
                 <MyTeamsList focusTeam={focusTeam} />
-                <button className="team-btn"
-                  variant="contained"
-                  size="small"
-                  sx={{ margin: '2%', background: 'rgba(88,138,182,1)' }}
-                  onClick={() => navigate(`/${team._id}/editteam`)}
-                >
-                  Update
-                </button>
-                <button onClick={() => navigate(`/createteam`)}
-                  className="team-btn"
-                  rel="noreferrer" target="_blank">Create New Team</button>
-                <button onClick={() => navigate(`/users`)} id="createSearch" rel="noreferrer" target="_blank">Search Users</button>
-              </div>)}
+
+              </>)}
           </div>
 
         </div>

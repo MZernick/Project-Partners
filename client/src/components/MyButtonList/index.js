@@ -1,12 +1,13 @@
 import React from 'react';
-import { useMutation } from '@apollo/client';
+import { useMutation, useState } from '@apollo/client';
 //be sure to create the mutations for this--done
 import { REMOVE_TEAM } from '../../utils/mutations';
+import Button from '@mui/material/Button';
 
 //be sure to create the query for this--done
 import { QUERY_SINGLE_USER_WITH_COMPATIBILITY } from '../../utils/queries';
 
-const TeamList = ({ teams, isLoggedInUser = false }) => {
+const MyButtonList = ({ teams, setSelectedTeam, setFocusTeam, isLoggedInUser = false }) => {
   const [removeTeam, { error }] = useMutation(REMOVE_TEAM, {
     update(cache, { data: { removeTeam } }) {
       try {
@@ -29,7 +30,11 @@ const TeamList = ({ teams, isLoggedInUser = false }) => {
       console.error(err);
     }
   };
-  console.log(teams);
+
+  //TO DO: write function to get team index from button click event and set selectedTeam index number
+  
+
+  console.log("this is in MyButtonList as teams: ", teams);
   if (!teams) {
     return <h3>No Teams Yet</h3>;
   }
@@ -37,24 +42,23 @@ const TeamList = ({ teams, isLoggedInUser = false }) => {
   return (
     <div>
       <div>
-        {teams &&
-          teams.map((team) => (
+        {/* Need a way to set the state of these buttons to get the right team. */}
+        <ul>{teams &&
+          teams.map((team, i) => (
             <div key={team.title}>
-              <div>
-                <h4>
-                  <li>{team.title}</li>
-                  {/* {isLoggedInUser && (
-                    <button
-                      className="btn btn-sm btn-danger ml-auto"
-                      onClick={() => handleRemoveTeam(teams)}
-                    >
-                      X
-                    </button>
-                  )} */}
-                </h4>
+              <li>
+                <Button className = 'focus-btn'
+                        sx={{margin: '2%'}}
+                        size="large"
+                        variant="contained"
+                        onClick={() => setFocusTeam(team)}>
+                  {team.title}
+                </Button>
+              </li>
               </div>
-            </div>
+            
           ))}
+        </ul>  
       </div>
       {error && (
         <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
@@ -63,4 +67,4 @@ const TeamList = ({ teams, isLoggedInUser = false }) => {
   );
 };
 
-export default TeamList;
+export default MyButtonList;

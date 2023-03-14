@@ -1,6 +1,8 @@
 # ProPairs
 [ProPairs](https://ancient-shore-28312.herokuapp.com/)
+
 Version 1.0
+
 Deployment Date: March 16, 2023
 
 # Table of Contents
@@ -36,10 +38,15 @@ To get started,  visit [the website](https://ancient-shore-28312.herokuapp.com/)
 # Technologies Used
 
 React.js library used for building the user interface.
+
 Styling: React Bootstrap, CSS, Material UI.
+
 Backend: GraphQL API with a Node.js and Express.js server.
-Data management: MongoDB, Mongoose ODM for .
+
+Data management: MongoDB, Mongoose ODM.
+
 Authentication: bcrypt with JSON Web Token (JWT).
+
 Deployment: Heroku, MongoDB Atlas.
 
 # Authors

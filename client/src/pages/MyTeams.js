@@ -4,7 +4,9 @@ import { useQuery } from '@apollo/client';
 import '../styles/MyTeam.css';
 import auth from '../utils/auth';
 import MyTeamsList from '../components/MyTeamsList';
-import TeamsList from "../components/TeamsList";
+import MyButtonList from "../components/MyButtonList";
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
 import NavTabs from '../components/NavTabs';
 import { MY_TEAMS } from '../utils/queries';
 
@@ -41,10 +43,9 @@ const MyTeam = () => {
 
   if (!data) {
     return (
-      <h4>
-        You need to be logged in to see your teams page. Use the navigation
-        links above to sign up or log in!
-      </h4>
+    <Box sx={{ width: '100%' }}>
+      <LinearProgress />
+    </Box>
     );
   }
   return (
@@ -58,7 +59,7 @@ const MyTeam = () => {
             <h1 className="headers">My Teams</h1>
             <div className="underline-title"></div>
             <div className="container">
-              <TeamsList teams={teamsData.teams} />
+              <MyButtonList teams={teamsData.teams} />
             </div>
           </div>
         {/* </div> */}

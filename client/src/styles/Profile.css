@@ -2,11 +2,24 @@
 .profileContainer {
     height: 130vh;
     display: flex;
-    flex-direction: inline-flex;
+    /* flex-direction: inline-flex; */
     align-items: center;
     justify-content: center;
     background-color:#1D3557;
     flex-wrap: wrap;
+    margin-left: 15%;
+  }
+
+  #welcomeBack {
+    display: flex;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Switzer', sans-serif;
+    font-size: clamp(2.5rem, 5.5vw, 5.5rem);
+    color: #F1FAEE;
+    font-weight: 400;
   }
 /* SPECIFIC PROFILE CONTAINER */
   .profile-box {
@@ -57,6 +70,7 @@
   text-decoration: none;
   color: #F1FAEE;
   margin-bottom: 0;
+  font-weight: 400;
 }
 
 #personalityType {
@@ -105,7 +119,6 @@
     font-family: 'Switzer', sans-serif;
     font-size: clamp(0.5rem, 2.5vw, 2.5rem);
     color:#F1FAEE;
-    font-weight: 700;
     margin-top: 1%;
     background-color: #E63946;
     padding-left: 15%;
@@ -113,6 +126,7 @@
     padding-top: 2%;
     padding-bottom: 2%;
     border-radius: 8px;
+    font-weight: 400;
   }
 
   .userAndTeamBox {
@@ -185,6 +199,7 @@
     border-color: #F1FAEE;
     margin-top: 3%;
     padding-bottom: 5%;
+    font-weight: 400;
   }
 
   .team1Container {

@@ -16,6 +16,7 @@
   height: 120vh;
   background-color: #1D3557;
   flex-direction: column;
+  margin-left: 15%;
 }
 
 .allteam-card { 

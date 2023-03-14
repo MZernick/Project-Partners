@@ -2,21 +2,35 @@
 .profileContainer {
     height: 130vh;
     display: flex;
-    flex-direction: inline-flex;
+    /* flex-direction: inline-flex; */
     align-items: center;
     justify-content: center;
     background-color:#1D3557;
     flex-wrap: wrap;
+    margin-left: 15%;
+  }
+
+  #welcomeBack {
+    display: flex;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Switzer', sans-serif;
+    font-size: clamp(2.5rem, 5.5vw, 5.5rem);
+    color: #F1FAEE;
+    font-weight: 400;
+    width: max-content;
   }
 /* SPECIFIC PROFILE CONTAINER */
   .profile-box {
     background-color:#3e5a80;
     /* border: 1px solid #ced4cc; */
     border-radius: 15px;
-    width: 25%;
+    width: fit-content;
     height: 56.5%;
     /* height: fit-content; */
-    padding: 20px;
+    padding: 2% 10%;
     /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); */
     display: flex;
     flex-direction: column;
@@ -59,6 +73,7 @@
   text-decoration: none;
   color: #F1FAEE;
   margin-bottom: 0;
+  font-weight: 400;
 }
 
 #personalityType {
@@ -107,7 +122,6 @@
     font-family: 'Switzer', sans-serif;
     font-size: clamp(0.5rem, 2.5vw, 2.5rem);
     color:#F1FAEE;
-    font-weight: 700;
     margin-top: 1%;
     background-color: #E63946;
     padding-left: 15%;
@@ -115,6 +129,7 @@
     padding-top: 2%;
     padding-bottom: 2%;
     border-radius: 8px;
+    font-weight: 400;
   }
 
   .userAndTeamBox {
@@ -154,7 +169,7 @@
   }
 
   .space {
-    width: 10%;
+    width: 5%;
   }
 
 /* TEAM BOX CONTAINER */
@@ -162,7 +177,8 @@
     background-color:#3e5a80;
     /* border: 1px solid #ced4cc; */
     border-radius: 15px;
-    width: 35%;
+    padding: 2% 5%;
+    width: fit-content;
     height: fit-content;
     /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); */
     display: flex;
@@ -187,6 +203,7 @@
     border-color: #F1FAEE;
     margin-top: 3%;
     padding-bottom: 5%;
+    font-weight: 400;
   }
 
   .team1Container {
@@ -265,8 +282,7 @@
     color: #F1FAEE;
     font-family: 'Switzer', sans-serif;
     /* height: 10vh; */
-    margin: 0 auto;
-    margin-top: 15%;
+    margin: 15%  auto 0 auto;
     transition: 0.25s;
     width: 15vw;
     padding: 5%;

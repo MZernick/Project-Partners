@@ -6,8 +6,9 @@ import { useMutation, useQuery } from '@apollo/client';
 import '../styles/Profile.css'
 import Avatar from '@mui/material/Avatar';
 import auth from '../utils/auth';
+import CircularProgress from '@mui/material/CircularProgress';
 // import Pairings from '../components/Pairings';
-
+import { Box } from '@mui/system';
 //profile query here- are we adding pairs/partners/favorites or just seeing partners in the their teamsview?
 import { QUERY_SINGLE_USER_WITH_COMPATIBILITY } from '../utils/queries';
 import ProfileTeamList from '../components/ProfileTeams';
@@ -34,7 +35,11 @@ const Profile = () => {
   console.log(user);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return(
+      <Box sx={{ position:'absolute', top:'50%', left: '50%', transform:'translate(-50%, -50%)' }}>
+      <CircularProgress color="inherit"  />
+    </Box>
+    )
   }
 
   if (!userId) {
@@ -42,7 +47,22 @@ const Profile = () => {
       <Navigate to="/" />
     );
   }
-
+  if(userId !== auth.getProfile().data._id) {
+    return (
+      <div>
+      <div><NavTabs /></div>
+      <div className="profileContainer">
+        <div className="profile-box">
+          <Avatar
+            sx={{ width: 112, height: 112 }}>{user.username}</Avatar>
+          <h2 className='profileName'>{user.username}</h2>
+          <p id="personalityType">{user.personality} </p>
+          <p id="email">{user.email}</p>
+        </div>
+      </div>
+    </div>
+    )
+  }
   return (
     <div>
       <div><NavTabs /></div>

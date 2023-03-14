@@ -73,13 +73,13 @@ useEffect(() => {
   }
 },[loading])
   
-const handleInputChange = (event) => {
-  const { name, value } = event.target;
-  setFormData({
-    ...formData,
-    [name]: value,
-  });
-};
+// const handleInputChange = (event) => {
+//   const { name, value } = event.target;
+//   setFormData({
+//     ...formData,
+//     [name]: value,
+//   });
+// };
 
 const [updateUser, {error}] = useMutation(UPDATE_USER)
 
@@ -155,15 +155,14 @@ console.log(formData)
             <p id="newComment">you stink</p>
           </div> */}
            <Button className='delete-btn' sx={{color: 'white', borderRadius: '15px'}} onClick={handleClickOpen}>Update My Account</Button>
-           <FormControl >
-           {/* <form onSubmit={handleFormSubmit}> */}
-              <Dialog open={open} onClose={handleFormSubmit}>
+           {/* <FormControl > */}
+           <form onSubmit={handleFormSubmit}>
+              <Dialog open={open} onClose={handleClose}>
               <DialogTitle>Update Your Profile</DialogTitle>
               <DialogContent>
                 <TextField 
-                  onChange={ handleInputChange }
-                  // defaultValue={user.email}
-                  value={formData.email}
+                  onChange={ (event, value) => setFormData({...formData, email: event.target.value}) }
+                  defaultValue={formData.email}
                   autoFocus
                   margin="dense"
                   id="email-update"
@@ -173,9 +172,8 @@ console.log(formData)
                   variant="standard"
                 />
                 <TextField
-                  onChange={ handleInputChange }
-                  // defaultValue={user.username}
-                  value={formData.username}
+                   onChange={ (event, value) => setFormData({...formData, username: event.target.value}) }
+                  defaultValue={formData.username}
                   autoFocus
                   margin="dense"
                   id="username"
@@ -186,12 +184,10 @@ console.log(formData)
                 />
                 {/* <InputLabel id="personality">Personality</InputLabel> */}
                 <Select
-                  // label="Personality"
                   labelId="personality"
                   id="personality"
-                  // defaultValue={user.personality}
                   value={formData.personality}
-                  onChange={ handleInputChange }
+                  onChange={ (event, value) => setFormData({...formData, personality: event.target.value}) }
                 >
                   <MenuItem value="ENFJ">ENFJ</MenuItem>
                   <MenuItem value="ENFP">ENFP</MenuItem>
@@ -212,12 +208,12 @@ console.log(formData)
                 </Select>
               </DialogContent>
               <DialogActions>
-                <Button  type='submit' onClick={handleClose}>Cancel</Button>
-                <Button onClick={handleClose}>Update</Button>
+                <Button  onClick={handleClose}>Cancel</Button>
+                <Button type='submit' onClick={handleFormSubmit }>Update</Button>
               </DialogActions>
               </Dialog>
-              {/* </form> */}
-            </FormControl>
+              </form>
+            {/* </FormControl> */}
            {/* <button onClick={async () => {
             edit = true
             console.log(edit)

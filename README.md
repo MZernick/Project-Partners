@@ -4,22 +4,22 @@ Version 1.0
 Deployment Date: March 16, 2023
 
 # Table of Contents
-- Description(#description)
-- Getting Started(#getting started)
-- Instructions(#instructions)
-- Technologies Used(#technologies used)
-- Authors(#authors)
-- Original Idea(#original idea)
-- IceBox(#icebox)
-- License(#license)
+- [Description](##description)
+- [Getting Started](##getting started)
+- [Instructions](##instructions)
+- [Technologies Used](##technologies used)
+- [Authors](##authors)
+- [Original Idea](##original idea)
+- [IceBox](##icebox)
+- [License](##license)
 
 # Description
 
 [ProPairs](https://ancient-shore-28312.herokuapp.com/) is a web application that matches compatible teammates for group projects based on their Myers-Briggs personality types. The application suggests potential partners with similar interests, values, and communication styles, and allows users to see their compatibility rating as a pair and as a team. The application is hosted on a secure server and can be accessed from any device with an internet connection.
 *Features*
-Compatibility: See your compatibility rating as a pair and as a team.
-Team Compatibility:  See predicted compatibility of two to five team members.
-User Authentication: Users can create a personal account and log in to access the application's features.
+- Compatibility: See one on one compatibility ratings.
+- Team Compatibility:  See predicted compatibility of up to five team members.
+- User Authentication: Create a personal account and log in to access the application's features.
 
 # Getting Started
 
@@ -55,9 +55,10 @@ Deployment: Heroku, MongoDB Atlas.
 
 # IceBox
 Ideas pending for future development:
-1. Integrated personality test.
+1. Integrate personality test.
 2. Facilitate team and user communication via chat.
 3. Add picture or avatar to user profile.
+4. Improve mobile friendliness.
 
 ## License
 

@@ -5,10 +5,11 @@ import { REMOVE_TEAM } from '../../utils/mutations';
 //be sure to create the query for this--done
 import { QUERY_ME, MY_TEAMS } from '../../utils/queries';
 import MyTeamSubLst from '../MyTeamSubLst'
+import Pie from "../PercentageCircle";
 import { getCompatibility, getCompatibilityandUsername, avg, indivTeamScores, myTeamScore, oneBigTeamScore, makeObjectListofOthers } from '../../utils/helpers'
 
 const MyTeamList = (props) => {
-  console.log("this is in MyTeamsList index.js",props.focusTeam)
+  console.log("this is in MyTeamsList index.js", props.focusTeam)
   const focusTeam = props.focusTeam;
   const members = focusTeam?.members;
   console.log(members)
@@ -16,7 +17,7 @@ const MyTeamList = (props) => {
   if (!focusTeam) {
     return <h3>No Teams Yet</h3>;
   }
-  
+
   return (
 
     <div>
@@ -25,20 +26,23 @@ const MyTeamList = (props) => {
       </h1>
       <div className="underline-title"></div>
       <p>{focusTeam.description}</p>
-      <h2>Overall Compatibility: {members?.length && Math.round(oneBigTeamScore(members))}%</h2>
+      <h2>Overall Compatibility:
+        <Pie percentage={members?.length && Math.round(oneBigTeamScore(members))} colour="blue" />
+      </h2>
       <div className="container">
         <h2>By team member:</h2>
         <ul className="list-group">
           {members?.map((member) => (
             <li className="list-group-item" key={member.username}>
               <div className="members-username">
-                <h3>{member.username}'s Team Score: 
-                {Math.round(myTeamScore(members, member))}%<br/></h3> </div>
-                  <div>
-                    <ul className="list-group-item-sub" key={member.username} >
-                <MyTeamSubLst members={members} thisOne = {member}/>
-                    </ul>
-                  </div>
+                <h3>{member.username}'s Team Score:
+                  {Math.round(myTeamScore(members, member))}%
+                  <br /></h3> </div>
+              <div>
+                <ul className="list-group-item-sub" key={member.username} >
+                  <MyTeamSubLst members={members} thisOne={member} />
+                </ul>
+              </div>
             </li>
           ))}
         </ul>

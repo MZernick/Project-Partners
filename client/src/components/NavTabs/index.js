@@ -19,7 +19,7 @@ function NavTabs({ currentPage }) {
         </li>
         <li className="tabOne">
           <Link id="nav-link"
-            to="/"
+            to="/landing"
             activeclassname={'active'}
           >
             <HomeRoundedIcon fontSize="large" id="icon1" /> Home

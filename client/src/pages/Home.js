@@ -17,9 +17,9 @@ export default function Homepage(props) {
           <Link to="descriptionContainer" smooth={true} duration={1000} className="menu-item"><div id='big-title'>ProPairs</div></Link>
           <Link to="raffContainer" smooth={true} duration={1000} className="menu-item"><div>How it Works</div></Link>
           <Link to="ourTeamContainer" smooth={true} duration={1000} className="menu-item"><div>Our Team</div></Link>
-          <a href="/signup" id="getStarted" className="menu-item"><div>
+          <Link to="/" id="getStarted" className="menu-item"><div>
             Get Started
-          </div></a>
+          </div></Link>
         </div>
         <div id="menu-background-image"></div>
       </div>
@@ -96,9 +96,9 @@ export default function Homepage(props) {
         </div>
       </div>
       <div className="startedContainer">
-        <a href="/signup" className="getStarted" id="getStarted1"><div>
+        <Link to="/" className="getStarted" id="getStarted1"><div>
           Get Started
-        </div></a>
+        </div></Link>
       </div>
     </div>
   );

@@ -21,21 +21,19 @@ const MyTeamList = (props) => {
   return (
 
     <div>
-      <h1 className="headers">
+      <h1 className="myTeamHeaders">
         {focusTeam.title}
       </h1>
       <div className="underline-title"></div>
-      <p>{focusTeam.description}</p>
-      <h2>Overall Compatibility:
-        <Pie percentage={members?.length && Math.round(oneBigTeamScore(members))} colour="blue" />
-      </h2>
-      <div className="container">
-        <h2>By team member:</h2>
-        <ul className="list-group">
-          {members?.map((member) => (
+      <p className='smallFont'>{focusTeam.description}</p>
+      <h2 className='bigFont'>Overall Compatibility:</h2>
+      <Pie percentage={members?.length && Math.round(oneBigTeamScore(members))} colour="#E63946" />
+      <div className='member-container'>
+        {members?.map((member) => (
+          <div className="member-box">
             <li className="list-group-item" key={member.username}>
               <div className="members-username">
-                <h3>{member.username}'s Team Score:
+                <h3 className='member-name'>{member.username}'s Team Score:
                   {Math.round(myTeamScore(members, member))}%
                   <br /></h3> </div>
               <div>
@@ -44,8 +42,8 @@ const MyTeamList = (props) => {
                 </ul>
               </div>
             </li>
-          ))}
-        </ul>
+          </div>
+        ))}
       </div>
     </div>
   );

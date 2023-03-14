@@ -1,4 +1,4 @@
-.headers {
+.myTeamHeaders {
   color: #F1FAEE;
   font-family: 'Switzer', sans-serif;
   padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
@@ -149,7 +149,7 @@ body {
   text-decoration: none;
 }
 
-.signup-btn {
+.team-btn {
   background: linear-gradient(90deg, rgba(21, 17, 87, 1) 0%, rgba(88, 138, 182, 1) 100%);
   border: none;
   border-radius: 21px;
@@ -161,6 +161,7 @@ body {
   margin-top: 50px;
   transition: 0.25s;
   width: 153px;
+  text-decoration: none;
 }
 
 .login-btn {
@@ -214,4 +215,56 @@ body {
 
 circle {
   transition: all 0.7s ease-in-out;
+}
+
+.smallFont {
+  font-size: 1.5rem;
+  color: #F1FAEE;
+  font-family: 'Switzer', sans-serif;
+  text-align: center;
+}
+
+.bigFont {
+  font-size: 2.5rem;
+  color: #F1FAEE;
+  font-family: 'Switzer', sans-serif;
+  text-align: center;
+}
+
+.percentageCircle {
+  display: flex;
+  justify-content: center;
+  margin-left: 35%;
+  width: 200;
+  height: 200;
+}
+
+.member-box {
+  background-color: #3e5a80;
+  /* border: 1px solid #ced4cc; */
+  border-radius: 15px;
+  /* width: 240px;
+  height: 56.5%; */
+  /* height: fit-content; */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2%;
+}
+
+.member-name {
+  font-family: 'Switzer', sans-serif;
+  /* font-size: clamp(1.5rem, 5.5vw, 5.5rem); */
+  text-decoration: none;
+  color: #F1FAEE;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+.member-container {
+  display: flex;
+  overflow-x: scroll;
+  justify-content: center;
 }

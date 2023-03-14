@@ -2,6 +2,7 @@ import React from "react";
 import '../styles/Home.css';
 import Hiwtest from '../styles/howitworksmock3.png';
 import { Link } from 'react-scroll';
+import { Avatar } from "@mui/material";
 
 export default function Homepage(props) {
   return (
@@ -48,10 +49,50 @@ export default function Homepage(props) {
           <h2 id="teamTitle">Meet Our<span id="redTeam"> Team</span></h2>
         </div>
         <div id="sidescrollContainer">
-          <a href="#" id="scrollItem1">JOSH PICTURE</a>
+          {/* <a href="#" id="scrollItem1">JOSH PICTURE</a>
           <a href="#" id="scrollItem2">DOM PICTURE</a>
           <a href="#" id="scrollItem3">ANITA PICTURE</a>
-          <a href="#" id="scrollItem4">MAG PICTURE</a>
+          <a href="#" id="scrollItem4">MAG PICTURE</a> */}
+          <div className="creator-box">
+            <Avatar className="creator-avatar"
+              sx={{ width: 112, height: 112 }}>
+              JG
+            </Avatar>
+            <h2 className="creator-name">Josh Goeke</h2>
+            <p className="creator-type">ENTP</p>
+          </div>
+          <div className="creator-box">
+            <Avatar className="creator-avatar"
+              sx={{ width: 112, height: 112 }}>
+              DN
+            </Avatar>
+            <h2 className="creator-name">Dominique Nix</h2>
+            <p className="creator-type">INTJ</p>
+          </div>
+          <div className="creator-box">
+            <Avatar className="creator-avatar"
+              sx={{ width: 112, height: 112 }}>
+              AB
+            </Avatar>
+            <h2 className="creator-name">Anita Banh</h2>
+            <p className="creator-type">ISTP</p>
+          </div>
+          <div className="creator-box">
+            <Avatar className="creator-avatar"
+              sx={{ width: 112, height: 112 }}>
+              JC
+            </Avatar>
+            <h2 className="creator-name">Jeremy Crouthamel</h2>
+            <p className="creator-type">INFP</p>
+          </div>
+          <div className="creator-box">
+            <Avatar className="creator-avatar"
+              sx={{ width: 112, height: 112 }}>
+              MZ
+            </Avatar>
+            <h2 className="creator-name">Magdalene Zernick</h2>
+            <p className="creator-type">ENFJ</p>
+          </div>
         </div>
       </div>
       <div className="startedContainer">

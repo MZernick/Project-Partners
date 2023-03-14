@@ -17,40 +17,40 @@ function NavTabs({ currentPage }) {
         <li className="logoPlaceholder">
           <img src={ProLogo} alt="ProPairs logo" id="Logo" />
         </li>
-        <li>
+        <li className="tabOne">
           <Link id="nav-link"
             to="/"
             activeclassname={'active'}
           >
-            <HomeRoundedIcon fontSize="large" id="icon1" />
+            <HomeRoundedIcon fontSize="large" id="icon1" /> Home
           </Link>
         </li>
         <li>
           <Link id="nav-link"
             to={`/user/${auth.getProfile().data._id}/teams`}
           >
-            <GroupsRoundedIcon fontSize="large" id="icon2" />
+            <GroupsRoundedIcon fontSize="large" id="icon2" /> My Teams
           </Link>
         </li>
         <li>
           <Link id="nav-link"
             to="/users"
           >
-            <SearchRoundedIcon fontSize="large" id="icon3" />
+            <SearchRoundedIcon fontSize="large" id="icon3" /> Search
           </Link>
         </li>
         <li>
           <Link id="nav-link"
             to="/createteam"
           >
-            <AddCircleOutlineRoundedIcon fontSize="large" id="icon4" />
+            <AddCircleOutlineRoundedIcon fontSize="large" id="icon4" /> Create Team
           </Link>
         </li>
         <li >
           <Link id="nav-link"
             to={`/user/${auth.getProfile().data._id}`}
           >
-            <AccountCircleRoundedIcon fontSize="large" id="icon5" />
+            <AccountCircleRoundedIcon fontSize="large" id="icon5" /> My Profile
           </Link>
         </li>
         <li >
@@ -58,7 +58,7 @@ function NavTabs({ currentPage }) {
             to={`/`}
             onClick={() => auth.logout()}
           >
-            <LogoutRoundedIcon fontSize="large" id="icon5" />
+            <LogoutRoundedIcon fontSize="large" id="icon5" /> Logout
           </Link>
         </li>
       </ul>

@@ -40,15 +40,13 @@ mutation addTeam($userId: ID!, $title: String!, $description: String!) {
 `
 
 export const REMOVE_TEAM = gql`
-  mutation removeTeam($teamId: ID!) {
-    removeTeam(teamId: $teamId) {
-      _id
-      username
-      team {
-        title
-      }
-    }
+mutation removeTeam($teamId: ID!) {
+  removeTeam(teamId: $teamId) {
+    title
+    description
+    _id
   }
+}
 `;
 
 export const ADD_TEAM_AND_MEMBERS = gql`

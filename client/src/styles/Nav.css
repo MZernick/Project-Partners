@@ -1,55 +1,78 @@
 nav {
-    top: 0;
-    display: flex;
-    justify-content: center;
-    padding: 1.5rem 2rem;
-    background-color: #3e5a80;
-    align-items: center;
-  }
+  /* top: 0;
+  left: 0; */
+  display: flex;
+  flex-direction: column;
+  background-color: #457B9D;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 15%; /* change the width to the desired width of the navigation bar */
+  height: 100%; /* add this to make the navigation bar take up the full height of the screen */
+}
 
-  .nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 530px;
-  }
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* margin-top: 20%; */
+  width: 100%;
+  margin-left: 15%;
+}
 
 li {
-    display: inline;
-    float: left;
-    font-family: 'Switzer', sans-serif;
+  display: flex;
+  font-family: 'Switzer', sans-serif;
 }
-  
+
 #nav-link {
-    display: block;
-    padding: 8px;
-    text-decoration: none;
-    color: #F1FAEE;
-  }
+  display: flex;
+  text-decoration: none;
+  color: #F1FAEE;
+  margin-bottom: 10%;
+  padding-bottom: 4%;
+  padding-top: 4%;
+  width: 80%;
+  align-items: center;
+  transition: 0.4s;
+  border: 1px;
+  border-radius: 15px;
+}
+
+#nav-link:hover {
+  background-color: #1D3557;
+}
 
 #icon1 {
-  margin-right: 4.5rem;
+  margin-right: 4%;
+  margin-left: 10%;
 }
 #icon2 {
-  margin-right: 4.5rem;
+  margin-right: 4%;
+  margin-left: 10%;
 }
 #icon3 {
-  margin-right: 4.5rem;
+  margin-right: 4%;
+  margin-left: 10%;
 }
 #icon4 {
-  margin-right: 4.5rem;
+  margin-right: 4%;
+  margin-left: 10%;
 }
 #icon5 {
-  margin-right: 4.5rem;
-}
-
-.logoPlaceholder {
-  display: flex;
-  align-items: center;
+  margin-right: 4%;
+  margin-left: 10%;
 }
 
 #Logo {
-  width: 150px;
-  height: 150px;
-  margin-right: 500px;
+  width: 240px;
+  height: 260px;
+  margin-bottom: 15%;
+  margin-right: 20%;
+  transition: 1s;
+}
+
+
+#Logo:hover {
+  filter: contrast(200%) brightness(150%) sepia(100%);
 }

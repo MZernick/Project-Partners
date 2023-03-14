@@ -6,6 +6,7 @@ query User($userId: ID!) {
     _id
     username
     personality
+    email
     compatibility {
       type
       rating
@@ -14,6 +15,9 @@ query User($userId: ID!) {
       _id
       title
       description
+      members {
+        username
+      }
     }
   }
 }

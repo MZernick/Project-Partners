@@ -27,12 +27,11 @@ const Circle = ({ colour, pct }) => {
 
 const Text = ({ percentage }) => {
     return (
-        <text
+        <text className='smallFont'
             x="50%"
             y="50%"
             dominantBaseline="central"
             textAnchor="middle"
-            fontSize={"1.5em"}
         >
             {percentage.toFixed(0)}%
         </text>
@@ -42,7 +41,7 @@ const Text = ({ percentage }) => {
 const Pie = ({ percentage, colour }) => {
     const pct = cleanPercentage(percentage);
     return (
-        <svg width={200} height={200}>
+        <svg className="percentageCircle" width={200} height={200}>
             <g transform={`rotate(-90 ${"100 100"})`}>
                 <Circle colour="lightgrey" />
                 <Circle colour={colour} pct={pct} />

@@ -113,21 +113,41 @@ body {
   height: 140vh;
 }
 
+#homeTitleContainer {
+  font-family: 'Switzer', sans-serif;
+  font-size: clamp(0.7rem, 2.7vw, 2.7rem);
+  color: #F1FAEE;
+  opacity: 1;
+  z-index: 3;
+  width: 200%;
+  margin-left: 15%;
+  /* width: 32%; */
+}
+
 #description1 {
   font-family: 'Switzer', sans-serif;
   font-size: clamp(0.7rem, 2.7vw, 2.7rem);
   color: #F1FAEE;
   opacity: 1;
   z-index: 3;
-  width: 32%;
+  /* width: 32%; */
 }
 
+#homeDescContainer {
+  font-family: 'Switzer', sans-serif;
+  font-size: clamp(3.5rem, 8.5vw, 8.5rem);
+  color: #E63946;
+  font-weight: 700;
+  margin-right: 14%;
+  /* margin-left: 20%; */
+  /* padding-right: 10%; */
+}
 #title1 {
   font-family: 'Switzer', sans-serif;
   font-size: clamp(3.5rem, 8.5vw, 8.5rem);
   color: #E63946;
   font-weight: 700;
-  padding-right: 10%;
+  /* padding-right: 10%; */
 }
 
 /* IMAGE CONTAINER BELOW */

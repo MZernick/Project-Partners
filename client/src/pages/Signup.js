@@ -99,46 +99,46 @@ const Signup = () => {
                     <Link to="/">back to the homepage.</Link>
                   </p>
                 ) : (
-                  <form className="form" onSubmit={handleSignup}>
+                  <form className="sign-up-form" onSubmit={handleSignup}>
                     <label htmlFor="username"> Enter Username:</label>
                     <input
                       id="username"
-                      className="form-input"
+                      className="signupform-input"
                       placeholder="Your username"
                       name="username"
                       type="text"
                       value={signupState.name}
                       onChange={handleSignupChange}
                     />
-                    <div className="form-border"></div>
+                    {/* <div className="form-border"></div> */}
                     <label htmlFor="email"> Enter Email:</label>
                     <input
                       id="email"
-                      className="form-input"
+                      className="signupform-input"
                       placeholder="Your email"
                       name="email"
                       type="email"
                       value={signupState.email}
                       onChange={handleSignupChange}
                     />
-                    <div className="form-border"></div>
+                    {/* <div className="form-border"></div> */}
                     <label htmlFor="password">Enter Password:</label>
                     <input
                       id="password"
-                      className="form-input password-signup"
+                      className="signupform-input password-signup"
                       placeholder="******"
                       name="password"
                       type="password"
                       value={signupState.password}
                       onChange={handleSignupChange}
                     />
-                    <div className="form-border"></div>
+                    {/* <div className="form-border"></div> */}
                     <label htmlFor="personality-type">
                       Input your Myers-Briggs Personality Type Here:
                     </label>
                     <select
                       id="personality-type"
-                      className="form-input"
+                      className="signupform-input"
                       placeholder="Pick Personality Type"
                       name="personality"
                       value={signupState.personality}
@@ -162,7 +162,7 @@ const Signup = () => {
                       <option value="ISTJ">ISTJ</option>
                       <option value="ISTP">ISTP</option>
                     </select>
-                    <div className="form-border"></div>
+                    {/* <div className="form-border"></div> */}
                     <button
                       className="btn btn-block btn-info signup-btn"
                       style={{ cursor: "pointer" }}
@@ -209,25 +209,25 @@ const Signup = () => {
                     <Link to="/">back to the homepage.</Link>
                   </p>
                 ) : (
-                  <form className="form" onSubmit={handleLogin}>
+                  <form className="sign-up-form" onSubmit={handleLogin}>
                     <input
-                      className="form-input"
+                      className="signupform-input"
                       placeholder="Your email"
                       name="email"
                       type="email"
                       value={loginState.email}
                       onChange={handleLoginChange}
                     />
-                    <div className="form-border"></div>
+                    {/* <div className="form-border"></div> */}
                     <input
-                      className="form-input"
+                      className="signupform-input"
                       placeholder="******"
                       name="password"
                       type="password"
                       value={loginState.password}
                       onChange={handleLoginChange}
                     />
-                    <div className="form-border"></div>
+                    {/* <div className="form-border"></div> */}
                     <button
                       className="btn btn-block btn-info login-btn"
                       style={{ cursor: "pointer" }}

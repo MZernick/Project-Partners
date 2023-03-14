@@ -20,7 +20,7 @@ const MyTeamList = (props) => {
 
   return (
 
-    <div>
+    <div className="team-card">
       <h1 className="myTeamHeaders">
         {focusTeam.title}
       </h1>
@@ -32,10 +32,9 @@ const MyTeamList = (props) => {
         {members?.map((member) => (
           <div className="member-box">
             <li className="list-group-item" key={member.username}>
-              <div className="members-username">
-                <h3 className='member-name'>{member.username}'s Team Score:
-                  {Math.round(myTeamScore(members, member))}%
-                  <br /></h3> </div>
+              <h3 className='member-name'>{member.username}'s Team Score:
+                {Math.round(myTeamScore(members, member))}%
+                <br /></h3>
               <div>
                 <ul className="list-group-item-sub" key={member.username} >
                   <MyTeamSubLst members={members} thisOne={member} />
@@ -44,6 +43,20 @@ const MyTeamList = (props) => {
             </li>
           </div>
         ))}
+      </div>
+      <div>
+        <button className="team-btn"
+          variant="contained"
+          size="small"
+          sx={{ margin: '2%', background: 'rgba(88,138,182,1)' }}
+          onClick={() => navigate(`/${team._id}/editteam`)}
+        >
+          Update
+        </button>
+        <button onClick={() => navigate(`/createteam`)}
+          className="team-btn"
+          rel="noreferrer" target="_blank">Create New Team</button>
+        <button onClick={() => navigate(`/users`)} className="team-btn" rel="noreferrer" target="_blank">Search Users</button>
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ function NavTabs({ currentPage }) {
         </li>
         <li className="tabOne">
           <Link id="nav-link"
-            to="/landing"
+            to={`/user/${auth.getProfile().data._id}`}
             activeclassname={'active'}
           >
             <HomeRoundedIcon fontSize="large" id="icon1" /> Home

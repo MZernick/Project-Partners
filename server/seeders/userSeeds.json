@@ -1,63 +1,99 @@
 [
     {
-      "username": "BrianKernighan",
-      "email": "bkernighan@techfriends.dev",
+      "username": "Archie01",
+      "email": "architect@Pmail.com",
       "password": "password01",
-      "personality": "INFJ"
+      "personality": "INTJ"
     },
     {
-      "username": "MaxKanat-Alexander",
-      "email": "mkanatalexander@techfriends.dev",
+      "username": "Logic02",
+      "email": "spock@Pmail.com",
       "password": "password02",
+      "personality": "INTP"
+    },
+    {
+      "username": "Command03",
+      "email": "amiko@Pmail.com",
+      "password": "password03",
       "personality": "ENTJ"
     },
     {
-      "username": "Amiko",
-      "email": "amiko@techfriends.dev",
-      "password": "password03",
+      "username": "Debate04",
+      "email": "MasterDebater@Pmail.com",
+      "password": "password04",
+      "personality": "ENTP"
+    },
+    {
+      "username": "Advocate05",
+      "email": "evberard@Pmail.com",
+      "password": "password05",
+      "personality": "INFJ"
+    },
+    {
+      "username": "Mediator06",
+      "email": "akay@Pmail.com",
+      "password": "password06",
       "personality": "INFP"
     },
     {
-      "username": "KentBeck",
-      "email": "kbeck@techfriends.dev",
-      "password": "password04",
-      "personality": "ESFP"
-    },
-    {
-      "username": "EdwardV.Berard",
-      "email": "evberard@techfriends.dev",
-      "password": "password05",
-      "personality": "ESTP"
-    },
-    {
-      "username": "AlanKay",
-      "email": "akay@techfriends.dev",
-      "password": "password06",
+      "username": "Protagonist07",
+      "email": "choare@Pmail.com",
+      "password": "password07",
       "personality": "ENFJ"
     },
     {
-      "username": "C.A.R.Hoare",
-      "email": "choare@techfriends.dev",
-      "password": "password07",
+      "username": "Campaign08",
+      "email": "dthomas@Pmail.com",
+      "password": "password08",
+      "personality": "ENFP"
+    },
+    {
+      "username": "LogisTick09",
+      "email": "dknuth@Pmail.com",
+      "password": "password09",
       "personality": "ISTJ"
     },
     {
-      "username": "DavidThomas",
-      "email": "dthomas@techfriends.dev",
-      "password": "password08",
+      "username": "Defend10",
+      "email": "lernantino@Pmail.com",
+      "password": "password10",
+      "personality": "ISFJ"
+    },
+    {
+      "username": "Exec11",
+      "email": "boss@Pmail.com",
+      "password": "password11",
       "personality": "ESTJ"
     },
     {
-      "username": "DonaldKnuth",
-      "email": "dknuth@techfriends.dev",
-      "password": "password09",
-      "personality": "ENFJ"
+      "username": "Consul12",
+      "email": "helper@Pmail.com",
+      "password": "password12",
+      "personality": "ESFJ"
     },
     {
-      "username": "Lernantino",
-      "email": "lernantino@techfriends.dev",
-      "password": "password10",
+      "username": "Leo13",
+      "email": "rennaissance@Pmail.com",
+      "password": "password13",
       "personality": "ISTP"
+    },
+    {
+      "username": "Adventure14",
+      "email": "LetsGoooo@Pmail.com",
+      "password": "password14",
+      "personality": "ISFP"
+    },
+    {
+      "username": "Startup15",
+      "email": "Entreprenteur@Pmail.com",
+      "password": "password15",
+      "personality": "ESTP"
+    },
+    {
+      "username": "StandUp16",
+      "email": "Funny@Pmail.com",
+      "password": "password16",
+      "personality": "ESFP"
     }
   ]
   

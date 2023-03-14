@@ -109,7 +109,7 @@ const UserSearch = () => {
 
                             </div>
                           </div>
-                        )) : <h1>{noResultMsg}</h1>}
+                        )) : <h1 className="userInfo">{noResultMsg}</h1>}
                       </div>
               </div>
             )}

@@ -6,7 +6,7 @@ import auth from '../utils/auth';
 import MyTeamsList from '../components/MyTeamsList';
 import MyButtonList from "../components/MyButtonList";
 import Box from '@mui/material/Box';
-import LinearProgress from '@mui/material/LinearProgress';
+import CircularProgress from '@mui/material/CircularProgress';
 import NavTabs from '../components/NavTabs';
 import { MY_TEAMS } from '../utils/queries';
 
@@ -43,8 +43,8 @@ const MyTeam = () => {
 
   if (!data) {
     return (
-    <Box sx={{ width: '100%' }}>
-      <LinearProgress />
+      <Box sx={{ position:'absolute', top:'50%', left: '50%', transform:'translate(-50%, -50%)' }}>
+      <CircularProgress color="inherit"  />
     </Box>
     );
   }

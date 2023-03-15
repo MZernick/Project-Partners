@@ -109,8 +109,6 @@ label {
 
 .signupform-input {
   background: #fbfbfb;
-  border: none;
-  border-bottom: 1px solid linear-gradient(90deg, rgba(21, 17, 87, 1) 0%, rgba(88, 138, 182, 1) 100%);
   outline: none;
   padding-top: 14px;
   padding-bottom: 5px;

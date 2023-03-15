@@ -300,7 +300,6 @@ h3 {
 
 .titlebtn {
   background: linear-gradient(90deg, rgba(21, 17, 87, 1) 0%, rgba(88, 138, 182, 1) 100%);
-  border: none;
 }
 
 .titlebtn:hover {

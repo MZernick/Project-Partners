@@ -70,7 +70,7 @@ const ProfileTeamList = ({ user, isLoggedInUser = false }) => {
                 {team.members.map(member => {
                   return (
                     <Stack direction="row" sx={{ padding: '2%' }} key={member.username}>
-                      <Avatar>{` ${member.username.charAt(0)} `}</Avatar>
+                      <Avatar sx={{ bgcolor: '#1D3557' }}> {` ${member.username.charAt(0)} `}</Avatar>
                     </Stack>
                   )
                 })}

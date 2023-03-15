@@ -328,6 +328,7 @@ body {
   text-decoration: none;
   color: #E63946;
   font-weight: 700;
+  cursor: pointer;
 }
 
 /* SPECIFIC PROFILE CONTAINER */

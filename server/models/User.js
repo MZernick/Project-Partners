@@ -1,9 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 const { setUserCompatibility } = require('../utils/setUserCompatibility');
-// import your setUserCompatibility function here. We'll use
-// to pass the value of of the user's personality into it,
-// and have it return the corresponding array of objects.
+
 const userSchema = new Schema(
     {
         username: {

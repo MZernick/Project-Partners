@@ -32,10 +32,7 @@ AOS.init();
     if (teamsData) {
       setLoading(false);
     }
-    // auth.getProfile().data._id "640f39aab4c41e776393b01c"
 
-    //selectedTeam  will be set by user click or default to 0;
-    // setSelectedTeam(0)
     data?.user?.teams?.length && setFocusTeam(data?.user?.teams[selectedTeam]);
 
     // console.log(focusTeam); 
@@ -58,16 +55,19 @@ AOS.init();
         <NavTabs />
       </div>
       <div className="teams-page">
+
         {/* <div className='column'> */}
         <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" className="allteam-card">
+
           <h1 className="myTeamHeaders">My Teams</h1>
           <div className="team-underline"></div>
           <div className="container">
             <MyButtonList teams={teamsData.teams} setFocusTeam={setFocusTeam} />
           </div>
         </div>
+
         {/* </div> */}
-        <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500" className="bottomContainer">
+
           <div className="team-cardContainer">
             {teamsData.teams?.length > 0 && (
               <>

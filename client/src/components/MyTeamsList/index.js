@@ -1,10 +1,9 @@
 import React from 'react';
 import { useMutation } from '@apollo/client';
-//be sure to create the mutations for this--done
 import { REMOVE_TEAM } from '../../utils/mutations';
-//be sure to create the query for this--done
 import { QUERY_ME, MY_TEAMS } from '../../utils/queries';
 import MyTeamSubLst from '../MyTeamSubLst'
+import { useNavigate } from 'react-router-dom';
 import Pie from "../PercentageCircle";
 import { getCompatibility, getCompatibilityandUsername, avg, indivTeamScores, myTeamScore, oneBigTeamScore, makeObjectListofOthers } from '../../utils/helpers'
 
@@ -13,6 +12,7 @@ const MyTeamList = (props) => {
   const focusTeam = props.focusTeam;
   const members = focusTeam?.members;
   console.log(members)
+  const navigate = useNavigate();
 
   if (!focusTeam) {
     return <h3>No Teams Yet</h3>;
@@ -48,7 +48,7 @@ const MyTeamList = (props) => {
           variant="contained"
           size="small"
           sx={{ margin: '2%', background: 'rgba(88,138,182,1)' }}
-          onClick={() => navigate(`/${team._id}/editteam`)}
+          onClick={() => navigate(`/${focusTeam._id}/editteam`)}
         >
           Update
         </button>

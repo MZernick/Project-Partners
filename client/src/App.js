@@ -17,10 +17,6 @@ import Signup from './pages/Signup';
 import UserSearch from './pages/UserSearch';
 import EditTeam from './pages/EditTeam';
 
-// const client = new ApolloClient({
-//   uri: '/graphql',
-//   cache: new InMemoryCache(),
-// });
 
 const httpLink = createHttpLink({
   uri: '/graphql',

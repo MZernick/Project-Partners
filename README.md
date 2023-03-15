@@ -7,11 +7,11 @@ Deployment Date: March 16, 2023
 
 # Table of Contents
 - [Description](##description)
-- [Getting Started](##getting started)
+- [Getting Started](##getting-started)
 - [Instructions](##instructions)
-- [Technologies Used](##technologies used)
+- [Technologies Used](##technologies-used)
 - [Authors](##authors)
-- [Original Idea](##original idea)
+- [Original Idea](##original-idea)
 - [IceBox](##icebox)
 - [License](##license)
 

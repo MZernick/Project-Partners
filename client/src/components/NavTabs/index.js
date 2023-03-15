@@ -71,7 +71,7 @@ const theme = createTheme({
         </li>
         <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
           <Link id="nav-link"
-            to={`/`}
+            to={`/landing`}
             onClick={() => auth.logout()}
           >
             <LogoutRoundedIcon theme={theme} fontSize="large" color="primary" id="icon5" /> Logout

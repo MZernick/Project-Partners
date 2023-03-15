@@ -1,5 +1,5 @@
 # ProPairs
-[ProPairs](https://ancient-shore-28312.herokuapp.com/)
+[ProPairs](https://pro-pairs.herokuapp.com/)
 
 Version 1.0
 
@@ -17,7 +17,7 @@ Deployment Date: March 16, 2023
 
 # Description
 
-[ProPairs](https://ancient-shore-28312.herokuapp.com/) is a web application that matches compatible teammates for group projects based on their Myers-Briggs personality types. The application suggests potential partners with similar interests, values, and communication styles, and allows users to see their compatibility rating as a pair and as a team. The application is hosted on a secure server and can be accessed from any device with an internet connection.
+[ProPairs](https://pro-pairs.herokuapp.com/) is a web application that matches compatible teammates for group projects based on their Myers-Briggs personality types. The application suggests potential partners with similar interests, values, and communication styles, and allows users to see their compatibility rating as a pair and as a team. The application is hosted on a secure server and can be accessed from any device with an internet connection.
 *Features*
 - Compatibility: See one on one compatibility ratings.
 - Team Compatibility:  See predicted compatibility of up to five team members.
@@ -25,7 +25,7 @@ Deployment Date: March 16, 2023
 
 # Getting Started
 
-To get started,  visit [the website](https://ancient-shore-28312.herokuapp.com/) to sign up for an account. You'll need your MBTI. If you know it, great! If not, take a [quick quiz](https://www.16personalities.com/free-personality-test) to discover your personality type. 
+To get started,  visit [the website](https://pro-pairs.herokuapp.com/) to sign up for an account. You'll need your MBTI. If you know it, great! If not, take a [quick quiz](https://www.16personalities.com/free-personality-test) to discover your personality type. 
 
 # Instructions
 

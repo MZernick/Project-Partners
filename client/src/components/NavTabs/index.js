@@ -11,14 +11,29 @@ import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import ProLogo from '../../styles/PP_logo.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { createTheme } from '@mui/material/styles';
+// import { purple } from '@mui/material/colors';
 
 function NavTabs({ currentPage }) {
   AOS.init();
+
 
   function handleLogOut(){
     localStorage.setItem('hasVisited', "")
     auth.logout()
   };
+
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#e63947',
+    },
+    secondary: {
+      main: '#1D3557',
+    },
+  },
+});
 
   return (
     <nav>
@@ -31,35 +46,35 @@ function NavTabs({ currentPage }) {
             to={`/user/${auth.getProfile().data._id}`}
             activeclassname={'active'}
           >
-            <HomeRoundedIcon fontSize="large" id="icon1" /> Home
+            <HomeRoundedIcon theme={theme} fontSize="large" color="primary" id="icon1" /> Home
           </Link>
         </li>
         <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" >
           <Link id="nav-link"
             to={`/user/${auth.getProfile().data._id}/teams`}
           >
-            <GroupsRoundedIcon fontSize="large" id="icon2" /> My Teams
+            <GroupsRoundedIcon theme={theme} fontSize="large" color="primary" id="icon2" /> My Teams
           </Link>
         </li>
         <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
           <Link id="nav-link"
             to="/users"
           >
-            <SearchRoundedIcon fontSize="large" id="icon3" /> Search
+            <SearchRoundedIcon theme={theme} fontSize="large" color="primary" id="icon3" /> Search
           </Link>
         </li>
         <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
           <Link id="nav-link"
             to="/createteam"
           >
-            <AddCircleOutlineRoundedIcon fontSize="large" id="icon4" /> Create Team
+            <AddCircleOutlineRoundedIcon theme={theme} fontSize="large" color="primary" id="icon4" /> Create Team
           </Link>
         </li>
         <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
           <Link id="nav-link"
             to={`/user/${auth.getProfile().data._id}`}
           >
-            <AccountCircleRoundedIcon fontSize="large" id="icon5" /> My Profile
+            <AccountCircleRoundedIcon theme={theme} fontSize="large" color="primary" id="icon5" /> My Profile
           </Link>
         </li>
         <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
@@ -67,7 +82,7 @@ function NavTabs({ currentPage }) {
             to={`/`}
             onClick={handleLogOut}
           >
-            <LogoutRoundedIcon fontSize="large" id="icon5" /> Logout
+            <LogoutRoundedIcon theme={theme} fontSize="large" color="primary" id="icon5" /> Logout
           </Link>
         </li>
       </ul>

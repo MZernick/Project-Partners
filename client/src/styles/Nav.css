@@ -3,12 +3,13 @@ nav {
   left: 0; */
   display: flex;
   flex-direction: column;
-  background-color: #457B9D;
+  background-color: #1D3557;
   align-items: center;
   justify-content: center;
   position: fixed;
   width: 15%; /* change the width to the desired width of the navigation bar */
   height: 100%; /* add this to make the navigation bar take up the full height of the screen */
+  font-size: clamp(0.55rem, 1.3vw, 1.3rem);
 }
 
 .nav {
@@ -40,7 +41,7 @@ li {
 }
 
 #nav-link:hover {
-  background-color: #1D3557;
+  background-color: #457B9D;
 }
 
 #icon1 {

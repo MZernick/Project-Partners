@@ -19,11 +19,6 @@ export default function Homepage() {
   
   return (
     <div className="main-container">
-      {/* <div className="homepageNav">
-    <Link to="raffContainer" smooth={true} duration={1000}>How it Works</Link>
-    <Link to="ourTeamContainer" smooth={true} duration={1000}>Our Team</Link>
-    <a href="/signup" id="getStartedNav">Get Started</a>
-  </div> */}
       <div data-aos="zoom-in" data-aos-duration="700"id="menu">
         <div data-aos="zoom-in" data-aos-delay="700" id="menu-items">
           <Link to="descriptionContainer" smooth={true} duration={1000} className="menu-item"><div id='big-title'>ProPairs</div></Link>
@@ -61,11 +56,7 @@ export default function Homepage() {
           <h2 data-aos="slide-left" data-aos-duration="700" id="teamTitle">Meet Our<span id="redTeam"> Team</span></h2>
         </div>
         <div id="sidescrollContainer">
-          {/* <a href="#" id="scrollItem1">JOSH PICTURE</a>
-          <a href="#" id="scrollItem2">DOM PICTURE</a>
-          <a href="#" id="scrollItem3">ANITA PICTURE</a>
-          <a href="#" id="scrollItem4">MAG PICTURE</a> */}
-          <div className="creator-box">
+          <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200" className="creator-box">
             <Avatar className="creator-avatar"
               sx={{ width: 112, height: 112 }}>
               JG
@@ -73,7 +64,7 @@ export default function Homepage() {
             <h2 className="creator-name">Josh Goeke</h2>
             <p className="creator-type">ENTP</p>
           </div>
-          <div className="creator-box">
+          <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400" className="creator-box">
             <Avatar className="creator-avatar"
               sx={{ width: 112, height: 112 }}>
               DN
@@ -81,7 +72,7 @@ export default function Homepage() {
             <h2 className="creator-name">Dominique Nix</h2>
             <p className="creator-type">INTJ</p>
           </div>
-          <div className="creator-box">
+          <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600" className="creator-box">
             <Avatar className="creator-avatar"
               sx={{ width: 112, height: 112 }}>
               AB
@@ -89,7 +80,7 @@ export default function Homepage() {
             <h2 className="creator-name">Anita Banh</h2>
             <p className="creator-type">ISTP</p>
           </div>
-          <div className="creator-box">
+          <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="800" className="creator-box">
             <Avatar className="creator-avatar"
               sx={{ width: 112, height: 112 }}>
               JC
@@ -97,7 +88,7 @@ export default function Homepage() {
             <h2 className="creator-name">Jeremy Crouthamel</h2>
             <p className="creator-type">INFP</p>
           </div>
-          <div className="creator-box">
+          <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="1000" className="creator-box">
             <Avatar className="creator-avatar"
               sx={{ width: 112, height: 112 }}>
               MZ
@@ -108,7 +99,7 @@ export default function Homepage() {
         </div>
       </div>
       <div className="startedContainer">
-        <Link to="/" className="getStarted" id="getStarted1"><div>
+        <Link to="/" className="getStarted" id="getStarted1" onClick={handleGetStarted}><div>
           Get Started
         </div></Link>
       </div>
@@ -116,8 +107,4 @@ export default function Homepage() {
   );
 }
 
-//         <div className="descriptionContainer">
-//         <h2>
-//             Group cohesion is everything in projects. We get it. ProPairs evaluates users based on their personality type and generates a rating of how well they will work with one another. The website aims to help users find compatible project partners based on their personality traits.
-//         </h2>
-//         </div>
+

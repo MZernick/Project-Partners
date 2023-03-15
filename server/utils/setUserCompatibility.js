@@ -294,7 +294,6 @@ case 'ESTJ' : return [
 };
 };
 
-//TO DO: make this function a module export
 module.exports = {
     setUserCompatibility
 }

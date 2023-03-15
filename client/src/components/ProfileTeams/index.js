@@ -1,6 +1,5 @@
 import React from 'react';
 import { useMutation } from '@apollo/client';
-//be sure to create the mutations for this--done
 import { REMOVE_TEAM } from '../../utils/mutations';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -12,26 +11,12 @@ import { deepOrange, deepPurple } from '@mui/material/colors';
 import Button from '@mui/material/Button';
 import { useNavigate, useParams } from 'react-router-dom';
 
-//be sure to create the query for this--done
 import { QUERY_SINGLE_USER_WITH_COMPATIBILITY } from '../../utils/queries';
 
 const ProfileTeamList = ({ user, isLoggedInUser = false }) => {
 
   const { userId } = useParams()
   const [removeTeam, { error }] = useMutation(REMOVE_TEAM)
-
-  // const [removeTeam, { error }] = useMutation(REMOVE_TEAM, {
-  //   update(cache, { data: { removeTeam } }) {
-  //     try {
-  //       cache.writeQuery({
-  //         query: QUERY_SINGLE_USER_WITH_COMPATIBILITY,
-  //         data: { user: removeTeam },
-  //       });
-  //     } catch (e) {
-  //       console.error(e);
-  //     }
-  //   },
-  // });
   let navigate = useNavigate();
 
   const handleRemoveTeam = async (team) => {
@@ -39,7 +24,6 @@ const ProfileTeamList = ({ user, isLoggedInUser = false }) => {
       const { data } = await removeTeam({
         variables: { teamId: team }
       });
-      // navigate(`/user/${userId}`)
       window.location.reload(true)
     } catch (err) {
       console.error(err);
@@ -64,13 +48,12 @@ const ProfileTeamList = ({ user, isLoggedInUser = false }) => {
                 size="large"
                 variant="contained"
                 onClick={() => navigate(`/user/${user._id}/teams`)}
-              // onClick={(console.log(team))}
               >
                 {team.title}
                 {team.members.map(member => {
                   return (
                     <Stack direction="row" sx={{ padding: '2%' }} key={member.username}>
-                      <Avatar>{` ${member.username.charAt(0)} `}</Avatar>
+                      <Avatar sx={{ bgcolor: '#1D3557' }}> {` ${member.username.charAt(0)} `}</Avatar>
                     </Stack>
                   )
                 })}
@@ -95,16 +78,7 @@ const ProfileTeamList = ({ user, isLoggedInUser = false }) => {
                 </Button>
               </div>
 
-              {/* <div id="teamInfoContainer">
-            <Stack direction="row" spacing={2}>
-                <Avatar>H</Avatar>
-              <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
-              <Avatar sx={{ bgcolor: deepPurple[500] }}>OP</Avatar>
-            </Stack>
-            </div> */}
-              {/* <div className="infoBox1">
-            <p>JOSH GRAPH HERE</p>
-            </div> */}
+
             </div>
           ))}
       </div>
@@ -117,11 +91,3 @@ const ProfileTeamList = ({ user, isLoggedInUser = false }) => {
 
 export default ProfileTeamList;
 
-{/* {isLoggedInUser && (
-                    <button
-                      className="btn btn-sm btn-danger ml-auto"
-                      onClick={() => handleRemoveTeam(teams)}
-                    >
-                      X
-                    </button>
-                  )} */}

@@ -20,10 +20,8 @@ import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
 // import Pairings from '../components/Pairings';
 import { Box } from '@mui/system';
-//profile query here- are we adding pairs/partners/favorites or just seeing partners in the their teamsview?
 import { QUERY_SINGLE_USER_WITH_COMPATIBILITY } from '../utils/queries';
 import ProfileTeamList from '../components/ProfileTeams';
 import { REMOVE_USER } from '../utils/mutations';
@@ -76,14 +74,6 @@ const Profile = () => {
     }
   }, [loading])
 
-  // const handleInputChange = (event) => {
-  //   const { name, value } = event.target;
-  //   setFormData({
-  //     ...formData,
-  //     [name]: value,
-  //   });
-  // };
-
   const [updateUser, { error }] = useMutation(UPDATE_USER)
 
   const handleFormSubmit = async (event) => {
@@ -131,7 +121,7 @@ const Profile = () => {
         <div className="profileContainer">
           <div className="profile-box">
             <Avatar
-              sx={{ width: 112, height: 112 }}>{user.username}</Avatar>
+              sx={{ width: 112, height: 112, bgcolor: '#1D3557' }}>{user.username}</Avatar>
             <h2 className='profileName'>{user.username}</h2>
             <p id="personalityType">{user.personality} </p>
             <p id="email">{user.email}</p>
@@ -152,13 +142,7 @@ const Profile = () => {
           <h2 className='profileName'>{user.username}</h2>
           <p id="personalityType">{user.personality} </p>
           <p id="pemail">{user.email}</p>
-          {/* <div className="commentBox">
-            <p id="newComment">you are awesome</p>
-            <p id="newComment">you are okay</p>
-            <p id="newComment">you stink</p>
-          </div> */}
           <Button className='delete-btn' sx={{ color: 'white', borderRadius: '15px' }} onClick={handleClickOpen}>Update My Account</Button>
-          {/* <FormControl > */}
           <form onSubmit={handleFormSubmit}>
             <Dialog open={open} onClose={handleClose}>
               <DialogTitle>Update Your Profile</DialogTitle>
@@ -185,7 +169,6 @@ const Profile = () => {
                   fullWidth
                   variant="standard"
                 />
-                {/* <InputLabel id="personality">Personality</InputLabel> */}
                 <Select
                   labelId="personality"
                   id="personality"
@@ -216,12 +199,6 @@ const Profile = () => {
               </DialogActions>
             </Dialog>
           </form>
-          {/* </FormControl> */}
-          {/* <button onClick={async () => {
-            edit = true
-            console.log(edit)
-            // window.location.reload(true);
-          }}>Update My Account</button> */}
           <button className='delete-btn' onClick={async () => {
             await removeUser();
             auth.logout();
@@ -229,10 +206,7 @@ const Profile = () => {
           }}>Delete My Account</button>
           <div className="userAndTeamBox">
             <div className="userBox1">
-              {/* <div>
-                <p>iamauser</p>
-              </div> */}
-            </div>
+           </div>
           </div>
         </div>
         <div className="space"></div>

@@ -139,19 +139,8 @@ const CreateTeam = () => {
                     onChange={(event, newValue) => setFormData({ ...formData, members: [...newValue].map(item => item.value) })}
                     multiple
                     id="user-autocomplete"
-                    // getOptionLabel={(option) => (
-                    //   <Box>
-                    //   <div className='tag'>
-                    // {`${option.username}`}
-                    //     <div className='spacing'></div>
-                    //     <div className='ratingtag'>
-                    //       {`${option.rating}`}
-                    //     </div>
-                    //   </div>
-                    // </Box>
-                    // ) }
+                 
                     getOptionLabel={(option) => `${option.username} ${option.rating}`}
-                    // isOptionEqualToValue={(option, value) => console.log(value)}
                     options={userArr}
                     className="usersearch"
                     renderInput={(params) => <TextField {...params} variant="standard" label="Add Member..." />}

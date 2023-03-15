@@ -14,6 +14,12 @@ import 'aos/dist/aos.css';
 
 function NavTabs({ currentPage }) {
   AOS.init();
+
+  function handleLogOut(){
+    localStorage.setItem('hasVisited', "")
+    auth.logout()
+  };
+
   return (
     <nav>
       <ul className="nav">
@@ -59,7 +65,7 @@ function NavTabs({ currentPage }) {
         <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
           <Link id="nav-link"
             to={`/`}
-            onClick={() => auth.logout()}
+            onClick={handleLogOut}
           >
             <LogoutRoundedIcon fontSize="large" id="icon5" /> Logout
           </Link>

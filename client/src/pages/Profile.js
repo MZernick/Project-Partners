@@ -18,6 +18,8 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // import Pairings from '../components/Pairings';
 import { Box } from '@mui/system';
@@ -28,6 +30,7 @@ import { REMOVE_USER } from '../utils/mutations';
 import { UPDATE_USER } from '../utils/mutations';
 
 const Profile = () => {
+    AOS.init();
   let { userId } = useParams();
   if (userId === "me") { userId = auth.getProfile().data._id }
   console.log(userId);
@@ -142,8 +145,8 @@ const Profile = () => {
     <div>
       <div><NavTabs /></div>
       <div className="profileContainer">
-        <h2 id="welcomeBack">Welcome back, {user.username}</h2>
-        <div className="profile-box">
+        <h2 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300" id="welcomeBack">Welcome back, {user.username}</h2>
+        <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500" className="profile-box">
           <Avatar
             sx={{ width: 112, height: 112 }}>{user.username}</Avatar>
           <h2 className='profileName'>{user.username}</h2>
@@ -233,7 +236,7 @@ const Profile = () => {
           </div>
         </div>
         <div className="space"></div>
-        <div className="team-box">
+        <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600" className="team-box">
           <h2 id="yourTeams">Your Teams</h2>
           <ProfileTeamList user={user} />
         </div>

@@ -24,7 +24,7 @@ const MyTeamList = (props) => {
       <h1 className="myTeamHeaders">
         {focusTeam.title}
       </h1>
-      {/* <div className="underline-title"></div> */}
+      <div className="team-underline"></div>
       <div className='description-card'>
 
         <p className='descFont'>Overall Compatibility:</p>

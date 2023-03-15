@@ -58,17 +58,55 @@ query User($email: String!) {
     _id
     username
     email
+    username
     personality
+    compatibility {
+      type
+      rating
+    }
+    teams {
+      title
+      description
+    }
   }
 }
 `;
 export const SEARCH_PERSONALITY = gql`
 query User($personality: String!) {
   searchPersonality(personality: $personality) {
-    _id
+   _id
     username
     email
+    username
     personality
+    compatibility {
+      type
+      rating
+    }
+    teams {
+      title
+      description
+    }
+  }
+}
+`;
+
+export const SEARCH_USERNAME= gql`
+query User($username: String!) {
+  searchUsername(username: $username) {
+  _id
+    username
+    email
+    username
+    personality
+    compatibility {
+      type
+      rating
+    }
+    teams {
+      title
+      description
+    }
   }
 }
 `;

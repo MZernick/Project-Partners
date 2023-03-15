@@ -20,7 +20,7 @@ const resolvers = {
         populate: "members",
       });
     },
-    // find one user by email
+    // find users by email
     searchEmail: async (parent, { email }) => {
       return await User.find({ email: email }).populate("teams").populate({
         path: "teams",
@@ -28,9 +28,17 @@ const resolvers = {
       });
     },
 
-    // find one user by email
+    // find users by personality
     searchPersonality: async (parent, { personality }) => {
       return await User.find({ personality: personality }).populate("teams").populate({
+        path: "teams",
+        populate: "members",
+      });
+    },
+
+     // find users by username
+     searchUsername: async (parent, { username }) => {
+      return await User.find({ username: username }).populate("teams").populate({
         path: "teams",
         populate: "members",
       });

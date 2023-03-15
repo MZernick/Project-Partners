@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NavTabs from "../components/NavTabs";
 import { useQuery } from "@apollo/client";
-import { SEARCH_USER } from "../utils/queries";
+import { SEARCH_USER, SEARCH_PERSONALITY, SEARCH_EMAIL, SEARCH_USERNAME } from "../utils/queries";
 import { useNavigate, useParams } from "react-router-dom";
 // import auth from "../utils/auth";
 // import Button from 'react-bootstrap/Button';
@@ -20,6 +20,8 @@ const UserSearch = () => {
   const { loading, data } = useQuery(SEARCH_USER);
   const [noResultMsg, setNoResultMsg] = useState("");
 
+  const[useQueryData, setUseQueryData] = useState({});
+
   const users = data?.users || [];
   let navigate = useNavigate();
   console.log(users);
@@ -30,21 +32,41 @@ const UserSearch = () => {
     console.log(searchText);
     console.log(filter);
     if (filter === "personality") {
-      listarray = users.filter(
-        (user) => user.personality.toLowerCase() === searchText
-      );
+      setUseQueryData({
+        selected: SEARCH_PERSONALITY,
+        variable: "personality"
+      })
+      // listarray = users.filter(
+      //   (user) => user.personality.toLowerCase() === searchText
+      // );
     } else if (filter === "email") {
-      listarray = users.filter(
-        (user) => user.email.toLowerCase() === searchText
-      );
+      setUseQueryData({
+        selected: SEARCH_EMAIL,
+        variable: "email"
+      })
+      // listarray = users.filter(
+      //   (user) => user.email.toLowerCase() === searchText
+      // );
     } else if (filter === "username") {
-      listarray = users.filter(
-        (user) => user.username.toLowerCase() === searchText
-      );
+      setUseQueryData({
+        selected: SEARCH_USERNAME,
+        variable: "username"
+      })
+
+      // listarray = users.filter(
+      //   (user) => user.username.toLowerCase() === searchText
+      // );
     } else {
       listarray = [];
     }
-    setFilteredUsers(listarray);
+
+    const { loading, error, data } = useQuery(useQueryData.selected, {
+          variables: { [useQueryData.variable]: searchText },
+        });
+      
+    setFilteredUsers(data?.users || []); //backend instead of filtering
+
+    // setFilteredUsers(listarray);
     // if array is empty, no results found is rendered in place of cards.
     if (listarray.length == 0) {
       setNoResultMsg("No results found");

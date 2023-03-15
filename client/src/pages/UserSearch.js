@@ -4,10 +4,13 @@ import { useQuery } from "@apollo/client";
 import { SEARCH_USER } from "../utils/queries";
 // import auth from "../utils/auth";
 // import Button from 'react-bootstrap/Button';
-import '../styles/UserSearch.css'
+import '../styles/UserSearch.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const UserSearch = () => {
+  AOS.init();
   const [searchText, setSearchText] = useState("");
   const [filter, setFilter] = useState("personality"); // set default filter to personality
   const [filteredUsers, setFilteredUsers] = useState([]);
@@ -53,7 +56,7 @@ const UserSearch = () => {
           ) : (
             <div>
               <div className="search-container">
-                <div className="search-card" >
+                <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" className="search-card" >
                   <div className="headers-search">
                     <h4>Search Users</h4>
                     <div className="underline-title"></div>

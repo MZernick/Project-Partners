@@ -144,9 +144,9 @@ const Profile = () => {
   return (
     <div>
       <div><NavTabs /></div>
-      <div data-aos="zoom-in" data-aos-duration="1000" className="profileContainer">
-        <h2 id="welcomeBack">Welcome back, {user.username}</h2>
-        <div className="profile-box">
+      <div className="profileContainer">
+        <h2 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300" id="welcomeBack">Welcome back, {user.username}</h2>
+        <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500" className="profile-box">
           <Avatar
             sx={{ width: 112, height: 112 }}>{user.username}</Avatar>
           <h2 className='profileName'>{user.username}</h2>
@@ -236,7 +236,7 @@ const Profile = () => {
           </div>
         </div>
         <div className="space"></div>
-        <div className="team-box">
+        <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600" className="team-box">
           <h2 id="yourTeams">Your Teams</h2>
           <ProfileTeamList user={user} />
         </div>

@@ -85,7 +85,7 @@ const resolvers = {
     // update a user
     updateUser: async (
       parent,
-      { userId, username, email, password, personality}
+      { userId, username, email, password, personality }
     ) => {
       return User.findOneAndUpdate(
         { _id: userId },
@@ -100,11 +100,11 @@ const resolvers = {
 
     // add a team then push that team's id number into the associated user's model
     addTeam: async (parent, { userId, title, description }) => {
-      return Teams.create({title, description})
-      .then((team) => {
-       return User.findOneAndUpdate(
+      return Teams.create({ title, description })
+        .then((team) => {
+          return User.findOneAndUpdate(
             { _id: userId },
-            { $addToSet: { teams: team._id }},
+            { $addToSet: { teams: team._id } },
             { new: true }
           )
         })
@@ -136,23 +136,23 @@ const resolvers = {
     // remove a member form a team
     removeMember: async (parent, { teamId, userId }) => {
       return Teams.findOneAndUpdate(
-        {_id: teamId}, 
-        {$pull: {members: userId}}, 
-        {new: true}
-        )
+        { _id: teamId },
+        { $pull: { members: userId } },
+        { new: true }
+      )
     },
 
-    addTeamAndMembers: async (parent, { userId, title, description, members}) => {
-      Teams.create({title, description, members })
-      .then((team) => {
-       return User.findOneAndUpdate(
+    addTeamAndMembers: async (parent, { userId, title, description, members }) => {
+      return Teams.create({ title, description, members })
+        .then((team) => {
+          return User.findOneAndUpdate(
             { _id: userId },
-            { $addToSet: { teams: team._id }},
+            { $addToSet: { teams: team._id } },
             { new: true }
           )
         })
     }
-   
+
   },
 };
 

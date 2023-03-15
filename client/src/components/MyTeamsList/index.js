@@ -33,11 +33,11 @@ const MyTeamList = (props) => {
       </div>
       <div className='member-container'>
         {members?.map((member) => (
-          <div className="member-box">
-            <h2 className='member-name' key={member.username}>{member.username}'s Team Score:</h2>
+          <div className="member-box" key={member.username}>
+            <h2 className='member-name' >{member.username}'s Team Score:</h2>
             <Pie percentage={Math.round(myTeamScore(members, member))} colour="#E63946" />
             <br />
-            <ul className="comparisons" key={member.username} >
+            <ul className="comparisons" >
               <MyTeamSubLst members={members} thisOne={member} />
             </ul>
           </div>

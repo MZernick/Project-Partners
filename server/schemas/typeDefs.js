@@ -43,14 +43,14 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!, personality: String!): Auth
     login(email: String!, password: String!): Auth
-    addTeam(userId: ID!, title: String!, description: String!) : Teams
+    addTeam(userId: ID!, title: String!, description: String!) : User
     updateUser(userId: ID!, username: String, email: String, password: String, personality: String) : User
     updateTeam(teamId: ID!, title: String , description: String, members: [ID]) : Teams
     removeUser(userId: ID!): User
     removeTeam(teamId: ID!): Teams
     addMember(teamId: ID!, userId: ID!): Teams
     removeMember(teamId: ID!, userId: ID!): Teams
-    addTeamAndMembers(userId: ID!, title: String!, description: String!, members:[ID]) : Teams
+    addTeamAndMembers(userId: ID!, title: String!, description: String!, members:[ID]) : User
   }
 `;
 

@@ -17,6 +17,13 @@ import { createTheme } from '@mui/material/styles';
 function NavTabs({ currentPage }) {
   AOS.init();
 
+
+  function handleLogOut(){
+    localStorage.setItem('hasVisited', "")
+    auth.logout()
+  };
+
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -27,6 +34,7 @@ const theme = createTheme({
     },
   },
 });
+
   return (
     <nav>
       <ul className="nav">
@@ -71,8 +79,8 @@ const theme = createTheme({
         </li>
         <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
           <Link id="nav-link"
-            to={`/landing`}
-            onClick={() => auth.logout()}
+            to={`/`}
+            onClick={handleLogOut}
           >
             <LogoutRoundedIcon theme={theme} fontSize="large" color="primary" id="icon5" /> Logout
           </Link>

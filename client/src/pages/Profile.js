@@ -1,4 +1,4 @@
-import React, {useEffect , useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 import NavTabs from '../components/NavTabs';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
@@ -59,60 +59,60 @@ const Profile = () => {
   };
 
   const [formData, setFormData] = useState({
-    email: '', 
-    username: '', 
-    personality:''
+    email: '',
+    username: '',
+    personality: ''
   })
-useEffect(() => {
-  if(!loading) {
+  useEffect(() => {
+    if (!loading) {
+      setFormData({
+        email: user.email,
+        username: user.username,
+        personality: user.personality
+      })
+    }
+  }, [loading])
+
+  // const handleInputChange = (event) => {
+  //   const { name, value } = event.target;
+  //   setFormData({
+  //     ...formData,
+  //     [name]: value,
+  //   });
+  // };
+
+  const [updateUser, { error }] = useMutation(UPDATE_USER)
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const { data } = await updateUser({
+        variables: {
+          userId: userId,
+          username: formData.username,
+          email: formData.email,
+          personality: formData.personality
+        }
+      });
+      window.location.reload(true);
+    } catch (err) {
+      console.log(err);
+    }
+
     setFormData({
-    email: user.email, 
-    username: user.username, 
-    personality: user.personality
-  })
-  }
-},[loading])
-  
-// const handleInputChange = (event) => {
-//   const { name, value } = event.target;
-//   setFormData({
-//     ...formData,
-//     [name]: value,
-//   });
-// };
-
-const [updateUser, {error}] = useMutation(UPDATE_USER)
-
-const handleFormSubmit = async (event) => {
-  event.preventDefault();
-  try {
-    const { data } = await updateUser({
-      variables: {
-        userId: userId,
-        username: formData.username,
-        email: formData.email,
-        personality: formData.personality
-      }
-    });
-    window.location.reload(true);
-  } catch (err) {
-    console.log(err);
+      email: '',
+      username: '',
+      personality: ''
+    })
   }
 
-  setFormData({
-    email: '', 
-    username: '', 
-    personality:''
-  })
-}
-
-console.log(formData)
+  console.log(formData)
 
   if (loading) {
-    return(
-      <Box sx={{ position:'absolute', top:'50%', left: '50%', transform:'translate(-50%, -50%)' }}>
-      <CircularProgress color="inherit"  />
-    </Box>
+    return (
+      <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+        <CircularProgress color="inherit" />
+      </Box>
     )
   }
 
@@ -121,20 +121,20 @@ console.log(formData)
       <Navigate to="/" />
     );
   }
-  if(userId !== auth.getProfile().data._id) {
+  if (userId !== auth.getProfile().data._id) {
     return (
       <div>
-      <div><NavTabs /></div>
-      <div className="profileContainer">
-        <div className="profile-box">
-          <Avatar
-            sx={{ width: 112, height: 112 }}>{user.username}</Avatar>
-          <h2 className='profileName'>{user.username}</h2>
-          <p id="personalityType">{user.personality} </p>
-          <p id="email">{user.email}</p>
+        <div><NavTabs /></div>
+        <div className="profileContainer">
+          <div className="profile-box">
+            <Avatar
+              sx={{ width: 112, height: 112 }}>{user.username}</Avatar>
+            <h2 className='profileName'>{user.username}</h2>
+            <p id="personalityType">{user.personality} </p>
+            <p id="email">{user.email}</p>
+          </div>
         </div>
       </div>
-    </div>
     )
   }
 
@@ -154,14 +154,14 @@ console.log(formData)
             <p id="newComment">you are okay</p>
             <p id="newComment">you stink</p>
           </div> */}
-           <Button className='delete-btn' sx={{color: 'white', borderRadius: '15px'}} onClick={handleClickOpen}>Update My Account</Button>
-           {/* <FormControl > */}
-           <form onSubmit={handleFormSubmit}>
-              <Dialog open={open} onClose={handleClose}>
+          <Button className='delete-btn' sx={{ color: 'white', borderRadius: '15px' }} onClick={handleClickOpen}>Update My Account</Button>
+          {/* <FormControl > */}
+          <form onSubmit={handleFormSubmit}>
+            <Dialog open={open} onClose={handleClose}>
               <DialogTitle>Update Your Profile</DialogTitle>
               <DialogContent>
-                <TextField 
-                  onChange={ (event, value) => setFormData({...formData, email: event.target.value}) }
+                <TextField
+                  onChange={(event, value) => setFormData({ ...formData, email: event.target.value })}
                   defaultValue={formData.email}
                   autoFocus
                   margin="dense"
@@ -172,7 +172,7 @@ console.log(formData)
                   variant="standard"
                 />
                 <TextField
-                   onChange={ (event, value) => setFormData({...formData, username: event.target.value}) }
+                  onChange={(event, value) => setFormData({ ...formData, username: event.target.value })}
                   defaultValue={formData.username}
                   autoFocus
                   margin="dense"
@@ -187,7 +187,7 @@ console.log(formData)
                   labelId="personality"
                   id="personality"
                   value={formData.personality}
-                  onChange={ (event, value) => setFormData({...formData, personality: event.target.value}) }
+                  onChange={(event, value) => setFormData({ ...formData, personality: event.target.value })}
                 >
                   <MenuItem value="ENFJ">ENFJ</MenuItem>
                   <MenuItem value="ENFP">ENFP</MenuItem>
@@ -208,13 +208,13 @@ console.log(formData)
                 </Select>
               </DialogContent>
               <DialogActions>
-                <Button  onClick={handleClose}>Cancel</Button>
-                <Button type='submit' onClick={handleFormSubmit }>Update</Button>
+                <Button onClick={handleClose}>Cancel</Button>
+                <Button type='submit' onClick={handleFormSubmit}>Update</Button>
               </DialogActions>
-              </Dialog>
-              </form>
-            {/* </FormControl> */}
-           {/* <button onClick={async () => {
+            </Dialog>
+          </form>
+          {/* </FormControl> */}
+          {/* <button onClick={async () => {
             edit = true
             console.log(edit)
             // window.location.reload(true);

@@ -18,6 +18,8 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // import Pairings from '../components/Pairings';
 import { Box } from '@mui/system';
@@ -28,6 +30,7 @@ import { REMOVE_USER } from '../utils/mutations';
 import { UPDATE_USER } from '../utils/mutations';
 
 const Profile = () => {
+    AOS.init();
   let { userId } = useParams();
   if (userId === "me") { userId = auth.getProfile().data._id }
   console.log(userId);
@@ -141,7 +144,7 @@ const Profile = () => {
   return (
     <div>
       <div><NavTabs /></div>
-      <div className="profileContainer">
+      <div data-aos="zoom-in" data-aos-duration="1000" className="profileContainer">
         <h2 id="welcomeBack">Welcome back, {user.username}</h2>
         <div className="profile-box">
           <Avatar

@@ -70,10 +70,7 @@ const EditTeam = () => {
       })
   }
 
-  // if(!data2.loading) {
-  //   console.log(teamData)
-  //   console.log(membersInTeam)
-  // }
+
 
 // itializing the formData
  const [formData, setFormData] = useState({
@@ -83,7 +80,7 @@ const EditTeam = () => {
  })
 
 
-//  will pre-populate the exsisting data in the team form after the team query has run
+//  will pre-populate the existing data in the team form after the team query has run
 useEffect(() => {
   if(!data2.loading) {
     setFormData({

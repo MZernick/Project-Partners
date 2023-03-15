@@ -29,10 +29,7 @@ const MyTeam = () => {
     if (teamsData) {
       setLoading(false);
     }
-    // auth.getProfile().data._id "640f39aab4c41e776393b01c"
 
-    //selectedTeam  will be set by user click or default to 0;
-    // setSelectedTeam(0)
     data?.user?.teams?.length && setFocusTeam(data?.user?.teams[selectedTeam]);
 
     // console.log(focusTeam); 
@@ -55,7 +52,6 @@ const MyTeam = () => {
         <NavTabs />
       </div>
       <div className="teams-page">
-        {/* <div className='column'> */}
         <div className="allteam-card">
           <h1 className="myTeamHeaders">My Teams</h1>
           <div className="team-underline"></div>
@@ -63,7 +59,6 @@ const MyTeam = () => {
             <MyButtonList teams={teamsData.teams} setFocusTeam={setFocusTeam} />
           </div>
         </div>
-        {/* </div> */}
         <div className="bottomContainer">
           <div className="team-cardContainer">
             {teamsData.teams?.length > 0 && (

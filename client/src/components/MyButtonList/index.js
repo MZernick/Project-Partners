@@ -45,7 +45,7 @@ const MyButtonList = ({ teams, setSelectedTeam, setFocusTeam, isLoggedInUser = f
       <ul className='no-padding'>{teams &&
         teams.map((team, i) => (
           <li key={team.title}>
-            <Button className='focus-btn'
+            <Button className='team-btn'
               sx={{ margin: '2%' }}
               size="large"
               variant="contained"

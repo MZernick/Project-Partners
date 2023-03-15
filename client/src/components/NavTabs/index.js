@@ -8,16 +8,19 @@ import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
-import ProLogo from '../../styles/PP_logo.png'
+import ProLogo from '../../styles/PP_logo.png';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function NavTabs({ currentPage }) {
+  AOS.init();
   return (
-    <nav data-aos="zoom-in" data-aos-duration="1000">
+    <nav>
       <ul className="nav">
         <li className="logoPlaceholder">
           <img src={ProLogo} alt="ProPairs logo" id="Logo" />
         </li>
-        <li className="tabOne">
+        <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100" className="tabOne">
           <Link id="nav-link"
             to={`/user/${auth.getProfile().data._id}`}
             activeclassname={'active'}
@@ -25,35 +28,35 @@ function NavTabs({ currentPage }) {
             <HomeRoundedIcon fontSize="large" id="icon1" /> Home
           </Link>
         </li>
-        <li>
+        <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" >
           <Link id="nav-link"
             to={`/user/${auth.getProfile().data._id}/teams`}
           >
             <GroupsRoundedIcon fontSize="large" id="icon2" /> My Teams
           </Link>
         </li>
-        <li>
+        <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
           <Link id="nav-link"
             to="/users"
           >
             <SearchRoundedIcon fontSize="large" id="icon3" /> Search
           </Link>
         </li>
-        <li>
+        <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
           <Link id="nav-link"
             to="/createteam"
           >
             <AddCircleOutlineRoundedIcon fontSize="large" id="icon4" /> Create Team
           </Link>
         </li>
-        <li >
+        <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
           <Link id="nav-link"
             to={`/user/${auth.getProfile().data._id}`}
           >
             <AccountCircleRoundedIcon fontSize="large" id="icon5" /> My Profile
           </Link>
         </li>
-        <li >
+        <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
           <Link id="nav-link"
             to={`/`}
             onClick={() => auth.logout()}

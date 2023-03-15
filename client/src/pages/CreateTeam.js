@@ -11,9 +11,11 @@ import { getCompatibilityandUsername } from '../utils/helpers';
 import { ADD_TEAM_AND_MEMBERS } from '../utils/mutations';
 import { useNavigate } from 'react-router-dom';
 import Box from "@mui/material/Box";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const CreateTeam = () => {
-
+  AOS.init();
   // Search for all users by username
   const { loading, data } = useQuery(SEARCH_USER);
   const userList = data?.users || [];
@@ -86,7 +88,7 @@ const CreateTeam = () => {
   return (
     <div>
       <div><NavTabs /></div>
-      <div className="bigContainer">
+      <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" className="bigContainer">
         <div className='card'>
           <h1 className="createheaders">Create a New Team</h1>
           <div className="underline"></div>

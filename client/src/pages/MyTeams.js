@@ -9,8 +9,11 @@ import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
 import NavTabs from '../components/NavTabs';
 import { MY_TEAMS } from '../utils/queries';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const MyTeam = () => {
+AOS.init();
   let navigate = useNavigate();
   const [focusTeam, setFocusTeam] = useState({});
   const [teamsData, setTeamsData] = useState({});
@@ -52,14 +55,19 @@ const MyTeam = () => {
         <NavTabs />
       </div>
       <div className="teams-page">
-        <div className="allteam-card">
+
+        {/* <div className='column'> */}
+        <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" className="allteam-card">
+
           <h1 className="myTeamHeaders">My Teams</h1>
           <div className="team-underline"></div>
           <div className="container">
             <MyButtonList teams={teamsData.teams} setFocusTeam={setFocusTeam} />
           </div>
         </div>
-        <div className="bottomContainer">
+
+        {/* </div> */}
+
           <div className="team-cardContainer">
             {teamsData.teams?.length > 0 && (
               <>

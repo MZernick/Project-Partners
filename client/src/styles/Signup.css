@@ -108,8 +108,9 @@ label {
 }
 
 .signupform-input {
-  background: #fbfbfb;
+  border: none;
   outline: none;
+  background: none;
   padding-top: 14px;
   padding-bottom: 5px;
   margin-bottom: 1rem;

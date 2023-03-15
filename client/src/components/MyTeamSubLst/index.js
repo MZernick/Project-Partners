@@ -18,7 +18,7 @@ const MyTeamSubLst = (props) => {
 
     <div>
       {others?.map(other => (
-        <li className='smallFont'> {thisOne.username} & {other.username}:
+        <li className='smallFont' key={thisOne.username + other.username}> {thisOne.username} & {other.username}:
           <p className='pRating'>{other.rating}% </p></li>
       ))}
     </div>

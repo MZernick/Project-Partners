@@ -1,6 +1,8 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Teams } = require("../models");
 const { signToken } = require("../utils/auth");
+// const  setUserCompatibility = require("../utils/setUserCompatibility");
+const { setUserCompatibility } = require('../utils/setUserCompatibility');
 
 const resolvers = {
   Query: {
@@ -83,11 +85,11 @@ const resolvers = {
     // update a user
     updateUser: async (
       parent,
-      { userId, username, email, password, personality }
+      { userId, username, email, password, personality}
     ) => {
       return User.findOneAndUpdate(
         { _id: userId },
-        { username, email, password, personality },
+        { username, email, password, personality, compatibility: setUserCompatibility(personality) },
         { runValidators: true, new: true }
       );
     },

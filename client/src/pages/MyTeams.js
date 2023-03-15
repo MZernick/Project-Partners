@@ -58,7 +58,7 @@ const MyTeam = () => {
         {/* <div className='column'> */}
         <div className="allteam-card">
           <h1 className="myTeamHeaders">My Teams</h1>
-          <div className="underline-title"></div>
+          <div className="team-underline"></div>
           <div className="container">
             <MyButtonList teams={teamsData.teams} setFocusTeam={setFocusTeam} />
           </div>

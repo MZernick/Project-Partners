@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001",
-  "homepage": "https://ancient-shore-28312.herokuapp.com/#/landing",
+  "homepage": "https://ancient-shore-28312.herokuapp.com/",
   "dependencies": {
     "@apollo/client": "^3.5.8",
     "@emotion/react": "^11.10.6",

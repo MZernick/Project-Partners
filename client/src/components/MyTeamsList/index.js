@@ -24,23 +24,22 @@ const MyTeamList = (props) => {
       <h1 className="myTeamHeaders">
         {focusTeam.title}
       </h1>
-      <div className="underline-title"></div>
-      <p className='smallFont'>{focusTeam.description}</p>
-      <h2 className='bigFont'>Overall Compatibility:</h2>
-      <Pie percentage={members?.length && Math.round(oneBigTeamScore(members))} colour="#E63946" />
+      <div className="team-underline"></div>
+      <div className='description-card'>
+
+        <p className='descFont'>Overall Compatibility:</p>
+        <Pie percentage={members?.length && Math.round(oneBigTeamScore(members))} colour="#E63946" />
+        <p className='descFont'>{focusTeam.description}</p>
+      </div>
       <div className='member-container'>
         {members?.map((member) => (
           <div className="member-box">
-            <li className="list-group-item" key={member.username}>
-              <h3 className='member-name'>{member.username}'s Team Score:
-                {Math.round(myTeamScore(members, member))}%
-                <br /></h3>
-              <div>
-                <ul className="list-group-item-sub" key={member.username} >
-                  <MyTeamSubLst members={members} thisOne={member} />
-                </ul>
-              </div>
-            </li>
+            <h2 className='member-name' key={member.username}>{member.username}'s Team Score:</h2>
+            <Pie percentage={Math.round(myTeamScore(members, member))} colour="#E63946" />
+            <br />
+            <ul className="comparisons" key={member.username} >
+              <MyTeamSubLst members={members} thisOne={member} />
+            </ul>
           </div>
         ))}
       </div>

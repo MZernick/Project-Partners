@@ -43,18 +43,23 @@ const UserSearch = () => {
 
   return (
     <div>
-      <NavTabs />
+      <div>
+        <NavTabs />
+      </div>
       <main>
         <div className="search-page" >
-          <div className="column">
-            {loading ? (
-              <div>Loading...</div>
-            ) : (
-              <div>
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <div>
+              <div className="search-container">
                 <div className="search-card" >
-                  <div className="container">
-                    <div className="headers-search">
-                      <div className="form">
+                  <div className="headers-search">
+                    <h4>Search Users</h4>
+                    <div className="underline-title"></div>
+                    <div className="container">
+
+                      <div className="search-form">
                         <label htmlFor="filter">Search By:</label>
                         <select
                           className="form-select pform-input"
@@ -66,19 +71,16 @@ const UserSearch = () => {
                           <option value="username">Username</option>
 
                         </select>
-
-                        <div className="headers-search" >
-                          <label htmlFor="search"></label>
-                          <input
-                            type="text"
-                            className="form-input"
-                            id="search"
-                            placeholder={`Enter ${filter}`}
-                            value={searchText}
-                            onChange={(e) => setSearchText(e.target.value.toLowerCase())}
-                            onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
-                          />
-                        </div>
+                        <input
+                          type="text"
+                          className="search-input"
+                          id="search"
+                          placeholder={`Enter ${filter}`}
+                          value={searchText}
+                          onChange={(e) => setSearchText(e.target.value.toLowerCase())}
+                          onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
+                        />
+                        <div className="search-border"></div>
                         <button className="search-btn"
                           type="submit"
                           onClick={() => handleSubmit()
@@ -88,32 +90,30 @@ const UserSearch = () => {
                     </div>
                   </div>
                 </div>
-                      <div>
-                        {filteredUsers.length > 0 ? filteredUsers.map((user) => (
-                          <div key={user._id} >
-                            <div className="user-container">
-                              <h2 className="profileNameSearch">
-                                {user.username}</h2>
-                              <br />
-                              <span className="profileNameSearch">{user.email}</span>
-                              <br />
-                              <span className="pTypeSearch">{user.personality}</span>
-                              <br />
-                              <span className="profileNameSearch" >
-                                Current team(s): {user.teams ? user.teams.length : 0}
-                              </span>
-                              <br />
-                              <button className="viewuser-btnSearch">
-                                <a href={`user/${user._id}`}>View Profile</a>
-                              </button>
-
-                            </div>
-                          </div>
-                        )) : <h1 className="userInfo">{noResultMsg}</h1>}
-                      </div>
               </div>
-            )}
-          </div>
+              <div className="user-container" >
+                {filteredUsers.length > 0 ? filteredUsers.map((user) => (
+                  <div key={user._id} className="user-box">
+                    <h2 className="profileNameSearch">
+                      {user.username}</h2>
+                    <br />
+                    <span className="profileNameSearch">{user.email}</span>
+                    <br />
+                    <span className="pTypeSearch">{user.personality}</span>
+                    <br />
+                    <span className="profileNameSearch" >
+                      Current team(s): {user.teams ? user.teams.length : 0}
+                    </span>
+                    <br />
+                    <button className="viewuser-btnSearch">
+                      <a href={`user/${user._id}`}>View Profile</a>
+                    </button>
+
+                  </div>
+                )) : <h1 className="userInfo">{noResultMsg}</h1>}
+              </div>
+            </div>
+          )}
 
 
 

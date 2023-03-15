@@ -1,10 +1,8 @@
 import React from 'react';
 import { useMutation, useState } from '@apollo/client';
-//be sure to create the mutations for this--done
 import { REMOVE_TEAM } from '../../utils/mutations';
 import Button from '@mui/material/Button';
 
-//be sure to create the query for this--done
 import { QUERY_SINGLE_USER_WITH_COMPATIBILITY } from '../../utils/queries';
 
 const MyButtonList = ({ teams, setSelectedTeam, setFocusTeam, isLoggedInUser = false }) => {
@@ -31,7 +29,7 @@ const MyButtonList = ({ teams, setSelectedTeam, setFocusTeam, isLoggedInUser = f
     }
   };
 
-  //TO DO: write function to get team index from button click event and set selectedTeam index number
+  //function to get team index from button click event and set selectedTeam index number
 
 
   console.log("this is in MyButtonList as teams: ", teams);
@@ -41,7 +39,6 @@ const MyButtonList = ({ teams, setSelectedTeam, setFocusTeam, isLoggedInUser = f
 
   return (
     <div>
-      {/* Need a way to set the state of these buttons to get the right team. */}
       <ul className='no-padding'>{teams &&
         teams.map((team, i) => (
           <li key={team.title}>

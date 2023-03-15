@@ -68,7 +68,7 @@ AOS.init();
 
         {/* </div> */}
 
-          <div className="team-cardContainer">
+          <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400" className="team-cardContainer">
             {teamsData.teams?.length > 0 && (
               <>
                 <MyTeamsList focusTeam={focusTeam} />
@@ -78,7 +78,6 @@ AOS.init();
 
         </div>
       </div>
-    </div>
   )
 }
 

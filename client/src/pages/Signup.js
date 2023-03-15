@@ -99,11 +99,11 @@ const Signup = () => {
                     <Link to="/">back to the homepage.</Link>
                   </p>
                 ) : (
-                  <form className="form" onSubmit={handleSignup}>
+                  <form className="sign-up-form" onSubmit={handleSignup}>
                     <label htmlFor="username"> Enter Username:</label>
                     <input
                       id="username"
-                      className="form-input"
+                      className="signupform-input"
                       placeholder="Your username"
                       name="username"
                       type="text"
@@ -114,7 +114,7 @@ const Signup = () => {
                     <label htmlFor="email"> Enter Email:</label>
                     <input
                       id="email"
-                      className="form-input"
+                      className="signupform-input"
                       placeholder="Your email"
                       name="email"
                       type="email"
@@ -125,7 +125,7 @@ const Signup = () => {
                     <label htmlFor="password">Enter Password:</label>
                     <input
                       id="password"
-                      className="form-input password-signup"
+                      className="signupform-input password-signup"
                       placeholder="******"
                       name="password"
                       type="password"
@@ -138,7 +138,7 @@ const Signup = () => {
                     </label>
                     <select
                       id="personality-type"
-                      className="form-input"
+                      className="signupform-input"
                       placeholder="Pick Personality Type"
                       name="personality"
                       value={signupState.personality}
@@ -209,9 +209,9 @@ const Signup = () => {
                     <Link to="/">back to the homepage.</Link>
                   </p>
                 ) : (
-                  <form className="form" onSubmit={handleLogin}>
+                  <form className="sign-up-form" onSubmit={handleLogin}>
                     <input
-                      className="form-input"
+                      className="signupform-input"
                       placeholder="Your email"
                       name="email"
                       type="email"
@@ -220,7 +220,7 @@ const Signup = () => {
                     />
                     <div className="form-border"></div>
                     <input
-                      className="form-input"
+                      className="signupform-input"
                       placeholder="******"
                       name="password"
                       type="password"

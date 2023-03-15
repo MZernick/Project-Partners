@@ -32,7 +32,7 @@ const MyButtonList = ({ teams, setSelectedTeam, setFocusTeam, isLoggedInUser = f
   };
 
   //TO DO: write function to get team index from button click event and set selectedTeam index number
-  
+
 
   console.log("this is in MyButtonList as teams: ", teams);
   if (!teams) {
@@ -41,25 +41,20 @@ const MyButtonList = ({ teams, setSelectedTeam, setFocusTeam, isLoggedInUser = f
 
   return (
     <div>
-      <div>
-        {/* Need a way to set the state of these buttons to get the right team. */}
-        <ul>{teams &&
-          teams.map((team, i) => (
-            <div key={team.title}>
-              <li>
-                <Button className = 'focus-btn'
-                        sx={{margin: '2%'}}
-                        size="large"
-                        variant="contained"
-                        onClick={() => setFocusTeam(team)}>
-                  {team.title}
-                </Button>
-              </li>
-              </div>
-            
-          ))}
-        </ul>  
-      </div>
+      {/* Need a way to set the state of these buttons to get the right team. */}
+      <ul className='no-padding'>{teams &&
+        teams.map((team, i) => (
+          <li key={team.title}>
+            <Button className='team-btn'
+              sx={{ margin: '2%' }}
+              size="large"
+              variant="contained"
+              onClick={() => setFocusTeam(team)}>
+              {team.title}
+            </Button>
+          </li>
+        ))}
+      </ul>
       {error && (
         <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
       )}

@@ -17,8 +17,8 @@ import { QUERY_SINGLE_USER_WITH_COMPATIBILITY } from '../../utils/queries';
 
 const ProfileTeamList = ({ user, isLoggedInUser = false }) => {
 
-  const {userId} = useParams()
-  const [removeTeam, {error}] = useMutation(REMOVE_TEAM)
+  const { userId } = useParams()
+  const [removeTeam, { error }] = useMutation(REMOVE_TEAM)
 
   // const [removeTeam, { error }] = useMutation(REMOVE_TEAM, {
   //   update(cache, { data: { removeTeam } }) {
@@ -32,12 +32,12 @@ const ProfileTeamList = ({ user, isLoggedInUser = false }) => {
   //     }
   //   },
   // });
-let navigate = useNavigate();
+  let navigate = useNavigate();
 
   const handleRemoveTeam = async (team) => {
     try {
       const { data } = await removeTeam({
-        variables: { teamId: team } 
+        variables: { teamId: team }
       });
       // navigate(`/user/${userId}`)
       window.location.reload(true)
@@ -46,7 +46,7 @@ let navigate = useNavigate();
     }
   };
 
-  
+
 
   if (!user.teams) {
     return <h3>No Teams Yet</h3>;
@@ -58,54 +58,54 @@ let navigate = useNavigate();
         {user.teams &&
           user.teams.map((team) => (
             <div className="team1Container" key={team._id}>
-              <Button 
-              className = 'titlebtn'
-              sx={{margin: '2%'}}
-              size="large"
-              variant="contained"
-              onClick={() => navigate(`/user/${user._id}/teams`)}
+              <Button
+                className='titlebtn'
+                sx={{ margin: '2%' }}
+                size="large"
+                variant="contained"
+                onClick={() => navigate(`/user/${user._id}/teams`)}
               // onClick={(console.log(team))}
               >
-              {team.title}
-              {team.members.map(member => {
-                return (
-                  <Stack direction="row" sx={{padding: '2%'}} key={member.username}>
-                  <Avatar>{` ${member.username.charAt(0)} `}</Avatar>
-                </Stack>
-                )
+                {team.title}
+                {team.members.map(member => {
+                  return (
+                    <Stack direction="row" sx={{ padding: '2%' }} key={member.username}>
+                      <Avatar>{` ${member.username.charAt(0)} `}</Avatar>
+                    </Stack>
+                  )
                 })}
-               </Button> 
-               <div className="buttons">
-              <Button 
-              variant="contained" 
-              size="small"
-              sx={{margin: '2%', background: 'rgba(88,138,182,1)'}}
-              onClick={() => navigate(`/${team._id}/editteam`)}
-              >
-                Update
               </Button>
-              <Button 
-              size="small"
-              variant="contained" 
-              sx={{margin: '2%',  background: '#E63946'}}
-              startIcon={<DeleteIcon />}
-              onClick={ () => handleRemoveTeam(team._id)}
-              aria-label="delete">
-                Delete
-              </Button>
+              <div className="buttons">
+                <Button
+                  variant="contained"
+                  size="small"
+                  sx={{ margin: '2%', background: 'rgba(88,138,182,1)' }}
+                  onClick={() => navigate(`/${team._id}/editteam`)}
+                >
+                  Update
+                </Button>
+                <Button
+                  size="small"
+                  variant="contained"
+                  sx={{ margin: '2%', background: '#E63946' }}
+                  startIcon={<DeleteIcon />}
+                  onClick={() => handleRemoveTeam(team._id)}
+                  aria-label="delete">
+                  Delete
+                </Button>
               </div>
-              
-            {/* <div id="teamInfoContainer">
+
+              {/* <div id="teamInfoContainer">
             <Stack direction="row" spacing={2}>
                 <Avatar>H</Avatar>
               <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
               <Avatar sx={{ bgcolor: deepPurple[500] }}>OP</Avatar>
             </Stack>
             </div> */}
-            {/* <div className="infoBox1">
+              {/* <div className="infoBox1">
             <p>JOSH GRAPH HERE</p>
             </div> */}
-          </div>
+            </div>
           ))}
       </div>
       {error && (
@@ -117,7 +117,7 @@ let navigate = useNavigate();
 
 export default ProfileTeamList;
 
-                  {/* {isLoggedInUser && (
+{/* {isLoggedInUser && (
                     <button
                       className="btn btn-sm btn-danger ml-auto"
                       onClick={() => handleRemoveTeam(teams)}

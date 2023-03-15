@@ -13,16 +13,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  margin-left: 15%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 600px;
+  margin: 20px;
 }
 
 .search-card {
   transition: 0.3s;
-  border-radius: 5px;
-  background: #fbfbfb;
+  background: #3e5a80;
   border-radius: 8px;
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
   width: 475px;
-  margin: 20px;
+  /* margin: 20px; */
+  height: 25rem;
 }
 
 .card:hover {
@@ -59,24 +73,35 @@ label {
   width: 153px;
 }
 
-.form {
+.search-form {
   align-items: left;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
-.form-border {
+.search-border {
   background: linear-gradient(90deg, rgba(21, 17, 87, 1) 0%, rgba(88, 138, 182, 1) 100%);
   height: 1px;
   width: 100%;
 }
 
-.form-input {
-  background: #fbfbfb;
+.pform-input {
+  background: rgb(173, 204, 232);
+  border: 1px;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 10%;
+  height: 30px;
+}
+
+.search-input {
+  background: rgb(173, 204, 232);
   border: none;
+  border-radius: 5px;
   outline: none;
   padding-top: 14px;
-  padding-bottom: 5px;
+  margin-bottom: 1%;
 }
 
 .viewuser-btnSearch {
@@ -91,13 +116,14 @@ label {
   width: 153px;
   margin-bottom: 30px;
 }
+
 .viewuser-btnSearch a {
- color: white;
- text-decoration: none;
- font-family: 700;
+  color: white;
+  text-decoration: none;
+  font-family: 700;
 }
 
-.user-container {
+.user-box {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,7 +133,7 @@ label {
   transition: 0.3s;
   border-radius: 15px;
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-  width: 600px;
+  width: 20rem;
   margin: 20px;
 }
 
@@ -139,7 +165,18 @@ label {
   border-radius: 8px;
 }
 
-.column {
-  padding: 100px 30px;
+.search-column {
+  padding: 100px 40px;
+  /* display: flex; */
+  /*justify-content: center;
+  align-items: center; */
 }
 
+.user-container {
+  display: flex;
+  gap: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}

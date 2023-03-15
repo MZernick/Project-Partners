@@ -122,7 +122,7 @@ const UserSearch = () => {
                       <br />
                       <button
                         className="viewuser-btnSearch"
-                        onClick={navigate(`/user/${user._id}`)}
+                        onClick={() => navigate(`/user/${user._id}`)}
                       >
                         View Profile
                       </button>

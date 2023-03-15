@@ -28,7 +28,7 @@ import { REMOVE_USER } from '../utils/mutations';
 import { UPDATE_USER } from '../utils/mutations';
 
 const Profile = () => {
-    AOS.init();
+  AOS.init();
   let { userId } = useParams();
   if (userId === "me") { userId = auth.getProfile().data._id }
   console.log(userId);
@@ -124,7 +124,7 @@ const Profile = () => {
               sx={{ width: 112, height: 112, bgcolor: '#1D3557' }}>{user.username}</Avatar>
             <h2 className='profileName'>{user.username}</h2>
             <p id="personalityType">{user.personality} </p>
-            <p id="email">{user.email}</p>
+            <p id="pemail">{user.email}</p>
           </div>
         </div>
       </div>
@@ -206,7 +206,7 @@ const Profile = () => {
           }}>Delete My Account</button>
           <div className="userAndTeamBox">
             <div className="userBox1">
-           </div>
+            </div>
           </div>
         </div>
         <div className="space"></div>

@@ -12,7 +12,7 @@ import ProLogo from '../../styles/PP_logo.png'
 
 function NavTabs({ currentPage }) {
   return (
-    <nav>
+    <nav data-aos="zoom-in" data-aos-duration="1000">
       <ul className="nav">
         <li className="logoPlaceholder">
           <img src={ProLogo} alt="ProPairs logo" id="Logo" />

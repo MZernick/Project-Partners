@@ -121,7 +121,7 @@ const Profile = () => {
         <div className="profileContainer">
           <div className="profile-box">
             <Avatar
-              sx={{ width: 112, height: 112 }}>{user.username}</Avatar>
+              sx={{ width: 112, height: 112, bgcolor: '#1D3557' }}>{user.username}</Avatar>
             <h2 className='profileName'>{user.username}</h2>
             <p id="personalityType">{user.personality} </p>
             <p id="email">{user.email}</p>

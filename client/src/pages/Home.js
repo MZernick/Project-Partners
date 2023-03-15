@@ -56,7 +56,7 @@ export default function Homepage() {
           <h2 data-aos="slide-left" data-aos-duration="700" id="teamTitle">Meet Our<span id="redTeam"> Team</span></h2>
         </div>
         <div id="sidescrollContainer">
-          <div className="creator-box">
+          <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200" className="creator-box">
             <Avatar className="creator-avatar"
               sx={{ width: 112, height: 112 }}>
               JG
@@ -64,7 +64,7 @@ export default function Homepage() {
             <h2 className="creator-name">Josh Goeke</h2>
             <p className="creator-type">ENTP</p>
           </div>
-          <div className="creator-box">
+          <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400" className="creator-box">
             <Avatar className="creator-avatar"
               sx={{ width: 112, height: 112 }}>
               DN
@@ -72,7 +72,7 @@ export default function Homepage() {
             <h2 className="creator-name">Dominique Nix</h2>
             <p className="creator-type">INTJ</p>
           </div>
-          <div className="creator-box">
+          <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600" className="creator-box">
             <Avatar className="creator-avatar"
               sx={{ width: 112, height: 112 }}>
               AB
@@ -80,7 +80,7 @@ export default function Homepage() {
             <h2 className="creator-name">Anita Banh</h2>
             <p className="creator-type">ISTP</p>
           </div>
-          <div className="creator-box">
+          <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="800" className="creator-box">
             <Avatar className="creator-avatar"
               sx={{ width: 112, height: 112 }}>
               JC
@@ -88,7 +88,7 @@ export default function Homepage() {
             <h2 className="creator-name">Jeremy Crouthamel</h2>
             <p className="creator-type">INFP</p>
           </div>
-          <div className="creator-box">
+          <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="1000" className="creator-box">
             <Avatar className="creator-avatar"
               sx={{ width: 112, height: 112 }}>
               MZ
@@ -99,7 +99,7 @@ export default function Homepage() {
         </div>
       </div>
       <div className="startedContainer">
-        <Link to="/" className="getStarted" id="getStarted1"><div>
+        <Link to="/" className="getStarted" id="getStarted1" onClick={handleGetStarted}><div>
           Get Started
         </div></Link>
       </div>

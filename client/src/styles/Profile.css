@@ -73,8 +73,8 @@
   /* font-size: clamp(1.5rem, 5.5vw, 5.5rem); */
   text-decoration: none;
   color: #F1FAEE;
-  margin-bottom: 0;
-  font-weight: 400;
+  margin-bottom: 12%;
+  font-weight: 700;
 }
 
 #personalityType {
@@ -82,7 +82,7 @@
   font-size: clamp(0.5rem, 2.5vw, 2.5rem);
   color: #F1FAEE;
   font-weight: 700;
-  margin-top: 1%;
+  margin-top: 5%;
   background-color: #E63946;
   padding-left: 15%;
   padding-right: 15%;

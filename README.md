@@ -29,7 +29,7 @@ To get started,  visit [the website](https://ancient-shore-28312.herokuapp.com/)
 
 # Instructions
 
-1. Once signed in, view your teams from your profile page. 
+1. Once signed in, view your your profile. See your teams and user details. Is something not quite right? Update your username, email, or password. 
 2. Build a team: Enter a project title and description. Add two to five team members. Include yourself on the team, or not.
 3. Search users: Search by personality type, name, or email. Navigate to profile page of a user you're interested in.
 4. Manage teams: View project details, team compatibility. We know projects pivot and needs change- update project title, description, and members as needed.
@@ -64,7 +64,7 @@ Deployment: Heroku, MongoDB Atlas.
 Ideas pending for future development:
 1. Integrate personality test.
 2. Facilitate team and user communication via chat.
-3. Add picture or avatar to user profile.
+3. Add user profile picture or avatar.
 4. Improve mobile friendliness.
 
 ## License

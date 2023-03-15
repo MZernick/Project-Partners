@@ -94,10 +94,11 @@ label {
 /* #signup-btn:hover {
     box-shadow: 0px 1px 18px #588ab6;
   }DOES NOT WORK */
-.form {
+.sign-up-form {
   align-items: left;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .form-border {
@@ -106,12 +107,14 @@ label {
   width: 100%;
 }
 
-.form-input {
+.signupform-input {
   background: #fbfbfb;
   border: none;
+  border-bottom: 1px solid linear-gradient(90deg, rgba(21, 17, 87, 1) 0%, rgba(88, 138, 182, 1) 100%);
   outline: none;
   padding-top: 14px;
   padding-bottom: 5px;
+  margin-bottom: 1rem;
 }
 
 .underline-title {

@@ -88,11 +88,11 @@ const CreateTeam = () => {
       <div><NavTabs /></div>
       <div className="bigContainer">
         <div className='card'>
-          <h1 className="headers">Create a New Team</h1>
+          <h1 className="createheaders">Create a New Team</h1>
           <div className="underline"></div>
           <div className="container">
-            <form className="form" onSubmit={handleFormSubmit}>
-              <label htmlFor="title">Team Title:</label>
+            <form className="createform" onSubmit={handleFormSubmit}>
+              <label htmlFor="title" id="titleLabel">Title</label>
               <input
                 name="title"
                 id="title"
@@ -104,7 +104,7 @@ const CreateTeam = () => {
               >
               </input>
               <div className="form-border"></div>
-              <label htmlFor="description">Description:</label>
+              <label htmlFor="description" id="descLabel">Description</label>
               <input
                 name="description"
                 id="description"

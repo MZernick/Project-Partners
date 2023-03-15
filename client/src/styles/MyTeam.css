@@ -1,32 +1,30 @@
-.headers {
+.myTeamHeaders {
   color: #F1FAEE;
   font-family: 'Switzer', sans-serif;
-  padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
   transition: opacity 400ms ease;
   letter-spacing: 4px;
-  padding-bottom: 23px;
+  padding: 2%;
   text-align: center;
-  font-size: clamp(0.7rem, 2.7vw, 2.7rem);
+  font-size: 4rem;
+  margin: 0px;
 }
 
-.signup-page {
+.teams-page {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 120vh;
   background-color: #1D3557;
   flex-direction: column;
   margin-left: 15%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .allteam-card {
   transition: 0.3s;
-  border-radius: 5px;
   background-color: #3e5a80;
-  border-radius: 8px;
+  border-radius: 15px;
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-  width: 90%;
-  height: 60%;
   color: #F1FAEE;
 }
 
@@ -41,7 +39,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 100%;
 }
 
 .team-card {
@@ -50,81 +48,17 @@
   background: #3e5a80;
   border-radius: 8px;
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
-  margin-top: 5%;
-  margin-right: 5%;
+  margin-top: 2%;
 }
 
-.goToSearchContainer {
-  transition: 0.3s;
-  border-radius: 5px;
-  background: #3e5a80;
-  border-radius: 8px;
-  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 90%;
-  margin-top: 2.5%;
-}
-
-#dontHaveTeam {
-  color: #F1FAEE;
-  font-family: 'Switzer', sans-serif;
-  padding: clamp(0.55rem, 0.9vw, 1.5rem);
-  font-weight: 700;
-}
-
-#dontHaveSearch {
-  color: #F1FAEE;
-  font-family: 'Switzer', sans-serif;
-  padding: clamp(0.55rem, 0.9vw, 1.5rem);
-  font-weight: 700;
-}
-
-#createTeam {
-  background: linear-gradient(90deg, rgba(21, 17, 87, 1) 0%, rgba(88, 138, 182, 1) 100%);
-  border: none;
-  border-radius: 21px;
-  box-shadow: 0px 1px 8px #588ab6;
-  color: #F1FAEE;
-  font-family: "Raleway SemiBold", sans-serif;
-  height: 42.3px;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  margin-top: 50px;
-  transition: 0.25s;
-  width: 153px;
-}
-
-#createSearch {
-  background: linear-gradient(90deg, rgba(21, 17, 87, 1) 0%, rgba(88, 138, 182, 1) 100%);
-  border: none;
-  border-radius: 21px;
-  box-shadow: 0px 1px 8px #588ab6;
-  color: #F1FAEE;
-  font-family: "Raleway SemiBold", sans-serif;
-  height: 42.3px;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  margin-top: 50px;
-  transition: 0.25s;
-  width: 153px;
-}
-
-/* On mouse-over, add a deeper shadow */
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* Add some padding inside the card container */
 .container {
   padding: 12px 44px;
 }
@@ -140,42 +74,21 @@ body {
   padding: 5px;
 }
 
-#create-team {
-  color: #588ab6;
-  font-family: 'Switzer', sans-serif;
-  font-size: 10pt;
-  margin-top: 3px;
-  text-align: right;
+.team-btn {
+  background: linear-gradient(90deg, rgba(21, 17, 87, 1) 0%, rgba(88, 138, 182, 1) 100%);
+  border: none;
+  border-radius: 21px;
+  box-shadow: 0px 1px 8px #588ab6;
+  color: #F1FAEE;
+  font-family: "Raleway SemiBold", sans-serif;
+  height: 42.3px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin: 1rem;
+  transition: 0.25s;
+  width: 153px;
   text-decoration: none;
-}
-
-.signup-btn {
-  background: linear-gradient(90deg, rgba(21, 17, 87, 1) 0%, rgba(88, 138, 182, 1) 100%);
-  border: none;
-  border-radius: 21px;
-  box-shadow: 0px 1px 8px #588ab6;
-  color: #F1FAEE;
-  font-family: "Raleway SemiBold", sans-serif;
-  height: 42.3px;
-  margin: 0 auto;
-  margin-top: 50px;
-  transition: 0.25s;
-  width: 153px;
-}
-
-.login-btn {
-  background: linear-gradient(90deg, rgba(21, 17, 87, 1) 0%, rgba(88, 138, 182, 1) 100%);
-  border: none;
-  border-radius: 21px;
-  box-shadow: 0px 1px 8px #588ab6;
-  color: #F1FAEE;
-  font-family: "Raleway SemiBold", sans-serif;
-  height: 42.3px;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  margin-top: 50px;
-  transition: 0.25s;
-  width: 153px;
 }
 
 /* #signup-btn:hover {
@@ -187,12 +100,6 @@ body {
   flex-direction: column;
 }
 
-.form-border {
-  background: linear-gradient(90deg, rgba(21, 17, 87, 1) 0%, rgba(88, 138, 182, 1) 100%);
-  height: 1px;
-  width: 100%;
-}
-
 .form-input {
   background: #fbfbfb;
   border: none;
@@ -201,11 +108,11 @@ body {
   padding-bottom: 5px;
 }
 
-.underline-title {
+.team-underline {
   background: linear-gradient(90deg, rgba(21, 17, 87, 1) 0%, rgba(88, 138, 182, 1) 100%);
   height: 2px;
   margin: -1.1rem auto 0 auto;
-  width: 89px;
+  width: 150px;
 }
 
 .column {
@@ -214,4 +121,99 @@ body {
 
 circle {
   transition: all 0.7s ease-in-out;
+}
+
+.smallFont {
+  font-size: 1.5rem;
+  color: #F1FAEE;
+  font-family: 'Switzer', sans-serif;
+  text-align: center;
+}
+
+.bigFont {
+  font-size: 3rem;
+  color: #F1FAEE;
+  font-family: 'Switzer', sans-serif;
+  text-align: center;
+}
+
+.member-box {
+  padding: 1rem;
+  background-color: #3e5a80;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2%;
+}
+
+.member-name {
+  font-family: 'Switzer', sans-serif;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #F1FAEE;
+  font-weight: 400;
+  display: inline-flex;
+}
+
+.member-container {
+  display: flex;
+  gap: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.pRating {
+  font-family: 'Switzer', sans-serif;
+  font-size: clamp(0.5rem, 2.5vw, 2.5rem);
+  color: #F1FAEE;
+  font-weight: 700;
+  margin-top: 1%;
+  background-color: #E63946;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-radius: 8px;
+}
+
+.comparisons {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.description-card {
+  display: flex;
+  align-items: center;
+}
+
+.descFont {
+  font-size: 1.5rem;
+  color: #F1FAEE;
+  font-family: 'Switzer', sans-serif;
+  text-align: center;
+  padding: 1%;
+}
+
+.descBGFont {
+  font-size: 2rem;
+  color: #F1FAEE;
+  font-family: 'Switzer', sans-serif;
+  text-align: center;
+  padding: 1%;
+}
+
+.percentageCircle {
+  justify-content: end;
+  padding: 1%;
 }

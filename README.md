@@ -15,10 +15,11 @@ Deployment Date: March 15, 2023
 
 # Description
 
-[ProPairs](https://pro-pairs.herokuapp.com/) is a web application that matches compatible teammates for group projects based on their Myers-Briggs personality types. The application suggests potential partners with similar interests, values, and communication styles, and allows users to see their compatibility rating as a pair and as a team. The application is hosted on a secure server and can be accessed from any device with an internet connection.
+[ProPairs](https://pro-pairs.herokuapp.com/) is a web application that matches compatible teammates for group projects based on their Myers-Briggs personality types. The application suggests potential partners with similar interests, values, and communication styles, and allows users to see their compatibility rating as a pair and as a team. The application is hosted on a secure server and can be accessed from any device with an internet connection.  
+
 *Features*
-- Compatibility: See one on one compatibility ratings.
-- Team Compatibility:  See predicted compatibility of up to five team members.
+- Compatibility: See one-on-one compatibility ratings.
+- Team Compatibility:  Model predicted compatibility of up to five team members.
 - User Authentication: Create a personal account and log in to access the application's features.
 
 ![image](https://user-images.githubusercontent.com/120350675/225492786-b6d5632d-1ad2-451b-99f3-c9bfd08a7928.png)

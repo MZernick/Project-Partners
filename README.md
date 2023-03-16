@@ -76,7 +76,7 @@ Ideas pending for future development:
 3. Add user profile picture or avatar.
 4. Improve mobile friendliness.
 
-## License
+# License
 
 MIT License
 

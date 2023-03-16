@@ -4,14 +4,14 @@ Version 1.0
 Deployment Date: March 15, 2023
 
 # Table of Contents
-- [Description](##description)
-- [Getting Started](##getting-started)
-- [Instructions](##instructions)
-- [Technologies Used](##technologies-used)
-- [Authors](##authors)
-- [Original Idea](##original-idea)
-- [IceBox](##icebox)
-- [License](##license)
+- [Description](#description)
+- [Getting Started](#getting-started)
+- [Instructions](#instructions)
+- [Technologies Used](#technologies-used)
+- [Authors](#authors)
+- [Original Idea](#original-idea)
+- [IceBox](#icebox)
+- [License](#license)
 
 # Description
 

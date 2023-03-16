@@ -1,9 +1,7 @@
 # ProPairs
 [ProPairs](https://pro-pairs.herokuapp.com/)
-
 Version 1.0
-
-Deployment Date: March 16, 2023
+Deployment Date: March 15, 2023
 
 # Table of Contents
 - [Description](##description)
@@ -40,17 +38,13 @@ To get started,  visit [the website](https://pro-pairs.herokuapp.com/) to sign u
 
 # Technologies Used
 
-React.js library used for building the user interface.
-
-Styling: React Bootstrap, CSS, Material UI.
-
-Backend: GraphQL API with a Node.js and Express.js server.
-
-Data management: MongoDB, Mongoose ODM.
-
-Authentication: bcrypt with JSON Web Token (JWT).
-
-Deployment: Heroku, MongoDB Atlas.
+**React.js** for building user interfaces.
+**React Bootstrap**, **CSS**, and **Material UI** for styling.
+**Node.js** and **Express.js** for building a GraphQL API.
+**MongoDB** as the database management system.
+**Mongoose** ODM for modeling data in MongoDB.
+**bcrypt** for password hashing and JSON Web Token (JWT) for authentication.
+**Heroku** and **MongoDB Atlas** for deployment.
 
 # Authors
 
@@ -61,17 +55,16 @@ Deployment: Heroku, MongoDB Atlas.
 * Jeremy Crouthamel: https://github.com/Leyden05
 
 # Original Idea
-Early Concept
+**Early Concept**
 
-![image](https://user-images.githubusercontent.com/120350675/225497060-983142c7-17b7-4127-bbf1-98a1d3211859.png)
-![image](https://user-images.githubusercontent.com/120350675/225497270-2518fa13-5ca1-4061-838e-7f0c823753ff.png)
+![image](https://user-images.githubusercontent.com/120350675/225497060-983142c7-17b7-4127-bbf1-98a1d3211859.png) ![image](https://user-images.githubusercontent.com/120350675/225497270-2518fa13-5ca1-4061-838e-7f0c823753ff.png)
 
 
-Logic
+**Logic**
 ![Compatibility JG](https://user-images.githubusercontent.com/120350675/225496933-ea5cff68-d85c-47ec-a7bd-8f9438d23e2c.jpg)
 
 
-User flow
+**User Flow**
 ![image](https://user-images.githubusercontent.com/120350675/225496309-37b01fb2-8b3a-4285-a94f-f47a6f9bddb9.png)
 
 

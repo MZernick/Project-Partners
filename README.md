@@ -1,6 +1,6 @@
 # ProPairs
-[ProPairs](https://pro-pairs.herokuapp.com/)
-Version 1.0
+[ProPairs](https://pro-pairs.herokuapp.com/)  
+Version 1.0  
 Deployment Date: March 15, 2023
 
 # Table of Contents

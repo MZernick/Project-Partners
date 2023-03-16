@@ -61,6 +61,18 @@ Deployment: Heroku, MongoDB Atlas.
 * Jeremy Crouthamel: https://github.com/Leyden05
 
 # Original Idea
+Early Concept
+
+![image](https://user-images.githubusercontent.com/120350675/225497060-983142c7-17b7-4127-bbf1-98a1d3211859.png)
+![image](https://user-images.githubusercontent.com/120350675/225497270-2518fa13-5ca1-4061-838e-7f0c823753ff.png)
+
+
+Logic
+![Compatibility JG](https://user-images.githubusercontent.com/120350675/225496933-ea5cff68-d85c-47ec-a7bd-8f9438d23e2c.jpg)
+
+
+User flow
+![image](https://user-images.githubusercontent.com/120350675/225496309-37b01fb2-8b3a-4285-a94f-f47a6f9bddb9.png)
 
 
 # IceBox

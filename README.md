@@ -23,6 +23,9 @@ Deployment Date: March 16, 2023
 - Team Compatibility:  See predicted compatibility of up to five team members.
 - User Authentication: Create a personal account and log in to access the application's features.
 
+![image](https://user-images.githubusercontent.com/120350675/225492786-b6d5632d-1ad2-451b-99f3-c9bfd08a7928.png)
+
+
 # Getting Started
 
 To get started,  visit [the website](https://pro-pairs.herokuapp.com/) to sign up for an account. You'll need your MBTI. If you know it, great! If not, take a [quick quiz](https://www.16personalities.com/free-personality-test) to discover your personality type. 

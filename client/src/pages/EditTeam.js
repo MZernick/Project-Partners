@@ -104,7 +104,9 @@ useEffect(() => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formData)
+    if (formData.members.length < 2 || formData.members.length > 5){
+      return
+    }
     try {
       const { data } = await updateTeam({
         variables: {

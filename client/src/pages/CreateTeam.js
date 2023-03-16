@@ -61,7 +61,10 @@ const CreateTeam = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formData)
+    if (formData.members.length < 2 || formData.members.length > 5){
+      return
+    }
+    // console.log(formData)
     try {
       const { data } = await addTeam({
         variables: {
@@ -84,7 +87,7 @@ const CreateTeam = () => {
     })
   }
 
-  console.log(formData)
+  // console.log(formData)
   return (
     <div>
       <div><NavTabs /></div>

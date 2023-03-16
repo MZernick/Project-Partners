@@ -27,7 +27,7 @@ Deployment Date: March 15, 2023
 
 # Getting Started
 
-To get started,  visit [the website](https://pro-pairs.herokuapp.com/) to sign up for an account. You'll need your MBTI. If you know it, great! If not, take a [quick quiz](https://www.16personalities.com/free-personality-test) to discover your personality type. 
+To get started,  visit [the website](https://pro-pairs.herokuapp.com/) to sign up for an account.  You'll need your MBTI. If you know it, great! If not, take a [quick quiz](https://www.16personalities.com/free-personality-test) to discover your personality type. 
 
 # Instructions
 

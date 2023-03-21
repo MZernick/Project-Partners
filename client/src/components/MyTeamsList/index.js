@@ -25,12 +25,19 @@ const MyTeamList = (props) => {
         {focusTeam.title}
       </h1>
       <div className="team-underline"></div>
+      {members.length<3 && (
+          <h2 className='member-name'>
+            {members[0].username} &amp; {members[1].username}
+          </h2>
+        )}
       <div className='description-card'>
 
         <p className='descFont'>Overall Compatibility:</p>
+        
         <Pie percentage={members?.length && Math.round(oneBigTeamScore(members))} colour="#E63946" />
         <p className='descFont'>{focusTeam.description}</p>
       </div>
+      {members.length>2 &&(
       <div className='member-container'>
         {members?.map((member) => (
           <div className="member-box" key={member.username}>
@@ -43,6 +50,7 @@ const MyTeamList = (props) => {
           </div>
         ))}
       </div>
+      )}
       <div>
         <button className="team-btn"
           variant="contained"

@@ -17,6 +17,7 @@ query User($userId: ID!) {
       description
       members {
         username
+        _id
       }
     }
   }

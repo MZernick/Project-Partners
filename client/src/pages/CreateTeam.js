@@ -139,7 +139,7 @@ const CreateTeam = () => {
 
                       </Box>
                     )}
-                    onChange={(event, newValue) => setFormData({ ...formData, members: [...newValue].map(item => item.value) })}
+                    onChange={(event, newValue) => setFormData({ ...formData, members: [auth.getProfile().data._id, ...newValue.map(item => item.value)] })}
                     multiple
                     id="user-autocomplete"
                  

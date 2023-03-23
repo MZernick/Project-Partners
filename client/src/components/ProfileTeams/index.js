@@ -51,11 +51,15 @@ const ProfileTeamList = ({ user, isLoggedInUser = false }) => {
               >
                 {team.title}
                 {team.members.map(member => {
-                  return (
-                    <Stack direction="row" sx={{ padding: '2%' }} key={member.username}>
+                  if(member._id === user._id) {
+                    return
+                  } else {
+                    return (
+                    <Stack direction="row" sx={{ padding: '2%' }} key={member._id}>
                       <Avatar sx={{ bgcolor: '#1D3557' }}> {` ${member.username.charAt(0)} `}</Avatar>
                     </Stack>
                   )
+                  }
                 })}
               </Button>
               <div className="buttons">

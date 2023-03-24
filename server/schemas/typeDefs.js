@@ -9,12 +9,20 @@ const typeDefs = gql`
     personality: String
     compatibility: [Score]!
     teams: [Teams]
+    comments: [Comment]!
   }
 
   type Score {
     _id: ID
     type: String
     rating: Int
+  }
+
+  type Comment {
+    _id: ID
+    user: [User]
+    createdAt: String
+    commentBody: String
   }
 
   type Teams {
@@ -51,6 +59,8 @@ const typeDefs = gql`
     addMember(teamId: ID!, userId: ID!): Teams
     removeMember(teamId: ID!, userId: ID!): Teams
     addTeamAndMembers(userId: ID!, title: String!, description: String!, members:[ID]) : User
+    addComment(userId: ID!, commenterId: ID!, commentBody: String!) : User
+    removeComment(userId: ID!, commentId: ID!) : User
   }
 `;
 

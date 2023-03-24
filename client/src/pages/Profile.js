@@ -26,6 +26,10 @@ import { QUERY_SINGLE_USER_WITH_COMPATIBILITY } from '../utils/queries';
 import ProfileTeamList from '../components/ProfileTeams';
 import { REMOVE_USER } from '../utils/mutations';
 import { UPDATE_USER } from '../utils/mutations';
+import CommentsBox from '../components/CommentsBox'
+import TextareaAutosize from '@mui/base/TextareaAutosize';
+
+import { ADD_COMMENT } from '../utils/mutations';
 
 const Profile = () => {
   AOS.init();
@@ -59,6 +63,31 @@ const Profile = () => {
     setOpen(false);
   };
 
+  const [commentData, setCommentData] = useState('')
+
+ const [addComment, { error1 }] = useMutation(ADD_COMMENT)
+
+ const handleCommentSubmit = async (event) => {
+  event.preventDefault
+  try {
+    const {data} = await addComment({
+      variables: {
+        userId: userId, 
+        commenterId: auth.getProfile().data._id, 
+        commentBody: commentData
+      } 
+    })
+    window.location.reload(true);
+  }  
+  catch (err) {
+    console.log(err);   
+  } 
+
+  setCommentData('')
+}
+
+
+  // update user form
   const [formData, setFormData] = useState({
     email: '',
     username: '',
@@ -99,7 +128,7 @@ const Profile = () => {
     })
   }
 
-  console.log(formData)
+  console.log(commentData)
 
   if (loading) {
     return (
@@ -125,6 +154,30 @@ const Profile = () => {
             <h2 className='profileName'>{user.username}</h2>
             <p id="personalityType">{user.personality} </p>
             <p id="pemail">{user.email}</p>
+            <Button className='delete-btn' sx={{ color: 'white', borderRadius: '15px'}} onClick={handleClickOpen}>Add A comment</Button>
+          <form onSubmit={handleCommentSubmit}>
+            <Dialog open={open} onClose={handleClose}>
+              <DialogTitle sx={{width: '50vw'}}>Add a comment for {user.username}</DialogTitle>
+              <DialogContent>
+                <TextareaAutosize
+                  minRows={10}
+                  onChange={(event, value) => setCommentData(event.target.value)}
+                  autoFocus
+                  margin="dense"
+                  id="commentBody"
+                  label="Comment"
+                  type="text"
+                  style={{width: '100%'}}
+                  variant="standard"
+                  placeholder='Enter Comment Here...'
+                />
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleClose}>Cancel</Button>
+                <Button type='submit' onClick={handleCommentSubmit}>Post</Button>
+              </DialogActions>
+            </Dialog>
+          </form>
           </div>
         </div>
       </div>
@@ -213,6 +266,9 @@ const Profile = () => {
         <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600" className="team-box">
           <h2 id="yourTeams">Your Teams</h2>
           <ProfileTeamList user={user} />
+        </div>
+        <div>
+          <CommentsBox user={user} />
         </div>
       </div>
     </div>

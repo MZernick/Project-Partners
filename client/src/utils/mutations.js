@@ -90,3 +90,19 @@ mutation updateUser($userId: ID!, $username: String, $email: String, $personalit
     email
   }
 }`
+
+export const ADD_COMMENT = gql`
+mutation addComment($userId: ID!, $commenterId: ID!, $commentBody: String!) {
+  addComment(userId: $userId, commenterId: $commenterId, commentBody: $commentBody) {
+    username
+    _id
+    comments {
+      user {
+        username
+      }
+      _id
+      commentBody
+      createdAt
+    }
+  }
+} `

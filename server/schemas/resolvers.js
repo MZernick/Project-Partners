@@ -11,6 +11,9 @@ const resolvers = {
       return await User.find({}).populate("teams").populate({
         path: "teams",
         populate: "members",
+      }).populate({
+        path: "comments", 
+        populate: 'user'
       });
     },
     // find one user
@@ -18,6 +21,9 @@ const resolvers = {
       return await User.findOne({ _id: userId }).populate("teams").populate({
         path: "teams",
         populate: "members",
+      }).populate({
+        path: "comments", 
+        populate: 'user'
       });
     },
     // find one user by email
@@ -151,7 +157,23 @@ const resolvers = {
             { new: true }
           )
         })
-    }
+    },
+
+    addComment: async (parent, {userId, commenterId, commentBody }) => {
+      return User.findByIdAndUpdate(
+        {_id: userId}, 
+        { $addToSet: { comments: {user: commenterId, commentBody: commentBody}} }, 
+        {new: true }
+      )
+    }, 
+
+    removeComment: async (parent, {userId, commentId }) => {
+      return User.findByIdAndUpdate(
+        {_id: userId}, 
+        { $pull: { comments: { _id: commentId}} }, 
+        {new: true }
+      )
+    }, 
 
   },
 };

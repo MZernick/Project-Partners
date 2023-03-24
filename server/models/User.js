@@ -43,9 +43,33 @@ const userSchema = new Schema(
               ref: 'Teams',
             },
         ],
+        comments: [
+          {
+            user: [
+              {
+                type: Schema.Types.ObjectId, 
+                ref: 'User'
+              }
+            ],
+            createdAt: {
+              type: Date,
+              get: ((date) => {
+                  date = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) 
+                  return date
+              }),
+              default: Date.now,
+            },
+            commentBody: {
+              type: String,
+              required: true, 
+              trim: true
+            }
+          }
+        ]
     },
     {
       toJSON: {
+        getters: true,
         virtuals: true,
       },
       id: false,

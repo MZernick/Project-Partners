@@ -178,6 +178,10 @@ const Profile = () => {
               </DialogActions>
             </Dialog>
           </form>
+          
+          </div>
+          <div>
+          <CommentsBox user={user} />
           </div>
         </div>
       </div>

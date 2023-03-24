@@ -106,3 +106,16 @@ mutation addComment($userId: ID!, $commenterId: ID!, $commentBody: String!) {
     }
   }
 } `
+
+export const REMOVE_COMMENT = gql`
+mutation removeComment($userId: ID!, $commentId: ID!) {
+  removeComment(userId: $userId, commentId: $commentId) {
+    username
+    _id
+    comments {
+      _id
+      commentBody
+      createdAt
+    }
+  }
+}`

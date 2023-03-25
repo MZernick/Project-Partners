@@ -20,6 +20,15 @@ query User($userId: ID!) {
         _id
       }
     }
+    comments {
+      _id
+      commentBody
+      createdAt
+      user {
+        username
+        _id
+      }
+    }
   }
 }
 `;

@@ -1,5 +1,6 @@
 /* LARGER CONTAINER */
 .profileContainer {
+  
   height: 130vh;
   display: flex;
   /* flex-direction: inline-flex; */
@@ -25,6 +26,7 @@
 
 /* SPECIFIC PROFILE CONTAINER */
 .profile-box {
+  margin-top: 20vh;
   background-color: #3e5a80;
   /* border: 1px solid #ced4cc; */
   border-radius: 15px;
@@ -177,6 +179,7 @@ h3 {
 
 /* TEAM BOX CONTAINER */
 .team-box {
+  margin-top: 20vh;
   background-color: #3e5a80;
   /* border: 1px solid #ced4cc; */
   border-radius: 15px;
@@ -312,4 +315,47 @@ h3 {
   color: #F1FAEE;
   font-family: 'Switzer', sans-serif;
 
+}
+.commentsbox {
+  margin-top: 5%;
+  background-color: #3e5a80;
+  height: fit-content;
+  border-radius: 15px;
+  width: 60vw;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Switzer', sans-serif;
+  text-align: center;
+  /* font-size: clamp(0.3rem, 1.2vw, 1.2rem); */
+  /* font-size: 2.5rem; */
+  /* text-decoration: none; */
+  color: #F1FAEE;
+}
+
+.eachComment {
+  border: solid rgba(21, 17, 87, 1) 2px;
+  padding: 1%;
+  border-radius: 12px;
+  margin: 1% 0 1% 0;
+  width: 95%
+}
+
+.commenter-btn{
+  background: linear-gradient(90deg, rgba(21, 17, 87, 1) 0%, rgba(88, 138, 182, 1) 100%);
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0px 1px 8px #588ab6;
+  color: #F1FAEE;
+  font-family: 'Switzer', sans-serif;
+  /* height: 10vh; */
+  transition: 0.25s;
+  padding: 3%
+}
+
+.commenter-btn:hover {
+  background: linear-gradient(90deg, rgba(88, 138, 182, 1) 0%, rgba(21, 17, 87, 1) 100%);
+  border: none;
 }

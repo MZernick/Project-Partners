@@ -141,19 +141,35 @@ const handleImageChange = (e) => {
 console.log(image);
 
 
+// const handleSubmit = () => {
+//   const imageRef = ref(storage, 'image');
+//   uploadBytes(imageRef, image).then(() => {
+//     getDownloadURL(imageRef).then((url) => {
+//       setUrl(url);
+//     }).catch(error => {
+//       console.error(error.message, "error getting the image url. try again.");
+//     });
+//   // setImage(null);
+//   }).catch(error => {
+//     console.log(error.message)
+//   })
+// };
+
 const handleSubmit = () => {
   const imageRef = ref(storage, 'image');
   uploadBytes(imageRef, image).then(() => {
     getDownloadURL(imageRef).then((url) => {
       setUrl(url);
+      localStorage.setItem('profilePicture', url); // Set the URL to local storage
     }).catch(error => {
       console.error(error.message, "error getting the image url. try again.");
     });
-  setImage(null);
+    // setImage(null);
   }).catch(error => {
     console.log(error.message)
   })
 };
+
 
   console.log(commentData)
 
@@ -177,7 +193,8 @@ const handleSubmit = () => {
         <div className="profileContainer">
           <div className="profile-box">
             <Avatar
-              sx={{ width: 112, height: 112, bgcolor: '#1D3557' }}>{user.username}</Avatar>
+              sx={{ width: 112, height: 112, bgcolor: '#1D3557' }}
+              src={localStorage.getItem('profilePicture') || null}>{user.username}</Avatar>
             <h2 className='profileName'>{user.username}</h2>
             <p id="personalityType">{user.personality} </p>
             <p id="pemail">{user.email}</p>
@@ -221,9 +238,12 @@ const handleSubmit = () => {
       <div className="profileContainer">
         <h2 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300" id="welcomeBack">Welcome back, {user.username}</h2>
         <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500" className="profile-box">
-          <Avatar
+          {/* <Avatar
             src={url}
-            sx={{ width: 112, height: 112 }}>{user.username}</Avatar>
+            sx={{ width: 112, height: 112 }}></Avatar> */}
+            <Avatar
+            sx={{ width: 112, height: 112, bgcolor: '#1D3557' }}
+            src={localStorage.getItem('profilePicture') || null}>{user.username}</Avatar>
             <input type="file" onChange={handleImageChange} />
             <button onClick={handleSubmit}>Submit</button>
           <h2 className='profileName'>{user.username}</h2>

@@ -7,8 +7,10 @@ nav {
   align-items: center;
   justify-content: center;
   position: fixed;
-  width: 15%; /* change the width to the desired width of the navigation bar */
-  height: 100%; /* add this to make the navigation bar take up the full height of the screen */
+  width: 15%;
+  /* change the width to the desired width of the navigation bar */
+  height: 100%;
+  /* add this to make the navigation bar take up the full height of the screen */
   font-size: clamp(0.55rem, 1.3vw, 1.3rem);
 }
 
@@ -48,31 +50,34 @@ li {
   margin-right: 4%;
   margin-left: 10%;
 }
+
 #icon2 {
   margin-right: 4%;
   margin-left: 10%;
 }
+
 #icon3 {
   margin-right: 4%;
   margin-left: 10%;
 }
+
 #icon4 {
   margin-right: 4%;
   margin-left: 10%;
 }
+
 #icon5 {
   margin-right: 4%;
   margin-left: 10%;
 }
 
 #Logo {
-  width: 240px;
-  height: 260px;
+  width: 100%;
+  height: auto;
   margin-bottom: 15%;
   margin-right: 20%;
   transition: 1s;
 }
-
 
 #Logo:hover {
   filter: contrast(200%) brightness(150%) sepia(100%);

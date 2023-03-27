@@ -30,6 +30,8 @@ import CommentsBox from '../components/CommentsBox'
 import TextareaAutosize from '@mui/base/TextareaAutosize';
 
 import { ADD_COMMENT } from '../utils/mutations';
+import { storage } from '../firebase';
+import {ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 const Profile = () => {
   AOS.init();
@@ -127,6 +129,31 @@ const Profile = () => {
       personality: ''
     })
   }
+const [image, setImage] = useState(null);
+const [url, setUrl] = useState(null);
+
+const handleImageChange = (e) => {
+  if(e.target.files[0]) {
+    setImage(e.target.files[0]);
+  }
+}
+
+console.log(image);
+
+
+const handleSubmit = () => {
+  const imageRef = ref(storage, 'image');
+  uploadBytes(imageRef, image).then(() => {
+    getDownloadURL(imageRef).then((url) => {
+      setUrl(url);
+    }).catch(error => {
+      console.error(error.message, "error getting the image url. try again.");
+    });
+  setImage(null);
+  }).catch(error => {
+    console.log(error.message)
+  })
+};
 
   console.log(commentData)
 
@@ -195,7 +222,10 @@ const Profile = () => {
         <h2 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300" id="welcomeBack">Welcome back, {user.username}</h2>
         <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500" className="profile-box">
           <Avatar
+            src={url}
             sx={{ width: 112, height: 112 }}>{user.username}</Avatar>
+            <input type="file" onChange={handleImageChange} />
+            <button onClick={handleSubmit}>Submit</button>
           <h2 className='profileName'>{user.username}</h2>
           <p id="personalityType">{user.personality} </p>
           <p id="pemail">{user.email}</p>

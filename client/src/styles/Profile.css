@@ -1,6 +1,6 @@
 /* LARGER CONTAINER */
 .profileContainer {
-  
+
   height: 130vh;
   display: flex;
   /* flex-direction: inline-flex; */
@@ -316,6 +316,7 @@ h3 {
   font-family: 'Switzer', sans-serif;
 
 }
+
 .commentsbox {
   margin-top: 5%;
   background-color: #3e5a80;
@@ -340,10 +341,12 @@ h3 {
   padding: 1%;
   border-radius: 12px;
   margin: 1% 0 1% 0;
-  width: 95%
+  width: 95%;
+  color: rgba(21, 17, 87, 1);
+  background: rgb(173, 204, 232);
 }
 
-.commenter-btn{
+.commenter-btn {
   background: linear-gradient(90deg, rgba(21, 17, 87, 1) 0%, rgba(88, 138, 182, 1) 100%);
   border: none;
   border-radius: 20px;

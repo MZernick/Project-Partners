@@ -25,7 +25,6 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  width: 600px;
   margin: 20px;
 }
 
@@ -37,6 +36,12 @@
   width: 475px;
   /* margin: 20px; */
   height: 25rem;
+}
+
+@media screen and (max-width: 768px) {
+  .search-card {
+    width: 100%;
+  }
 }
 
 .card:hover {

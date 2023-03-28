@@ -14,17 +14,17 @@ nav {
   font-size: clamp(0.55rem, 1.3vw, 1.3rem);
 }
 
-.nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* margin-top: 20%; */
-  width: 100%;
-  margin-left: 15%;
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: row;
+    width: 100%;
+    height: 20vh;
+  }
 }
 
 li {
   display: flex;
+  margin: 5%;
   font-family: 'Switzer', sans-serif;
 }
 
@@ -35,7 +35,6 @@ li {
   margin-bottom: 10%;
   padding-bottom: 4%;
   padding-top: 4%;
-  width: 80%;
   align-items: center;
   transition: 0.4s;
   border: 1px;
@@ -74,8 +73,6 @@ li {
 #Logo {
   width: 100%;
   height: auto;
-  margin-bottom: 15%;
-  margin-right: 20%;
   transition: 1s;
 }
 

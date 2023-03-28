@@ -6,9 +6,15 @@ import Profile from '../styles/Profile.png'
 import Puzzle from '../styles/Puzzle.png'
 import { Link } from 'react-scroll';
 import { Avatar } from "@mui/material";
+import anitaFace from '../styles/assets/teampics/AnitaFace.jpg';
+import domFace from '../styles/assets/teampics/DomFace.jpeg';
+import jerHair from '../styles/assets/teampics/JerHair.png';
+import joshFace from '../styles/assets/teampics/JoshFace.jpg';
+import magFace from '../styles/assets/teampics/MagFace.jpg';
 import { useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
 
 export default function Homepage() {
   AOS.init();
@@ -65,6 +71,7 @@ export default function Homepage() {
         <div id="sidescrollContainer">
           <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200" className="creator-box">
             <Avatar className="creator-avatar"
+              src={joshFace}
               sx={{ width: 112, height: 112 }}>
               JG
             </Avatar>
@@ -73,6 +80,7 @@ export default function Homepage() {
           </div>
           <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400" className="creator-box">
             <Avatar className="creator-avatar"
+              src={domFace}
               sx={{ width: 112, height: 112 }}>
               DN
             </Avatar>
@@ -81,6 +89,7 @@ export default function Homepage() {
           </div>
           <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600" className="creator-box">
             <Avatar className="creator-avatar"
+              src={anitaFace}
               sx={{ width: 112, height: 112 }}>
               AB
             </Avatar>
@@ -89,6 +98,7 @@ export default function Homepage() {
           </div>
           <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="800" className="creator-box">
             <Avatar className="creator-avatar"
+              src={jerHair}
               sx={{ width: 112, height: 112 }}>
               JC
             </Avatar>
@@ -97,6 +107,7 @@ export default function Homepage() {
           </div>
           <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="1000" className="creator-box">
             <Avatar className="creator-avatar"
+              src={magFace}
               sx={{ width: 112, height: 112 }}>
               MZ
             </Avatar>

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import NavTabs from "../components/NavTabs";
 import { useQuery } from "@apollo/client";
-import { SEARCH_USER } from "../utils/queries";
+import { SEARCH_USER, QUERY_SINGLE_USER_WITH_COMPATIBILITY } from '../utils/queries';
+import { getCompatibilityandUsername } from '../utils/helpers';
 import { useNavigate, useParams } from "react-router-dom";
-// import auth from "../utils/auth";
+import auth from "../utils/auth";
 // import Button from 'react-bootstrap/Button';
 
 import '../styles/UserSearch.css';
@@ -24,6 +25,22 @@ const UserSearch = () => {
   let navigate = useNavigate();
   console.log(users);
 
+  const userArr=[];
+  const userList = data?.users || [];
+
+  // searching for the single user logged in so we can run commpatibility
+  const data1 = useQuery(QUERY_SINGLE_USER_WITH_COMPATIBILITY, {
+    variables: { userId: auth.getProfile().data._id }
+  })
+  console.log(auth.getProfile().data._id )
+  if (data1.loading) {
+    console.log('loading user')
+  } else {
+    userList.map(user => {
+      return userArr.push(getCompatibilityandUsername(data1.data.user, user));
+    })
+    console.log(userArr)
+  }
   function handleSubmit() {
     let listarray = [];
 
@@ -53,14 +70,33 @@ const UserSearch = () => {
       listarray = [];
     }
 
-    setFilteredUsers(listarray);
+    const listarrayWithRatings = listarray.map(item => {
+      const matchingItem = userArr.find(innerItem => innerItem.username === item.username);
+      return {
+        ...item,
+        rating: matchingItem.rating
+      };
+    });
+
+    setFilteredUsers(listarrayWithRatings);
     // if array is empty, no results found is rendered in place of cards.
-    if (listarray.length == 0) {
+    if (listarrayWithRatings.length == 0) {
       setNoResultMsg("No results found");
     }
   }
-  console.log(filteredUsers);
+  // console.log(filteredUsers);
+  // console.log(userArr);
+  // const filteredUsernames = filteredUsers.map(user => user.username);
 
+
+  // userArr.forEach(user => {
+  //   if (filteredUsernames.includes(user.username)) {
+  //     const compatibilityObj = filteredUsers.find(filteredUser => filteredUser.username === user.username).compatibility;
+  //     const compatibility = compatibilityObj.find(obj => obj.value === user._id).rating;
+  //     console.log(`Compatibility value for ${user.username}: ${compatibility}`);
+  //   }
+  // });
+  
   return (
     <div>
       <div>
@@ -125,6 +161,8 @@ const UserSearch = () => {
                       <span className="profileNameSearch">{user.email}</span>
                       <br />
                       <span className="pTypeSearch">{user.personality}</span>
+                      <br />
+                      <span className="pTypeSearch">{user.rating}</span>
                       <br />
                       <span className="profileNameSearch">
                         Current team(s): {user.teams ? user.teams.length : 0}

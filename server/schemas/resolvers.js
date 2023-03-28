@@ -26,17 +26,27 @@ const resolvers = {
         populate: 'user'
       });
     },
-    // find one user by email
+    // find users by email, case-insensitive
     searchEmail: async (parent, { email }) => {
-      return await User.find({ email: email }).populate("teams").populate({
+      const regex = new RegExp(`^${email}$`, 'i');
+      return await User.find({ email: regex }).populate("teams").populate({
         path: "teams",
         populate: "members",
       });
     },
 
-    // find one user by email
+    // find users by personality, case-insensitive
     searchPersonality: async (parent, { personality }) => {
-      return await User.find({ personality: personality }).populate("teams").populate({
+      const regex = new RegExp(`^${personality}$`, 'i');
+      return await User.find({ personality: regex }).populate("teams").populate({
+        path: "teams",
+        populate: "members",
+      });
+    },
+     // find users by username, case-insensitive
+     searchUsername: async (parent, { username }) => {
+      const regex = new RegExp(`^${username}$`, 'i');
+      return await User.find({ username: regex }).populate("teams").populate({
         path: "teams",
         populate: "members",
       });

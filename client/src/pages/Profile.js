@@ -30,14 +30,14 @@ import CommentsBox from '../components/CommentsBox'
 import TextareaAutosize from '@mui/base/TextareaAutosize';
 
 import { ADD_COMMENT } from '../utils/mutations';
-import { storage } from '../firebase';
+import { useAuth, upload } from '../firebase';
 import {ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 const Profile = () => {
   AOS.init();
   let { userId } = useParams();
   if (userId === "me") { userId = auth.getProfile().data._id }
-  console.log(userId);
+  // console.log(userId);
   const navigate = useNavigate();
   const [removeUser] = useMutation(REMOVE_USER, {
     variables: { userId },
@@ -130,33 +130,57 @@ const Profile = () => {
     })
   }
 
-// Avatar image upload
-const [image, setImage] = useState(null);
-const [url, setUrl] = useState(null);
+const currentUser = useAuth();
+const [photo, setPhoto] = useState(null);
+const [imgLoading, setImgLoading] = useState(false);
+const [photoURL, setPhotoURL] = useState("https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png");
 
-const handleImageChange = (e) => {
-  if(e.target.files[0]) {
-    setImage(e.target.files[0]);
+function handleChange(e) {
+  if (e.target.files[0]) {
+    setPhoto(e.target.files[0])
   }
 }
 
-console.log(image);
+function handleClick() {
+  upload(photo, currentUser, setImgLoading);
+}
+
+
+useEffect(() => {
+  if (currentUser?.photoURL) {
+    setPhotoURL(currentUser.photoURL);
+  }
+}, [currentUser])
+
+// Avatar image upload
+// const [image, setImage] = useState(null);
+// const [url, setUrl] = useState(null);
+
+// const handleImageChange = (e) => {
+//   if(e.target.files[0]) {
+//     setImage(e.target.files[0]);
+//   }
+// }
+
+// console.log(image);
 
 // Submitting the avatar image request
-const handleSubmit = () => {
-  const imageRef = ref(storage, 'image');
-  uploadBytes(imageRef, image).then(() => {
-    getDownloadURL(imageRef).then((url) => {
-      setUrl(url);
-      localStorage.setItem('profilePicture', url); // Set the URL to local storage
-    }).catch(error => {
-      console.error(error.message, "error getting the image url. try again.");
-    });
-    setImage(null);
-  }).catch(error => {
-    console.log(error.message)
-  })
-};
+// const handleSubmit = () => {
+//   const imageRef = ref(storage, 'image');
+//   uploadBytes(imageRef, image).then(() => {
+//     getDownloadURL(imageRef).then((url) => {
+//       setUrl(url);
+//       localStorage.setItem('profilePicture', url); // Set the URL to local storage
+//     }).catch(error => {
+//       console.error(error.message, "error getting the image url. try again.");
+//     });
+//     setImage(null);
+//   }).catch(error => {
+//     console.log(error.message)
+//   })
+// };
+
+
 
 
   console.log(commentData)
@@ -182,7 +206,7 @@ const handleSubmit = () => {
           <div className="profile-box">
             <Avatar
               sx={{ width: 112, height: 112, bgcolor: '#1D3557' }}
-              src={localStorage.getItem('profilePicture') || null}>{user.username}</Avatar>
+              src={photoURL}>{user.username}</Avatar>
             <h2 className='profileName'>{user.username}</h2>
             <p id="personalityType">{user.personality} </p>
             <p id="pemail">{user.email}</p>
@@ -228,7 +252,9 @@ const handleSubmit = () => {
         <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500" className="profile-box">
             <Avatar
             sx={{ width: 156, height: 156, bgcolor: '#1D3557' }}
-            src={localStorage.getItem('profilePicture') || null}>{user.username}</Avatar>
+            src={photoURL}>{user.username}</Avatar>
+                  <input type="file" onChange={handleChange} />
+      <button disabled={loading || !photo} onClick={handleClick}>Upload</button>
           <h2 className='profileName'>{user.username}</h2>
           <p id="personalityType">{user.personality} </p>
           <p id="pemail">{user.email}</p>
@@ -237,18 +263,6 @@ const handleSubmit = () => {
             <Dialog open={open} onClose={handleClose}>
               <DialogTitle>Update Your Profile</DialogTitle>
               <DialogContent>
-              <TextField
-              id="avatar"
-              label="Avatar"
-              onChange={handleImageChange} 
-              type="file"
-              margin="dense"
-              fullWidth
-              variant="standard"
-              autoFocus/>
-              <DialogActions>
-              <Button onClick={handleSubmit}>Submit</Button>
-              </DialogActions>
                 <TextField
                   onChange={(event, value) => setFormData({ ...formData, email: event.target.value })}
                   defaultValue={formData.email}

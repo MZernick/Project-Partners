@@ -15,7 +15,7 @@ import 'aos/dist/aos.css';
 const UserSearch = () => {
   AOS.init();
   const [searchText, setSearchText] = useState("");
-  const [filter, setFilter] = useState("personality"); // set default filter to personality
+  const [filter, setFilter] = useState("all"); // set default filter
   const [filteredUsers, setFilteredUsers] = useState([]);
   const { loading, data } = useQuery(SEARCH_USER);
   const [noResultMsg, setNoResultMsg] = useState("");
@@ -41,9 +41,18 @@ const UserSearch = () => {
       listarray = users.filter(
         (user) => user.username.toLowerCase() === searchText
       );
+      
+    } else if (filter === "all") {
+      listarray = users.filter(
+        (user) => 
+          user.personality.toLowerCase() === searchText ||
+          user.email.toLowerCase() === searchText ||
+          user.username.toLowerCase() === searchText
+      );
     } else {
       listarray = [];
     }
+
     setFilteredUsers(listarray);
     // if array is empty, no results found is rendered in place of cards.
     if (listarray.length == 0) {
@@ -78,6 +87,7 @@ const UserSearch = () => {
                           id="filter"
                           onChange={(e) => setFilter(e.target.value)}
                         >
+                          <option value="all">All</option>
                           <option value="personality">Personality Type</option>
                           <option value="email">Email</option>
                           <option value="username">Username</option>
@@ -86,7 +96,7 @@ const UserSearch = () => {
                           type="text"
                           className="search-input"
                           id="search"
-                          placeholder={`Enter ${filter}`}
+                          placeholder={filter === "all" ? "Enter personality, email, or username" : `Enter ${filter}`}
                           value={searchText}
                           onChange={(e) =>
                             setSearchText(e.target.value.toLowerCase())

@@ -37,7 +37,7 @@ const Profile = () => {
   AOS.init();
   let { userId } = useParams();
   if (userId === "me") { userId = auth.getProfile().data._id }
-  // console.log(userId);
+  console.log(userId);
   const navigate = useNavigate();
   const [removeUser] = useMutation(REMOVE_USER, {
     variables: { userId },
@@ -87,7 +87,6 @@ const Profile = () => {
 
     setCommentData('')
   }
-
 
   // update user form
   const [formData, setFormData] = useState({
@@ -139,6 +138,7 @@ function handleChange(e) {
   if (e.target.files[0]) {
     setPhoto(e.target.files[0])
   }
+}
 
 function handleClick() {
   upload(photo, currentUser, setImgLoading);
@@ -178,8 +178,6 @@ useEffect(() => {
 //     console.log(error.message)
 //   })
 // };
-
-
 
   console.log(commentData)
 
@@ -251,8 +249,18 @@ useEffect(() => {
           <Avatar
             sx={{ width: 156, height: 156, bgcolor: '#1D3557' }}
             src={photoURL}>{user.username}</Avatar>
-                  <input type="file" onChange={handleChange} />
-      <button disabled={loading || !photo} onClick={handleClick}>Upload</button>
+                          <TextField
+              id="avatar"
+              label="Avatar"
+              onChange={handleChange} 
+              type="file"
+              margin="dense"
+              fullWidth
+              variant="standard"
+              autoFocus/>
+              <DialogActions>
+              <Button disabled={imgLoading || !photo } onClick={handleClick}>Upload</Button>
+              </DialogActions>
           <h2 className='profileName'>{user.username}</h2>
           <p id="personalityType">{user.personality} </p>
           <p id="pemail">{user.email}</p>

@@ -119,3 +119,9 @@ mutation removeComment($userId: ID!, $commentId: ID!) {
     }
   }
 }`
+
+export const SEARCH_TRIGGER = gql`
+mutation SearchTrigger($searchValue: String!) {
+  triggerSearch(searchValue: $searchValue)
+}
+`

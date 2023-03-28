@@ -3,6 +3,7 @@
 
   height: 130vh;
   display: flex;
+  text-align: center;
   /* flex-direction: inline-flex; */
   align-items: center;
   justify-content: center;
@@ -33,13 +34,20 @@
   width: fit-content;
   /* height: 56.5%; */
   /* height: fit-content; */
-  padding: 2% 10%;
+  padding: 2% 5%;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-right: 2%;
+  /* margin-right: 2%; */
+}
+
+@media screen and (max-width: 768px) {
+  .profile-box {
+    margin-left: 4%;
+    margin-bottom: 4%;
+  }
 }
 
 /* SPECIFIC PROFILE CONTAINER */
@@ -179,7 +187,7 @@ h3 {
 
 /* TEAM BOX CONTAINER */
 .team-box {
-  margin-top: 20vh;
+  /* margin-top: 20vh; */
   background-color: #3e5a80;
   /* border: 1px solid #ced4cc; */
   border-radius: 15px;
@@ -190,7 +198,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
   text-align: center;
 }
 

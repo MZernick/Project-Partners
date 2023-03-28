@@ -15,6 +15,13 @@
   align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+  .signup-page {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 .signup-card {
   transition: 0.3s;
   border-radius: 5px;
@@ -24,6 +31,7 @@
   width: 475px;
   margin-top: 200px;
   margin-right: 2%;
+  margin-left: 2%;
 }
 
 .login-card {
@@ -34,6 +42,14 @@
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
   width: 475px;
   margin-left: 2%;
+  margin-right: 2%;
+}
+
+@media screen and (max-width: 768px) {
+  .login-card {
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
 }
 
 .card:hover {

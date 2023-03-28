@@ -46,6 +46,7 @@ const typeDefs = gql`
     team(teamId: ID!): Teams
     searchEmail(email: String!): [User]!
     searchPersonality(personality: String!): [User]!
+    searchUsername(username: String!): [User]!
   }
 
   type Mutation {

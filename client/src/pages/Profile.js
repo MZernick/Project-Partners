@@ -67,26 +67,26 @@ const Profile = () => {
 
   const [commentData, setCommentData] = useState('')
 
- const [addComment, { error1 }] = useMutation(ADD_COMMENT)
+  const [addComment, { error1 }] = useMutation(ADD_COMMENT)
 
- const handleCommentSubmit = async (event) => {
-  event.preventDefault
-  try {
-    const {data} = await addComment({
-      variables: {
-        userId: userId, 
-        commenterId: auth.getProfile().data._id, 
-        commentBody: commentData
-      } 
-    })
-    window.location.reload(true);
-  }  
-  catch (err) {
-    console.log(err);   
-  } 
+  const handleCommentSubmit = async (event) => {
+    event.preventDefault
+    try {
+      const { data } = await addComment({
+        variables: {
+          userId: userId,
+          commenterId: auth.getProfile().data._id,
+          commentBody: commentData
+        }
+      })
+      window.location.reload(true);
+    }
+    catch (err) {
+      console.log(err);
+    }
 
-  setCommentData('')
-}
+    setCommentData('')
+  }
 
 
   // update user form
@@ -139,7 +139,6 @@ function handleChange(e) {
   if (e.target.files[0]) {
     setPhoto(e.target.files[0])
   }
-}
 
 function handleClick() {
   upload(photo, currentUser, setImgLoading);
@@ -182,7 +181,6 @@ useEffect(() => {
 
 
 
-
   console.log(commentData)
 
   if (loading) {
@@ -210,34 +208,34 @@ useEffect(() => {
             <h2 className='profileName'>{user.username}</h2>
             <p id="personalityType">{user.personality} </p>
             <p id="pemail">{user.email}</p>
-            <Button className='delete-btn' sx={{ color: 'white', borderRadius: '15px'}} onClick={handleClickOpen}>Add A comment</Button>
-          <form onSubmit={handleCommentSubmit}>
-            <Dialog open={open} onClose={handleClose}>
-              <DialogTitle sx={{width: '50vw'}}>Add a comment for {user.username}</DialogTitle>
-              <DialogContent>
-                <TextareaAutosize
-                  minRows={10}
-                  onChange={(event, value) => setCommentData(event.target.value)}
-                  autoFocus
-                  margin="dense"
-                  id="commentBody"
-                  label="Comment"
-                  type="text"
-                  style={{width: '100%'}}
-                  variant="standard"
-                  placeholder='Enter Comment Here...'
-                />
-              </DialogContent>
-              <DialogActions>
-                <Button onClick={handleClose}>Cancel</Button>
-                <Button type='submit' onClick={handleCommentSubmit}>Post</Button>
-              </DialogActions>
-            </Dialog>
-          </form>
-          
+            <Button className='delete-btn' sx={{ color: 'white', borderRadius: '15px' }} onClick={handleClickOpen}>Add A comment</Button>
+            <form onSubmit={handleCommentSubmit}>
+              <Dialog open={open} onClose={handleClose}>
+                <DialogTitle sx={{ width: '50vw' }}>Add a comment for {user.username}</DialogTitle>
+                <DialogContent>
+                  <TextareaAutosize
+                    minRows={10}
+                    onChange={(event, value) => setCommentData(event.target.value)}
+                    autoFocus
+                    margin="dense"
+                    id="commentBody"
+                    label="Comment"
+                    type="text"
+                    style={{ width: '100%' }}
+                    variant="standard"
+                    placeholder='Enter Comment Here...'
+                  />
+                </DialogContent>
+                <DialogActions>
+                  <Button onClick={handleClose}>Cancel</Button>
+                  <Button type='submit' onClick={handleCommentSubmit}>Post</Button>
+                </DialogActions>
+              </Dialog>
+            </form>
+
           </div>
           <div>
-          <CommentsBox user={user} />
+            <CommentsBox user={user} />
           </div>
         </div>
       </div>
@@ -250,7 +248,7 @@ useEffect(() => {
       <div className="profileContainer">
         <h2 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300" id="welcomeBack">Welcome back, {user.username}</h2>
         <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500" className="profile-box">
-            <Avatar
+          <Avatar
             sx={{ width: 156, height: 156, bgcolor: '#1D3557' }}
             src={photoURL}>{user.username}</Avatar>
                           <TextField
@@ -330,10 +328,10 @@ useEffect(() => {
             auth.logout();
             navigate("/");
           }}>Delete My Account</button>
-          <div className="userAndTeamBox">
+          {/* <div className="userAndTeamBox">
             <div className="userBox1">
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="space"></div>
         <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600" className="team-box">

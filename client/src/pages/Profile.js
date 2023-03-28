@@ -31,7 +31,7 @@ import TextareaAutosize from '@mui/base/TextareaAutosize';
 
 import { ADD_COMMENT } from '../utils/mutations';
 import { storage } from '../firebase';
-import {ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 const Profile = () => {
   AOS.init();
@@ -67,26 +67,26 @@ const Profile = () => {
 
   const [commentData, setCommentData] = useState('')
 
- const [addComment, { error1 }] = useMutation(ADD_COMMENT)
+  const [addComment, { error1 }] = useMutation(ADD_COMMENT)
 
- const handleCommentSubmit = async (event) => {
-  event.preventDefault
-  try {
-    const {data} = await addComment({
-      variables: {
-        userId: userId, 
-        commenterId: auth.getProfile().data._id, 
-        commentBody: commentData
-      } 
-    })
-    window.location.reload(true);
-  }  
-  catch (err) {
-    console.log(err);   
-  } 
+  const handleCommentSubmit = async (event) => {
+    event.preventDefault
+    try {
+      const { data } = await addComment({
+        variables: {
+          userId: userId,
+          commenterId: auth.getProfile().data._id,
+          commentBody: commentData
+        }
+      })
+      window.location.reload(true);
+    }
+    catch (err) {
+      console.log(err);
+    }
 
-  setCommentData('')
-}
+    setCommentData('')
+  }
 
 
   // update user form
@@ -130,33 +130,33 @@ const Profile = () => {
     })
   }
 
-// Avatar image upload
-const [image, setImage] = useState(null);
-const [url, setUrl] = useState(null);
+  // Avatar image upload
+  const [image, setImage] = useState(null);
+  const [url, setUrl] = useState(null);
 
-const handleImageChange = (e) => {
-  if(e.target.files[0]) {
-    setImage(e.target.files[0]);
+  const handleImageChange = (e) => {
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
   }
-}
 
-console.log(image);
+  console.log(image);
 
-// Submitting the avatar image request
-const handleSubmit = () => {
-  const imageRef = ref(storage, 'image');
-  uploadBytes(imageRef, image).then(() => {
-    getDownloadURL(imageRef).then((url) => {
-      setUrl(url);
-      localStorage.setItem('profilePicture', url); // Set the URL to local storage
+  // Submitting the avatar image request
+  const handleSubmit = () => {
+    const imageRef = ref(storage, 'image');
+    uploadBytes(imageRef, image).then(() => {
+      getDownloadURL(imageRef).then((url) => {
+        setUrl(url);
+        localStorage.setItem('profilePicture', url); // Set the URL to local storage
+      }).catch(error => {
+        console.error(error.message, "error getting the image url. try again.");
+      });
+      setImage(null);
     }).catch(error => {
-      console.error(error.message, "error getting the image url. try again.");
-    });
-    setImage(null);
-  }).catch(error => {
-    console.log(error.message)
-  })
-};
+      console.log(error.message)
+    })
+  };
 
 
   console.log(commentData)
@@ -186,34 +186,34 @@ const handleSubmit = () => {
             <h2 className='profileName'>{user.username}</h2>
             <p id="personalityType">{user.personality} </p>
             <p id="pemail">{user.email}</p>
-            <Button className='delete-btn' sx={{ color: 'white', borderRadius: '15px'}} onClick={handleClickOpen}>Add A comment</Button>
-          <form onSubmit={handleCommentSubmit}>
-            <Dialog open={open} onClose={handleClose}>
-              <DialogTitle sx={{width: '50vw'}}>Add a comment for {user.username}</DialogTitle>
-              <DialogContent>
-                <TextareaAutosize
-                  minRows={10}
-                  onChange={(event, value) => setCommentData(event.target.value)}
-                  autoFocus
-                  margin="dense"
-                  id="commentBody"
-                  label="Comment"
-                  type="text"
-                  style={{width: '100%'}}
-                  variant="standard"
-                  placeholder='Enter Comment Here...'
-                />
-              </DialogContent>
-              <DialogActions>
-                <Button onClick={handleClose}>Cancel</Button>
-                <Button type='submit' onClick={handleCommentSubmit}>Post</Button>
-              </DialogActions>
-            </Dialog>
-          </form>
-          
+            <Button className='delete-btn' sx={{ color: 'white', borderRadius: '15px' }} onClick={handleClickOpen}>Add A comment</Button>
+            <form onSubmit={handleCommentSubmit}>
+              <Dialog open={open} onClose={handleClose}>
+                <DialogTitle sx={{ width: '50vw' }}>Add a comment for {user.username}</DialogTitle>
+                <DialogContent>
+                  <TextareaAutosize
+                    minRows={10}
+                    onChange={(event, value) => setCommentData(event.target.value)}
+                    autoFocus
+                    margin="dense"
+                    id="commentBody"
+                    label="Comment"
+                    type="text"
+                    style={{ width: '100%' }}
+                    variant="standard"
+                    placeholder='Enter Comment Here...'
+                  />
+                </DialogContent>
+                <DialogActions>
+                  <Button onClick={handleClose}>Cancel</Button>
+                  <Button type='submit' onClick={handleCommentSubmit}>Post</Button>
+                </DialogActions>
+              </Dialog>
+            </form>
+
           </div>
           <div>
-          <CommentsBox user={user} />
+            <CommentsBox user={user} />
           </div>
         </div>
       </div>
@@ -226,7 +226,7 @@ const handleSubmit = () => {
       <div className="profileContainer">
         <h2 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300" id="welcomeBack">Welcome back, {user.username}</h2>
         <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500" className="profile-box">
-            <Avatar
+          <Avatar
             sx={{ width: 156, height: 156, bgcolor: '#1D3557' }}
             src={localStorage.getItem('profilePicture') || null}>{user.username}</Avatar>
           <h2 className='profileName'>{user.username}</h2>
@@ -237,18 +237,18 @@ const handleSubmit = () => {
             <Dialog open={open} onClose={handleClose}>
               <DialogTitle>Update Your Profile</DialogTitle>
               <DialogContent>
-              <TextField
-              id="avatar"
-              label="Avatar"
-              onChange={handleImageChange} 
-              type="file"
-              margin="dense"
-              fullWidth
-              variant="standard"
-              autoFocus/>
-              <DialogActions>
-              <Button onClick={handleSubmit}>Submit</Button>
-              </DialogActions>
+                <TextField
+                  id="avatar"
+                  label="Avatar"
+                  onChange={handleImageChange}
+                  type="file"
+                  margin="dense"
+                  fullWidth
+                  variant="standard"
+                  autoFocus />
+                <DialogActions>
+                  <Button onClick={handleSubmit}>Submit</Button>
+                </DialogActions>
                 <TextField
                   onChange={(event, value) => setFormData({ ...formData, email: event.target.value })}
                   defaultValue={formData.email}
@@ -306,10 +306,10 @@ const handleSubmit = () => {
             auth.logout();
             navigate("/");
           }}>Delete My Account</button>
-          <div className="userAndTeamBox">
+          {/* <div className="userAndTeamBox">
             <div className="userBox1">
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="space"></div>
         <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600" className="team-box">

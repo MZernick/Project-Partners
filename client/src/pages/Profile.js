@@ -88,7 +88,6 @@ const Profile = () => {
     setCommentData('')
   }
 
-
   // update user form
   const [formData, setFormData] = useState({
     email: '',
@@ -139,6 +138,7 @@ function handleChange(e) {
   if (e.target.files[0]) {
     setPhoto(e.target.files[0])
   }
+}
 
 function handleClick() {
   upload(photo, currentUser, setImgLoading);
@@ -178,8 +178,6 @@ useEffect(() => {
 //     console.log(error.message)
 //   })
 // };
-
-
 
   console.log(commentData)
 

@@ -7,6 +7,8 @@
   text-align: center;
   font-size: 4rem;
   margin: 0px;
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  ;
 }
 
 .teams-page {
@@ -35,12 +37,12 @@
   width: 90%;
 }
 
-.team-cardContainer {
+/* .team-cardContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-}
+} */
 
 .team-card {
   transition: 0.3s;
@@ -53,6 +55,13 @@
   align-items: center;
   flex-direction: column;
   margin-top: 2%;
+  margin: 5%;
+}
+
+@media screen and (max-width: 768px) {
+  .team-card {
+    margin: 10%;
+  }
 }
 
 .card:hover {
@@ -124,7 +133,14 @@ circle {
 }
 
 .smallFont {
-  font-size: 1.5rem;
+  font-size: clamp(.5rem, 2vw, 5.5rem);
+  color: #F1FAEE;
+  font-family: 'Switzer', sans-serif;
+  text-align: center;
+}
+
+.percFont {
+  font-size: clamp(1.5rem, 2vw, 5.5rem);
   color: #F1FAEE;
   font-family: 'Switzer', sans-serif;
   text-align: center;
@@ -151,7 +167,7 @@ circle {
 
 .member-name {
   font-family: 'Switzer', sans-serif;
-  font-size: 2rem;
+  font-size: clamp(.5rem, 2.5vw, 5.5rem);
   text-decoration: none;
   color: #F1FAEE;
   font-weight: 400;
@@ -195,6 +211,13 @@ circle {
 .description-card {
   display: flex;
   align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .description-card {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .descFont {

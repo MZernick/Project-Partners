@@ -25,6 +25,12 @@
   width: max-content;
 }
 
+@media screen and (max-width: 768px) {
+  #welcomeBack {
+    margin-top: 13%;
+  }
+}
+
 /* SPECIFIC PROFILE CONTAINER */
 .profile-box {
   margin-top: 20vh;

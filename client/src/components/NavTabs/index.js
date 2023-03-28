@@ -18,74 +18,74 @@ function NavTabs({ currentPage }) {
   AOS.init();
 
 
-  function handleLogOut(){
+  function handleLogOut() {
     localStorage.setItem('hasVisited', "")
     auth.logout()
   };
 
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#e63947',
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#e63947',
+      },
+      secondary: {
+        main: '#1D3557',
+      },
     },
-    secondary: {
-      main: '#1D3557',
-    },
-  },
-});
+  });
 
   return (
-    <nav>
-      <ul className="nav">
-        <li className="logoPlaceholder">
-          <img src={ProLogo} alt="ProPairs logo" id="Logo" />
-        </li>
-        <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100" className="tabOne">
-          <Link id="nav-link"
-            to={`/user/${auth.getProfile().data._id}`}
-            activeclassname={'active'}
-          >
-            <HomeRoundedIcon theme={theme} fontSize="large" color="primary" id="icon1" /> Home
-          </Link>
-        </li>
-        <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" >
-          <Link id="nav-link"
-            to={`/user/${auth.getProfile().data._id}/teams`}
-          >
-            <GroupsRoundedIcon theme={theme} fontSize="large" color="primary" id="icon2" /> My Teams
-          </Link>
-        </li>
-        <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
-          <Link id="nav-link"
-            to="/users"
-          >
-            <SearchRoundedIcon theme={theme} fontSize="large" color="primary" id="icon3" /> Search
-          </Link>
-        </li>
-        <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
-          <Link id="nav-link"
-            to="/createteam"
-          >
-            <AddCircleOutlineRoundedIcon theme={theme} fontSize="large" color="primary" id="icon4" /> Create Team
-          </Link>
-        </li>
-        <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
-          <Link id="nav-link"
-            to={`/user/${auth.getProfile().data._id}`}
-          >
-            <AccountCircleRoundedIcon theme={theme} fontSize="large" color="primary" id="icon5" /> My Profile
-          </Link>
-        </li>
-        <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
-          <Link id="nav-link"
-            to={`/`}
-            onClick={handleLogOut}
-          >
-            <LogoutRoundedIcon theme={theme} fontSize="large" color="primary" id="icon5" /> Logout
-          </Link>
-        </li>
-      </ul>
+    <nav className="nav">
+      {/* <ul > */}
+      <li className="logoPlaceholder">
+        <img src={ProLogo} alt="ProPairs logo" id="Logo" />
+      </li>
+      <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100" className="tabOne">
+        <Link id="nav-link"
+          to={`/user/${auth.getProfile().data._id}`}
+          activeclassname={'active'}
+        >
+          <HomeRoundedIcon theme={theme} fontSize="large" color="primary" id="icon1" />
+        </Link>
+      </li>
+      <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" >
+        <Link id="nav-link"
+          to={`/user/${auth.getProfile().data._id}/teams`}
+        >
+          <GroupsRoundedIcon theme={theme} fontSize="large" color="primary" id="icon2" />
+        </Link>
+      </li>
+      <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
+        <Link id="nav-link"
+          to="/users"
+        >
+          <SearchRoundedIcon theme={theme} fontSize="large" color="primary" id="icon3" />
+        </Link>
+      </li>
+      <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
+        <Link id="nav-link"
+          to="/createteam"
+        >
+          <AddCircleOutlineRoundedIcon theme={theme} fontSize="large" color="primary" id="icon4" />
+        </Link>
+      </li>
+      <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
+        <Link id="nav-link"
+          to={`/user/${auth.getProfile().data._id}`}
+        >
+          <AccountCircleRoundedIcon theme={theme} fontSize="large" color="primary" id="icon5" />
+        </Link>
+      </li>
+      <li data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
+        <Link id="nav-link"
+          to={`/`}
+          onClick={handleLogOut}
+        >
+          <LogoutRoundedIcon theme={theme} fontSize="large" color="primary" id="icon5" />
+        </Link>
+      </li>
+      {/* </ul> */}
     </nav>
   );
 }

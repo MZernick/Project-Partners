@@ -1,7 +1,7 @@
 # ProPairs
-[ProPairs](https://pro-pairs.herokuapp.com/)  
-Version 1.0  
-Deployment Date: March 15, 2023
+[ProPairs](https://propairs.herokuapp.com/)  
+Version 2.0  
+Deployment Date: March 28, 2023
 
 # Table of Contents
 - [Description](#description)
@@ -15,7 +15,7 @@ Deployment Date: March 15, 2023
 
 # Description
 
-[ProPairs](https://pro-pairs.herokuapp.com/) is a web application that matches compatible teammates for group projects based on their Myers-Briggs personality types. The application suggests potential partners with similar interests, values, and communication styles, and allows users to see their compatibility rating as a pair and as a team. The application is hosted on a secure server and can be accessed from any device with an internet connection.  
+[ProPairs](https://propairs.herokuapp.com/) is a web application that matches compatible teammates for group projects based on their Myers-Briggs personality types. The application suggests potential partners with similar interests, values, and communication styles, and allows users to see their compatibility rating as a pair and as a team. The application is hosted on a secure server and can be accessed from any device with an internet connection.  
 
 *Features*
 - Compatibility: See one-on-one compatibility ratings.
@@ -27,13 +27,13 @@ Deployment Date: March 15, 2023
 
 # Getting Started
 
-To get started,  visit [the website](https://pro-pairs.herokuapp.com/) to sign up for an account.  You'll need your MBTI. If you know it, great! If not, take a [quick quiz](https://www.16personalities.com/free-personality-test) to discover your personality type. 
+To get started,  visit [the website](https://propairs.herokuapp.com/) to sign up for an account.  You'll need your MBTI. If you know it, great! If not, take a [quick quiz](https://www.16personalities.com/free-personality-test) to discover your personality type. 
 
 # Instructions
 
 1. Once signed in, view your your profile. See your teams and user details. Is something not quite right? Update your username, email, or password. 
-2. Build a team: Enter a project title and description. Add two to five team members. Include yourself on the team, or not.
-3. Search users: Search by personality type, name, or email. Navigate to profile page of a user you're interested in.
+2. Build a team: Enter a project title and description. Add up to four users to your team. 
+3. Search users: Search by personality type, name, email, or all. Navigate to profile page of a user you're interested in.
 4. Manage teams: View project details, team compatibility. We know projects pivot and needs change- update project title, description, and members as needed.
 5. Log out when you're done!
 
@@ -56,6 +56,8 @@ To get started,  visit [the website](https://pro-pairs.herokuapp.com/) to sign u
 * Jeremy Crouthamel: https://github.com/Leyden05
 
 # Original Idea
+
+Original GitHub repository https://github.com/MZernick/Project-Partners  
 **Early Concept**
 
 ![image](https://user-images.githubusercontent.com/120350675/225497060-983142c7-17b7-4127-bbf1-98a1d3211859.png) ![image](https://user-images.githubusercontent.com/120350675/225497270-2518fa13-5ca1-4061-838e-7f0c823753ff.png)
@@ -73,14 +75,13 @@ To get started,  visit [the website](https://pro-pairs.herokuapp.com/) to sign u
 Ideas pending for future development:
 1. Integrate personality test.
 2. Facilitate team and user communication via chat.
-3. Add user profile picture or avatar.
-4. Improve mobile friendliness.
+3. Add project management functionality
 
 # License
 
 MIT License
 
-Copyright (c) 2023 Magdalene Zernick
+Copyright (c) 2023 Magdalene Zernick, Dominique Nix, Jeremy Crouthamel, Josh Goeke, and Anita Banh
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

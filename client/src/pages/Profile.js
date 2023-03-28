@@ -129,6 +129,8 @@ const Profile = () => {
       personality: ''
     })
   }
+
+// Avatar image upload
 const [image, setImage] = useState(null);
 const [url, setUrl] = useState(null);
 
@@ -140,21 +142,7 @@ const handleImageChange = (e) => {
 
 console.log(image);
 
-
-// const handleSubmit = () => {
-//   const imageRef = ref(storage, 'image');
-//   uploadBytes(imageRef, image).then(() => {
-//     getDownloadURL(imageRef).then((url) => {
-//       setUrl(url);
-//     }).catch(error => {
-//       console.error(error.message, "error getting the image url. try again.");
-//     });
-//   // setImage(null);
-//   }).catch(error => {
-//     console.log(error.message)
-//   })
-// };
-
+// Submitting the avatar image request
 const handleSubmit = () => {
   const imageRef = ref(storage, 'image');
   uploadBytes(imageRef, image).then(() => {
@@ -164,7 +152,7 @@ const handleSubmit = () => {
     }).catch(error => {
       console.error(error.message, "error getting the image url. try again.");
     });
-    // setImage(null);
+    setImage(null);
   }).catch(error => {
     console.log(error.message)
   })
@@ -238,14 +226,9 @@ const handleSubmit = () => {
       <div className="profileContainer">
         <h2 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300" id="welcomeBack">Welcome back, {user.username}</h2>
         <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500" className="profile-box">
-          {/* <Avatar
-            src={url}
-            sx={{ width: 112, height: 112 }}></Avatar> */}
             <Avatar
-            sx={{ width: 112, height: 112, bgcolor: '#1D3557' }}
+            sx={{ width: 156, height: 156, bgcolor: '#1D3557' }}
             src={localStorage.getItem('profilePicture') || null}>{user.username}</Avatar>
-            <input type="file" onChange={handleImageChange} />
-            <button onClick={handleSubmit}>Submit</button>
           <h2 className='profileName'>{user.username}</h2>
           <p id="personalityType">{user.personality} </p>
           <p id="pemail">{user.email}</p>
@@ -254,6 +237,18 @@ const handleSubmit = () => {
             <Dialog open={open} onClose={handleClose}>
               <DialogTitle>Update Your Profile</DialogTitle>
               <DialogContent>
+              <TextField
+              id="avatar"
+              label="Avatar"
+              onChange={handleImageChange} 
+              type="file"
+              margin="dense"
+              fullWidth
+              variant="standard"
+              autoFocus/>
+              <DialogActions>
+              <Button onClick={handleSubmit}>Submit</Button>
+              </DialogActions>
                 <TextField
                   onChange={(event, value) => setFormData({ ...formData, email: event.target.value })}
                   defaultValue={formData.email}
@@ -330,6 +325,3 @@ const handleSubmit = () => {
 };
 
 export default Profile;
-
-
-

@@ -10,6 +10,7 @@ import auth from "../utils/auth";
 import '../styles/UserSearch.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { textAlign } from "@mui/system";
 
 
 
@@ -120,7 +121,7 @@ const UserSearch = () => {
                       onChange={(e) => setFilter(e.target.value)}
                     >
                       <option value="all">All</option>
-                      <option value="personality">Personality Type</option>
+                      <option value="personality">Personality Type (ex. ENTP)</option>
                       <option value="email">Email</option>
                       <option value="username">Username</option>
                     </select>
@@ -128,7 +129,7 @@ const UserSearch = () => {
                       type="text"
                       className="search-input"
                       id="search"
-                      placeholder={filter === "all" ? "Enter personality, email, or username" : `Enter ${filter}`}
+                      placeholder={filter === "all" ? "Enter MBTI, email, or username" : `Enter ${filter}`}
                       value={searchText}
                       onChange={(e) =>
                         setSearchText(e.target.value.toLowerCase())
@@ -154,11 +155,11 @@ const UserSearch = () => {
                 <div key={user._id} className="user-box">
                   <h2 className="profileNameSearch">{user.username}</h2>
                   <br />
-                  <span className="profileNameSearch">{user.email}</span>
-                  <br />
                   <span className="pTypeSearch">{user.personality}</span>
-                      <br />
-                      <span className="pTypeSearch">{user.rating}</span>
+                  <br />
+                  <span className="pTypeSearch" >Compatibility: {user.rating}</span>
+                  <br />
+                  <span className="profileNameSearch">{user.email}</span>
                   <br />
                   <span className="profileNameSearch">
                     Current team(s): {user.teams ? user.teams.length : 0}

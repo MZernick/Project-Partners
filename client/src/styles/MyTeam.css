@@ -257,3 +257,9 @@ circle {
   justify-content: end;
   padding: 1%;
 }
+
+.pairCircle {
+  width: 50%;
+  justify-content: end;
+  padding: 1%;
+}

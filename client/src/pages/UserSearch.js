@@ -157,7 +157,7 @@ const UserSearch = () => {
                   <br />
                   <span className="pTypeSearch">{user.personality}</span>
                   <br />
-                  <span className="pTypeSearch" >Compatibility: {user.rating}</span>
+                  <span className="pTypeSearch" >Compatibility: {user.rating}%</span>
                   <br />
                   <span className="profileNameSearch">{user.email}</span>
                   <br />

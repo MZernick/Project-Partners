@@ -36,10 +36,10 @@ const storage = getStorage();
 export function useAuth() {
   const [currentUser, setCurrentUser] = useState();
 
-  // useEffect(() => {
-  //   const unsub = onAuthStateChanged(auth, user => setCurrentUser(user));
-  //   return unsub;
-  // }, [])
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, user => setCurrentUser(user));
+    return unsub;
+  }, [])
 
 // JOSH LOOK ABOVE ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 // This useEffect method is apparently necessary for the photo to load. Commented out because we use two seperate auths

@@ -19,6 +19,12 @@
   padding-bottom: 2rem;
 }
 
+@media screen and (max-width: 768px) {
+  .search-page {
+    margin-left: 0;
+  }
+}
+
 .search-container {
   display: flex;
   flex-direction: column;
@@ -26,6 +32,12 @@
   justify-content: center;
   flex-wrap: wrap;
   margin: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .search-container {
+    margin-top: 20%;
+  }
 }
 
 .search-card {

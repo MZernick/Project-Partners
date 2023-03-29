@@ -22,6 +22,13 @@
   padding-bottom: 2rem;
 }
 
+@media screen and (max-width: 768px) {
+  .teams-page {
+    margin-left: 0;
+    padding-top: 20%;
+  }
+}
+
 .allteam-card {
   transition: 0.3s;
   background-color: #3e5a80;
@@ -45,6 +52,7 @@
 } */
 
 .team-card {
+  text-align: center;
   transition: 0.3s;
   border-radius: 5px;
   background: #3e5a80;
@@ -100,9 +108,11 @@ body {
   text-decoration: none;
 }
 
-/* #signup-btn:hover {
-  box-shadow: 0px 1px 18px #588ab6;
-}DOES NOT WORK */
+.team-btn:hover {
+  background: linear-gradient(90deg, rgba(88, 138, 182, 1) 0%, rgba(21, 17, 87, 1) 100%);
+  border: none;
+}
+
 .form {
   align-items: left;
   display: flex;
@@ -133,10 +143,16 @@ circle {
 }
 
 .smallFont {
-  font-size: clamp(.5rem, 2vw, 5.5rem);
+  font-size: clamp(.5rem, 1rem, 1.5rem);
   color: #F1FAEE;
   font-family: 'Switzer', sans-serif;
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .smallFont {
+    align-items: center;
+  }
 }
 
 .percFont {
@@ -167,7 +183,7 @@ circle {
 
 .member-name {
   font-family: 'Switzer', sans-serif;
-  font-size: clamp(.5rem, 2.5vw, 5.5rem);
+  font-size: clamp(.5rem, 1.5rem, 2rem);
   text-decoration: none;
   color: #F1FAEE;
   font-weight: 400;
@@ -199,6 +215,7 @@ circle {
   padding-top: 2%;
   padding-bottom: 2%;
   border-radius: 8px;
+  margin-left: 1%;
 }
 
 .comparisons {

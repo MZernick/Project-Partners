@@ -17,6 +17,16 @@ query User($userId: ID!) {
       description
       members {
         username
+        _id
+      }
+    }
+    comments {
+      _id
+      commentBody
+      createdAt
+      user {
+        username
+        _id
       }
     }
   }
@@ -52,26 +62,111 @@ export const QUERY_SINGLE_USER = gql`
   }
 `;
 
+export const SEARCH_USERS = gql`
+query User($searchValue: String!) {
+  searchEmail(email: $searchValue) {
+    _id
+    username
+    email
+    personality
+    compatibility {
+      type
+      rating
+    }
+    teams {
+      title
+      description
+    }
+  }
+  searchPersonality(personality: $searchValue) {
+    _id
+    username
+    email
+    personality
+    compatibility {
+      type
+      rating
+    }
+    teams {
+      title
+      description
+    }
+  }
+  searchUsername(username: $searchValue) {
+    _id
+    username
+    email
+    personality
+    compatibility {
+      type
+      rating
+    }
+    teams {
+      title
+      description
+    }
+  }
+}`;
+
 export const SEARCH_EMAIL = gql`
 query User($email: String!) {
   searchEmail(email: $email) {
     _id
     username
     email
+    username
     personality
+    compatibility {
+      type
+      rating
+    }
+    teams {
+      title
+      description
+    }
   }
 }
 `;
 export const SEARCH_PERSONALITY = gql`
 query User($personality: String!) {
   searchPersonality(personality: $personality) {
-    _id
+   _id
     username
     email
+    username
     personality
+    compatibility {
+      type
+      rating
+    }
+    teams {
+      title
+      description
+    }
   }
 }
 `;
+
+export const SEARCH_USERNAME= gql`
+query User($username: String!) {
+  searchUsername(username: $username) {
+  _id
+    username
+    email
+    username
+    personality
+    compatibility {
+      type
+      rating
+    }
+    teams {
+      title
+      description
+    }
+  }
+}
+`;
+
 
 export const MY_TEAMS = gql `
 query myTeams($userId: ID!) {

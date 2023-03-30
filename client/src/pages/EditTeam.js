@@ -66,8 +66,13 @@ const EditTeam = () => {
   } 
   else {
     teamData.data.team.members.map(member => {
+      // console.log(data1.data.user._id)
+      if (member._id === data1.data.user._id) {
+        return
+      } else {
         return membersInTeam.push(getCompatibilityandUsername(data1.data?.user, member))
-      })
+      }
+    })
   }
 
 
@@ -184,7 +189,7 @@ if(loading || data2.loading || data1.loading) {
                                 </div>                               
                               </Box>
                             )}
-                            onChange = { (event, newValue) => setFormData({...formData, members: [...newValue].map(item => item.value)})}
+                            onChange = { (event, newValue) => setFormData({...formData, members: [data1.data.user._id, ...newValue.map(item => item.value)]})}
                             multiple
                             id="user-autocomplete"
                             defaultValue={membersInTeam}

@@ -27,7 +27,7 @@ const Circle = ({ colour, pct }) => {
 
 const Text = ({ percentage }) => {
     return (
-        <text className='smallFont'
+        <text className='percFont'
             x="50%"
             y="50%"
             dominantBaseline="central"

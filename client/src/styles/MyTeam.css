@@ -7,6 +7,8 @@
   text-align: center;
   font-size: 4rem;
   margin: 0px;
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  ;
 }
 
 .teams-page {
@@ -18,6 +20,13 @@
   margin-left: 15%;
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .teams-page {
+    margin-left: 0;
+    padding-top: 20%;
+  }
 }
 
 .allteam-card {
@@ -35,14 +44,15 @@
   width: 90%;
 }
 
-.team-cardContainer {
+/* .team-cardContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-}
+} */
 
 .team-card {
+  text-align: center;
   transition: 0.3s;
   border-radius: 5px;
   background: #3e5a80;
@@ -53,6 +63,13 @@
   align-items: center;
   flex-direction: column;
   margin-top: 2%;
+  margin: 5%;
+}
+
+@media screen and (max-width: 768px) {
+  .team-card {
+    margin: 10%;
+  }
 }
 
 .card:hover {
@@ -91,9 +108,11 @@ body {
   text-decoration: none;
 }
 
-/* #signup-btn:hover {
-  box-shadow: 0px 1px 18px #588ab6;
-}DOES NOT WORK */
+.team-btn:hover {
+  background: linear-gradient(90deg, rgba(88, 138, 182, 1) 0%, rgba(21, 17, 87, 1) 100%);
+  border: none;
+}
+
 .form {
   align-items: left;
   display: flex;
@@ -124,7 +143,20 @@ circle {
 }
 
 .smallFont {
-  font-size: 1.5rem;
+  font-size: clamp(.5rem, 1rem, 1.5rem);
+  color: #F1FAEE;
+  font-family: 'Switzer', sans-serif;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .smallFont {
+    align-items: center;
+  }
+}
+
+.percFont {
+  font-size: clamp(1.5rem, 2vw, 5.5rem);
   color: #F1FAEE;
   font-family: 'Switzer', sans-serif;
   text-align: center;
@@ -151,7 +183,7 @@ circle {
 
 .member-name {
   font-family: 'Switzer', sans-serif;
-  font-size: 2rem;
+  font-size: clamp(.5rem, 1.5rem, 2rem);
   text-decoration: none;
   color: #F1FAEE;
   font-weight: 400;
@@ -183,6 +215,7 @@ circle {
   padding-top: 2%;
   padding-bottom: 2%;
   border-radius: 8px;
+  margin-left: 1%;
 }
 
 .comparisons {
@@ -195,6 +228,13 @@ circle {
 .description-card {
   display: flex;
   align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .description-card {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .descFont {
@@ -214,6 +254,12 @@ circle {
 }
 
 .percentageCircle {
+  justify-content: end;
+  padding: 1%;
+}
+
+.pairCircle {
+  width: 50%;
   justify-content: end;
   padding: 1%;
 }

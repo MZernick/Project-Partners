@@ -8,7 +8,7 @@ import { Link } from 'react-scroll';
 import { Avatar } from "@mui/material";
 import anitaFace from '../styles/assets/teampics/AnitaFace.jpg';
 import domFace from '../styles/assets/teampics/DomFace.jpeg';
-import jerHair from '../styles/assets/teampics/JerHair.png';
+import jerHair from '../styles/assets/teampics/JerHair.jpg';
 import joshFace from '../styles/assets/teampics/JoshFace.jpg';
 import magFace from '../styles/assets/teampics/MagFace.jpg';
 import { useNavigate } from 'react-router-dom';
@@ -69,51 +69,61 @@ export default function Homepage() {
           <h2 data-aos="slide-left" data-aos-duration="700" id="teamTitle">Meet Our<span id="redTeam"> Team</span></h2>
         </div>
         <div id="sidescrollContainer">
-          <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200" className="creator-box">
+        <a href="https://www.linkedin.com/in/joshuagoeke/" target="_blank" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200" className="creator-box" >
+          
             <Avatar className="creator-avatar"
               src={joshFace}
               sx={{ width: 112, height: 112 }}>
               JG
             </Avatar>
+            
             <h2 className="creator-name">Josh Goeke</h2>
             <p className="creator-type">ENTP</p>
-          </div>
-          <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400" className="creator-box">
+          </a>
+          
+          <a href="https://www.linkedin.com/in/dominique-nix-152361263/" target="_blank" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400" className="creator-box">
             <Avatar className="creator-avatar"
               src={domFace}
               sx={{ width: 112, height: 112 }}>
               DN
             </Avatar>
+            
             <h2 className="creator-name">Dominique Nix</h2>
             <p className="creator-type">INTJ</p>
-          </div>
-          <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600" className="creator-box">
+          </a>
+          
+          <a href="https://www.linkedin.com/in/anitabanh/" target="_blank" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600" className="creator-box">
             <Avatar className="creator-avatar"
               src={anitaFace}
               sx={{ width: 112, height: 112 }}>
               AB
             </Avatar>
+            
             <h2 className="creator-name">Anita Banh</h2>
             <p className="creator-type">ISTP</p>
-          </div>
-          <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="800" className="creator-box">
+          </a>
+          
+          <a href="https://www.linkedin.com/in/jcrouthamel05/" target="_blank" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="800" className="creator-box">
             <Avatar className="creator-avatar"
               src={jerHair}
               sx={{ width: 112, height: 112 }}>
               JC
             </Avatar>
+            
             <h2 className="creator-name">Jeremy Crouthamel</h2>
             <p className="creator-type">INFP</p>
-          </div>
-          <div data-aos="zoom-in" data-aos-duration="600" data-aos-delay="1000" className="creator-box">
+          </a>
+          <a href="https://www.linkedin.com/in/mzernick/" target="_blank" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="1000" className="creator-box">
             <Avatar className="creator-avatar"
               src={magFace}
               sx={{ width: 112, height: 112 }}>
               MZ
             </Avatar>
+            
             <h2 className="creator-name">Magdalene Zernick</h2>
             <p className="creator-type">ENFJ</p>
-          </div>
+            
+          </a>
         </div>
       </div>
       <div className="startedContainer">

@@ -352,6 +352,12 @@ body {
   align-items: center;
   justify-content: center;
   margin: 2%;
+  text-decoration: none;
+  
+}
+
+.creator-box:hover {
+  filter: saturate(1.8) drop-shadow(0 0 1rem #F1FAEE)
 }
 
 .creator-avatar {

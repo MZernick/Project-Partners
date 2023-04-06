@@ -11,6 +11,9 @@ const resolvers = {
       return await User.find({}).populate("teams").populate({
         path: "teams",
         populate: "members",
+      }).populate({
+        path: "comments", 
+        populate: 'user'
       });
     },
     // find one user
@@ -18,19 +21,32 @@ const resolvers = {
       return await User.findOne({ _id: userId }).populate("teams").populate({
         path: "teams",
         populate: "members",
+      }).populate({
+        path: "comments", 
+        populate: 'user'
       });
     },
-    // find one user by email
+    // find users by email, case-insensitive
     searchEmail: async (parent, { email }) => {
-      return await User.find({ email: email }).populate("teams").populate({
+      const regex = new RegExp(`^${email}$`, 'i');
+      return await User.find({ email: regex }).populate("teams").populate({
         path: "teams",
         populate: "members",
       });
     },
 
-    // find one user by email
+    // find users by personality, case-insensitive
     searchPersonality: async (parent, { personality }) => {
-      return await User.find({ personality: personality }).populate("teams").populate({
+      const regex = new RegExp(`^${personality}$`, 'i');
+      return await User.find({ personality: regex }).populate("teams").populate({
+        path: "teams",
+        populate: "members",
+      });
+    },
+     // find users by username, case-insensitive
+     searchUsername: async (parent, { username }) => {
+      const regex = new RegExp(`^${username}$`, 'i');
+      return await User.find({ username: regex }).populate("teams").populate({
         path: "teams",
         populate: "members",
       });
@@ -151,7 +167,23 @@ const resolvers = {
             { new: true }
           )
         })
-    }
+    },
+
+    addComment: async (parent, {userId, commenterId, commentBody }) => {
+      return User.findByIdAndUpdate(
+        {_id: userId}, 
+        { $addToSet: { comments: {user: commenterId, commentBody: commentBody}} }, 
+        {new: true }
+      )
+    }, 
+
+    removeComment: async (parent, {userId, commentId }) => {
+      return User.findByIdAndUpdate(
+        {_id: userId}, 
+        { $pull: { comments: { _id: commentId}} }, 
+        {new: true }
+      )
+    }, 
 
   },
 };

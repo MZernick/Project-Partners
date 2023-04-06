@@ -15,6 +15,13 @@
   align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+  .signup-page {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 .signup-card {
   transition: 0.3s;
   border-radius: 5px;
@@ -23,6 +30,8 @@
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
   width: 475px;
   margin-top: 200px;
+  margin-right: 2%;
+  margin-left: 2%;
 }
 
 .login-card {
@@ -32,6 +41,15 @@
   border-radius: 8px;
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
   width: 475px;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+@media screen and (max-width: 768px) {
+  .login-card {
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
 }
 
 .card:hover {
@@ -91,9 +109,6 @@ label {
   width: 153px;
 }
 
-/* #signup-btn:hover {
-    box-shadow: 0px 1px 18px #588ab6;
-  }DOES NOT WORK */
 .sign-up-form {
   align-items: left;
   display: flex;

@@ -61,7 +61,7 @@ const CreateTeam = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    if (formData.members.length < 2 || formData.members.length > 5){
+    if (formData.members.length < 2 || formData.members.length > 5) {
       return
     }
     // console.log(formData)
@@ -93,7 +93,7 @@ const CreateTeam = () => {
       <div><NavTabs /></div>
       <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200" className="bigContainer">
         <div className='card'>
-          <h1 className="createheaders">Create a New Team</h1>
+          <h1 className="createheaders">Create a Team</h1>
           <div className="underline"></div>
           <div className="container">
             <form className="createform" onSubmit={handleFormSubmit}>
@@ -139,10 +139,10 @@ const CreateTeam = () => {
 
                       </Box>
                     )}
-                    onChange={(event, newValue) => setFormData({ ...formData, members: [...newValue].map(item => item.value) })}
+                    onChange={(event, newValue) => setFormData({ ...formData, members: [auth.getProfile().data._id, ...newValue.map(item => item.value)] })}
                     multiple
                     id="user-autocomplete"
-                 
+
                     getOptionLabel={(option) => `${option.username} ${option.rating}`}
                     options={userArr}
                     className="usersearch"

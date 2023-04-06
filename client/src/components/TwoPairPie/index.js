@@ -38,10 +38,10 @@ const Text = ({ percentage }) => {
     );
 };
 
-const Pie = ({ percentage, colour }) => {
+const PairPie = ({ percentage, colour }) => {
     const pct = cleanPercentage(percentage);
     return (
-        <svg className="percentageCircle" width={200} height={200}>
+        <svg className="pairCircle" width={200} height={200}>
             <g transform={`rotate(-90 ${"100 100"})`}>
                 <Circle colour="lightgrey" />
                 <Circle colour={colour} pct={pct} />
@@ -51,4 +51,4 @@ const Pie = ({ percentage, colour }) => {
     );
 };
 
-export default Pie;
+export default PairPie;
